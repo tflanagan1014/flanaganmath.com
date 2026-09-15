@@ -42,8 +42,8 @@
       --fill:         #f5f5f5;
       --fill-faint:   #fafafa;
 
-      --measure:      44rem;   /* prose column, ~70 characters */
-      --measure-wide: 52rem;   /* figures, formula boxes        */
+      --measure:      44rem;
+      --measure-wide: 52rem;
 
       --font-text:    Georgia, 'Iowan Old Style', 'Times New Roman', serif;
     }
@@ -206,6 +206,26 @@
       content: " " counter(lesson) "." counter(figure) ".";
     }
 
+    /* Accessible image descriptions */
+
+    .image-description {
+      margin-top: 12px;
+      border-top: 1px solid var(--rule-faint);
+      padding-top: 10px;
+      font-size: 0.93rem;
+      color: var(--ink-soft);
+    }
+
+    .image-description summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .image-description p {
+      margin: 10px 0 0;
+      line-height: 1.6;
+    }
+
     /* ---------------------------------------------------------------
        Examples
        --------------------------------------------------------------- */
@@ -362,6 +382,21 @@
           <span class="figure-number">Figure</span>
           Distance between two points in \( \mathbb{R}^3 \).
         </figcaption>
+
+        <details class="image-description">
+          <summary>Image description</summary>
+
+          <p>
+            A three-dimensional coordinate system contains the points
+            \(P_1=(x_1,y_1,z_1)\) and \(P_2=(x_2,y_2,z_2)\).
+            A line segment connects \(P_1\) and \(P_2\), representing
+            the distance between the two points. Dashed construction
+            lines form a rectangular box aligned with the coordinate
+            axes, illustrating the changes in the \(x\)-, \(y\)-,
+            and \(z\)-coordinates used in the three-dimensional
+            distance formula.
+          </p>
+        </details>
       </figure>
 
       <section class="example" id="example-1-1">
