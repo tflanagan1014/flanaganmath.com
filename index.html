@@ -21,12 +21,31 @@
   </script>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: #ffffff;
       color: #222;
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.65;
+    }
+
+    .site-header {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .site-header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 18px 28px;
+    }
+
+    .site-name {
+      font-size: 1.05rem;
+      font-weight: 700;
     }
 
     .page {
@@ -36,15 +55,15 @@
     }
 
     .lesson-title {
-      font-size: 1.55rem;
+      font-size: 1.6rem;
       font-weight: 700;
-      margin-bottom: 34px;
+      margin: 0 0 38px;
       padding-bottom: 12px;
       border-bottom: 2px solid #333;
     }
 
     h2 {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       margin: 0 0 16px;
     }
 
@@ -53,34 +72,37 @@
       margin: 0 0 16px;
     }
 
-    /* Important formulas */
+    /* Named formulas */
 
     .formula-box {
-      max-width: 620px;
-      margin: 28px auto;
-      padding: 18px 24px;
-      border: 1px solid #bbb;
+      max-width: 650px;
+      margin: 30px auto;
+      border: 1px solid #aaa;
       border-radius: 6px;
-      background: #fafafa;
+      overflow: hidden;
     }
 
-    .callout-label {
-      font-size: 0.78rem;
+    .formula-title {
+      padding: 8px 16px;
+      background: #f1f1f1;
+      border-bottom: 1px solid #ccc;
+      font-size: 0.8rem;
       font-weight: 700;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 8px;
     }
 
-    .formula {
+    .formula-content {
+      padding: 16px 22px;
       font-size: 1.1rem;
+      text-align: center;
     }
 
     /* Figures */
 
     figure {
       max-width: 620px;
-      margin: 36px auto;
+      margin: 38px auto;
     }
 
     figure img {
@@ -92,7 +114,7 @@
     figcaption {
       margin-top: 12px;
       text-align: center;
-      font-size: 0.92rem;
+      font-size: 0.93rem;
       color: #444;
     }
 
@@ -100,51 +122,70 @@
       font-weight: 700;
     }
 
-    /* Callouts for later sections */
+    /* Definitions */
 
-    .definition,
-    .key-idea,
-    .recall {
-      margin: 28px 0;
+    .definition {
+      margin: 30px 0;
       padding: 18px 22px;
-      border-left: 4px solid #555;
+      border-left: 4px solid #444;
       background: #f7f7f7;
     }
 
-    .definition p,
-    .key-idea p,
-    .recall p {
-      margin-bottom: 0;
+    .definition-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    /* Key ideas and recall */
+
+    .key-idea,
+    .recall {
+      margin: 30px 0;
+      padding: 18px 22px;
+      background: #fafafa;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      margin-bottom: 6px;
     }
 
     /* Examples */
 
     .example {
-      margin: 34px 0;
-      padding-top: 16px;
-      border-top: 1px solid #bbb;
+      margin: 36px 0;
+      padding-top: 18px;
+      border-top: 1px solid #aaa;
     }
 
     .example-title {
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     @media (max-width: 700px) {
+      .site-header-inner,
       .page {
-        padding: 24px 18px 50px;
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
       .lesson-title {
-        font-size: 1.35rem;
+        font-size: 1.4rem;
       }
 
-      .formula-box {
-        padding: 14px 12px;
+      .formula-content {
+        padding: 14px 10px;
       }
     }
 
     @media print {
+      .site-header {
+        display: none;
+      }
+
       .page {
         max-width: none;
         padding: 0;
@@ -154,6 +195,12 @@
 </head>
 
 <body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-name">Flanagan Math</div>
+    </div>
+  </header>
 
   <main class="page">
 
@@ -181,9 +228,11 @@
       </p>
 
       <div class="formula-box">
-        <div class="callout-label">Distance Formula in \( \mathbb{R}^3 \)</div>
+        <div class="formula-title">
+          Distance Formula in \( \mathbb{R}^3 \)
+        </div>
 
-        <div class="formula">
+        <div class="formula-content">
           \[
           \sqrt{
             (x_2-x_1)^2+
@@ -194,7 +243,7 @@
         </div>
       </div>
 
-      <figure>
+      <figure id="figure-1-1">
         <img
           src="distance-between-points-3d.png"
           alt="Three-dimensional coordinate system showing points P1 and P2 connected by a line segment."
