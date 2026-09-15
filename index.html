@@ -6,11 +6,17 @@
 
   <title>Lesson 1 – Basic Vector Arithmetic | Flanagan Math</title>
 
+  <!-- Hidden until MathJax finishes so raw TeX never flashes. -->
+  <style>body { visibility: hidden; }</style>
+
   <script>
     window.MathJax = {
-      tex: {
-        inlineMath: [['\\(', '\\)']],
-        displayMath: [['\\[', '\\]']]
+      startup: {
+        pageReady() {
+          return MathJax.startup.defaultPageReady().then(() => {
+            document.body.style.visibility = 'visible';
+          });
+        }
       }
     };
   </script>
@@ -21,50 +27,45 @@
   </script>
 
   <style>
+    /* ---------------------------------------------------------------
+       Tokens
+       --------------------------------------------------------------- */
+
+    :root {
+      --ink:          #222;
+      --ink-soft:     #444;
+
+      --rule-strong:  #333;
+      --rule:         #aaa;
+      --rule-faint:   #d5d5d5;
+
+      --fill:         #f5f5f5;
+      --fill-faint:   #fafafa;
+
+      --measure:      44rem;   /* prose column, ~70 characters */
+      --measure-wide: 52rem;   /* figures, formula boxes        */
+
+      --font-text:    Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    }
+
     * {
       box-sizing: border-box;
     }
 
+    /* ---------------------------------------------------------------
+       Base
+       --------------------------------------------------------------- */
+
     body {
       margin: 0;
-      background: #ffffff;
-      color: #222;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.65;
-    }
+      background: #fff;
+      color: var(--ink);
+      font-family: var(--font-text);
+      line-height: 1.7;
 
-    .site-header {
-      border-bottom: 1px solid #ddd;
-    }
-
-    .site-header-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 18px 28px;
-    }
-
-    .site-name {
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
-
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 36px 28px 70px;
-    }
-
-    .lesson-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin: 0 0 38px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid #333;
-    }
-
-    h2 {
-      font-size: 1.25rem;
-      margin: 0 0 16px;
+      /* One lesson number per page: change the 1 and every
+         "Figure 1.n" / "Example 1.n" label follows. */
+      counter-reset: lesson 1 figure example;
     }
 
     p {
@@ -72,24 +73,100 @@
       margin: 0 0 16px;
     }
 
-    /* Named formulas */
+    /* ---------------------------------------------------------------
+       Shell
+       --------------------------------------------------------------- */
+
+    .site-header {
+      border-bottom: 1px solid var(--rule-faint);
+    }
+
+    .site-header-inner,
+    .page {
+      max-width: var(--measure-wide);
+      margin: 0 auto;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+
+    .site-header-inner {
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+
+    .site-name {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .page {
+      padding-top: 36px;
+      padding-bottom: 70px;
+    }
+
+    /* Prose stays narrow; figures and formulas are free to run wider. */
+    .page > section > p,
+    .page > section > h2,
+    .example > p,
+    .example > .solution-title,
+    .definition,
+    .key-idea,
+    .recall {
+      max-width: var(--measure);
+    }
+
+    /* ---------------------------------------------------------------
+       Headings
+       --------------------------------------------------------------- */
+
+    .lesson-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 0 38px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--rule-strong);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin: 0 0 16px;
+    }
+
+    .example-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 12px;
+    }
+
+    .example-title::after {
+      content: " " counter(lesson) "." counter(example);
+    }
+
+    .solution-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 24px 0 8px;
+    }
+
+    /* ---------------------------------------------------------------
+       Named formulas
+       --------------------------------------------------------------- */
 
     .formula-box {
       max-width: 650px;
       margin: 30px auto;
-      border: 1px solid #aaa;
+      border: 1px solid var(--rule);
       border-radius: 6px;
       overflow: hidden;
     }
 
     .formula-title {
       padding: 8px 16px;
-      background: #f1f1f1;
-      border-bottom: 1px solid #ccc;
-      font-size: 0.8rem;
+      background: var(--fill);
+      border-bottom: 1px solid var(--rule-faint);
+      font-size: 0.9rem;
       font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
     }
 
     .formula-content {
@@ -98,11 +175,14 @@
       text-align: center;
     }
 
-    /* Figures */
+    /* ---------------------------------------------------------------
+       Figures
+       --------------------------------------------------------------- */
 
     figure {
       max-width: 620px;
       margin: 38px auto;
+      counter-increment: figure;
     }
 
     figure img {
@@ -115,31 +195,26 @@
       margin-top: 12px;
       text-align: center;
       font-size: 0.93rem;
-      color: #444;
+      color: var(--ink-soft);
     }
 
     .figure-number {
       font-weight: 700;
     }
 
-    /* Examples */
+    .figure-number::after {
+      content: " " counter(lesson) "." counter(figure) ".";
+    }
+
+    /* ---------------------------------------------------------------
+       Examples
+       --------------------------------------------------------------- */
 
     .example {
       margin: 46px 0 30px;
-      border-top: 2px solid #444;
       padding-top: 18px;
-    }
-
-    .example-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .solution-title {
-      font-weight: 700;
-      margin-top: 24px;
-      margin-bottom: 8px;
+      border-top: 2px solid var(--ink-soft);
+      counter-increment: example;
     }
 
     .example-math {
@@ -147,35 +222,35 @@
       font-size: 1.05rem;
     }
 
-    /* Definitions */
+    /* ---------------------------------------------------------------
+       Definitions, key ideas, recall
+       --------------------------------------------------------------- */
 
     .definition {
       margin: 30px 0;
       padding: 18px 22px;
-      border-left: 4px solid #444;
+      border-left: 4px solid var(--ink-soft);
       background: #f7f7f7;
     }
-
-    .definition-title {
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    /* Key ideas and recall */
 
     .key-idea,
     .recall {
       margin: 30px 0;
       padding: 18px 22px;
-      background: #fafafa;
-      border: 1px solid #ccc;
+      background: var(--fill-faint);
+      border: 1px solid var(--rule-faint);
       border-radius: 5px;
     }
 
+    .definition-title,
     .callout-title {
       font-weight: 700;
       margin-bottom: 6px;
     }
+
+    /* ---------------------------------------------------------------
+       Small screens
+       --------------------------------------------------------------- */
 
     @media (max-width: 700px) {
       .site-header-inner,
@@ -193,6 +268,10 @@
       }
     }
 
+    /* ---------------------------------------------------------------
+       Print
+       --------------------------------------------------------------- */
+
     @media print {
       .site-header {
         display: none;
@@ -202,6 +281,21 @@
         max-width: none;
         padding: 0;
       }
+
+      figure,
+      .example,
+      .formula-box,
+      .definition,
+      .key-idea,
+      .recall {
+        break-inside: avoid;
+      }
+
+      h2,
+      .example-title,
+      .solution-title {
+        break-after: avoid;
+      }
     }
   </style>
 </head>
@@ -210,15 +304,15 @@
 
   <header class="site-header">
     <div class="site-header-inner">
-      <div class="site-name">Flanagan Math</div>
+      <p class="site-name">Flanagan Math</p>
     </div>
   </header>
 
   <main class="page">
 
-    <div class="lesson-title">
+    <h1 class="lesson-title">
       Lesson 1 – Basic Vector Arithmetic
-    </div>
+    </h1>
 
     <section>
 
@@ -259,29 +353,27 @@
       <figure id="figure-1-1">
         <img
           src="distance-between-points-3d.png"
+          width="620"
+          height="420"
           alt="Three-dimensional coordinate system showing points P1 and P2 connected by a line segment."
         >
 
         <figcaption>
-          <span class="figure-number">Figure 1.1.</span>
+          <span class="figure-number">Figure</span>
           Distance between two points in \( \mathbb{R}^3 \).
         </figcaption>
       </figure>
 
-      <div class="example" id="example-1-1">
+      <section class="example" id="example-1-1">
 
-        <div class="example-title">
-          Example 1.1
-        </div>
+        <h3 class="example-title">Example</h3>
 
         <p>
           Find the distance between the points
           \(P_1=(1,2,-1)\) and \(P_2=(4,6,1)\).
         </p>
 
-        <div class="solution-title">
-          Solution
-        </div>
+        <h4 class="solution-title">Solution</h4>
 
         <p>
           Using the distance formula,
@@ -304,7 +396,7 @@
           \( \sqrt{29} \).
         </p>
 
-      </div>
+      </section>
 
     </section>
 
