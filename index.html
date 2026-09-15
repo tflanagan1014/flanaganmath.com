@@ -15,6 +15,7 @@
       }
     };
   </script>
+
   <script
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     async>
@@ -26,46 +27,39 @@
       background: #ffffff;
       color: #222222;
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     .page {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 24px 28px 60px;
+      padding: 32px 28px 60px;
     }
 
     .lesson-title {
-      text-align: left;
-      font-size: 1.1rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
     }
 
     h1 {
       font-size: 1.15rem;
-      margin: 0 0 14px;
+      margin: 0 0 16px;
     }
 
     p {
       font-size: 1rem;
-      margin: 0 0 14px;
-    }
-
-    .lesson-layout {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 40px;
-      align-items: start;
+      margin: 0 0 16px;
     }
 
     .formula {
       font-size: 1.1rem;
-      margin-top: 18px;
+      margin: 24px 0;
     }
 
     figure {
-      margin: 0;
+      max-width: 600px;
+      margin: 30px auto 0;
     }
 
     figure img {
@@ -74,22 +68,17 @@
       height: auto;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 700px) {
       .page {
-        padding: 20px;
+        padding: 22px 18px 50px;
       }
 
       .lesson-title {
-        text-align: left;
-      }
-
-      .lesson-layout {
-        grid-template-columns: 1fr;
+        font-size: 1.3rem;
       }
 
       figure {
-        max-width: 550px;
-        margin: 10px auto 0;
+        margin-top: 24px;
       }
     }
   </style>
@@ -103,38 +92,34 @@
       Lesson 1 – Basic Vector Arithmetic
     </div>
 
-    <div class="lesson-layout">
+    <section>
 
-      <section>
+      <h1>
+        The Distance between Points, in \( \mathbb{R}^3 \)
+      </h1>
 
-        <h1>
-          The Distance between Points, in \( \mathbb{R}^3 \)
-        </h1>
+      <p>
+        The spatial location of a point requires three pieces of
+        information, described via three real numbers. In this sense
+        space is three-dimensional and often referred to as
+        \( \mathbb{R}^3 \).
+      </p>
 
-        <p>
-          The spatial location of a point requires three pieces of
-          information, described via three real numbers. In this sense
-          space is three-dimensional and often referred to as
-          \( \mathbb{R}^3 \).
-        </p>
+      <p>
+        In the following diagram, the distance between points
+        \(P_1\) and \(P_2\) can be found via the distance formula.
+        In \( \mathbb{R}^3 \) this expression is given below.
+      </p>
 
-        <p>
-          In the following diagram, the distance between points
-          \(P_1\) and \(P_2\) can be found via the distance formula.
-          In \( \mathbb{R}^3 \) this expression is given below.
-        </p>
-
-        <div class="formula">
-          \[
-          \sqrt{
-            (x_2-x_1)^2+
-            (y_2-y_1)^2+
-            (z_2-z_1)^2
-          }
-          \]
-        </div>
-
-      </section>
+      <div class="formula">
+        \[
+        \sqrt{
+          (x_2-x_1)^2+
+          (y_2-y_1)^2+
+          (z_2-z_1)^2
+        }
+        \]
+      </div>
 
       <figure>
         <img
@@ -143,7 +128,7 @@
         >
       </figure>
 
-    </div>
+    </section>
 
   </main>
 
