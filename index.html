@@ -6,7 +6,6 @@
 
   <title>Lesson 1 – Basic Vector Arithmetic | Flanagan Math</title>
 
-  <!-- MathJax for mathematical notation -->
   <script>
     window.MathJax = {
       tex: {
@@ -25,25 +24,27 @@
     body {
       margin: 0;
       background: #ffffff;
-      color: #222222;
+      color: #222;
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .page {
       max-width: 900px;
       margin: 0 auto;
-      padding: 32px 28px 60px;
+      padding: 36px 28px 70px;
     }
 
     .lesson-title {
-      font-size: 1.4rem;
+      font-size: 1.55rem;
       font-weight: 700;
-      margin-bottom: 32px;
+      margin-bottom: 34px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #333;
     }
 
-    h1 {
-      font-size: 1.15rem;
+    h2 {
+      font-size: 1.2rem;
       margin: 0 0 16px;
     }
 
@@ -52,14 +53,34 @@
       margin: 0 0 16px;
     }
 
-    .formula {
-      font-size: 1.1rem;
-      margin: 24px 0;
+    /* Important formulas */
+
+    .formula-box {
+      max-width: 620px;
+      margin: 28px auto;
+      padding: 18px 24px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      background: #fafafa;
     }
 
+    .callout-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .formula {
+      font-size: 1.1rem;
+    }
+
+    /* Figures */
+
     figure {
-      max-width: 600px;
-      margin: 30px auto 0;
+      max-width: 620px;
+      margin: 36px auto;
     }
 
     figure img {
@@ -68,17 +89,65 @@
       height: auto;
     }
 
+    figcaption {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 0.92rem;
+      color: #444;
+    }
+
+    .figure-number {
+      font-weight: 700;
+    }
+
+    /* Callouts for later sections */
+
+    .definition,
+    .key-idea,
+    .recall {
+      margin: 28px 0;
+      padding: 18px 22px;
+      border-left: 4px solid #555;
+      background: #f7f7f7;
+    }
+
+    .definition p,
+    .key-idea p,
+    .recall p {
+      margin-bottom: 0;
+    }
+
+    /* Examples */
+
+    .example {
+      margin: 34px 0;
+      padding-top: 16px;
+      border-top: 1px solid #bbb;
+    }
+
+    .example-title {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
     @media (max-width: 700px) {
       .page {
-        padding: 22px 18px 50px;
+        padding: 24px 18px 50px;
       }
 
       .lesson-title {
-        font-size: 1.3rem;
+        font-size: 1.35rem;
       }
 
-      figure {
-        margin-top: 24px;
+      .formula-box {
+        padding: 14px 12px;
+      }
+    }
+
+    @media print {
+      .page {
+        max-width: none;
+        padding: 0;
       }
     }
   </style>
@@ -94,9 +163,9 @@
 
     <section>
 
-      <h1>
-        The Distance between Points, in \( \mathbb{R}^3 \)
-      </h1>
+      <h2>
+        The Distance Between Points in \( \mathbb{R}^3 \)
+      </h2>
 
       <p>
         The spatial location of a point requires three pieces of
@@ -111,21 +180,30 @@
         In \( \mathbb{R}^3 \) this expression is given below.
       </p>
 
-      <div class="formula">
-        \[
-        \sqrt{
-          (x_2-x_1)^2+
-          (y_2-y_1)^2+
-          (z_2-z_1)^2
-        }
-        \]
+      <div class="formula-box">
+        <div class="callout-label">Distance Formula in \( \mathbb{R}^3 \)</div>
+
+        <div class="formula">
+          \[
+          \sqrt{
+            (x_2-x_1)^2+
+            (y_2-y_1)^2+
+            (z_2-z_1)^2
+          }
+          \]
+        </div>
       </div>
 
       <figure>
         <img
           src="distance-between-points-3d.png"
-          alt="Three-dimensional coordinate system showing points P1 and P2 connected by a line segment, illustrating the distance between two points in three-dimensional space."
+          alt="Three-dimensional coordinate system showing points P1 and P2 connected by a line segment."
         >
+
+        <figcaption>
+          <span class="figure-number">Figure 1.1.</span>
+          Distance between two points in \( \mathbb{R}^3 \).
+        </figcaption>
       </figure>
 
     </section>
