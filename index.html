@@ -122,6 +122,31 @@
       font-weight: 700;
     }
 
+    /* Examples */
+
+    .example {
+      margin: 46px 0 30px;
+      border-top: 2px solid #444;
+      padding-top: 18px;
+    }
+
+    .example-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .solution-title {
+      font-weight: 700;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    .example-math {
+      margin: 22px 0;
+      font-size: 1.05rem;
+    }
+
     /* Definitions */
 
     .definition {
@@ -150,19 +175,6 @@
     .callout-title {
       font-weight: 700;
       margin-bottom: 6px;
-    }
-
-    /* Examples */
-
-    .example {
-      margin: 36px 0;
-      padding-top: 18px;
-      border-top: 1px solid #aaa;
-    }
-
-    .example-title {
-      font-weight: 700;
-      margin-bottom: 12px;
     }
 
     @media (max-width: 700px) {
@@ -234,6 +246,7 @@
 
         <div class="formula-content">
           \[
+          d =
           \sqrt{
             (x_2-x_1)^2+
             (y_2-y_1)^2+
@@ -254,6 +267,44 @@
           Distance between two points in \( \mathbb{R}^3 \).
         </figcaption>
       </figure>
+
+      <div class="example" id="example-1-1">
+
+        <div class="example-title">
+          Example 1.1
+        </div>
+
+        <p>
+          Find the distance between the points
+          \(P_1=(1,2,-1)\) and \(P_2=(4,6,1)\).
+        </p>
+
+        <div class="solution-title">
+          Solution
+        </div>
+
+        <p>
+          Using the distance formula,
+        </p>
+
+        <div class="example-math">
+          \[
+          \begin{aligned}
+          d
+          &= \sqrt{(4-1)^2+(6-2)^2+(1-(-1))^2} \\[6pt]
+          &= \sqrt{3^2+4^2+2^2} \\[6pt]
+          &= \sqrt{9+16+4} \\[6pt]
+          &= \sqrt{29}.
+          \end{aligned}
+          \]
+        </div>
+
+        <p>
+          Therefore, the distance between the two points is
+          \( \sqrt{29} \).
+        </p>
+
+      </div>
 
     </section>
 
