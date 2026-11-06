@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Limits and Continuity of Vector-Valued Functions | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="The limit and continuity of a vector-valued function, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Limits and Continuity of Vector-Valued Functions</h1>
+
+    <section class="topic-section" id="the-limit-of-a-vector-valued-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-limit-of-a-vector-valued-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Limit of a Vector-Valued Function</span></button></h2>
+      <div class="section-body" id="the-limit-of-a-vector-valued-function-body">
+      <p>Consider the below vector-valued function, \(\mathbf{r}(t)\).</p>
+      <div>\[ \mathbf{r}(t) = x(t)\mathbf{i} + y(t)\mathbf{j} + z(t)\mathbf{k} \]</div>
+      <p>The limit of this function as \(t\) approaches \(t_0\) is defined below, provided these limits exist.</p>
+      <div class="formula">
+        <p class="formula-name">Limit of a Vector-Valued Function</p>
+        <div>\[
+        \begin{aligned}
+          \lim_{t \to t_0} \mathbf{r}(t) &= \left[ \lim_{t \to t_0} x(t) \right] \mathbf{i} \\
+          &\qquad {}+ \left[ \lim_{t \to t_0} y(t) \right] \mathbf{j} \\
+          &\qquad {}+ \left[ \lim_{t \to t_0} z(t) \right] \mathbf{k}
+        \end{aligned}
+        \]</div>
+      </div>
+      <p>This can also be expressed via angle bracket notation, for \(\vec{r}(t) = \langle x(t), y(t), z(t) \rangle\).</p>
+      <div>\[ \lim_{t \to t_0} \vec{r}(t) = \left\langle \lim_{t \to t_0} x(t),\ \lim_{t \to t_0} y(t),\ \lim_{t \to t_0} z(t) \right\rangle \]</div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-a-limit">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-a-limit-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding a Limit</span></button></h2>
+      <div class="section-body" id="finding-a-limit-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the below vector-valued function, \(\vec{r}(t)\). Evaluate \(\displaystyle\lim_{t \to 0} \vec{r}(t)\).</p>
+        <div>\[ \vec{r}(t) = \left\langle \frac{t^2 - t}{t},\ \frac{\sin t}{t},\ 2t \right\rangle \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Find the limit of each component.</p>
+          <div>\[
+          \begin{aligned}
+            \lim_{t \to 0} \frac{t^2 - t}{t} &= \lim_{t \to 0} (t - 1) \\
+            &= -1 \\
+            \lim_{t \to 0} \frac{\sin t}{t} &= 1 \\
+            \lim_{t \to 0} 2t &= 0
+          \end{aligned}
+          \]</div>
+          <p>Putting the components together gives the limit of the function.</p>
+          <div>\[ \lim_{t \to 0} \vec{r}(t) = \langle -1,\ 1,\ 0 \rangle \]</div>
+          <p><strong>Note:</strong> As a follow-up question, I will often ask for the magnitude of a vector you have found.</p>
+          <div>\[
+          \begin{aligned}
+            \left\| \lim_{t \to 0} \vec{r}(t) \right\| &= \sqrt{(-1)^2 + 1^2 + 0^2} \\
+            &= \sqrt{2}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-continuity-of-a-vector-valued-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-continuity-of-a-vector-valued-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Continuity of a Vector-Valued Function</span></button></h2>
+      <div class="section-body" id="the-continuity-of-a-vector-valued-function-body">
+      <p>Consider the below vector-valued function, \(\mathbf{r}(t)\).</p>
+      <div>\[ \mathbf{r}(t) = x(t)\mathbf{i} + y(t)\mathbf{j} + z(t)\mathbf{k} \]</div>
+      <p>The function is continuous at the real number \(t_0\) if all three of the following are true.</p>
+      <ul>
+        <li>\(\mathbf{r}(t_0)\) exists.</li>
+        <li>\(\displaystyle\lim_{t \to t_0} \mathbf{r}(t)\) exists.</li>
+        <li>\(\displaystyle\lim_{t \to t_0} \mathbf{r}(t) = \mathbf{r}(t_0)\).</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="checking-continuity">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="checking-continuity-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Checking Continuity</span></button></h2>
+      <div class="section-body" id="checking-continuity-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Explain why the below function is continuous at zero.</p>
+        <div>\[ \mathbf{r}(t) = t^2\mathbf{i} + (1 + t)\mathbf{j} + (\sin t)\mathbf{k} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The function is continuous at zero because the three requirements for continuity hold, as shown below.</p>
+          <p>First, \(\mathbf{r}(0)\) exists.</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{r}(0) &= 0^2\mathbf{i} + (1 + 0)\mathbf{j} + (\sin 0)\mathbf{k} \\
+            &= 0\mathbf{i} + 1\mathbf{j} + 0\mathbf{k} \\
+            &= \mathbf{j}
+          \end{aligned}
+          \]</div>
+          <p>Second, \(\displaystyle\lim_{t \to 0} \mathbf{r}(t)\) exists.</p>
+          <div>\[
+          \begin{aligned}
+            \lim_{t \to 0} \mathbf{r}(t) &= \left[ \lim_{t \to 0} t^2 \right] \mathbf{i} \\
+            &\qquad {}+ \left[ \lim_{t \to 0} (1 + t) \right] \mathbf{j} \\
+            &\qquad {}+ \left[ \lim_{t \to 0} \sin t \right] \mathbf{k} \\
+            &= 0\mathbf{i} + 1\mathbf{j} + 0\mathbf{k} \\
+            &= \mathbf{j}
+          \end{aligned}
+          \]</div>
+          <p>Third, the limit equals the value of the function, since both are \(\mathbf{j}\).</p>
+          <div>\[ \lim_{t \to 0} \mathbf{r}(t) = \mathbf{r}(0) \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="vector-valued-functions.html">&larr; Vector-Valued Functions</a>
+      <a class="next" href="derivatives-of-vector-valued-functions.html">Derivatives of Vector-Valued Functions &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
