@@ -206,3 +206,6 @@ ul.links li { margin: 0.5rem 0; font-size: 1.1rem; }
   body { font-size: 11pt; }
   .work, button.toggle { display: none !important; }
 }
+
+/* Home page headings */
+.page > h2 { font-size: 1.15rem; margin: 1.75rem 0 0.4rem; }

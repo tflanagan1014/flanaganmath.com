@@ -1,0 +1,220 @@
+/* Flanagan Math - one simple style for every page */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #111;
+  font-family: Aptos, "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 3rem;
+}
+
+a { color: #111; text-underline-offset: 0.15em; }
+:focus-visible { outline: 3px solid #111; outline-offset: 2px; }
+
+img { max-width: 100%; height: auto; }
+
+/* Equations never get their own scroll bar; displayed equations are indented a little, like the notes */
+mjx-container { overflow: visible !important; }
+mjx-container[display="true"] { margin-left: 1.5em !important; }
+
+/* Top line: where you are */
+.top {
+  font-size: 0.95rem;
+  color: #444;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #ccc;
+}
+.top a { color: #444; }
+
+/* Headings, like the notes */
+h1 { font-size: 1.7rem; line-height: 1.25; margin: 1.5rem 0 1.5rem; }
+h2 { font-size: 1.15rem; margin: 0; }
+
+/* Each section: a title row that opens and closes the section below it */
+.topic-section { border-top: 1px solid #bbb; }
+.topic-section:last-of-type { border-bottom: 1px solid #bbb; }
+
+button.section-toggle {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  width: 100%;
+  margin: 0;
+  padding: 0.9rem 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+.chevron::before {
+  content: "\25B8";                 /* small right-pointing triangle */
+  display: inline-block;
+  width: 0.8em;
+  transition: transform 0.15s;
+}
+button.section-toggle[aria-expanded="true"] .chevron::before { transform: rotate(90deg); }
+
+.section-body { padding: 0 0 1.5rem; }
+
+/* Closed sections keep their width (so equations lay out correctly) but take no space */
+.js .section-body:not(.open) {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+h3 { font-size: 1.05rem; margin: 1.5rem 0 0.5rem; }
+
+p { margin: 0 0 0.9rem; }
+ul { margin: 0 0 0.9rem; }
+
+/* Text with a figure to the right, like the notes; stacked on phones */
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 18rem);
+  gap: 2rem;
+  align-items: start;
+}
+.row > * { min-width: 0; }
+.row > img { max-width: 100%; }
+
+@media (max-width: 760px) {
+  .row { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+  .row.fig-first > img { order: -1; }
+}
+
+img.wide { display: block; max-width: min(36rem, 100%); margin: 0.5rem 0 1rem; }
+
+/* Worked solutions: hidden until the button is pressed */
+button.toggle {
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111;
+  background: #fff;
+  padding: 0.25rem 0.8rem;
+  border: 1px solid #111;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button.toggle { display: block; margin: 0.25rem 0 0.75rem; }
+button.toggle[hidden] { display: none; }
+
+.example {                         /* an example, start to finish */
+  background: #f3f3f3;
+  border-radius: 6px;
+  padding: 0.9rem 1.1rem 0.3rem;
+  margin: 1rem 0 1.5rem;
+}
+.example h3 { margin-top: 0; }
+.example .work { border-left-color: #bbb; }
+
+.formula {                         /* a key formula, with its name */
+  border: 1px solid #c8c8c8;
+  padding: 0.6rem 1rem 0.2rem;
+  margin: 0.5rem 0 1.25rem;
+  background: #fff;
+}
+.formula-name { font-weight: 700; font-size: 0.95rem; margin: 0; }
+.formula mjx-container[display="true"] { margin: 0.4em 0 0.5em 0.75em !important; }
+
+.work {
+  margin: 0 0 0.75rem;
+  padding-left: 1rem;
+  border-left: 2px solid #ccc;
+}
+.work.collapsed {
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* A list of separate equations: tight spacing, one per line */
+.eq-list mjx-container[display="true"] { margin: 0.3em 0 0.3em 1.5em !important; }
+
+/* Lists of properties */
+dl.properties { margin: 0 0 1rem; }
+dl.properties dt { margin-top: 0.5rem; }
+dl.properties dd { margin: 0; }
+
+/* Small grid, such as the standard basis cross products */
+table.grid { border-collapse: collapse; margin: 0.5rem 0 1rem; }
+table.grid td { border: 1px solid #ccc; padding: 0.35rem 0.9rem; text-align: center; }
+
+/* Course and topic lists */
+ul.links { list-style: none; padding: 0; }
+ul.links li { margin: 0.5rem 0; font-size: 1.1rem; }
+
+/* Previous / next topic */
+.next-prev {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+.next-prev .next { margin-left: auto; text-align: right; }
+
+/* Text for screen readers only */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+@media (max-width: 600px) {
+  body { font-size: 1rem; }
+  mjx-container[display="true"],
+  .eq-list mjx-container[display="true"] { margin-left: 0.25em !important; }
+  .page { padding: 0.75rem 1rem 2.5rem; }
+  .example { padding: 0.75rem 0.75rem 0.2rem; }
+  .example .work { padding-left: 0.6rem; }
+  h1 { font-size: 1.45rem; }
+}
+
+@media (max-width: 400px) {
+  table.grid { width: 100%; table-layout: fixed; }
+  table.grid td { padding: 0.35rem 0.1rem; font-size: 0.9rem; }
+}
+
+/* Printing gives the notes without the solutions, like a guided-notes handout */
+@media print {
+  .section-body, .js .section-body:not(.open) { height: auto !important; visibility: visible !important; overflow: visible !important; padding-bottom: 1rem !important; }
+  .section-body[hidden] { display: block !important; content-visibility: visible !important; }
+  .chevron { display: none; }
+  .top, .next-prev { display: none; }
+  .page { max-width: none; padding: 0; }
+  body { font-size: 11pt; }
+  .work, button.toggle { display: none !important; }
+}
+
+/* ---- HESI pages: plain headings and conversion tables ---- */
+.page > h2 { font-size: 1.2rem; margin: 2.25rem 0 0.6rem; padding-top: 1.25rem; border-top: 1px solid #bbb; }
+.page > h1 + p, .page > h1 + h2 { margin-top: 0.5rem; }
+table.conv { border-collapse: collapse; margin: 0.4rem 0 1.25rem; }
+table.conv td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #ddd; vertical-align: top; }
+table.conv td.eq { text-align: center; padding: 0.4rem 0.2rem; }
+table.conv th { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 2px solid #111; }
+.qr { display: block; width: 200px; height: 200px; margin: 0.5rem 0 0.75rem; }
+ol.steps li { margin: 0.3rem 0; }
+.big-link { font-size: 1.1rem; font-weight: 600; }
+@media (max-width: 400px) { table.conv td { padding: 0.4rem 0.3rem; } }
