@@ -237,3 +237,11 @@ ul.facts ul { margin: 0.2rem 0; }
 .example.qm button.toggle { margin: 0 0 0.2rem; padding: 0.2rem 0.6rem; font-size: 0.9rem; }
 .example.qm .work { margin: 0.2rem 0 0.2rem; }
 .example.qm .work p { font-weight: 600; }
+
+/* Civics study guide: clean two-column fact tables */
+p.why { font-style: italic; margin-top: 0.25rem; }
+table.facts { width: 100%; border-collapse: collapse; margin: 0.3rem 0 1.25rem; }
+table.facts th, table.facts td { text-align: left; vertical-align: top; padding: 0.45rem 0.5rem; border-bottom: 1px solid #ddd; }
+table.facts thead th { border-bottom: 2px solid #111; font-size: 0.95rem; }
+table.facts tbody th { font-weight: 600; width: 38%; }
+@media (max-width: 400px) { table.facts th, table.facts td { padding: 0.4rem 0.3rem; } }
