@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vector-Valued Functions | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="What a vector-valued function is, evaluating one, and finding its domain, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Vector-Valued Functions</h1>
+
+    <section class="topic-section" id="what-is-a-vector-valued-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-a-vector-valued-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is a Vector-Valued Function?</span></button></h2>
+      <div class="section-body" id="what-is-a-vector-valued-function-body">
+      <p>A vector-valued function of a real variable is a function whose domain is a subset of the real numbers and whose range is a set of vectors. We use the notations below.</p>
+      <div class="eq-list">
+        <div>\[ \vec{r}(t) = \langle x(t),\ y(t),\ z(t) \rangle \]</div>
+        <div>\[ \vec{r}(t) = x(t)\,\vec{i} + y(t)\,\vec{j} + z(t)\,\vec{k} \]</div>
+        <div>\[ \mathbf{r}(t) = x(t)\mathbf{i} + y(t)\mathbf{j} + z(t)\mathbf{k} \]</div>
+      </div>
+      <p>We will be interested in the curve \(C\) traced out by the vectors in standard position. As illustrated in the figure, the curve has direction, or orientation.</p>
+      <img class="wide" src="images/vector-valued-functions/helix-curve.png" width="1052" height="798"
+           alt="A curve C spiraling upward around the z-axis like a coil, with an arrow at its top end showing its direction. Dashed vectors labeled r of 1, r of 2, and r of 3 go from the origin to three points on the curve, each higher than the last.">
+      </div>
+    </section>
+
+    <section class="topic-section" id="evaluating-a-vector-valued-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="evaluating-a-vector-valued-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Evaluating a Vector-Valued Function</span></button></h2>
+      <div class="section-body" id="evaluating-a-vector-valued-function-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Given the below vector-valued function, find \(\mathbf{r}(2)\).</p>
+        <div>\[ \mathbf{r}(t) = 2\mathbf{i} + \frac{10}{t}\mathbf{j} + (2t + 1)\mathbf{k} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Evaluate the function for \(t = 2\).</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{r}(2) &= 2\mathbf{i} + \frac{10}{2}\mathbf{j} + (2 \cdot 2 + 1)\mathbf{k} \\
+            &= 2\mathbf{i} + 5\mathbf{j} + 5\mathbf{k}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-domain-of-a-vector-valued-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-domain-of-a-vector-valued-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Domain of a Vector-Valued Function</span></button></h2>
+      <div class="section-body" id="the-domain-of-a-vector-valued-function-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>State the domain of the below vector-valued function.</p>
+        <div>\[ \vec{r}(t) = \left\langle \sin t,\ \frac{1}{t},\ 1 + e^t \right\rangle \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Idea:</strong> The domain is all values of \(t\) for which every component is defined.</p>
+          <p>Because of the expression for the \(y\)-component of the vector, we must exclude zero from the domain of \(\vec{r}(t)\). The domain of \(\vec{r}(t)\) is all real numbers except zero, \((-\infty, 0) \cup (0, \infty)\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="equations-for-planes.html">&larr; Equations for Planes</a>
+      <a class="next" href="limits-and-continuity.html">Limits and Continuity of Vector-Valued Functions &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

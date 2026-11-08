@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Cross Product | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Computing the cross product, its properties, and the area of a parallelogram, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>The Cross Product</h1>
+
+    <section class="topic-section" id="the-cross-product-in-r3">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-cross-product-in-r3-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Cross Product, in \(\mathbb{R}^3\)</span></button></h2>
+      <div class="section-body" id="the-cross-product-in-r3-body">
+      <p>Given the two vectors below, their cross product \(\vec{v} \times \vec{w}\) is defined as below.</p>
+      <div>\[
+      \begin{aligned}
+        \vec{v} &= v_1\mathbf{i} + v_2\mathbf{j} + v_3\mathbf{k} \\
+        \vec{w} &= w_1\mathbf{i} + w_2\mathbf{j} + w_3\mathbf{k}
+      \end{aligned}
+      \]</div>
+      <div class="formula">
+        <p class="formula-name">Cross Product</p>
+        <div>\[
+        \begin{aligned}
+          \vec{v} \times \vec{w} &= (v_2 w_3 - v_3 w_2)\mathbf{i} \\
+          &\qquad {}+ (v_3 w_1 - v_1 w_3)\mathbf{j} \\
+          &\qquad {}+ (v_1 w_2 - v_2 w_1)\mathbf{k}
+        \end{aligned}
+        \]</div>
+      </div>
+      <p><b>Idea:</b> A common way to remember this is as the determinant of the matrix below.</p>
+      <div>\[ \vec{v} \times \vec{w} = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3 \end{vmatrix} \]</div>
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Given the vectors \(\vec{v} = \langle 2, 2, 2 \rangle\) and \(\vec{w} = \langle 3, 5, 4 \rangle\), find \(\vec{v} \times \vec{w}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \vec{v} &= 2\mathbf{i} + 2\mathbf{j} + 2\mathbf{k} \\
+            \vec{w} &= 3\mathbf{i} + 5\mathbf{j} + 4\mathbf{k}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \vec{v} \times \vec{w} &= (2 \cdot 4 - 2 \cdot 5)\mathbf{i} \\
+            &\qquad {}+ (2 \cdot 3 - 2 \cdot 4)\mathbf{j} \\
+            &\qquad {}+ (2 \cdot 5 - 2 \cdot 3)\mathbf{k} \\
+            &= -2\mathbf{i} - 2\mathbf{j} + 4\mathbf{k} \\
+            &= \langle -2, -2, 4 \rangle
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <p><b>Note:</b> The cross product yields a vector! It is sometimes called the vector product.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="several-important-cross-products">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="several-important-cross-products-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Several Important Cross Products</span></button></h2>
+      <div class="section-body" id="several-important-cross-products-body">
+      <p>For the standard basis vectors, the following are true.</p>
+      <table class="grid">
+        <caption class="visually-hidden">Cross products of the standard basis vectors</caption>
+        <tr><td>\(\mathbf{i} \times \mathbf{i} = \mathbf{0}\)</td><td>\(\mathbf{i} \times \mathbf{j} = \mathbf{k}\)</td><td>\(\mathbf{j} \times \mathbf{i} = -\mathbf{k}\)</td></tr>
+        <tr><td>\(\mathbf{j} \times \mathbf{j} = \mathbf{0}\)</td><td>\(\mathbf{j} \times \mathbf{k} = \mathbf{i}\)</td><td>\(\mathbf{i} \times \mathbf{k} = -\mathbf{j}\)</td></tr>
+        <tr><td>\(\mathbf{k} \times \mathbf{k} = \mathbf{0}\)</td><td>\(\mathbf{k} \times \mathbf{i} = \mathbf{j}\)</td><td>\(\mathbf{k} \times \mathbf{j} = -\mathbf{i}\)</td></tr>
+      </table>
+      <div class="example">
+        <p>A good homework problem is to verify these properties. Let&rsquo;s confirm \(\mathbf{i} \times \mathbf{k} = -\mathbf{j}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Use the cross product formula with \(\vec{v} = \mathbf{i}\) and \(\vec{w} = \mathbf{k}\).</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{i} &= \langle 1, 0, 0 \rangle \\
+            \mathbf{k} &= \langle 0, 0, 1 \rangle
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \mathbf{i} \times \mathbf{k} &= (v_2 w_3 - v_3 w_2)\mathbf{i} \\
+            &\qquad {}+ (v_3 w_1 - v_1 w_3)\mathbf{j} \\
+            &\qquad {}+ (v_1 w_2 - v_2 w_1)\mathbf{k} \\
+            &= (0 \cdot 1 - 0 \cdot 0)\mathbf{i} \\
+            &\qquad {}+ (0 \cdot 0 - 1 \cdot 1)\mathbf{j} \\
+            &\qquad {}+ (1 \cdot 0 - 0 \cdot 0)\mathbf{k} \\
+            &= 0\mathbf{i} - 1\mathbf{j} + 0\mathbf{k} \\
+            &= -\mathbf{j}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="algebraic-properties-of-the-cross-product">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="algebraic-properties-of-the-cross-product-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Algebraic Properties of the Cross Product</span></button></h2>
+      <div class="section-body" id="algebraic-properties-of-the-cross-product-body">
+      <p>For vectors \(\vec{u}\), \(\vec{v}\), and \(\vec{w}\), and a scalar \(a\), the following are true.</p>
+      <div class="eq-list">
+        <div>\[ \vec{v} \times \vec{v} = \vec{0} \]</div>
+        <div>\[ \vec{v} \times \vec{w} = -(\vec{w} \times \vec{v}) \]</div>
+        <div>\[ a(\vec{v} \times \vec{w}) = (a\vec{v}) \times \vec{w} = \vec{v} \times (a\vec{w}) \]</div>
+        <div>\[ \vec{u} \times (\vec{v} + \vec{w}) = \vec{u} \times \vec{v} + \vec{u} \times \vec{w} \]</div>
+        <div>\[ \|\vec{v} \times \vec{w}\|^2 = \|\vec{v}\|^2\,\|\vec{w}\|^2 - (\vec{v} \dotp \vec{w})^2 \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="geometric-properties-of-the-cross-product">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="geometric-properties-of-the-cross-product-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Geometric Properties of the Cross Product</span></button></h2>
+      <div class="section-body" id="geometric-properties-of-the-cross-product-body">
+      <div class="row">
+        <div>
+          <p>For nonzero vectors \(\vec{v}\) and \(\vec{w}\), the following are true.</p>
+          <ul>
+            <li>If \(\theta\) is the angle between the vectors, then \(\|\vec{v} \times \vec{w}\| = \|\vec{v}\|\,\|\vec{w}\|\sin\theta\).</li>
+            <li>\(\vec{v} \times \vec{w}\) is perpendicular to both \(\vec{v}\) and \(\vec{w}\).</li>
+            <li>\(\vec{v} \times \vec{w} = \vec{0}\) if and only if \(\vec{v}\) and \(\vec{w}\) are parallel.</li>
+            <li>The parallelogram with adjacent sides \(\vec{v}\) and \(\vec{w}\) has area \(\|\vec{v} \times \vec{w}\|\).</li>
+          </ul>
+        </div>
+        <img src="images/cross-product/cross-product-perpendicular.png" width="565" height="540"
+             alt="Vectors v and w forming a shaded parallelogram with the angle theta between them, and the vector v cross w pointing straight up, perpendicular to both.">
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-area-of-a-parallelogram">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-area-of-a-parallelogram-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Area of a Parallelogram</span></button></h2>
+      <div class="section-body" id="the-area-of-a-parallelogram-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <div class="row">
+          <div>
+            <p>Find the area of the parallelogram having adjacent sides \(\vec{v} = \langle 2, 2, 2 \rangle\) and \(\vec{w} = \langle 3, 5, 4 \rangle\), shown in the figure.</p>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <p><b>Idea:</b> From one of the properties of the cross product, this area is equal to the magnitude of the cross product.</p>
+              <div>\[
+              \begin{aligned}
+                \vec{v} \times \vec{w} &= (v_2 w_3 - v_3 w_2)\mathbf{i} \\
+                &\qquad {}+ (v_3 w_1 - v_1 w_3)\mathbf{j} \\
+                &\qquad {}+ (v_1 w_2 - v_2 w_1)\mathbf{k} \\
+                &= (2 \cdot 4 - 2 \cdot 5)\mathbf{i} \\
+                &\qquad {}+ (2 \cdot 3 - 2 \cdot 4)\mathbf{j} \\
+                &\qquad {}+ (2 \cdot 5 - 2 \cdot 3)\mathbf{k} \\
+                &= \langle -2, -2, 4 \rangle
+              \end{aligned}
+              \]</div>
+              <div>\[
+              \begin{aligned}
+                \|\vec{v} \times \vec{w}\| &= \sqrt{(-2)^2 + (-2)^2 + 4^2} \\
+                &= \sqrt{24} \\
+                &= 2\sqrt{6}
+              \end{aligned}
+              \]</div>
+              <p>The area is \(2\sqrt{6}\).</p>
+            </div>
+          </div>
+          <img src="images/cross-product/parallelogram-area.png" width="431" height="214"
+               alt="A shaded parallelogram with adjacent sides v equals 2, 2, 2 and w equals 3, 5, 4.">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="dot-product.html">&larr; The Dot Product</a>
+      <a class="next" href="vector-equation-of-a-line.html">Vector Equation of a Line &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
