@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unit Tangent Vector | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="The unit tangent vector, its physics interpretation, and smooth curves, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Unit Tangent Vector</h1>
+
+    <section class="topic-section" id="the-unit-tangent-vector">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-unit-tangent-vector-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Unit Tangent Vector</span></button></h2>
+      <div class="section-body" id="the-unit-tangent-vector-body">
+      <p>Consider a vector-valued function, \(\mathbf{r}(t)\). The unit tangent vector is denoted as \(\mathbf{T}(t)\) and defined below.</p>
+      <div class="formula">
+        <p class="formula-name">Unit Tangent Vector</p>
+        <div>\[ \mathbf{T}(t) = \frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|} \]</div>
+      </div>
+      <img class="wide" src="images/unit-tangent-vector/unit-tangent-vector.png" width="757" height="662"
+           alt="A curve spiraling around the z-axis. At one point, the dashed position vector r of t goes from the origin to the point, and two vectors point along the curve: a short unit tangent vector T of t, and a longer tangent vector r prime of t in the same direction.">
+      <ul>
+        <li>The unit tangent vector is the normalization of the tangent vector \(\mathbf{r}'(t)\).</li>
+        <li>It is a vector with the same direction as \(\mathbf{r}'(t)\), but with magnitude one.</li>
+        <li>\(\mathbf{T}(t)\) is a unit vector indicating the direction of motion.</li>
+        <li>The unit tangent vector is essential to understanding motion, acceleration, and curvature.</li>
+      </ul>
+      <p>Below is the definition of the unit tangent vector using another notation for vectors.</p>
+      <div>\[ \vec{T}(t) = \frac{\dfrac{d\vec{r}}{dt}}{\left\| \dfrac{d\vec{r}}{dt} \right\|} \]</div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="physics-interpretation">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="physics-interpretation-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Physics Interpretation</span></button></h2>
+      <div class="section-body" id="physics-interpretation-body">
+      <p>The unit tangent vector is velocity divided by speed.</p>
+      <div>\[
+      \begin{aligned}
+        \mathbf{T}(t) &= \frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|} \\
+        &= \frac{\mathbf{v}(t)}{\|\mathbf{v}(t)\|} \\
+        &= \frac{\mathbf{v}(t)}{v}
+      \end{aligned}
+      \]</div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-the-unit-tangent-vector">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-the-unit-tangent-vector-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding the Unit Tangent Vector</span></button></h2>
+      <div class="section-body" id="finding-the-unit-tangent-vector-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the below vector-valued function. Find the unit tangent vector, \(\mathbf{T}(t)\).</p>
+        <div>\[ \mathbf{r}(t) = 3t\,\mathbf{i} + 4t\,\mathbf{j} + 2\mathbf{k} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \mathbf{r}'(t) &= 3\mathbf{i} + 4\mathbf{j} + 0\mathbf{k} \\
+            &= 3\mathbf{i} + 4\mathbf{j}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \|\mathbf{r}'(t)\| &= \sqrt{3^2 + 4^2} \\
+            &= 5
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \mathbf{T}(t) &= \frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|} \\
+            &= \frac{3\mathbf{i} + 4\mathbf{j}}{5} \\
+            &= \frac{3}{5}\mathbf{i} + \frac{4}{5}\mathbf{j}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-unit-tangent-vector-at-a-point">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-unit-tangent-vector-at-a-point-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Unit Tangent Vector at a Point</span></button></h2>
+      <div class="section-body" id="the-unit-tangent-vector-at-a-point-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <div class="row">
+          <div>
+            <p>Consider the below vector-valued function. Find \(\vec{T}(3)\).</p>
+            <div>\[ \vec{r}(t) = \langle t^2,\ t + 1,\ t^2 \rangle \]</div>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <div>\[ \vec{r}\,'(t) = \langle 2t,\ 1,\ 2t \rangle \]</div>
+              <div>\[
+              \begin{aligned}
+                \|\vec{r}\,'(t)\| &= \sqrt{(2t)^2 + 1^2 + (2t)^2} \\
+                &= \sqrt{8t^2 + 1}
+              \end{aligned}
+              \]</div>
+              <div>\[
+              \begin{aligned}
+                \vec{T}(t) &= \frac{\vec{r}\,'(t)}{\|\vec{r}\,'(t)\|} \\
+                &= \frac{\langle 2t,\ 1,\ 2t \rangle}{\sqrt{8t^2 + 1}}
+              \end{aligned}
+              \]</div>
+              <div>\[
+              \begin{aligned}
+                \vec{T}(3) &= \frac{\langle 2 \cdot 3,\ 1,\ 2 \cdot 3 \rangle}{\sqrt{8 \cdot 3^2 + 1}} \\
+                &= \frac{\langle 6,\ 1,\ 6 \rangle}{\sqrt{73}} \\
+                &= \left\langle \frac{6}{\sqrt{73}},\ \frac{1}{\sqrt{73}},\ \frac{6}{\sqrt{73}} \right\rangle \\
+                &= \left\langle \frac{6\sqrt{73}}{73},\ \frac{\sqrt{73}}{73},\ \frac{6\sqrt{73}}{73} \right\rangle
+              \end{aligned}
+              \]</div>
+            </div>
+          </div>
+          <img src="images/unit-tangent-vector/unit-tangent-at-t-3.png" width="578" height="706"
+               alt="A curve rising through space. At the point where t equals 3, the dashed position vector r of 3 goes from the origin to the point, and the unit tangent vector T of 3 and the longer tangent vector r prime of 3 point along the curve.">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="smooth-curves">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="smooth-curves-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Smooth Curves</span></button></h2>
+      <div class="section-body" id="smooth-curves-body">
+      <p>Consider the interval \(a < t < b\) and the curve \(C\) traced out by the vector function \(\mathbf{r}(t)\). Over this interval, \(C\) is called a <strong>smooth curve</strong> if the following three statements are true.</p>
+      <ul>
+        <li>\(\mathbf{r}(t)\) is continuous.</li>
+        <li>\(\mathbf{r}'(t)\) exists and is continuous.</li>
+        <li>\(\mathbf{r}'(t) \neq \mathbf{0}\).</li>
+      </ul>
+      <p>Without these conditions, the unit tangent vector \(\mathbf{T}(t)\) might not exist or might be undefined.</p>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="motion-along-a-curve.html">&larr; Motion Along a Curve</a>
+      <a class="next" href="principal-unit-normal-vector.html">Principal Unit Normal Vector &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

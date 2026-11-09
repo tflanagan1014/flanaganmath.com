@@ -206,3 +206,13 @@ ul.links li { margin: 0.5rem 0; font-size: 1.1rem; }
   body { font-size: 11pt; }
   .work, button.toggle { display: none !important; }
 }
+
+/* Tables of formulas (quantity | formula) */
+table.facts { width: 100%; border-collapse: collapse; margin: 0.3rem 0 1.25rem; }
+table.facts th, table.facts td { text-align: left; vertical-align: middle; padding: 0.5rem 0.5rem; border-bottom: 1px solid #ddd; }
+table.facts thead th { border-bottom: 2px solid #111; font-size: 0.95rem; }
+table.facts tbody th { font-weight: 600; width: 34%; }
+@media (max-width: 400px) { table.facts th, table.facts td { padding: 0.45rem 0.3rem; } }
+
+/* Calculus 3 page: units that open to a list of topics */
+.section-body ul.links { margin: 0.2rem 0 0.5rem; }

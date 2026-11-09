@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motion Along a Curve | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Position, velocity, speed, and acceleration of a particle moving along a curve, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Motion Along a Curve</h1>
+
+    <section class="topic-section" id="position-velocity-speed-and-acceleration">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="position-velocity-speed-and-acceleration-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Position, Velocity, Speed, and Acceleration</span></button></h2>
+      <div class="section-body" id="position-velocity-speed-and-acceleration-body">
+      <p>I made an application in GeoGebra to visualize a vector-valued function and its derivative: <a href="https://www.geogebra.org/m/fjutn3wx">open the GeoGebra app</a>.</p>
+      <ul>
+        <li>The position of a particle as a function of time \(t\) is given by the vector-valued function \(\mathbf{r}(t)\). The particle travels along the curve \(C\) traced out by this function. Encoded into this function is more than just the curve itself. It also describes how quickly the particle moves along the curve, and in what direction.</li>
+        <li>The derivative \(\mathbf{r}'(t)\) produces a vector tangent to the curve. That should make sense, since it results from the limit definition of the derivative.</li>
+        <li>Since \(\mathbf{r}'(t)\) measures the instantaneous rate of change of position with respect to time, it also gives the velocity \(\mathbf{v}(t)\) of the particle.</li>
+        <li>Since speed is the magnitude of velocity, the speed of the particle is \(\|\mathbf{r}'(t)\|\), which is the same as \(\|\mathbf{v}(t)\|\). We use \(v\) to denote speed.</li>
+        <li>Since acceleration is the derivative of velocity with respect to time, the acceleration of the particle is \(\mathbf{r}''(t)\). We use \(\mathbf{a}(t)\) for the acceleration vector.</li>
+      </ul>
+      <img class="wide" src="images/motion/position-velocity-acceleration.png" width="880" height="686"
+           alt="A curve spiraling upward around the z-axis. At one point on the curve, the position vector r of t goes from the origin to the point, the velocity vector v of t points along the curve, and the acceleration vector a of t points inward, toward the z-axis.">
+      </div>
+    </section>
+
+    <section class="topic-section" id="summary">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="summary-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Summary</span></button></h2>
+      <div class="section-body" id="summary-body">
+      <table class="facts">
+        <thead><tr><th scope="col">Quantity</th><th scope="col">Formula</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Position</th><td>\(\mathbf{r}(t)\)</td></tr>
+          <tr><th scope="row">Velocity</th><td>\(\mathbf{v}(t) = \mathbf{r}'(t) = \dfrac{d\mathbf{r}}{dt}\)</td></tr>
+          <tr><th scope="row">Speed</th><td>\(v = \|\mathbf{v}(t)\| = \|\mathbf{r}'(t)\|\)</td></tr>
+          <tr><th scope="row">Acceleration</th><td>\(\mathbf{a}(t) = \mathbf{v}'(t) = \mathbf{r}''(t)\)</td></tr>
+          <tr><th scope="row">Magnitude of acceleration</th><td>\(\|\mathbf{a}(t)\| = \|\mathbf{r}''(t)\|\)</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-speed">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-speed-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding Speed</span></button></h2>
+      <div class="section-body" id="finding-speed-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>The function \(\mathbf{r}(t)\) below traces out the position of a particle over time, \(t\). Find the speed of the particle.</p>
+        <div>\[ \mathbf{r}(t) = 2t\,\mathbf{i} + 10t\,\mathbf{j} + 11t\,\mathbf{k} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Speed is the magnitude of velocity, so speed is the magnitude of the first derivative.</p>
+          <div>\[ \mathbf{v}(t) = \mathbf{r}'(t) = 2\mathbf{i} + 10\mathbf{j} + 11\mathbf{k} \]</div>
+          <div>\[
+          \begin{aligned}
+            v &= \|\mathbf{v}(t)\| \\
+            &= \sqrt{2^2 + 10^2 + 11^2} \\
+            &= \sqrt{225} \\
+            &= 15
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-acceleration">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-acceleration-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding Acceleration</span></button></h2>
+      <div class="section-body" id="finding-acceleration-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>The function \(\vec{r}(t)\) below traces out the position of a particle over time, \(t\). Find the acceleration vector.</p>
+        <div>\[ \vec{r}(t) = \langle t^4,\ e^t,\ 8t \rangle \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Differentiate once to find the velocity, and then again to find the acceleration.</p>
+          <div>\[ \vec{v}(t) = \frac{d\vec{r}}{dt} = \langle 4t^3,\ e^t,\ 8 \rangle \]</div>
+          <div>\[ \vec{a}(t) = \frac{d\vec{v}}{dt} = \langle 12t^2,\ e^t,\ 0 \rangle \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="derivatives-of-vector-valued-functions.html">&larr; Derivatives of Vector-Valued Functions</a>
+      <a class="next" href="unit-tangent-vector.html">Unit Tangent Vector &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

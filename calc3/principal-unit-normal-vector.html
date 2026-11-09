@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Principal Unit Normal Vector | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Why the unit tangent vector and its derivative are orthogonal, and the principal unit normal vector, with a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Principal Unit Normal Vector</h1>
+
+    <section class="topic-section" id="mathbftt-and-mathbftt-are-orthogonal">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="mathbftt-and-mathbftt-are-orthogonal-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">\(\mathbf{T}(t)\) and \(\mathbf{T}'(t)\) are Orthogonal</span></button></h2>
+      <div class="section-body" id="mathbftt-and-mathbftt-are-orthogonal-body">
+      <p>We need to show that \(\mathbf{T}(t)\) and \(\mathbf{T}'(t)\) are orthogonal.</p>
+      <div class="example">
+        <button type="button" class="toggle" aria-expanded="false" data-what="proof" hidden>Show proof</button>
+        <div class="work">
+          <p>Consider the magnitude property of the dot product, applied to the unit tangent vector.</p>
+          <div class="eq-list">
+            <div>\[ \mathbf{v} \dotp \mathbf{v} = \|\mathbf{v}\|^2 \]</div>
+            <div>\[ \mathbf{T}(t) \dotp \mathbf{T}(t) = \|\mathbf{T}(t)\|^2 \]</div>
+          </div>
+          <p>The unit tangent vector is a unit vector, \(\|\mathbf{T}(t)\| = 1\), because it is defined by normalizing \(\mathbf{r}'(t)\).</p>
+          <div class="eq-list">
+            <div>\[ \mathbf{T}(t) \dotp \mathbf{T}(t) = 1 \]</div>
+          </div>
+          <p>Next, differentiate both sides, using the dot product rule.</p>
+          <div class="eq-list">
+            <div>\[ \frac{d}{dt}\left[ \mathbf{T}(t) \dotp \mathbf{T}(t) \right] = \frac{d}{dt}[1] \]</div>
+            <div>\[ \frac{d}{dt}\left[ \mathbf{T}(t) \dotp \mathbf{T}(t) \right] = 0 \]</div>
+            <div>\[ \mathbf{T}'(t) \dotp \mathbf{T}(t) + \mathbf{T}(t) \dotp \mathbf{T}'(t) = 0 \]</div>
+            <div>\[ 2\,\mathbf{T}'(t) \dotp \mathbf{T}(t) = 0 \]</div>
+            <div>\[ \mathbf{T}'(t) \dotp \mathbf{T}(t) = 0 \]</div>
+          </div>
+          <p>Because the dot product of \(\mathbf{T}'(t)\) and \(\mathbf{T}(t)\) is zero, these two vectors are orthogonal!</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-principal-unit-normal-vector">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-principal-unit-normal-vector-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Principal Unit Normal Vector</span></button></h2>
+      <div class="section-body" id="the-principal-unit-normal-vector-body">
+      <p>The principal unit normal vector is denoted as \(\mathbf{N}(t)\) and defined below, provided \(\mathbf{T}'(t) \neq \mathbf{0}\).</p>
+      <div class="formula">
+        <p class="formula-name">Principal Unit Normal Vector</p>
+        <div>\[ \mathbf{N}(t) = \frac{\mathbf{T}'(t)}{\|\mathbf{T}'(t)\|} \]</div>
+      </div>
+      <img class="wide" src="images/principal-unit-normal-vector/tangent-and-normal.png" width="881" height="467"
+           alt="A curve with a point marked on it. From the point, the unit tangent vector T of t and the longer vector r prime of t point along the curve. At a right angle to them, the principal unit normal vector N of t and the longer vector T prime of t point toward the inside of the bend.">
+      <ul>
+        <li>The principal unit normal vector is the normalization of \(\mathbf{T}'(t)\). For this reason, it has the same direction as \(\mathbf{T}'(t)\), but has a magnitude of one.</li>
+        <li>We just demonstrated that \(\mathbf{T}'(t)\) is orthogonal to \(\mathbf{T}(t)\). This means \(\mathbf{N}(t)\) is also orthogonal to \(\mathbf{T}(t)\). The unit tangent vector and the principal unit normal vector are orthogonal!</li>
+        <li>The vectors \(\mathbf{r}'(t)\) and \(\mathbf{T}(t)\) are parallel. They are tangent to the curve. \(\mathbf{N}(t)\) is orthogonal to these vectors.</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-the-principal-unit-normal-vector">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-the-principal-unit-normal-vector-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding the Principal Unit Normal Vector</span></button></h2>
+      <div class="section-body" id="finding-the-principal-unit-normal-vector-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Given the below vector-valued function, find \(\mathbf{N}(t)\).</p>
+        <div>\[ \mathbf{r}(t) = 3\sin t\,\mathbf{i} + 3\cos t\,\mathbf{j} + 4t\,\mathbf{k} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>First find the unit tangent vector, \(\mathbf{T}(t)\).</p>
+          <div>\[ \mathbf{r}'(t) = 3\cos t\,\mathbf{i} - 3\sin t\,\mathbf{j} + 4\mathbf{k} \]</div>
+          <div>\[
+          \begin{aligned}
+            \|\mathbf{r}'(t)\| &= \sqrt{(3\cos t)^2 + (-3\sin t)^2 + 4^2} \\
+            &= \sqrt{3^2(\cos^2 t + \sin^2 t) + 4^2} \\
+            &= \sqrt{9 + 16} \\
+            &= 5
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \mathbf{T}(t) &= \frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|} \\
+            &= \frac{3\cos t\,\mathbf{i} - 3\sin t\,\mathbf{j} + 4\mathbf{k}}{5} \\
+            &= \frac{3}{5}\cos t\,\mathbf{i} - \frac{3}{5}\sin t\,\mathbf{j} \\
+            &\qquad {}+ \frac{4}{5}\mathbf{k}
+          \end{aligned}
+          \]</div>
+          <p>Then differentiate \(\mathbf{T}(t)\), and normalize the result.</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{T}'(t) &= -\frac{3}{5}\sin t\,\mathbf{i} - \frac{3}{5}\cos t\,\mathbf{j} + 0\mathbf{k} \\
+            &= -\frac{3}{5}\sin t\,\mathbf{i} - \frac{3}{5}\cos t\,\mathbf{j}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \|\mathbf{T}'(t)\| &= \sqrt{\left(-\frac{3}{5}\sin t\right)^2 + \left(-\frac{3}{5}\cos t\right)^2} \\
+            &= \sqrt{\frac{9}{25}(\sin^2 t + \cos^2 t)} \\
+            &= \frac{3}{5}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \mathbf{N}(t) &= \frac{\mathbf{T}'(t)}{\|\mathbf{T}'(t)\|} \\
+            &= \frac{-\frac{3}{5}\sin t\,\mathbf{i} - \frac{3}{5}\cos t\,\mathbf{j}}{\frac{3}{5}} \\
+            &= -\sin t\,\mathbf{i} - \cos t\,\mathbf{j}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="unit-tangent-vector.html">&larr; Unit Tangent Vector</a>
+    </nav>
+
+  </main>
+</body>
+</html>
