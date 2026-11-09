@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arc Length as the Parameter | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="What it means for arc length to be the parameter of a curve, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Arc Length as the Parameter</h1>
+
+    <section class="topic-section" id="the-parameter">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-parameter-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Parameter</span></button></h2>
+      <div class="section-body" id="the-parameter-body">
+      <p>The vector-valued function \(\mathbf{r}(t)\) can be interpreted as tracing out the path of a particle. We call \(t\) the parameter. The parameter usually represents time, but it can represent other quantities.</p>
+      <img class="wide" src="images/arc-length-parameter/parameter.png" width="694" height="666"
+           alt="A curve traced out by r of t, starting at the tip of the position vector r of 0. The part of the curve from r of 0 to r of t is highlighted, with the question: does arc length s equal time t?">
+      </div>
+    </section>
+
+    <section class="topic-section" id="arc-length-as-the-parameter">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="arc-length-as-the-parameter-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Arc Length as the Parameter</span></button></h2>
+      <div class="section-body" id="arc-length-as-the-parameter-body">
+      <p>Arc length is the parameter when the arc length, the distance traveled by the particle, equals the amount of time the particle has been traveling. It results from a constant speed of one.</p>
+      <div>\[ v = \|\mathbf{v}(t)\| = \|\mathbf{r}'(t)\| = 1 \]</div>
+      <h3>The Key Idea</h3>
+      <p>If we travel at a constant speed of 1 mile per hour, then:</p>
+      <ul>
+        <li>We travel 1 mile in 1 hour.</li>
+        <li>We travel 2 miles in 2 hours.</li>
+        <li>We travel 8 miles in 8 hours.</li>
+      </ul>
+      <p>If we move at a constant speed of 1 mile per hour, the distance we travel, which is the arc length, is equal to the amount of time we have been traveling. This is what it means for arc length to be the parameter.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="showing-arc-length-is-the-parameter">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="showing-arc-length-is-the-parameter-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Showing Arc Length is the Parameter</span></button></h2>
+      <div class="section-body" id="showing-arc-length-is-the-parameter-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Show that arc length is the parameter for the below vector-valued function.</p>
+        <div>\[ \mathbf{r}(s) = \langle \sin s,\ \cos s,\ 3 \rangle \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>We just need to check whether the speed is always equal to one.</p>
+          <div>\[ \mathbf{r}'(s) = \langle \cos s,\ -\sin s,\ 0 \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            v &= \|\mathbf{r}'(s)\| \\
+            &= \sqrt{(\cos s)^2 + (-\sin s)^2 + 0^2} \\
+            &= 1
+          \end{aligned}
+          \]</div>
+          <p>The speed is one, so arc length is the parameter. When arc length is the parameter, we often use \(s\) for the parameter, as in this example.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="showing-arc-length-is-not-the-parameter">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="showing-arc-length-is-not-the-parameter-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Showing Arc Length is Not the Parameter</span></button></h2>
+      <div class="section-body" id="showing-arc-length-is-not-the-parameter-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Show that arc length is not the parameter for the below vector-valued function.</p>
+        <div>\[ \mathbf{r}(t) = 10t\,\mathbf{i} + t^2\,\mathbf{j} - 11t\,\mathbf{k} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>We check whether the speed is always equal to one.</p>
+          <div>\[ \mathbf{r}'(t) = 10\mathbf{i} + 2t\,\mathbf{j} - 11\mathbf{k} \]</div>
+          <div>\[
+          \begin{aligned}
+            v &= \|\mathbf{r}'(t)\| \\
+            &= \sqrt{10^2 + (2t)^2 + (-11)^2} \\
+            &= \sqrt{221 + 4t^2}
+          \end{aligned}
+          \]</div>
+          <p>Since \(4t^2 \ge 0\), the speed is always at least \(\sqrt{221}\), which is greater than one. The speed is never one, so arc length is not the parameter.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="arc-length.html">&larr; Arc Length</a>
+      <a class="next" href="curvature.html">Curvature &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curvature | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="The curvature of a curve, its definition and formulas, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Curvature</h1>
+
+    <section class="topic-section" id="what-is-curvature">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-curvature-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is Curvature?</span></button></h2>
+      <div class="section-body" id="what-is-curvature-body">
+      <p>Suppose a smooth curve \(C\) is traced out by a twice differentiable vector function \(\mathbf{r}(s)\), where the parameter is arc length \(s\). Curvature is denoted as \(\kappa\) and is defined below.</p>
+      <div class="formula">
+        <p class="formula-name">Curvature</p>
+        <div>\[ \kappa = \left\| \frac{d\mathbf{T}}{ds} \right\| \]</div>
+      </div>
+      <p>This is the magnitude of the rate of change in the unit tangent vector \(\mathbf{T}\) with respect to the change in arc length \(s\).</p>
+      <p><strong>Key Question:</strong> If we move a positive differential distance \(ds\) along the curve, what differential change takes place in the unit tangent vectors?</p>
+      <img class="wide" src="images/curvature/curvature-a-b.png" width="614" height="452"
+           alt="A curve that bends gently at point A and sharply at point B. Near A, the unit tangent vectors change direction only a little. Near B, they change direction a lot.">
+      <ul>
+        <li>This expression calculates the answer to that question.</li>
+        <li>The curve in the figure turns more sharply at point \(B\) than at point \(A\). Observe this in the change in the unit tangent vectors near these points.</li>
+        <li>The curvature is greater at point \(B\) than at point \(A\): \(\kappa\) is larger at \(B\).</li>
+      </ul>
+      <p>Curvature is also the magnitude of the acceleration of a particle moving along the curve at a constant speed of one.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="formulas-for-curvature">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="formulas-for-curvature-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Formulas for Curvature</span></button></h2>
+      <div class="section-body" id="formulas-for-curvature-body">
+      <p>We can also derive the following more convenient formulas for curvature, for a smooth curve traced out by \(\mathbf{r}(t)\). We will use the second one most often.</p>
+      <div class="formula">
+        <p class="formula-name">Curvature, Using the Unit Tangent Vector</p>
+        <div>\[ \kappa = \frac{\|\mathbf{T}'(t)\|}{\|\mathbf{r}'(t)\|} \]</div>
+      </div>
+      <div class="formula">
+        <p class="formula-name">Curvature, Using the Cross Product</p>
+        <div>\[ \kappa = \frac{\|\mathbf{r}'(t) \times \mathbf{r}''(t)\|}{\|\mathbf{r}'(t)\|^3} \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-curvature-at-a-point">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-curvature-at-a-point-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding Curvature at a Point</span></button></h2>
+      <div class="section-body" id="finding-curvature-at-a-point-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find the curvature \(\kappa\) of the curve traced out by the below vector-valued function at the point where \(t = 3\).</p>
+        <div>\[ \mathbf{r}(t) = \langle t,\ t,\ t^2 \rangle \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Use the cross product formula. First find the first and second derivatives.</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{r}'(t) &= \langle 1,\ 1,\ 2t \rangle \\
+            \mathbf{r}''(t) &= \langle 0,\ 0,\ 2 \rangle
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            &\mathbf{r}'(t) \times \mathbf{r}''(t) \\
+            &\quad = (1 \cdot 2 - 2t \cdot 0)\mathbf{i} \\
+            &\qquad\quad {}+ (2t \cdot 0 - 1 \cdot 2)\mathbf{j} \\
+            &\qquad\quad {}+ (1 \cdot 0 - 1 \cdot 0)\mathbf{k} \\
+            &\quad = \langle 2,\ -2,\ 0 \rangle
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            &\|\mathbf{r}'(t) \times \mathbf{r}''(t)\| \\
+            &\quad = \sqrt{2^2 + (-2)^2 + 0^2} \\
+            &\quad = 2\sqrt{2}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \|\mathbf{r}'(t)\| &= \sqrt{1^2 + 1^2 + (2t)^2} \\
+            &= \sqrt{2 + 4t^2}
+          \end{aligned}
+          \]</div>
+          <p>At \(t = 3\), \(\|\mathbf{r}'(3)\| = \sqrt{2 + 36} = \sqrt{38}\).</p>
+          <div>\[
+          \begin{aligned}
+            \kappa &= \frac{2\sqrt{2}}{\left(\sqrt{38}\right)^3} \\
+            &= \frac{2\sqrt{2}}{38\sqrt{38}} \\
+            &= \frac{1}{19\sqrt{19}} \\
+            &= \frac{\sqrt{19}}{361}
+          \end{aligned}
+          \]</div>
+          <p>The curvature at \(t = 3\) is \(\kappa = \frac{\sqrt{19}}{361} \approx 0.0121\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-curvature-of-a-circle">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-curvature-of-a-circle-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Curvature of a Circle</span></button></h2>
+      <div class="section-body" id="the-curvature-of-a-circle-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Show that the curvature of a circle is the reciprocal of its radius.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>A circle of radius \(R > 0\) is traced out by the vector-valued function below.</p>
+          <div>\[ \mathbf{r}(t) = \langle R\cos t,\ R\sin t,\ 0 \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            \mathbf{r}'(t) &= \langle -R\sin t,\ R\cos t,\ 0 \rangle \\
+            \mathbf{r}''(t) &= \langle -R\cos t,\ -R\sin t,\ 0 \rangle
+          \end{aligned}
+          \]</div>
+          <p>The first two components of the cross product are zero, since each term contains a zero third component.</p>
+          <div>\[
+          \begin{aligned}
+            &\mathbf{r}'(t) \times \mathbf{r}''(t) \\
+            &\quad = \langle 0,\ 0,\ R^2\sin^2 t + R^2\cos^2 t \rangle \\
+            &\quad = \langle 0,\ 0,\ R^2 \rangle
+          \end{aligned}
+          \]</div>
+          <div>\[ \|\mathbf{r}'(t) \times \mathbf{r}''(t)\| = R^2 \]</div>
+          <div>\[
+          \begin{aligned}
+            \|\mathbf{r}'(t)\| &= \sqrt{R^2\sin^2 t + R^2\cos^2 t} \\
+            &= R
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \kappa &= \frac{R^2}{R^3} \\
+            &= \frac{1}{R}
+          \end{aligned}
+          \]</div>
+          <p>The curvature of a circle is \(\frac{1}{R}\), the reciprocal of its radius. A small circle bends sharply and has large curvature; a large circle bends gently and has small curvature.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="arc-length-as-the-parameter.html">&larr; Arc Length as the Parameter</a>
+      <a class="next" href="tangential-and-normal-components-of-acceleration.html">Tangential and Normal Components of Acceleration &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tangential and Normal Components of Acceleration | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Breaking acceleration into tangential and normal components, how the formulas are derived, and a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Tangential and Normal Components of Acceleration</h1>
+
+    <section class="topic-section" id="components-of-acceleration">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="components-of-acceleration-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Components of Acceleration</span></button></h2>
+      <div class="section-body" id="components-of-acceleration-body">
+      <p>The acceleration \(\mathbf{a}(t)\) of a particle whose motion is along the smooth curve \(C\), traced out by the twice differentiable vector function \(\mathbf{r}(t)\), lies in the plane formed by the unit tangent vector \(\mathbf{T}(t)\) and the principal unit normal vector \(\mathbf{N}(t)\). It is convenient to break the acceleration vector into two components:</p>
+      <ul>
+        <li>one parallel to the direction of motion, which is parallel to \(\mathbf{T}(t)\), and</li>
+        <li>one normal to the direction of motion, which is parallel to \(\mathbf{N}(t)\).</li>
+      </ul>
+      <img class="wide" src="images/components-of-acceleration/components.png" width="658" height="502"
+           alt="A curve C with a point on it. From the point, the unit tangent vector T of t points along the curve and the principal unit normal vector N of t points toward the inside of the bend. The acceleration vector a of t is the diagonal of a rectangle whose sides are v prime of t times T of t, along the curve, and v of t squared times kappa times N of t, toward the inside of the bend.">
+      <p>We will derive the following essential formula.</p>
+      <div class="formula">
+        <p class="formula-name">Acceleration in Components</p>
+        <div>\[ \mathbf{a}(t) = v'(t)\,\mathbf{T}(t) + [v(t)]^2\,\kappa\,\mathbf{N}(t) \]</div>
+      </div>
+      <p>The tangential component of acceleration is denoted as \(a_{\mathbf{T}}\). This is the acceleration in the direction of motion.</p>
+      <div class="formula">
+        <p class="formula-name">Tangential Component of Acceleration</p>
+        <div>\[ a_{\mathbf{T}} = v'(t) \]</div>
+      </div>
+      <p>The normal component of acceleration is denoted as \(a_{\mathbf{N}}\). This is the acceleration perpendicular to the direction of motion.</p>
+      <div class="formula">
+        <p class="formula-name">Normal Component of Acceleration</p>
+        <div>\[ a_{\mathbf{N}} = [v(t)]^2\,\kappa \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="deriving-the-formulas">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="deriving-the-formulas-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Deriving the Formulas</span></button></h2>
+      <div class="section-body" id="deriving-the-formulas-body">
+      <p>Here is how these formulas come from what we already know.</p>
+      <div class="example">
+        <button type="button" class="toggle" aria-expanded="false" data-what="derivation" hidden>Show derivation</button>
+        <div class="work">
+          <p>First, we show that velocity is speed times the unit tangent vector.</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{T}(t) &= \frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|} \\
+            &= \frac{\mathbf{v}(t)}{\|\mathbf{v}(t)\|} \\
+            &= \frac{\mathbf{v}(t)}{v(t)}
+          \end{aligned}
+          \]</div>
+          <div>\[ \mathbf{v}(t) = v(t)\,\mathbf{T}(t) \]</div>
+          <p>Next, we rearrange a formula for curvature.</p>
+          <div class="eq-list">
+            <div>\[ \kappa = \frac{\|\mathbf{T}'(t)\|}{\|\mathbf{r}'(t)\|} \]</div>
+          </div>
+          <div>\[
+          \begin{aligned}
+            \|\mathbf{T}'(t)\| &= \kappa\,\|\mathbf{r}'(t)\| \\
+            &= \kappa\,\|\mathbf{v}(t)\| \\
+            &= \kappa\,v(t)
+          \end{aligned}
+          \]</div>
+          <p>Also, since \(\mathbf{N}(t) = \frac{\mathbf{T}'(t)}{\|\mathbf{T}'(t)\|}\), we have \(\mathbf{T}'(t) = \|\mathbf{T}'(t)\|\,\mathbf{N}(t)\).</p>
+          <p>Now we use these with acceleration and the product rule for differentiation.</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{a}(t) &= \frac{d}{dt}\mathbf{v}(t) \\
+            &= \frac{d}{dt}\left[ v(t)\,\mathbf{T}(t) \right] \\
+            &= v'(t)\,\mathbf{T}(t) + v(t)\,\mathbf{T}'(t) \\
+            &= v'(t)\,\mathbf{T}(t) + v(t)\,\|\mathbf{T}'(t)\|\,\mathbf{N}(t) \\
+            &= v'(t)\,\mathbf{T}(t) + v(t)\,\kappa\,v(t)\,\mathbf{N}(t) \\
+            &= v'(t)\,\mathbf{T}(t) + [v(t)]^2\,\kappa\,\mathbf{N}(t) \\
+            &= a_{\mathbf{T}}\,\mathbf{T}(t) + a_{\mathbf{N}}\,\mathbf{N}(t)
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-the-components-of-acceleration">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-the-components-of-acceleration-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding the Components of Acceleration</span></button></h2>
+      <div class="section-body" id="finding-the-components-of-acceleration-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>The motion of a particle is traced out by the below vector function. Find \(a_{\mathbf{T}}\) and \(a_{\mathbf{N}}\).</p>
+        <div>\[ \vec{r}(t) = \langle \sin t,\ t,\ \cos t \rangle \]</div>
+        <img class="wide" src="images/components-of-acceleration/helix.png" width="692" height="633"
+             alt="A helix coiling around the y-axis, traced out by r of t.">
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>First find the speed and its derivative, which gives \(a_{\mathbf{T}}\).</p>
+          <div>\[ \vec{v}(t) = \vec{r}\,'(t) = \langle \cos t,\ 1,\ -\sin t \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            v(t) &= \|\vec{r}\,'(t)\| \\
+            &= \sqrt{\cos^2 t + 1^2 + (-\sin t)^2} \\
+            &= \sqrt{2}
+          \end{aligned}
+          \]</div>
+          <div>\[ a_{\mathbf{T}} = v'(t) = 0 \]</div>
+          <p>Next find the curvature, which gives \(a_{\mathbf{N}}\).</p>
+          <div>\[ \vec{r}\,''(t) = \langle -\sin t,\ 0,\ -\cos t \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            &\vec{r}\,'(t) \times \vec{r}\,''(t) \\
+            &\quad = \langle -\cos t,\ \sin^2 t + \cos^2 t,\ \sin t \rangle \\
+            &\quad = \langle -\cos t,\ 1,\ \sin t \rangle
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            &\|\vec{r}\,'(t) \times \vec{r}\,''(t)\| \\
+            &\quad = \sqrt{(-\cos t)^2 + 1^2 + (\sin t)^2} \\
+            &\quad = \sqrt{2}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \kappa &= \frac{\|\vec{r}\,'(t) \times \vec{r}\,''(t)\|}{\|\vec{r}\,'(t)\|^3} \\
+            &= \frac{\sqrt{2}}{\left(\sqrt{2}\right)^3} \\
+            &= \frac{1}{2}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            a_{\mathbf{N}} &= [v(t)]^2\,\kappa \\
+            &= \left(\sqrt{2}\right)^2 \cdot \frac{1}{2} \\
+            &= 1
+          \end{aligned}
+          \]</div>
+          <p>The particle has a constant speed, \(v(t) = \sqrt{2}\). The tangential component of acceleration is the derivative of speed, \(a_{\mathbf{T}} = v'(t) = 0\). Because this is zero, the particle does not speed up or slow down in its direction of motion as it travels along a helix around the \(y\)-axis.</p>
+          <p>The normal component of acceleration is one, \(a_{\mathbf{N}} = [v(t)]^2\kappa = 1\), so the acceleration of the particle equals the principal unit normal vector, \(\mathbf{N}(t)\). The only acceleration the particle experiences is normal to its direction of motion, turning it along the helix. This has the effect of pulling the particle only and always toward the axis of the helix. What does this remind you of?</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="curvature.html">&larr; Curvature</a>
+    </nav>
+
+  </main>
+</body>
+</html>
