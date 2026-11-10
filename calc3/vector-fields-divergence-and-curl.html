@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vector Fields, Divergence, and Curl | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Vector fields, divergence, and curl, with worked examples connected to Maxwell's equations.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Vector Fields, Divergence, and Curl</h1>
+
+    <section class="topic-section" id="maxwell-s-equations">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="maxwell-s-equations-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Maxwell's Equations</span></button></h2>
+      <div class="section-body" id="maxwell-s-equations-body">
+      <p>Below are Maxwell&rsquo;s equations, the laws of electromagnetism. They are written in a symbolic language that looks mysterious to most people, but now that you have taken Calculus III, you are ready to understand the mathematics behind them. Here we learn about vector fields and how to calculate divergence and curl. Since you already know about vectors and partial derivatives, you have the tools to understand many of the calculations in these equations.</p>
+      <p>To be clear, we are <strong>not</strong> learning the physics behind Maxwell&rsquo;s equations. That is beyond the scope of Calculus III. I simply want to show you that the mathematics you have learned is powerful enough to understand some of the most important equations in physics.</p>
+      <div class="eq-list">
+        <div>\[ \nabla \dotp \mathbf{E} = \frac{\rho}{\epsilon_0} \]</div>
+        <div>\[ \nabla \dotp \mathbf{B} = 0 \]</div>
+        <div>\[ \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t} \]</div>
+        <div>\[ \nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t} \]</div>
+      </div>
+      <p>The most interesting one to me is the second equation. We cannot get into the details, but it says there are no magnetic monopoles. A monopole would be a particle that carries only a north or only a south pole, unlike electric charges such as electrons and protons. The search for magnetic monopoles is a big deal in physics, and none has ever been found, just as Maxwell&rsquo;s second equation says.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="what-is-a-vector-field">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-a-vector-field-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is a Vector Field?</span></button></h2>
+      <div class="section-body" id="what-is-a-vector-field-body">
+      <p>Suppose \(P\), \(Q\), and \(R\) are functions of \(x\), \(y\), \(z\), and \(t\). A vector field \(\mathbf{F}\) assigns a vector to each point \((x, y, z)\) in space, at each moment in time \(t\).</p>
+      <div>\[
+      \begin{aligned}
+        &\mathbf{F}(x, y, z, t) \\
+        &\quad = P(x, y, z, t)\,\mathbf{i} + Q(x, y, z, t)\,\mathbf{j} \\
+        &\qquad\quad {}+ R(x, y, z, t)\,\mathbf{k}
+      \end{aligned}
+      \]</div>
+      <img class="wide" src="images/vector-fields/vector-field-3d.png" width="527" height="431"
+           alt="A vector field in three-dimensional space: many small arrows, one at each of many points, each showing the direction and size of the field there.">
+      <p>An example is an electric force field, where each point in space has a force vector acting on a charged particle. Another is the velocity field of a fluid, where \(\mathbf{F}(x, y, z, t)\) gives the direction and speed of the water at each location and at each moment in time.</p>
+      <p>Since we have several notations for vectors, we also have several notations for vector fields. The vector field above can also be written in angle bracket notation, with arrows or in bold.</p>
+      <div>\[ \vec{F}(x, y, z, t) = \langle P,\ Q,\ R \rangle \]</div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="evaluating-a-vector-field">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="evaluating-a-vector-field-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Evaluating a Vector Field</span></button></h2>
+      <div class="section-body" id="evaluating-a-vector-field-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>The vector field below represents the force exerted on an object at each point in space and time. Find the force on an object at the point \((2, 5, 8)\) at the moment when \(t = 2\).</p>
+        <div>\[ \mathbf{F}(x, y, z, t) = \langle x,\ 6yz,\ t^2 \rangle \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \mathbf{F}(2, 5, 8, 2) &= \langle 2,\ 6 \cdot 5 \cdot 8,\ 2^2 \rangle \\
+            &= \langle 2,\ 240,\ 4 \rangle
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-divergence-of-a-vector-field">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-divergence-of-a-vector-field-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Divergence of a Vector Field</span></button></h2>
+      <div class="section-body" id="the-divergence-of-a-vector-field-body">
+      <p>Given the vector field \(\mathbf{F} = P\,\mathbf{i} + Q\,\mathbf{j} + R\,\mathbf{k}\), the divergence of \(\mathbf{F}\) is defined below. The divergence is a scalar.</p>
+      <div class="formula">
+        <p class="formula-name">Divergence</p>
+        <div>\[ \nabla \dotp \mathbf{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \]</div>
+      </div>
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find the divergence of the vector field below.</p>
+        <div>\[ \mathbf{F}(x, y, z, t) = 8xy\,\mathbf{i} + 8y^2 t\,\mathbf{j} + z^3\,\mathbf{k} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div class="eq-list">
+            <div>\[ P = 8xy \]</div>
+            <div>\[ Q = 8y^2 t \]</div>
+            <div>\[ R = z^3 \]</div>
+          </div>
+          <div class="eq-list">
+            <div>\[ \frac{\partial P}{\partial x} = 8y \]</div>
+            <div>\[ \frac{\partial Q}{\partial y} = 16yt \]</div>
+            <div>\[ \frac{\partial R}{\partial z} = 3z^2 \]</div>
+          </div>
+          <div>\[ \nabla \dotp \mathbf{F} = 8y + 16yt + 3z^2 \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Another Example</h3>
+        <p>For any magnetic field \(\mathbf{B}\), Maxwell&rsquo;s second equation states that the divergence is always zero: \(\nabla \dotp \mathbf{B} = 0\). Verify this is true for the field below.</p>
+        <div>\[
+        \begin{aligned}
+          \mathbf{B}(x, y, z, t) &= \sin(xy)\,\mathbf{i} + 6\sin x\,\mathbf{j} \\
+          &\qquad {}- zy\cos(xy)\,\mathbf{k}
+        \end{aligned}
+        \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div class="eq-list">
+            <div>\[ \frac{\partial P}{\partial x} = y\cos(xy) \]</div>
+            <div>\[ \frac{\partial Q}{\partial y} = 0 \]</div>
+            <div>\[ \frac{\partial R}{\partial z} = -y\cos(xy) \]</div>
+          </div>
+          <div>\[
+          \begin{aligned}
+            \nabla \dotp \mathbf{B} &= y\cos(xy) + 0 - y\cos(xy) \\
+            &= 0
+          \end{aligned}
+          \]</div>
+          <p>The divergence is zero, as Maxwell&rsquo;s second equation says.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-curl-of-a-vector-field">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-curl-of-a-vector-field-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Curl of a Vector Field</span></button></h2>
+      <div class="section-body" id="the-curl-of-a-vector-field-body">
+      <p>Given the vector field \(\mathbf{F} = P\,\mathbf{i} + Q\,\mathbf{j} + R\,\mathbf{k}\), the curl of \(\mathbf{F}\) is defined below. The curl is a vector.</p>
+      <div class="formula">
+        <p class="formula-name">Curl</p>
+        <div>\[
+        \begin{aligned}
+          \nabla \times \mathbf{F} &= \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right)\mathbf{i} \\
+          &\qquad {}+ \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right)\mathbf{j} \\
+          &\qquad {}+ \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)\mathbf{k}
+        \end{aligned}
+        \]</div>
+      </div>
+      <p>This can also be written as the determinant below.</p>
+      <div>\[ \nabla \times \mathbf{F} = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ P & Q & R \end{vmatrix} \]</div>
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find the curl of the vector field below.</p>
+        <div>\[ \mathbf{F}(x, y, z) = \langle 2y,\ 3z,\ -13x^2 \rangle \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div class="eq-list">
+            <div>\[ P = 2y \]</div>
+            <div>\[ Q = 3z \]</div>
+            <div>\[ R = -13x^2 \]</div>
+          </div>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} &= 0 - 3 = -3 \\
+            \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} &= 0 - (-26x) = 26x \\
+            \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} &= 0 - 2 = -2
+          \end{aligned}
+          \]</div>
+          <div>\[ \nabla \times \mathbf{F} = \langle -3,\ 26x,\ -2 \rangle \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="faraday-s-law">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="faraday-s-law-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Faraday's Law</span></button></h2>
+      <div class="section-body" id="faraday-s-law-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Assume the fields below.</p>
+        <div>\[
+        \begin{aligned}
+          \mathbf{E}(x, y, z, t) &= \langle 4z,\ -3x^2,\ 11y^2 \rangle \\
+          \mathbf{B}(x, y, z, t) &= \langle -22yt,\ -4t,\ 6xt \rangle
+        \end{aligned}
+        \]</div>
+        <ol type="a">
+          <li>Find the curl of \(\mathbf{E}\).</li>
+          <li>Find \(-\dfrac{\partial \mathbf{B}}{\partial t}\), the negative time derivative of \(\mathbf{B}\).</li>
+          <li>I made this problem to help you understand the mathematics in Maxwell&rsquo;s third equation, sometimes called Faraday&rsquo;s Law: \(\nabla \times \mathbf{E} = -\dfrac{\partial \mathbf{B}}{\partial t}\). Compare your results from parts (a) and (b).</li>
+        </ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Part (a)</strong>: Here \(P = 4z\), \(Q = -3x^2\), and \(R = 11y^2\).</p>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} &= 22y - 0 = 22y \\
+            \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} &= 4 - 0 = 4 \\
+            \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} &= -6x - 0 = -6x
+          \end{aligned}
+          \]</div>
+          <div>\[ \nabla \times \mathbf{E} = \langle 22y,\ 4,\ -6x \rangle \]</div>
+          <p><strong>Part (b)</strong></p>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial \mathbf{B}}{\partial t} &= \langle -22y,\ -4,\ 6x \rangle \\
+            -\frac{\partial \mathbf{B}}{\partial t} &= \langle 22y,\ 4,\ -6x \rangle
+          \end{aligned}
+          \]</div>
+          <p><strong>Part (c)</strong>: Parts (a) and (b) give the same vector, \(\langle 22y, 4, -6x \rangle\), so these fields satisfy Faraday&rsquo;s Law.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="spherical-coordinates.html">&larr; Spherical Coordinates and Triple Integrals</a>
+      <a class="next" href="line-integrals.html">Line Integrals &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

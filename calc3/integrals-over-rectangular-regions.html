@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integrals over Rectangular Regions | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Evaluating double and triple integrals over rectangular regions, and Fubini's Theorem, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Integrals over Rectangular Regions</h1>
+
+    <section class="topic-section" id="from-riemann-sums-to-integrals">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="from-riemann-sums-to-integrals-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">From Riemann Sums to Integrals</span></button></h2>
+      <div class="section-body" id="from-riemann-sums-to-integrals-body">
+      <img class="wide" src="images/rectangular-regions/riemann-box.png" width="908" height="696"
+           alt="A surface z equals f of x, y above a grid on the xy-plane, with one rectangular box drawn up to the surface.">
+      <p>Consider the solid lying above or below a region in the \(xy\)-plane, where the height of the surface is given by a function \(z = f(x, y)\). In the previous lesson we found the exact volume of this solid as the limit of a Riemann sum.</p>
+      <div>\[ \lim_{(m,n) \to \infty} \sum_{j=1}^{n} \sum_{i=1}^{m} f(i\,\Delta x,\ j\,\Delta y)\,\Delta x\,\Delta y \]</div>
+      <p>In this lesson we learn to evaluate this with integrals and the Fundamental Theorem of Calculus. We also evaluate double and triple integrals over rectangular regions in general, along with some important notation and terminology.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="evaluating-an-iterated-integral">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="evaluating-an-iterated-integral-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Evaluating an Iterated Integral</span></button></h2>
+      <div class="section-body" id="evaluating-an-iterated-integral-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Evaluate the integral below.</p>
+        <div>\[ \int_0^4 \int_0^8 x^2 y^3\,dx\,dy \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Integrate the inside integral first, with respect to \(x\), treating \(y\) as a constant.</p>
+          <div>\[
+          \begin{aligned}
+            &\int_0^4 \int_0^8 x^2 y^3\,dx\,dy \\
+            &\quad = \int_0^4 \left[ \frac{x^3}{3} \right]_0^8 y^3\,dy \\
+            &\quad = \int_0^4 \frac{512}{3}\,y^3\,dy \\
+            &\quad = \frac{512}{3} \left[ \frac{y^4}{4} \right]_0^4 \\
+            &\quad = \frac{512}{3} \cdot 64 \\
+            &\quad = \frac{32768}{3}
+          \end{aligned}
+          \]</div>
+          <p>This matches the limit of the Riemann sum from the previous lesson!</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="changing-the-order-of-integration">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="changing-the-order-of-integration-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Changing the Order of Integration</span></button></h2>
+      <div class="section-body" id="changing-the-order-of-integration-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Evaluate the integral below.</p>
+        <div>\[ \int_0^8 \int_0^4 x^2 y^3\,dy\,dx \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>This time, integrate with respect to \(y\) first, treating \(x\) as a constant.</p>
+          <div>\[
+          \begin{aligned}
+            &\int_0^8 \int_0^4 x^2 y^3\,dy\,dx \\
+            &\quad = \int_0^8 x^2 \left[ \frac{y^4}{4} \right]_0^4 dx \\
+            &\quad = \int_0^8 64x^2\,dx \\
+            &\quad = 64 \left[ \frac{x^3}{3} \right]_0^8 \\
+            &\quad = \frac{32768}{3}
+          \end{aligned}
+          \]</div>
+          <p>Changing the order of integration gives the same result.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="fubini-s-theorem">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="fubini-s-theorem-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Fubini's Theorem</span></button></h2>
+      <div class="section-body" id="fubini-s-theorem-body">
+      <p>Fubini&rsquo;s Theorem says that for a continuous function on a rectangular region, we can integrate in either order, as long as the limits of integration match the order, so they still describe the same region. The result is the same.</p>
+      <div class="formula">
+        <p class="formula-name">Fubini's Theorem</p>
+        <div>\[
+        \begin{aligned}
+          &\int_c^d \int_a^b f(x, y)\,dx\,dy \\
+          &\quad = \int_a^b \int_c^d f(x, y)\,dy\,dx
+        \end{aligned}
+        \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-double-integral-over-a-rectangle">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-double-integral-over-a-rectangle-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Double Integral over a Rectangle</span></button></h2>
+      <div class="section-body" id="a-double-integral-over-a-rectangle-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(R\) be the region defined by the inequalities \(0 \le x \le 4\) and \(-2 \le y \le 2\). Evaluate the double integral below.</p>
+        <div>\[ \iint_R \left( x^3 + 6y^3 \right) dA \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            &\int_{-2}^{2} \int_0^4 \left( x^3 + 6y^3 \right) dx\,dy \\
+            &\quad = \int_{-2}^{2} \left[ \frac{x^4}{4} + 6y^3 x \right]_0^4 dy \\
+            &\quad = \int_{-2}^{2} \left( 64 + 24y^3 \right) dy \\
+            &\quad = \Big[ 64y + 6y^4 \Big]_{-2}^{2} \\
+            &\quad = (128 + 96) - (-128 + 96) \\
+            &\quad = 256
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-triple-integral-over-a-box">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-triple-integral-over-a-box-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Triple Integral over a Box</span></button></h2>
+      <div class="section-body" id="a-triple-integral-over-a-box-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(E\) be the solid defined by the inequalities \(0 \le x \le 4\), \(0 \le y \le 2\), and \(-1 \le z \le 2\). Evaluate the triple integral below.</p>
+        <div>\[ \iiint_E (1 + xyz)\,dV \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            &\int_{-1}^{2} \int_0^2 \int_0^4 (1 + xyz)\,dx\,dy\,dz \\
+            &\quad = \int_{-1}^{2} \int_0^2 \left[ x + \frac{x^2 yz}{2} \right]_0^4 dy\,dz \\
+            &\quad = \int_{-1}^{2} \int_0^2 (4 + 8yz)\,dy\,dz \\
+            &\quad = \int_{-1}^{2} \Big[ 4y + 4y^2 z \Big]_0^2 dz \\
+            &\quad = \int_{-1}^{2} (8 + 16z)\,dz \\
+            &\quad = \Big[ 8z + 8z^2 \Big]_{-1}^{2} \\
+            &\quad = (16 + 32) - (-8 + 8) \\
+            &\quad = 48
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="riemann-sums-for-functions-of-two-variables.html">&larr; Riemann Sums for Functions of Two Variables</a>
+      <a class="next" href="integrals-over-non-rectangular-regions.html">Integrals over Non-Rectangular Regions &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

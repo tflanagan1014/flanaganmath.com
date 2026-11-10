@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spherical Coordinates and Triple Integrals | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Spherical coordinates and evaluating triple integrals with them, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Spherical Coordinates and Triple Integrals</h1>
+
+    <section class="topic-section" id="why-spherical-coordinates">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="why-spherical-coordinates-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Why Spherical Coordinates?</span></button></h2>
+      <div class="section-body" id="why-spherical-coordinates-body">
+      <img class="wide" src="images/spherical/spacetime.png" width="602" height="216"
+           alt="A wireframe drawing of a curved surface, sagging deeply in the middle like a funnel, picturing how a mass curves spacetime.">
+      <p>Einstein is one of my heroes. He is most famous for his equation \(E = mc^2\), but his bigger accomplishment is the equation below, which describes gravity.</p>
+      <div>\[ R_{\mu\nu} - \frac{1}{2} R\,g_{\mu\nu} = \frac{8\pi G}{c^4}\,T_{\mu\nu} \]</div>
+      <p>At first, Einstein did not think anyone would find neat solutions to this equation. But a few months later, Karl Schwarzschild did, by finding a helpful symmetry. Gravity around a single mass is the same in every direction, so the equations should look the same in every direction too. This is spherical symmetry, and it was the key to the first exact solution of Einstein&rsquo;s equation. To use it, he wrote the equations in spherical coordinates.</p>
+      <p>Here we learn about spherical coordinates, and use them to evaluate triple integrals more easily when a problem involves spherical symmetry.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="spherical-coordinates">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="spherical-coordinates-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Spherical Coordinates</span></button></h2>
+      <div class="section-body" id="spherical-coordinates-body">
+      <p>A point \(P\) with rectangular coordinates \((x, y, z)\) has spherical coordinates \((\rho, \theta, \phi)\). Sometimes \(\varphi\) is written instead of \(\phi\).</p>
+      <img src="images/spherical/spherical-point.png" width="305" height="350"
+           alt="A point P in space, at distance rho from the origin. The angle phi is measured down from the positive z-axis, and the angle theta is measured in the xy-plane from the positive x-axis.">
+      <ul>
+        <li>The angle \(\theta\) is the same angle as in polar and cylindrical coordinates.</li>
+        <li>The distance from the point \(P\) to the origin is \(\rho\).</li>
+        <li>The angle \(\phi\) is the angle between the positive \(z\)-axis and the line segment from the origin to \(P\). Note that \(0 \le \phi \le \pi\).</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="important-identities">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="important-identities-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Important Identities</span></button></h2>
+      <div class="section-body" id="important-identities-body">
+      <p>These equations connect rectangular and spherical coordinates. Here \(r\) is the distance from the origin to the projection of \(P\) onto the \(xy\)-plane, as in cylindrical coordinates.</p>
+      <div class="formula">
+        <p class="formula-name">Converting to Spherical Coordinates</p>
+        <div>\[
+        \begin{aligned}
+          \rho &= \sqrt{x^2 + y^2 + z^2} \\
+          r &= \rho\sin\phi \\
+          x &= r\cos\theta = \rho\sin\phi\cos\theta \\
+          y &= r\sin\theta = \rho\sin\phi\sin\theta \\
+          z &= \rho\cos\phi \\
+          \tan\theta &= \frac{y}{x}
+        \end{aligned}
+        \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-volume-differential-in-spherical-coordinates">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-volume-differential-in-spherical-coordinates-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Volume Differential in Spherical Coordinates</span></button></h2>
+      <div class="section-body" id="the-volume-differential-in-spherical-coordinates-body">
+      <div class="formula">
+        <p class="formula-name">Volume Differential</p>
+        <div>\[ dV = \rho^2 \sin\phi\,d\rho\,d\phi\,d\theta \]</div>
+      </div>
+      <img class="wide" src="images/spherical/spherical-box.png" width="964" height="472"
+           alt="A small spherical box, enlarged, with sides delta rho, rho delta phi, and rho sine phi delta theta, and volume approximately rho squared sine phi delta rho delta phi delta theta.">
+      <div class="example">
+        <button type="button" class="toggle" aria-expanded="false" data-what="derivation" hidden>Show derivation</button>
+        <div class="work">
+          <p>A small spherical box has three sides, as in the figure.</p>
+          <ul>
+            <li>Moving outward a distance \(\Delta\rho\) gives one side of length \(\Delta\rho\).</li>
+            <li>Changing \(\phi\) by \(\Delta\phi\) moves along an arc of a circle of radius \(\rho\), so that side has length \(\rho\,\Delta\phi\).</li>
+            <li>Changing \(\theta\) by \(\Delta\theta\) moves along an arc of a circle of radius \(r = \rho\sin\phi\), so that side has length \(\rho\sin\phi\,\Delta\theta\).</li>
+          </ul>
+          <p>For small changes, the box is nearly a rectangular box, so its volume is approximately the product of its sides.</p>
+          <div>\[
+          \begin{aligned}
+            \Delta V &\approx \Delta\rho \cdot \rho\,\Delta\phi \cdot \rho\sin\phi\,\Delta\theta \\
+            &= \rho^2\sin\phi\,\Delta\rho\,\Delta\phi\,\Delta\theta
+          \end{aligned}
+          \]</div>
+          <p>In the limit, this becomes \(dV = \rho^2 \sin\phi\,d\rho\,d\phi\,d\theta\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-volume-of-a-ball">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-volume-of-a-ball-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Volume of a Ball</span></button></h2>
+      <div class="section-body" id="the-volume-of-a-ball-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(E\) be the solid determined by \(x^2 + y^2 + z^2 \le a^2\). Use spherical coordinates to evaluate the integral below. Then confirm your result using basic geometry.</p>
+        <div>\[ \iiint_E 1\,dV \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The ball is \(0 \le \rho \le a\), \(0 \le \phi \le \pi\), and \(0 \le \theta \le 2\pi\).</p>
+          <div>\[
+          \begin{aligned}
+            &\iiint_E 1\,dV \\
+            &\quad = \int_0^{2\pi} \int_0^{\pi} \int_0^a \rho^2 \sin\phi\,d\rho\,d\phi\,d\theta \\
+            &\quad = \left( \int_0^a \rho^2\,d\rho \right) \left( \int_0^{\pi} \sin\phi\,d\phi \right) \\
+            &\qquad\quad \cdot \left( \int_0^{2\pi} d\theta \right) \\
+            &\quad = \frac{a^3}{3} \cdot 2 \cdot 2\pi \\
+            &\quad = \frac{4}{3}\pi a^3
+          \end{aligned}
+          \]</div>
+          <p>This is the volume of a sphere of radius \(a\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="integrating-over-a-half-ball">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="integrating-over-a-half-ball-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Integrating over a Half Ball</span></button></h2>
+      <div class="section-body" id="integrating-over-a-half-ball-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Evaluate the triple integral below, where \(E\) is the top half of the solid sphere of radius \(8\).</p>
+        <div>\[ \iiint_E \left( x^2 + y^2 + z^2 \right) dV \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>In spherical coordinates, \(x^2 + y^2 + z^2 = \rho^2\). The top half is \(0 \le \rho \le 8\), \(0 \le \phi \le \frac{\pi}{2}\), and \(0 \le \theta \le 2\pi\).</p>
+          <div>\[
+          \begin{aligned}
+            &\iiint_E \rho^2\,dV \\
+            &\quad = \int_0^{2\pi} \int_0^{\pi/2} \int_0^8 \rho^4 \sin\phi\,d\rho\,d\phi\,d\theta \\
+            &\quad = \frac{8^5}{5} \cdot 1 \cdot 2\pi \\
+            &\quad = \frac{65536\pi}{5}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="integrating-over-a-spherical-shell">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="integrating-over-a-spherical-shell-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Integrating over a Spherical Shell</span></button></h2>
+      <div class="section-body" id="integrating-over-a-spherical-shell-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Evaluate the triple integral below, where \(E\) is the top half of the spherical shell between the spheres of radius \(2\) and \(5\).</p>
+        <div>\[ \iiint_E z\,dV \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>In spherical coordinates, \(z = \rho\cos\phi\). The solid is \(2 \le \rho \le 5\), \(0 \le \phi \le \frac{\pi}{2}\), and \(0 \le \theta \le 2\pi\).</p>
+          <div>\[
+          \begin{aligned}
+            &\iiint_E z\,dV \\
+            &\quad = \int_0^{2\pi} \int_0^{\pi/2} \int_2^5 \rho^3 \cos\phi\sin\phi\,d\rho\,d\phi\,d\theta \\
+            &\quad = \left( \int_2^5 \rho^3\,d\rho \right) \left( \int_0^{\pi/2} \sin\phi\cos\phi\,d\phi \right) \\
+            &\qquad\quad \cdot \left( \int_0^{2\pi} d\theta \right) \\
+            &\quad = \frac{625 - 16}{4} \cdot \frac{1}{2} \cdot 2\pi \\
+            &\quad = \frac{609\pi}{4}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-mass-of-a-ball">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-mass-of-a-ball-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Mass of a Ball</span></button></h2>
+      <div class="section-body" id="the-mass-of-a-ball-body">
+      <div class="example">
+        <h3>A Physics Application</h3>
+        <p>Given a density function \(\delta\) for a solid \(E\), the total mass of the solid is given by the triple integral below.</p>
+        <div>\[ \text{Mass} = \iiint_E \delta\,dV \]</div>
+        <p>Assume a solid ball has radius \(8\), and its density is inversely proportional to the square of the distance \(\rho\) from its center, with constant of proportionality \(4\). Find the total mass of the ball.</p>
+        <div>\[ \delta = \frac{4}{\rho^2} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            &\text{Mass} \\
+            &\quad = \int_0^{2\pi} \int_0^{\pi} \int_0^8 \frac{4}{\rho^2} \cdot \rho^2 \sin\phi\,d\rho\,d\phi\,d\theta \\
+            &\quad = 4 \left( \int_0^8 d\rho \right) \left( \int_0^{\pi} \sin\phi\,d\phi \right) \\
+            &\qquad\quad \cdot \left( \int_0^{2\pi} d\theta \right) \\
+            &\quad = 4 \cdot 8 \cdot 2 \cdot 2\pi \\
+            &\quad = 128\pi
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="cylindrical-coordinates.html">&larr; Cylindrical Coordinates and Triple Integrals</a>
+      <a class="next" href="vector-fields-divergence-and-curl.html">Vector Fields, Divergence, and Curl &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flux | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="The flux of a vector field across a surface, with a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Flux</h1>
+
+    <section class="topic-section" id="what-is-flux">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-flux-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is Flux?</span></button></h2>
+      <div class="section-body" id="what-is-flux-body">
+      <p>The flux of a vector field \(\mathbf{F}\) across a surface \(S\) is given below.</p>
+      <div class="formula">
+        <p class="formula-name">Flux</p>
+        <div>\[
+        \begin{aligned}
+          &\iint_S \mathbf{F} \dotp \mathbf{n}\,dS \\
+          &\quad = \iint_D \mathbf{F}(\mathbf{R}(u, v)) \dotp (\mathbf{R}_u \times \mathbf{R}_v)\,dA
+        \end{aligned}
+        \]</div>
+      </div>
+      <p>Flux measures how much of the vector field passes through the surface. If \(\mathbf{F}\) is the velocity field of a fluid, the flux is the net volume of fluid passing through \(S\) per unit time.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-the-flux-across-a-rectangle">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-the-flux-across-a-rectangle-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding the Flux Across a Rectangle</span></button></h2>
+      <div class="section-body" id="finding-the-flux-across-a-rectangle-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find the flux of \(\mathbf{F}(x, y, z) = \langle x, y, z \rangle\) across the rectangle below, with the upward orientation.</p>
+        <div>\[
+        \begin{aligned}
+          &\mathbf{R}(u, v) = \langle u,\ v,\ 2 \rangle, \\
+          &\qquad 0 \le u \le 3,\quad 0 \le v \le 4
+        \end{aligned}
+        \]</div>
+        <img class="wide" src="images/flux/flux-rectangle.png" width="851" height="729"
+             alt="The rectangle S at height z equals 2, over 0 to 3 in x and 0 to 4 in y, with blue arrows of the field F passing up through it and a black upward normal vector n.">
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \mathbf{R}_u &= \langle 1,\ 0,\ 0 \rangle \\
+            \mathbf{R}_v &= \langle 0,\ 1,\ 0 \rangle \\
+            \mathbf{R}_u \times \mathbf{R}_v &= \langle 0,\ 0,\ 1 \rangle
+          \end{aligned}
+          \]</div>
+          <p>This normal points upward, as required. On the surface, z = 2.</p>
+          <div>\[
+          \begin{aligned}
+            &\mathbf{F} \dotp (\mathbf{R}_u \times \mathbf{R}_v) \\
+            &\quad = \langle u,\ v,\ 2 \rangle \dotp \langle 0,\ 0,\ 1 \rangle \\
+            &\quad = 2
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \iint_S \mathbf{F} \dotp \mathbf{n}\,dS &= \int_0^3 \int_0^4 2\,dv\,du \\
+            &= 24
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="stokes-theorem.html">&larr; Stokes' Theorem</a>
+      <a class="next" href="divergence-theorem.html">The Divergence Theorem &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

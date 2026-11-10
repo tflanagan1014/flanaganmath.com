@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integrals over Non-Rectangular Regions | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Evaluating double and triple integrals over non-rectangular regions, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Integrals over Non-Rectangular Regions</h1>
+
+    <section class="topic-section" id="beyond-rectangular-regions">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="beyond-rectangular-regions-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Beyond Rectangular Regions</span></button></h2>
+      <div class="section-body" id="beyond-rectangular-regions-body">
+      <img class="wide" src="images/non-rectangular-regions/cylinder-region.png" width="604" height="658"
+           alt="A solid inside a cylinder, cut off at the top by a slanted plane, sitting above a circular, non-rectangular region in the xy-plane.">
+      <p>Earlier, we used the limit of a Riemann sum to find the volume of a solid, and then found the same volume using a double integral and the Fundamental Theorem of Calculus. Both times, the solid was above or below a rectangular region in the \(xy\)-plane.</p>
+      <p>Now we begin integrating over non-rectangular regions, as illustrated in the figure. In this lesson we focus only on how the calculations are carried out. In the next few lessons, we will explore what they represent, and see how these calculations apply to geometry and the sciences, especially physics.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="integrating-with-a-variable-limit">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="integrating-with-a-variable-limit-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Integrating with a Variable Limit</span></button></h2>
+      <div class="section-body" id="integrating-with-a-variable-limit-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Evaluate the double integral below.</p>
+        <div>\[ \int_0^5 \int_0^{2x} (y + 2)\,dy\,dx \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The inside limit depends on \(x\). Integrate with respect to \(y\) first.</p>
+          <div>\[
+          \begin{aligned}
+            &\int_0^5 \int_0^{2x} (y + 2)\,dy\,dx \\
+            &\quad = \int_0^5 \left[ \frac{y^2}{2} + 2y \right]_0^{2x} dx \\
+            &\quad = \int_0^5 \left( 2x^2 + 4x \right) dx \\
+            &\quad = \left[ \frac{2x^3}{3} + 2x^2 \right]_0^5 \\
+            &\quad = \frac{250}{3} + 50 \\
+            &\quad = \frac{400}{3}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-region-between-two-curves">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-region-between-two-curves-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Region Between Two Curves</span></button></h2>
+      <div class="section-body" id="a-region-between-two-curves-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Evaluate the double integral below, where \(R\) is the region in the first quadrant enclosed by \(y = 4x\) and \(y = x^3\).</p>
+        <div>\[ \iint_R xy^2\,dA \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>First find where the curves meet: \(x^3 = 4x\) gives \(x = 0\) or \(x = 2\) in the first quadrant. Between these, the line \(y = 4x\) is above the curve \(y = x^3\). So \(x\) runs from \(0\) to \(2\), and \(y\) runs from \(x^3\) up to \(4x\).</p>
+          <div>\[
+          \begin{aligned}
+            &\iint_R xy^2\,dA \\
+            &\quad = \int_0^2 \int_{x^3}^{4x} xy^2\,dy\,dx \\
+            &\quad = \int_0^2 x \left[ \frac{y^3}{3} \right]_{x^3}^{4x} dx \\
+            &\quad = \int_0^2 \frac{x\left(64x^3 - x^9\right)}{3}\,dx \\
+            &\quad = \frac{1}{3} \int_0^2 \left( 64x^4 - x^{10} \right) dx \\
+            &\quad = \frac{1}{3} \left[ \frac{64x^5}{5} - \frac{x^{11}}{11} \right]_0^2 \\
+            &\quad = \frac{1}{3} \left( \frac{2048}{5} - \frac{2048}{11} \right) \\
+            &\quad = \frac{4096}{55}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-triple-integral-with-a-variable-limit">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-triple-integral-with-a-variable-limit-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Triple Integral with a Variable Limit</span></button></h2>
+      <div class="section-body" id="a-triple-integral-with-a-variable-limit-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Express the answer to the following in terms of \(t\).</p>
+        <div>\[ \int_0^t \int_0^6 \int_0^2 xyz\,dx\,dy\,dz \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            &\int_0^t \int_0^6 \int_0^2 xyz\,dx\,dy\,dz \\
+            &\quad = \int_0^t \int_0^6 \left[ \frac{x^2}{2} \right]_0^2 yz\,dy\,dz \\
+            &\quad = \int_0^t \int_0^6 2yz\,dy\,dz \\
+            &\quad = \int_0^t \Big[ y^2 z \Big]_0^6 dz \\
+            &\quad = \int_0^t 36z\,dz \\
+            &\quad = 18t^2
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="integrals-over-rectangular-regions.html">&larr; Integrals over Rectangular Regions</a>
+      <a class="next" href="double-integrals-and-area.html">Double Integrals and Area &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stokes' Theorem | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Stokes' Theorem, relating the work around a closed curve to a surface integral of the curl, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Stokes' Theorem</h1>
+
+    <section class="topic-section" id="stokes-theorem">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="stokes-theorem-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Stokes' Theorem</span></button></h2>
+      <div class="section-body" id="stokes-theorem-body">
+      <p>Green&rsquo;s Theorem showed that the work done by a vector field around a closed curve in the plane equals a double integral over the region inside the curve. Stokes&rsquo; Theorem extends this idea to three dimensions. The work done around a closed curve \(C\) in space equals a surface integral over any surface \(S\) whose boundary is \(C\).</p>
+      <img class="wide" src="images/stokes/stokes-disk.png" width="625" height="671"
+           alt="A yellow disk S in xyz-space inside a blue vector field. Its boundary is the red closed curve C, with arrows showing its direction, and a black normal vector n points out of the disk.">
+      <p>Let \(S\) be an oriented, piecewise-smooth surface bounded by a simple, closed, piecewise-smooth curve \(C\) with positive orientation. Let \(\mathbf{F}\) be a vector field whose components have continuous partial derivatives on an open region containing \(S\). Then:</p>
+      <div class="formula">
+        <p class="formula-name">Stokes' Theorem</p>
+        <div>\[ \oint_C \mathbf{F} \dotp d\mathbf{r} = \iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS \]</div>
+      </div>
+      <p>Put simply, the work done by \(\mathbf{F}\) around the boundary curve \(C\) equals the surface integral of \((\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\) over the surface \(S\).</p>
+      <p>Positive orientation means the direction of \(C\) and the normal \(\mathbf{n}\) follow the right-hand rule: curl the fingers of your right hand in the direction of \(C\), and your thumb points in the direction of \(\mathbf{n}\).</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="two-ways-to-find-the-work">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="two-ways-to-find-the-work-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Two Ways to Find the Work</span></button></h2>
+      <div class="section-body" id="two-ways-to-find-the-work-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(\mathbf{F}(x, y, z) = \langle 0, -z, y \rangle\), and let \(C\) be the curve \(\mathbf{r}(t) = \langle 2, 3\cos t, 3\sin t \rangle\), \(0 \le t \le 2\pi\).</p>
+        <ol type="a">
+          <li>Find the work done by \(\mathbf{F}\) around \(C\) directly, using the line integral.</li>
+          <li>Confirm your result using Stokes&rsquo; Theorem.</li>
+        </ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Part (a)</strong></p>
+          <div>\[ \mathbf{r}'(t) = \langle 0,\ -3\sin t,\ 3\cos t \rangle \]</div>
+          <p>Along the curve, \(y = 3\cos t\) and \(z = 3\sin t\), so \(\mathbf{F}(\mathbf{r}(t)) = \langle 0, -3\sin t, 3\cos t \rangle\).</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{F}(\mathbf{r}(t)) \dotp \mathbf{r}'(t) &= 9\sin^2 t + 9\cos^2 t \\
+            &= 9
+          \end{aligned}
+          \]</div>
+          <div>\[ \oint_C \mathbf{F} \dotp d\mathbf{r} = \int_0^{2\pi} 9\,dt = 18\pi \]</div>
+          <p><strong>Part (b)</strong>: Let \(S\) be the disk in the plane \(x = 2\) bounded by \(C\).</p>
+          <div>\[
+          \begin{aligned}
+            &\mathbf{R}(u, v) = \langle 2,\ u\cos v,\ u\sin v \rangle, \\
+            &\qquad 0 \le u \le 3,\quad 0 \le v \le 2\pi
+          \end{aligned}
+          \]</div>
+          <div>\[ \operatorname{curl}\mathbf{F} = \langle 2,\ 0,\ 0 \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            \mathbf{R}_u &= \langle 0,\ \cos v,\ \sin v \rangle \\
+            \mathbf{R}_v &= \langle 0,\ -u\sin v,\ u\cos v \rangle \\
+            \mathbf{R}_u \times \mathbf{R}_v &= \langle u,\ 0,\ 0 \rangle
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            &(\operatorname{curl}\mathbf{F}) \dotp (\mathbf{R}_u \times \mathbf{R}_v) \\
+            &\quad = \langle 2,\ 0,\ 0 \rangle \dotp \langle u,\ 0,\ 0 \rangle \\
+            &\quad = 2u
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            &\iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS \\
+            &\quad = \int_0^{2\pi} \int_0^3 2u\,du\,dv \\
+            &\quad = \int_0^{2\pi} 9\,dv \\
+            &\quad = 18\pi
+          \end{aligned}
+          \]</div>
+          <p>Both methods give \(18\pi\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="using-stokes-theorem-with-a-plane">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="using-stokes-theorem-with-a-plane-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Using Stokes' Theorem with a Plane</span></button></h2>
+      <div class="section-body" id="using-stokes-theorem-with-a-plane-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find the work done by the vector field \(\mathbf{F}\) as a particle moves once around the closed curve \(C\). Use Stokes&rsquo; Theorem and the given surface \(S\).</p>
+        <div>\[ \mathbf{F}(x, y, z) = \langle xy,\ x^2 + y^2 + z^2,\ yz \rangle \]</div>
+        <div>\[
+        \begin{aligned}
+          &S:\ \mathbf{R}(u, v) = \langle u,\ v,\ 1 - u - v \rangle, \\
+          &\qquad 0 \le u \le 2,\quad 0 \le v \le 1
+        \end{aligned}
+        \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \operatorname{curl}\mathbf{F} = \langle -z,\ 0,\ x \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            \mathbf{R}_u &= \langle 1,\ 0,\ -1 \rangle \\
+            \mathbf{R}_v &= \langle 0,\ 1,\ -1 \rangle \\
+            \mathbf{R}_u \times \mathbf{R}_v &= \langle 1,\ 1,\ 1 \rangle
+          \end{aligned}
+          \]</div>
+          <p>On the surface, \(x = u\) and \(z = 1 - u - v\).</p>
+          <div>\[
+          \begin{aligned}
+            &(\operatorname{curl}\mathbf{F}) \dotp (\mathbf{R}_u \times \mathbf{R}_v) \\
+            &\quad = -z + x \\
+            &\quad = -(1 - u - v) + u \\
+            &\quad = 2u + v - 1
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \oint_C \mathbf{F} \dotp d\mathbf{r} &= \int_0^2 \int_0^1 (2u + v - 1)\,dv\,du \\
+            &= \int_0^2 \left( 2u - \frac{1}{2} \right) du \\
+            &= 3
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="using-stokes-theorem-with-a-paraboloid">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="using-stokes-theorem-with-a-paraboloid-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Using Stokes' Theorem with a Paraboloid</span></button></h2>
+      <div class="section-body" id="using-stokes-theorem-with-a-paraboloid-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find the work done by the vector field \(\mathbf{F}\) as a particle moves once around the closed curve \(C\). Use Stokes&rsquo; Theorem and the given surface \(S\).</p>
+        <div>\[
+        \begin{aligned}
+          &\mathbf{F}(x, y, z) \\
+          &\quad = \langle \sin\left(x^3\right) + xz,\ x - yz,\ \cos\left(z^4\right) \rangle
+        \end{aligned}
+        \]</div>
+        <div>\[
+        \begin{aligned}
+          &S:\ \mathbf{R}(u, v) = \langle u,\ v,\ u^2 + v^2 \rangle, \\
+          &\qquad 0 \le u \le 2,\quad 0 \le v \le 1
+        \end{aligned}
+        \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \operatorname{curl}\mathbf{F} = \langle y,\ x,\ 1 \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            \mathbf{R}_u &= \langle 1,\ 0,\ 2u \rangle \\
+            \mathbf{R}_v &= \langle 0,\ 1,\ 2v \rangle \\
+            \mathbf{R}_u \times \mathbf{R}_v &= \langle -2u,\ -2v,\ 1 \rangle
+          \end{aligned}
+          \]</div>
+          <p>On the surface, \(x = u\) and \(y = v\).</p>
+          <div>\[
+          \begin{aligned}
+            &(\operatorname{curl}\mathbf{F}) \dotp (\mathbf{R}_u \times \mathbf{R}_v) \\
+            &\quad = \langle v,\ u,\ 1 \rangle \dotp \langle -2u,\ -2v,\ 1 \rangle \\
+            &\quad = 1 - 4uv
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \oint_C \mathbf{F} \dotp d\mathbf{r} &= \int_0^2 \int_0^1 (1 - 4uv)\,dv\,du \\
+            &= \int_0^2 (1 - 2u)\,du \\
+            &= -2
+          \end{aligned}
+          \]</div>
+          <p>Notice how Stokes&rsquo; Theorem lets us avoid the difficult terms \(\sin\left(x^3\right)\) and \(\cos\left(z^4\right)\) entirely.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="surface-integrals.html">&larr; Surface Integrals</a>
+      <a class="next" href="flux.html">Flux &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Partial Derivatives | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Partial derivatives, the limit definition, and a physical interpretation, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Partial Derivatives</h1>
+
+    <section class="topic-section" id="constants-and-variables">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="constants-and-variables-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Constants and Variables</span></button></h2>
+      <div class="section-body" id="constants-and-variables-body">
+      <p>Let's review an essential idea from Calculus I.</p>
+      <table class="facts">
+        <thead><tr><th scope="col">\(f(x)\)</th><th scope="col">\(\dfrac{df}{dx}\)</th></tr></thead>
+        <tbody>
+          <tr><td>\(x^2 + 1\)</td><td>\(2x\)</td></tr>
+          <tr><td>\(x^2 + \pi\)</td><td>\(2x\)</td></tr>
+          <tr><td>\(x^2 + \ln 2\)</td><td>\(2x\)</td></tr>
+          <tr><td>\(x^2 + e^2\)</td><td>\(2x\)</td></tr>
+        </tbody>
+      </table>
+      <p>Here \(1\), \(\pi\), \(\ln 2\), and \(e^2\) are not variables. They are constants! So when differentiating those terms, we obtain zero.</p>
+      <p>In this lesson we learn about partial derivatives, and how for these we treat some variables as constants!</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="treating-a-variable-as-a-constant">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="treating-a-variable-as-a-constant-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Treating a Variable as a Constant</span></button></h2>
+      <div class="section-body" id="treating-a-variable-as-a-constant-body">
+      <p>For each function below, treat \(y\) as a constant and differentiate with respect to \(x\).</p>
+      <table class="facts">
+        <thead><tr><th scope="col">\(f(x, y)\)</th><th scope="col">\(\dfrac{\partial f}{\partial x}\)</th></tr></thead>
+        <tbody>
+          <tr><td>\(x^2 + y\)</td><td>\(2x\)</td></tr>
+          <tr><td>\(x^2 + e^y\)</td><td>\(2x\)</td></tr>
+          <tr><td>\(x^2 + \ln y\)</td><td>\(2x\)</td></tr>
+          <tr><td>\(x^2 + \sin y\)</td><td>\(2x\)</td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>By treating \(y\) as a constant, we obtain the &ldquo;partial derivative of \(f(x, y)\) with respect to \(x\).&rdquo;</li>
+        <li>This is denoted as both \(\partial f / \partial x\) and \(f_x\).</li>
+        <li>We will explore the meaning of this using the limit definition of the derivative.</li>
+        <li>We will discuss a physical interpretation involving the rate of change in one direction.</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-a-partial-derivative">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-a-partial-derivative-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding a Partial Derivative</span></button></h2>
+      <div class="section-body" id="finding-a-partial-derivative-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Given the function below, treat \(y\) as a constant and differentiate with respect to \(x\).</p>
+        <div>\[ f(x, y) = x^2 + y^2 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ f_x = \frac{\partial f}{\partial x} = 2x \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-limit-definition-of-the-partial-derivative">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-limit-definition-of-the-partial-derivative-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Limit Definition of the Partial Derivative</span></button></h2>
+      <div class="section-body" id="the-limit-definition-of-the-partial-derivative-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Confirm the result from the previous problem agrees with the limit definition of the derivative, when we keep \(y\) constant and allow \(x\) to change by a small amount, \(\Delta x\).</p>
+        <div>\[ f(x, y) = x^2 + y^2 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f_x &= \lim_{\Delta x \to 0} \frac{f(x + \Delta x, y) - f(x, y)}{\Delta x} \\
+            &= \lim_{\Delta x \to 0} \frac{(x + \Delta x)^2 + y^2 - \left(x^2 + y^2\right)}{\Delta x} \\
+            &= \lim_{\Delta x \to 0} \frac{x^2 + 2x\,\Delta x + (\Delta x)^2 - x^2}{\Delta x} \\
+            &= \lim_{\Delta x \to 0} \frac{2x\,\Delta x + (\Delta x)^2}{\Delta x} \\
+            &= \lim_{\Delta x \to 0} \frac{\Delta x\,(2x + \Delta x)}{\Delta x} \\
+            &= \lim_{\Delta x \to 0} (2x + \Delta x) \\
+            &= 2x
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="partial-derivatives-with-respect-to-any-variable">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="partial-derivatives-with-respect-to-any-variable-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Partial Derivatives with Respect to Any Variable</span></button></h2>
+      <div class="section-body" id="partial-derivatives-with-respect-to-any-variable-body">
+      <p>Suppose we have a function of several variables.</p>
+      <div>\[ f(x, y, z, t) = 100 + 2x^4 + \tan y + 3t^7 z \]</div>
+      <p>We find a partial derivative by differentiating with respect to one variable, treating all the others as constants.</p>
+      <div class="eq-list">
+        <div>\[ \frac{\partial f}{\partial x} = 8x^3 \]</div>
+        <div>\[ \frac{\partial f}{\partial y} = \sec^2 y \]</div>
+        <div>\[ \frac{\partial f}{\partial z} = 3t^7 \]</div>
+        <div>\[ \frac{\partial f}{\partial t} = 21t^6 z \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="physical-interpretation">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="physical-interpretation-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Physical Interpretation</span></button></h2>
+      <div class="section-body" id="physical-interpretation-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>The function below gives the temperature \(T\), in \(^\circ\mathrm{C}\), at each point in the \(xy\)-plane.</p>
+        <div>\[ T(x, y) = x^2 + \sin y \]</div>
+        <img class="wide" src="images/partial-derivatives/temperature-plane.png" width="509" height="518"
+             alt="A color-coded temperature map of the xy-plane, from cool blue on the left to hot red on the right, with the point (3, 2) marked.">
+        <ol type="a">
+          <li>Evaluate and interpret \(T(x, y)\) at the point \((3, 2)\).</li>
+          <li>Evaluate and interpret the partial derivative of the temperature with respect to \(x\) at the point \((3, 2)\).</li>
+          <li>Evaluate and interpret the partial derivative of the temperature with respect to \(y\) at the point \((3, 2)\).</li>
+        </ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Part (a)</strong></p>
+          <div>\[
+          \begin{aligned}
+            T(3, 2) &= 3^2 + \sin 2 \\
+            &\approx 9.9
+          \end{aligned}
+          \]</div>
+          <p>At the point \((3, 2)\), the temperature is approximately \(9.9^\circ\mathrm{C}\).</p>
+          <p><strong>Part (b)</strong></p>
+          <div>\[ T_x = \frac{\partial T}{\partial x} = 2x \]</div>
+          <div>\[ T_x(3, 2) = 2 \cdot 3 = 6 \]</div>
+          <p>If we stand at the point \((3, 2)\) and face the direction of the positive \(x\)-axis, the temperature is increasing at a rate of \(6^\circ\mathrm{C}\) per unit of distance.</p>
+          <p><strong>Part (c)</strong></p>
+          <div>\[ T_y = \frac{\partial T}{\partial y} = \cos y \]</div>
+          <div>\[ T_y(3, 2) = \cos 2 \approx -0.42 \]</div>
+          <p>If we stand at the point \((3, 2)\) and face the direction of the positive \(y\)-axis, the temperature is decreasing at a rate of about \(0.42^\circ\mathrm{C}\) per unit of distance.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="limits-and-continuity-of-functions-of-several-variables.html">&larr; Limits and Continuity of Functions of Several Variables</a>
+      <a class="next" href="second-order-partial-derivatives.html">Second-Order Partial Derivatives &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

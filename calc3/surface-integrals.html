@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surface Integrals | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Surface area and surface integrals of functions over parametric surfaces, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Surface Integrals</h1>
+
+    <section class="topic-section" id="surface-area">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="surface-area-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Surface Area</span></button></h2>
+      <div class="section-body" id="surface-area-body">
+      <p>For a surface \(S\) given by \(\mathbf{R}(u, v)\) over a region \(D\) in the \(uv\)-plane, the surface area differential is below.</p>
+      <div class="formula">
+        <p class="formula-name">Surface Area Differential</p>
+        <div>\[ dS = \|\mathbf{R}_u \times \mathbf{R}_v\|\,dA \]</div>
+      </div>
+      <div class="formula">
+        <p class="formula-name">Surface Area</p>
+        <div>\[
+        \begin{aligned}
+          \text{Surface Area} &= \iint_S dS \\
+          &= \iint_D \|\mathbf{R}_u \times \mathbf{R}_v\|\,dA
+        \end{aligned}
+        \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-area-of-a-plane">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-area-of-a-plane-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Area of a Plane</span></button></h2>
+      <div class="section-body" id="the-area-of-a-plane-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find the area of the surface below.</p>
+        <div>\[
+        \begin{aligned}
+          &\mathbf{R}(u, v) = \langle u,\ v,\ 3 \rangle, \\
+          &\qquad 0 \le u \le 4,\quad 0 \le v \le 5
+        \end{aligned}
+        \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \mathbf{R}_u &= \langle 1,\ 0,\ 0 \rangle \\
+            \mathbf{R}_v &= \langle 0,\ 1,\ 0 \rangle
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \mathbf{R}_u \times \mathbf{R}_v &= \langle 0,\ 0,\ 1 \rangle \\
+            \|\mathbf{R}_u \times \mathbf{R}_v\| &= 1
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \iint_S dS &= \int_0^4 \int_0^5 1\,dv\,du \\
+            &= 20
+          \end{aligned}
+          \]</div>
+          <p>Check: the surface is a \(4\) by \(5\) rectangle at height \(z = 3\), so its area is \(20\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-surface-integral-of-a-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-surface-integral-of-a-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Surface Integral of a Function</span></button></h2>
+      <div class="section-body" id="the-surface-integral-of-a-function-body">
+      <p>The steps are the same as for surface area, but now the function is inside the integral.</p>
+      <div class="formula">
+        <p class="formula-name">Surface Integral of a Function</p>
+        <div>\[
+        \begin{aligned}
+          &\iint_S f(x, y, z)\,dS \\
+          &\quad = \iint_D f(\mathbf{R}(u, v))\,\|\mathbf{R}_u \times \mathbf{R}_v\|\,dA
+        \end{aligned}
+        \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-surface-integral-over-a-sphere">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-surface-integral-over-a-sphere-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Surface Integral over a Sphere</span></button></h2>
+      <div class="section-body" id="a-surface-integral-over-a-sphere-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Evaluate \(\displaystyle\iint_S z^2\,dS\), where \(S\) is the sphere below.</p>
+        <div>\[
+        \begin{aligned}
+          &\mathbf{R}(u, v) = \langle 2\sin v\cos u,\ 2\sin v\sin u,\ 2\cos v \rangle, \\
+          &\qquad 0 \le u \le 2\pi,\quad 0 \le v \le \pi
+        \end{aligned}
+        \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \mathbf{R}_u &= \langle -2\sin v\sin u,\ 2\sin v\cos u,\ 0 \rangle \\
+            \mathbf{R}_v &= \langle 2\cos v\cos u,\ 2\cos v\sin u,\ -2\sin v \rangle
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            &\mathbf{R}_u \times \mathbf{R}_v \\
+            &\quad = \langle -4\sin^2 v\cos u,\ -4\sin^2 v\sin u, \\
+            &\qquad\quad -4\sin v\cos v \rangle
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            &\|\mathbf{R}_u \times \mathbf{R}_v\|^2 \\
+            &\quad = 16\sin^4 v\cos^2 u + 16\sin^4 v\sin^2 u \\
+            &\qquad\quad {}+ 16\sin^2 v\cos^2 v \\
+            &\quad = 16\sin^4 v + 16\sin^2 v\cos^2 v \\
+            &\quad = 16\sin^2 v\left(\sin^2 v + \cos^2 v\right) \\
+            &\quad = 16\sin^2 v
+          \end{aligned}
+          \]</div>
+          <p>Since \(\sin v \ge 0\) for \(0 \le v \le \pi\), we have \(\|\mathbf{R}_u \times \mathbf{R}_v\| = 4\sin v\). On the sphere, \(z = 2\cos v\), so \(z^2 = 4\cos^2 v\).</p>
+          <div>\[
+          \begin{aligned}
+            &\iint_S z^2\,dS \\
+            &\quad = \int_0^{2\pi} \int_0^{\pi} \left(4\cos^2 v\right)(4\sin v)\,dv\,du \\
+            &\quad = \int_0^{2\pi} \left[ -\frac{16}{3}\cos^3 v \right]_0^{\pi} du \\
+            &\quad = \int_0^{2\pi} \frac{32}{3}\,du \\
+            &\quad = \frac{64\pi}{3}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="looking-ahead">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="looking-ahead-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Looking Ahead</span></button></h2>
+      <div class="section-body" id="looking-ahead-body">
+      <p>We now know how to compute a surface integral \(\displaystyle\iint_S f\,dS\). The most important applications come from vector fields, where \(f\) involves a normal vector \(\mathbf{n}\). On the next two pages, we will see two of them: Stokes&rsquo; Theorem and flux. Stay tuned!</p>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="parametric-surfaces.html">&larr; Parametric Surfaces</a>
+      <a class="next" href="stokes-theorem.html">Stokes' Theorem &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

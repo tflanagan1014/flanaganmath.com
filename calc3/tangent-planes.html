@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equations for Tangent Planes | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Why the gradient is normal to a level surface, and equations of tangent planes, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Equations for Tangent Planes</h1>
+
+    <section class="topic-section" id="what-is-a-level-surface">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-a-level-surface-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is a Level Surface?</span></button></h2>
+      <div class="section-body" id="what-is-a-level-surface-body">
+      <p>A surface produced by an equation of the form \(F(x, y, z) = k\) is called a level surface.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-gradient-is-normal-to-a-level-surface">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-gradient-is-normal-to-a-level-surface-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Gradient is Normal to a Level Surface</span></button></h2>
+      <div class="section-body" id="the-gradient-is-normal-to-a-level-surface-body">
+      <p>We will illustrate this with an example, using the level surface below, which is the sphere in the figure.</p>
+      <div>\[ F(x, y, z) = x^2 + y^2 + z^2 = 1 \]</div>
+      <img class="wide" src="images/tangent-planes/gradient-normal-sphere.png" width="408" height="370"
+           alt="The unit sphere with a curve r of t equals cosine t, 0, sine t drawn on it. At a point on the curve, the tangent vector r prime of t points along the curve, and the gradient of F points straight out from the sphere, at a right angle to the tangent vector.">
+      <p>We want to see that \(\nabla F\) is normal, or perpendicular, to the sphere. We use the curve traced out by the vector-valued function \(\mathbf{r}(t) = \langle \cos t, 0, \sin t \rangle\). Recall, two vectors are orthogonal if and only if their dot product is zero. Because \(\mathbf{r}'(t)\) is tangent to the sphere, showing \(\nabla F \dotp \mathbf{r}'(t) = 0\) shows \(\nabla F\) is normal to the sphere along this curve.</p>
+      <div class="example">
+        <h3>Let's Complete These Tasks</h3>
+        <ol>
+          <li>Show that \(\mathbf{r}(t)\) traces out a curve on the sphere.</li>
+          <li>Show that \(\nabla F \dotp \mathbf{r}'(t) = 0\).</li>
+        </ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Task 1:</strong> substitute \(x = \cos t\), \(y = 0\), and \(z = \sin t\) into the equation of the sphere.</p>
+          <div>\[
+          \begin{aligned}
+            x^2 + y^2 + z^2 &= \cos^2 t + 0^2 + \sin^2 t \\
+            &= 1
+          \end{aligned}
+          \]</div>
+          <p>Every point of the curve satisfies the equation, so the curve lies on the sphere.</p>
+          <p><strong>Task 2:</strong> find the gradient and the tangent vector along the curve.</p>
+          <div>\[
+          \begin{aligned}
+            \nabla F &= \langle 2x,\ 2y,\ 2z \rangle \\
+            &= \langle 2\cos t,\ 0,\ 2\sin t \rangle
+          \end{aligned}
+          \]</div>
+          <div>\[ \mathbf{r}'(t) = \langle -\sin t,\ 0,\ \cos t \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            &\nabla F \dotp \mathbf{r}'(t) \\
+            &\quad = -2\cos t \sin t + 0 + 2\sin t \cos t \\
+            &\quad = 0
+          \end{aligned}
+          \]</div>
+          <p>The gradient is orthogonal to the tangent vector, so it is normal to the sphere along this curve.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="equation-of-the-tangent-plane">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="equation-of-the-tangent-plane-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Equation of the Tangent Plane</span></button></h2>
+      <div class="section-body" id="equation-of-the-tangent-plane-body">
+      <p>Consider the level surface \(F(x, y, z) = k\). Recall the general equation of a plane, where \((x_0, y_0, z_0)\) is on the plane and \(\mathbf{N} = \langle A, B, C \rangle\) is a vector normal to the plane.</p>
+      <div>\[ Ax + By + Cz = Ax_0 + By_0 + Cz_0 \]</div>
+      <img class="wide" src="images/tangent-planes/tangent-plane-level-surface.png" width="520" height="443"
+           alt="A level surface F of x, y, z equals k, shown as part of a sphere, with a tangent plane touching it at one point. The normal vector N equals the gradient of F points straight out from the plane at that point.">
+      <p>We now understand that the normal vector \(\mathbf{N}\) to the tangent plane comes from the gradient.</p>
+      <div class="formula">
+        <p class="formula-name">Normal Vector to a Tangent Plane</p>
+        <div>\[ \mathbf{N} = \langle A,\ B,\ C \rangle = \nabla F \]</div>
+      </div>
+      <p><strong>Essential Idea:</strong> We find the equation of the tangent plane by using the gradient as the normal vector to the plane.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-a-tangent-plane-to-a-level-surface">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-a-tangent-plane-to-a-level-surface-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding a Tangent Plane to a Level Surface</span></button></h2>
+      <div class="section-body" id="finding-a-tangent-plane-to-a-level-surface-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>The equation of a level surface is given below. Find an equation of the tangent plane to the surface at the point (2, 3, 5).</p>
+        <div>\[ F(x, y, z) = x + y + z^2 = 30 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Use the gradient, evaluated at the point, as the normal vector.</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{N} &= \nabla F \\
+            &= \langle F_x,\ F_y,\ F_z \rangle \\
+            &= \langle 1,\ 1,\ 2z \rangle \\
+            &= \langle 1,\ 1,\ 2 \cdot 5 \rangle \\
+            &= \langle 1,\ 1,\ 10 \rangle
+          \end{aligned}
+          \]</div>
+          <p>For the point \((x_0, y_0, z_0)\), use \((2, 3, 5)\).</p>
+          <div>\[
+          \begin{aligned}
+            Ax + By + Cz &= Ax_0 + By_0 + Cz_0 \\
+            1x + 1y + 10z &= 1(2) + 1(3) + 10(5) \\
+            x + y + 10z &= 55
+          \end{aligned}
+          \]</div>
+          <img src="images/tangent-planes/tangent-plane-example.png" width="543" height="503"
+               alt="The level surface x plus y plus z squared equals 30, curving downward, with the tangent plane touching it at the point (2, 3, 5) and the normal vector N equals the gradient of F pointing out from the plane.">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="tangent-planes-for-z-f-x-y">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="tangent-planes-for-z-f-x-y-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Tangent Planes for z = f(x, y)</span></button></h2>
+      <div class="section-body" id="tangent-planes-for-z-f-x-y-body">
+      <p>The method above applies to a level surface, an equation of the form \(F(x, y, z) = k\). For a surface of the form \(z = f(x, y)\), we use the formula below.</p>
+      <div class="formula">
+        <p class="formula-name">Tangent Plane to z = f(x, y)</p>
+        <div>\[
+        \begin{aligned}
+          z - z_0 &= f_x(x_0, y_0)(x - x_0) \\
+          &\qquad {}+ f_y(x_0, y_0)(y - y_0)
+        \end{aligned}
+        \]</div>
+      </div>
+      <div class="example">
+        <button type="button" class="toggle" aria-expanded="false" data-what="derivation" hidden>Show derivation</button>
+        <div class="work">
+          <p>Write the surface as a level surface.</p>
+          <div>\[ F(x, y, z) = z - f(x, y) = 0 \]</div>
+          <p>Find the partial derivatives.</p>
+          <div class="eq-list">
+            <div>\[ F_x = -f_x \]</div>
+            <div>\[ F_y = -f_y \]</div>
+            <div>\[ F_z = 1 \]</div>
+          </div>
+          <p>The gradient gives a vector normal to the plane. Evaluate it at the point.</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{N} &= \nabla F = \langle -f_x,\ -f_y,\ 1 \rangle \\
+            &= \langle -f_x(x_0, y_0),\ -f_y(x_0, y_0),\ 1 \rangle
+          \end{aligned}
+          \]</div>
+          <p>Now use the general equation of a plane, and rearrange.</p>
+          <div>\[
+          \begin{aligned}
+            &-f_x(x_0, y_0)\,x - f_y(x_0, y_0)\,y + z \\
+            &\quad = -f_x(x_0, y_0)\,x_0 - f_y(x_0, y_0)\,y_0 + z_0
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            z - z_0 &= f_x(x_0, y_0)(x - x_0) \\
+            &\qquad {}+ f_y(x_0, y_0)(y - y_0)
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-a-tangent-plane-to-z-f-x-y">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-a-tangent-plane-to-z-f-x-y-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding a Tangent Plane to z = f(x, y)</span></button></h2>
+      <div class="section-body" id="finding-a-tangent-plane-to-z-f-x-y-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find an equation of the tangent plane to the graph of the function below at the point (1, 3, 2).</p>
+        <div>\[ z = f(x, y) = \frac{24}{2 + x^2 + y^2} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>We are given \((x_0, y_0, z_0) = (1, 3, 2)\). Next, find and evaluate the partial derivatives.</p>
+          <div>\[
+          \begin{aligned}
+            f_x &= \frac{-48x}{\left(2 + x^2 + y^2\right)^2} \\
+            f_x(1, 3) &= \frac{-48 \cdot 1}{\left(2 + 1^2 + 3^2\right)^2} = -\frac{1}{3}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            f_y &= \frac{-48y}{\left(2 + x^2 + y^2\right)^2} \\
+            f_y(1, 3) &= \frac{-48 \cdot 3}{\left(2 + 1^2 + 3^2\right)^2} = -1
+          \end{aligned}
+          \]</div>
+          <p>Use these results in the formula.</p>
+          <div>\[ z - 2 = -\frac{1}{3}(x - 1) - 1(y - 3) \]</div>
+          <p>Multiply both sides by 3, and simplify.</p>
+          <div class="eq-list">
+            <div>\[ 3z - 6 = -(x - 1) - 3(y - 3) \]</div>
+            <div>\[ 3z - 6 = -x + 1 - 3y + 9 \]</div>
+            <div>\[ x + 3y + 3z = 16 \]</div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="directional-derivative.html">&larr; The Directional Derivative</a>
+      <a class="next" href="extrema-of-functions-of-two-variables.html">Extrema of Functions of Two Variables &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

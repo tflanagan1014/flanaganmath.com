@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polar Coordinates | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Polar coordinates, converting between coordinate systems, and the area differential, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Polar Coordinates</h1>
+
+    <section class="topic-section" id="what-are-polar-coordinates">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-are-polar-coordinates-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What are Polar Coordinates?</span></button></h2>
+      <div class="section-body" id="what-are-polar-coordinates-body">
+      <p>Changing the coordinate system can often make a difficult problem much simpler. For double integrals, this usually means switching from rectangular coordinates to polar coordinates. Polar coordinates describe a point in the plane by its distance from the origin and the angle it makes with the positive \(x\)-axis, making circular and radial regions much easier to work with.</p>
+      <p>Every point in the plane can be located using two pieces of information, which is why the plane is two-dimensional. In rectangular coordinates these are \(x\) and \(y\), and a point is written \(P = (x, y)\). In polar coordinates, we describe the same point using a different pair of quantities:</p>
+      <ul>
+        <li>\(r\), the distance from the origin to the point, and</li>
+        <li>\(\theta\), the angle formed with the positive \(x\)-axis.</li>
+      </ul>
+      <p>So the point is written \(P = (r, \theta)\).</p>
+      <img src="images/polar/polar-point.png" width="276" height="212"
+           alt="A point P in the plane, at distance r from the origin along a dashed line making angle theta with the positive x-axis. Its x- and y-coordinates are marked along the axes.">
+      <p>From right-triangle trigonometry, we can relate the two coordinate systems.</p>
+      <div class="formula">
+        <p class="formula-name">Converting Between Coordinates</p>
+        <div>\[
+        \begin{aligned}
+          x &= r\cos\theta \\
+          y &= r\sin\theta \\
+          \tan\theta &= \frac{y}{x} \\
+          x^2 + y^2 &= r^2
+        \end{aligned}
+        \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="converting-to-polar-coordinates">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="converting-to-polar-coordinates-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Converting to Polar Coordinates</span></button></h2>
+      <div class="section-body" id="converting-to-polar-coordinates-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find the polar coordinates \((r, \theta)\) of the point with rectangular coordinates \((-1, 1)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            r &= \sqrt{x^2 + y^2} \\
+            &= \sqrt{(-1)^2 + 1^2} \\
+            &= \sqrt{2}
+          \end{aligned}
+          \]</div>
+          <p>Since \(\tan\theta = \frac{1}{-1} = -1\) and the point is in the second quadrant, \(\theta = \frac{3\pi}{4}\).</p>
+          <p>The polar coordinates are \(\left(\sqrt{2},\ \frac{3\pi}{4}\right)\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-the-shape-of-a-polar-graph">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-the-shape-of-a-polar-graph-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding the Shape of a Polar Graph</span></button></h2>
+      <div class="section-body" id="finding-the-shape-of-a-polar-graph-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Prove the graph of the polar equation below is a circle of radius \(2\) centered at \((0, 2)\).</p>
+        <div>\[ r = 4\sin\theta \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Multiply both sides by \(r\), and then convert to rectangular coordinates.</p>
+          <div class="eq-list">
+            <div>\[ r^2 = 4r\sin\theta \]</div>
+            <div>\[ x^2 + y^2 = 4y \]</div>
+            <div>\[ x^2 + y^2 - 4y = 0 \]</div>
+          </div>
+          <p>Complete the square in \(y\) by adding \(4\) to both sides.</p>
+          <div class="eq-list">
+            <div>\[ x^2 + \left(y^2 - 4y + 4\right) = 4 \]</div>
+            <div>\[ x^2 + (y - 2)^2 = 4 \]</div>
+          </div>
+          <p>This is the equation of a circle of radius \(2\) centered at \((0, 2)\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-area-differential-in-polar-coordinates">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-area-differential-in-polar-coordinates-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Area Differential in Polar Coordinates</span></button></h2>
+      <div class="section-body" id="the-area-differential-in-polar-coordinates-body">
+      <p>For a section of a circle, the arc length, radius, and angle are related by the formula below.</p>
+      <img src="images/polar/arc-length.png" width="280" height="212"
+           alt="A section of a circle with radius r and angle delta theta at the origin, and arc length s along the curved edge.">
+      <div>\[ \Delta\theta = \frac{s}{r}, \quad \text{so} \quad s = r\,\Delta\theta \]</div>
+      <p>The area differential has the following forms in rectangular and polar coordinates.</p>
+      <div class="formula">
+        <p class="formula-name">Area Differential</p>
+        <div>\[
+        \begin{aligned}
+          dA &= dx\,dy = dy\,dx \\
+          dA &= r\,dr\,d\theta = r\,d\theta\,dr
+        \end{aligned}
+        \]</div>
+      </div>
+      <img src="images/polar/polar-rectangle.png" width="434" height="350"
+           alt="A small polar rectangle between radius r and r plus delta r and between two rays separated by delta theta, with area delta A.">
+      <div class="example">
+        <button type="button" class="toggle" aria-expanded="false" data-what="explanation" hidden>Show explanation</button>
+        <div class="work">
+          <p>A small polar &ldquo;rectangle&rdquo; lies between the radii \(r\) and \(r + \Delta r\) and between two rays separated by the angle \(\Delta\theta\), as in the figure. One side has length \(\Delta r\). The other side is an arc, whose length is \(s = r\,\Delta\theta\).</p>
+          <p>For small changes, the region is nearly a rectangle, so its area is approximately the product of its sides.</p>
+          <div>\[ \Delta A \approx \Delta r \cdot r\,\Delta\theta = r\,\Delta r\,\Delta\theta \]</div>
+          <p>In the limit, this becomes \(dA = r\,dr\,d\theta\). The extra factor of \(r\) appears because regions farther from the origin are wider.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="surface-area-above-a-region.html">&larr; Surface Area above a Region</a>
+      <a class="next" href="double-integrals-in-polar-coordinates.html">Double Integrals in Polar Coordinates &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

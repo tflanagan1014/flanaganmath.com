@@ -212,7 +212,22 @@ table.facts { width: 100%; border-collapse: collapse; margin: 0.3rem 0 1.25rem; 
 table.facts th, table.facts td { text-align: left; vertical-align: middle; padding: 0.5rem 0.5rem; border-bottom: 1px solid #ddd; }
 table.facts thead th { border-bottom: 2px solid #111; font-size: 0.95rem; }
 table.facts tbody th { font-weight: 600; width: 34%; }
-@media (max-width: 400px) { table.facts th, table.facts td { padding: 0.45rem 0.3rem; } }
+@media (max-width: 400px) { table.facts { font-size: 0.9rem; } table.facts th, table.facts td { padding: 0.4rem 0.25rem; } }
 
 /* Calculus 3 page: units that open to a list of topics */
 .section-body ul.links { margin: 0.2rem 0 0.5rem; }
+
+/* Quadric surfaces: name, equation and picture in a grid of cards */
+.surfaces { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem 1.25rem; margin: 0.5rem 0 1rem; }
+.surface h3 { margin: 0 0 0.2rem; font-size: 1rem; }
+.surface img { display: block; width: 100%; max-width: 240px; height: auto; margin: 0.25rem 0 0; }
+.surface mjx-container[display="true"] { margin: 0.3em 0 !important; }
+/* Answer choices in two columns on wider screens */
+ul.options { columns: 2; column-gap: 2rem; margin: 0.3rem 0 0.8rem; }
+ul.options li { break-inside: avoid; margin: 0.15rem 0; }
+@media (max-width: 400px) { ul.options { columns: 1; } }
+/* Tables of numbers inside solutions */
+table.nums { border-collapse: collapse; margin: 0.4rem 0 0.9rem; }
+table.nums th, table.nums td { padding: 0.3rem 0.7rem; border-bottom: 1px solid #ccc; text-align: right; }
+table.nums thead th { border-bottom: 2px solid #111; }
+@media (max-width: 400px) { table.nums { font-size: 0.85rem; } table.nums th, table.nums td { padding: 0.3rem 0.35rem; } }

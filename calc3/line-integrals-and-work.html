@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Line Integrals and Work | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="The work done by a vector field in moving a particle along a curve, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Line Integrals and Work</h1>
+
+    <section class="topic-section" id="work-done-by-a-vector-field">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="work-done-by-a-vector-field-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Work Done by a Vector Field</span></button></h2>
+      <div class="section-body" id="work-done-by-a-vector-field-body">
+      <p>Here we see how to compute the work done by a vector field \(\mathbf{F}\) in moving a particle along a curve \(C\).</p>
+      <img class="wide" src="images/work/field-and-curve.png" width="480" height="455"
+           alt="A vector field drawn as blue arrows on a grid, with a red curve C passing through it. A particle moves along the curve, pushed by the field.">
+      <p>Consider the vector field \(\mathbf{F}(x, y) = P(x, y)\,\mathbf{i} + Q(x, y)\,\mathbf{j}\). Suppose \(C\) is a smooth curve traced out by the vector function \(\mathbf{r}(t)\). The work \(W\) done by the vector field in moving a particle along \(C\) is below.</p>
+      <div class="formula">
+        <p class="formula-name">Work</p>
+        <div>\[ W = \int_C \mathbf{F} \dotp d\mathbf{r} \]</div>
+      </div>
+      <p>This is connected to the form below.</p>
+      <div>\[ W = \int_C P\,dx + Q\,dy \]</div>
+      <div class="example">
+        <button type="button" class="toggle" aria-expanded="false" data-what="explanation" hidden>Show explanation</button>
+        <div class="work">
+          <p>Write the curve as \(\mathbf{r} = \langle x, y \rangle\). Then its differential is \(d\mathbf{r} = \langle dx, dy \rangle\), so the dot product is:</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{F} \dotp d\mathbf{r} &= \langle P,\ Q \rangle \dotp \langle dx,\ dy \rangle \\
+            &= P\,dx + Q\,dy
+          \end{aligned}
+          \]</div>
+          <p>To evaluate either form, write everything in terms of \(t\). Since \(d\mathbf{r} = \mathbf{r}'(t)\,dt\):</p>
+          <div>\[ W = \int_a^b \mathbf{F}(\mathbf{r}(t)) \dotp \mathbf{r}'(t)\,dt \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="work-along-a-line-segment">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="work-along-a-line-segment-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Work Along a Line Segment</span></button></h2>
+      <div class="section-body" id="work-along-a-line-segment-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the vector field below. Suppose \(C\) is the line segment from the point \((0, 0)\) to the point \((-2, 4)\). Find the work done by this vector field in moving a particle along \(C\).</p>
+        <div>\[ \mathbf{F}(x, y) = \langle -x,\ 2y \rangle \]</div>
+        <img class="wide" src="images/work/segment.png" width="566" height="552"
+             alt="A vector field drawn as blue arrows on a grid, with a red line segment from the origin to the point (negative 2, 4).">
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Parametrize the segment, and find the derivative.</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{r}(t) &= \langle -2t,\ 4t \rangle, \quad 0 \le t \le 1 \\
+            \mathbf{r}'(t) &= \langle -2,\ 4 \rangle
+          \end{aligned}
+          \]</div>
+          <p>Along the curve, \(x = -2t\) and \(y = 4t\).</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{F}(\mathbf{r}(t)) &= \langle -(-2t),\ 2(4t) \rangle \\
+            &= \langle 2t,\ 8t \rangle
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \mathbf{F}(\mathbf{r}(t)) \dotp \mathbf{r}'(t) &= (2t)(-2) + (8t)(4) \\
+            &= 28t
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            W &= \int_0^1 28t\,dt \\
+            &= \Big[ 14t^2 \Big]_0^1 \\
+            &= 14
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="work-in-space">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="work-in-space-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Work in Space</span></button></h2>
+      <div class="section-body" id="work-in-space-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the vector field in three-dimensional space below. Suppose \(C\) is the curve traced out by \(\mathbf{r}(t) = t\,\mathbf{i} + t^2\,\mathbf{j} + 6\,\mathbf{k}\). Find the work done by this vector field in moving a particle along \(C\) over \(0 \le t \le 5\).</p>
+        <div>\[ \mathbf{F}(x, y, z) = 3x^2\,\mathbf{i} + 5\,\mathbf{j} + z\,\mathbf{k} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \mathbf{r}'(t) = \langle 1,\ 2t,\ 0 \rangle \]</div>
+          <p>Along the curve, \(x = t\), \(y = t^2\), and \(z = 6\).</p>
+          <div>\[ \mathbf{F}(\mathbf{r}(t)) = \langle 3t^2,\ 5,\ 6 \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            \mathbf{F}(\mathbf{r}(t)) \dotp \mathbf{r}'(t) &= 3t^2(1) + 5(2t) + 6(0) \\
+            &= 3t^2 + 10t
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            W &= \int_0^5 \left( 3t^2 + 10t \right) dt \\
+            &= \Big[ t^3 + 5t^2 \Big]_0^5 \\
+            &= 250
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="line-integrals.html">&larr; Line Integrals</a>
+      <a class="next" href="conservative-vector-fields.html">Conservative Vector Fields &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

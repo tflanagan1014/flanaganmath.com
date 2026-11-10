@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Double Integrals and Volume | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Using a double integral to find the volume of a solid under a surface, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Double Integrals and Volume</h1>
+
+    <section class="topic-section" id="volume-under-a-surface-over-any-region">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="volume-under-a-surface-over-any-region-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Volume Under a Surface over Any Region</span></button></h2>
+      <div class="section-body" id="volume-under-a-surface-over-any-region-body">
+      <p>Earlier, we found the volume of a solid above or below a rectangular region, first with the limit of a Riemann sum and then with a double integral. Then we extended these calculations to any region, not just rectangles.</p>
+      <p>In this lesson, we use double integrals to find the volume of a solid above a region \(R\) in the \(xy\)-plane and below a surface given by a function \(f(x, y)\).</p>
+      <div class="formula">
+        <p class="formula-name">Volume Under a Surface</p>
+        <div>\[ V = \iint_R f(x, y)\,dA \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="volume-over-a-triangular-region">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="volume-over-a-triangular-region-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Volume over a Triangular Region</span></button></h2>
+      <div class="section-body" id="volume-over-a-triangular-region-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(R\) be the region in the \(xy\)-plane bounded by \(x = 0\), \(y = 0\), and \(y = 2 - x\). Consider the solid bounded below by \(R\) and bounded above by the surface below. Use a double integral to find the volume of this solid.</p>
+        <div>\[ f(x, y) = 9xy \]</div>
+        <img class="wide" src="images/double-integrals-and-volume/triangle-solid.png" width="574" height="618"
+             alt="A solid rising above a triangle in the xy-plane, with a curved top that is highest near the middle of the triangle&rsquo;s slanted edge.">
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The region is a triangle: \(x\) runs from \(0\) to \(2\), and \(y\) runs from \(0\) up to the line \(y = 2 - x\).</p>
+          <div>\[
+          \begin{aligned}
+            &\iint_R 9xy\,dA \\
+            &\quad = \int_0^2 \int_0^{2 - x} 9xy\,dy\,dx \\
+            &\quad = \int_0^2 9x \left[ \frac{y^2}{2} \right]_0^{2 - x} dx \\
+            &\quad = \frac{9}{2} \int_0^2 x(2 - x)^2\,dx \\
+            &\quad = \frac{9}{2} \int_0^2 \left( 4x - 4x^2 + x^3 \right) dx \\
+            &\quad = \frac{9}{2} \left[ 2x^2 - \frac{4x^3}{3} + \frac{x^4}{4} \right]_0^2 \\
+            &\quad = \frac{9}{2} \left( 8 - \frac{32}{3} + 4 \right) \\
+            &\quad = \frac{9}{2} \cdot \frac{4}{3} \\
+            &\quad = 6
+          \end{aligned}
+          \]</div>
+          <p>The volume is 6 cubic units.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="volume-under-an-exponential-surface">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="volume-under-an-exponential-surface-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Volume Under an Exponential Surface</span></button></h2>
+      <div class="section-body" id="volume-under-an-exponential-surface-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(R\) be the region in the \(xy\)-plane bounded by \(0 \le x \le 4\) and \(0 \le y \le 7\). Consider the solid bounded below by \(R\) and bounded above by the surface below. Use a double integral to find the volume of this solid.</p>
+        <div>\[ f(x, y) = \frac{1}{e^{x + y}} \]</div>
+        <img class="wide" src="images/double-integrals-and-volume/exponential-surface.png" width="722" height="590"
+             alt="A solid above a rectangle in the xy-plane, with a top surface that is highest at the origin corner and drops off quickly away from it.">
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Write the function as \(e^{-x} e^{-y}\). The integral then separates into two single integrals.</p>
+          <div>\[
+          \begin{aligned}
+            &\iint_R e^{-x} e^{-y}\,dA \\
+            &\quad = \int_0^4 \int_0^7 e^{-x} e^{-y}\,dy\,dx \\
+            &\quad = \left( \int_0^4 e^{-x}\,dx \right) \left( \int_0^7 e^{-y}\,dy \right) \\
+            &\quad = \left( 1 - e^{-4} \right) \left( 1 - e^{-7} \right) \\
+            &\quad = \approx 0.9808
+          \end{aligned}
+          \]</div>
+          <p>The volume is \(\left(1 - e^{-4}\right)\left(1 - e^{-7}\right) \approx 0.9808\) cubic units.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="volume-under-a-trigonometric-surface">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="volume-under-a-trigonometric-surface-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Volume Under a Trigonometric Surface</span></button></h2>
+      <div class="section-body" id="volume-under-a-trigonometric-surface-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(R\) be the region in the \(xy\)-plane bounded by \(0 \le x \le \frac{\pi}{2}\) and \(0 \le y \le 16\). Consider the solid bounded below by R and bounded above by the surface below. Use a double integral to find the volume of this solid.</p>
+        <div>\[ f(x, y) = 4y + \cos x \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            &\iint_R (4y + \cos x)\,dA \\
+            &\quad = \int_0^{\pi/2} \int_0^{16} (4y + \cos x)\,dy\,dx \\
+            &\quad = \int_0^{\pi/2} \Big[ 2y^2 + y\cos x \Big]_0^{16} dx \\
+            &\quad = \int_0^{\pi/2} (512 + 16\cos x)\,dx \\
+            &\quad = \Big[ 512x + 16\sin x \Big]_0^{\pi/2} \\
+            &\quad = 256\pi + 16 \\
+            &\quad = \approx 820.25
+          \end{aligned}
+          \]</div>
+          <p>The volume is \(256\pi + 16 \approx 820.25\) cubic units.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="double-integrals-and-area.html">&larr; Double Integrals and Area</a>
+      <a class="next" href="triple-integrals-and-volume.html">Triple Integrals and Volume &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

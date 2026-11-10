@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Fundamental Theorem of Line Integrals | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="The Fundamental Theorem of Line Integrals and work around closed curves, with a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>The Fundamental Theorem of Line Integrals</h1>
+
+    <section class="topic-section" id="the-fundamental-theorem-of-line-integrals">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-fundamental-theorem-of-line-integrals-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Fundamental Theorem of Line Integrals</span></button></h2>
+      <div class="section-body" id="the-fundamental-theorem-of-line-integrals-body">
+      <p>Let \(C\) be a smooth curve given by \(\mathbf{r}(t)\) over the interval \(a \le t \le b\). Let \(\mathbf{F}\) be a conservative vector field with a continuously differentiable potential function \(f\). Then the work done by \(\mathbf{F}\) in moving a particle along \(C\) can be found from the potential function at the endpoints of \(C\).</p>
+      <div class="formula">
+        <p class="formula-name">The Fundamental Theorem of Line Integrals</p>
+        <div>\[
+        \begin{aligned}
+          \int_C \mathbf{F} \dotp d\mathbf{r} &= \int_C \nabla f \dotp d\mathbf{r} \\
+          &= f(\mathbf{r}(b)) - f(\mathbf{r}(a))
+        \end{aligned}
+        \]</div>
+      </div>
+      <p><strong>Note:</strong> The work depends only on the values of the potential function at the endpoints, not on the path between them!</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="two-ways-to-find-the-work">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="two-ways-to-find-the-work-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Two Ways to Find the Work</span></button></h2>
+      <div class="section-body" id="two-ways-to-find-the-work-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(\mathbf{F}(x, y) = \langle 2xy, x^2 + 3y^2 \rangle\), and let \(C\) be the curve given by \(\mathbf{r}(t) = \langle t, t^2 \rangle\) over the interval \(0 \le t \le 2\).</p>
+        <ol>
+          <li>Set up and evaluate the line integral \(\displaystyle\int_C \mathbf{F} \dotp d\mathbf{r}\) directly.</li>
+          <li>Verify your result by finding a potential function and using the Fundamental Theorem of Line Integrals.</li>
+        </ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Part (1)</strong></p>
+          <div>\[ \mathbf{r}'(t) = \langle 1,\ 2t \rangle \]</div>
+          <p>Along the curve, \(x = t\) and \(y = t^2\).</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{F}(\mathbf{r}(t)) &= \langle 2t \cdot t^2,\ t^2 + 3\left(t^2\right)^2 \rangle \\
+            &= \langle 2t^3,\ t^2 + 3t^4 \rangle
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            &\mathbf{F}(\mathbf{r}(t)) \dotp \mathbf{r}'(t) \\
+            &\quad = 2t^3(1) + \left(t^2 + 3t^4\right)(2t) \\
+            &\quad = 4t^3 + 6t^5
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \int_C \mathbf{F} \dotp d\mathbf{r} &= \int_0^2 \left( 4t^3 + 6t^5 \right) dt \\
+            &= \Big[ t^4 + t^6 \Big]_0^2 \\
+            &= 16 + 64 \\
+            &= 80
+          \end{aligned}
+          \]</div>
+          <p><strong>Part (2)</strong>: A potential function for this field, found on the previous page, is \(f(x, y) = x^2 y + y^3\). The endpoints of the curve are \(\mathbf{r}(0) = (0, 0)\) and \(\mathbf{r}(2) = (2, 4)\).</p>
+          <div>\[
+          \begin{aligned}
+            \int_C \mathbf{F} \dotp d\mathbf{r} &= f(2, 4) - f(0, 0) \\
+            &= \left( 2^2 \cdot 4 + 4^3 \right) - 0 \\
+            &= 80
+          \end{aligned}
+          \]</div>
+          <p>Both methods give 80.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="work-around-a-closed-curve">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="work-around-a-closed-curve-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Work Around a Closed Curve</span></button></h2>
+      <div class="section-body" id="work-around-a-closed-curve-body">
+      <p><strong>The work done by a conservative vector field around a smooth closed curve is zero!</strong></p>
+      <img class="wide" src="images/ftli/closed-curve.png" width="809" height="810"
+           alt="A vector field drawn as blue arrows, with a red closed curve that starts and ends at the same point, marked start r of a and end r of b.">
+      <p>This is a special case of the Fundamental Theorem of Line Integrals. Recall that \(\mathbf{r}(a)\) is the starting point of the curve, and \(\mathbf{r}(b)\) is its end point. For a closed curve, the starting and end points are the same: \(\mathbf{r}(b) = \mathbf{r}(a)\). So the work around a closed curve is:</p>
+      <div>\[
+      \begin{aligned}
+        \oint_C \mathbf{F} \dotp d\mathbf{r} &= f(\mathbf{r}(b)) - f(\mathbf{r}(a)) \\
+        &= f(\mathbf{r}(a)) - f(\mathbf{r}(a)) \\
+        &= 0
+      \end{aligned}
+      \]</div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="conservative-vector-fields.html">&larr; Conservative Vector Fields</a>
+      <a class="next" href="greens-theorem.html">Green's Theorem &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

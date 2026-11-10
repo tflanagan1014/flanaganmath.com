@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Double Integrals and Area | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Using a double integral to find the area of a region, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Double Integrals and Area</h1>
+
+    <section class="topic-section" id="area-as-a-double-integral">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="area-as-a-double-integral-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Area as a Double Integral</span></button></h2>
+      <div class="section-body" id="area-as-a-double-integral-body">
+      <p>When the function being integrated is \(1\), the double integral gives the area of the region \(R\). Think of it as the volume of a solid with height \(1\) over \(R\): its volume equals the area of its base. Through three examples, we will see why.</p>
+      <div class="formula">
+        <p class="formula-name">Area of a Region</p>
+        <div>\[ \text{Area of } R = \iint_R 1\,dA \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-area-of-a-rectangle">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-area-of-a-rectangle-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Area of a Rectangle</span></button></h2>
+      <div class="section-body" id="the-area-of-a-rectangle-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(R\) be the region in the \(xy\)-plane described by \(3 \le x \le 8\) and \(7 \le y \le 15\). Evaluate the double integral below. Then draw a graph and explain the meaning of the calculation. Use your knowledge of geometry to confirm the result.</p>
+        <div>\[ \iint_R 1\,dA \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \iint_R 1\,dA &= \int_7^{15} \int_3^8 1\,dx\,dy \\
+            &= \int_7^{15} 5\,dy \\
+            &= 40
+          \end{aligned}
+          \]</div>
+          <img src="images/double-integrals-and-area/rectangle.svg" width="403" height="346"
+               alt="The rectangle R in the xy-plane from x equals 3 to 8 and y equals 7 to 15, shaded gray.">
+          <p>The region is a rectangle with width \(8 - 3 = 5\) and height \(15 - 7 = 8\). Its area is \(5 \cdot 8 = 40\), which matches the double integral.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-area-of-a-triangle">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-area-of-a-triangle-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Area of a Triangle</span></button></h2>
+      <div class="section-body" id="the-area-of-a-triangle-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(R\) be the region in the \(xy\)-plane bounded by the line \(y = 4x\), the \(x\)-axis, and the vertical line \(x = 2\). Evaluate the double integral below. Then draw a graph and explain the meaning of the calculation. Use your knowledge of geometry to confirm the result.</p>
+        <div>\[ \iint_R 1\,dA \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \iint_R 1\,dA &= \int_0^2 \int_0^{4x} 1\,dy\,dx \\
+            &= \int_0^2 4x\,dx \\
+            &= \Big[ 2x^2 \Big]_0^2 \\
+            &= 8
+          \end{aligned}
+          \]</div>
+          <img src="images/double-integrals-and-area/triangle.svg" width="403" height="346"
+               alt="The triangle R under the line y equals 4x, above the x-axis, from x equals 0 to 2, shaded gray. Its top corner is at (2, 8).">
+          <p>The region is a triangle with base \(2\) and height \(8\). Its area is \(\frac{1}{2} \cdot 2 \cdot 8 = 8\), which matches the double integral.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-area-between-two-curves">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-area-between-two-curves-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Area Between Two Curves</span></button></h2>
+      <div class="section-body" id="the-area-between-two-curves-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(R\) be the region in the \(xy\)-plane enclosed by \(y = 64x\) and \(y = x^4\). Evaluate the double integral below. Draw a graph and explain the meaning of the calculation.</p>
+        <div>\[ \iint_R 1\,dA \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>First find where the curves meet: \(x^4 = 64x\) gives \(x = 0\) or \(x^3 = 64\), so \(x = 4\). Between these, the line \(y = 64x\) is above the curve \(y = x^4\).</p>
+          <div>\[
+          \begin{aligned}
+            \iint_R 1\,dA &= \int_0^4 \int_{x^4}^{64x} 1\,dy\,dx \\
+            &= \int_0^4 \left( 64x - x^4 \right) dx \\
+            &= \left[ 32x^2 - \frac{x^5}{5} \right]_0^4 \\
+            &= 512 - \frac{1024}{5} \\
+            &= \frac{1536}{5} = 307.2
+          \end{aligned}
+          \]</div>
+          <img src="images/double-integrals-and-area/between-curves.svg" width="403" height="346"
+               alt="The region R between the line y equals 64x above and the curve y equals x to the fourth below, from x equals 0 to 4, shaded gray. The curves meet at the origin and at (4, 256).">
+          <p>The double integral gives the area of the region between the two curves, \(307.2\) square units.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="integrals-over-non-rectangular-regions.html">&larr; Integrals over Non-Rectangular Regions</a>
+      <a class="next" href="double-integrals-and-volume.html">Double Integrals and Volume &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

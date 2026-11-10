@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Second-Order Partial Derivatives | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Second-order and mixed partial derivatives, and Clairaut's Theorem, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Second-Order Partial Derivatives</h1>
+
+    <section class="topic-section" id="what-are-second-order-partial-derivatives">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-are-second-order-partial-derivatives-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What are Second-Order Partial Derivatives?</span></button></h2>
+      <div class="section-body" id="what-are-second-order-partial-derivatives-body">
+      <p>Given a function of two variables \(f(x, y)\), the second-order partial derivatives and their notations are explained below.</p>
+      <table class="facts">
+        <thead><tr><th scope="col">Notation</th><th scope="col">Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>\(\dfrac{\partial^2 f}{\partial x^2} = f_{xx}\)</td><td>Treat \(y\) as a constant and differentiate twice with respect to \(x\).</td></tr>
+          <tr><td>\(\dfrac{\partial^2 f}{\partial y^2} = f_{yy}\)</td><td>Treat \(x\) as a constant and differentiate twice with respect to \(y\).</td></tr>
+          <tr><td>\(\dfrac{\partial^2 f}{\partial y\,\partial x} = f_{xy}\)</td><td>Differentiate with respect to \(x\), and then with respect to \(y\).</td></tr>
+          <tr><td>\(\dfrac{\partial^2 f}{\partial x\,\partial y} = f_{yx}\)</td><td>Differentiate with respect to \(y\), and then with respect to \(x\).</td></tr>
+        </tbody>
+      </table>
+      <p>The last two, \(f_{xy}\) and \(f_{yx}\), are called the <strong>mixed partial derivatives</strong>.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-a-second-order-partial-derivative">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-a-second-order-partial-derivative-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding a Second-Order Partial Derivative</span></button></h2>
+      <div class="section-body" id="finding-a-second-order-partial-derivative-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Given the function below, find \(f_{xx}\).</p>
+        <div>\[ f(x, y) = x^5 + xy + 7x - e^y - 10 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div class="eq-list">
+            <div>\[ f_x = 5x^4 + y + 7 \]</div>
+            <div>\[ f_{xx} = 20x^3 \]</div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-the-mixed-partial-derivatives">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-the-mixed-partial-derivatives-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding the Mixed Partial Derivatives</span></button></h2>
+      <div class="section-body" id="finding-the-mixed-partial-derivatives-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Given the function below, find each of the following.</p>
+        <div>\[ f(x, y) = 100 + \sin x + e^y + 2x^4 y^5 \]</div>
+        <p>\(\dfrac{\partial f}{\partial x}\), \(\dfrac{\partial^2 f}{\partial y\,\partial x}\), \(\dfrac{\partial f}{\partial y}\), and \(\dfrac{\partial^2 f}{\partial x\,\partial y}\)</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div class="eq-list">
+            <div>\[ \frac{\partial f}{\partial x} = \cos x + 8x^3 y^5 \]</div>
+            <div>\[ \frac{\partial^2 f}{\partial y\,\partial x} = 40x^3 y^4 \]</div>
+            <div>\[ \frac{\partial f}{\partial y} = e^y + 10x^4 y^4 \]</div>
+            <div>\[ \frac{\partial^2 f}{\partial x\,\partial y} = 40x^3 y^4 \]</div>
+          </div>
+          <p>Notice the two mixed partial derivatives are equal.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="clairaut-s-theorem">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="clairaut-s-theorem-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Clairaut's Theorem</span></button></h2>
+      <div class="section-body" id="clairaut-s-theorem-body">
+      <p>If the mixed partial derivatives \(f_{xy}\) and \(f_{yx}\) are continuous on an open region, then they are equal there. This is called Clairaut&rsquo;s Theorem.</p>
+      <div class="formula">
+        <p class="formula-name">Clairaut's Theorem</p>
+        <div>\[ f_{xy} = f_{yx} \]</div>
+      </div>
+      <p>Notice this happened in the previous example. This will come up in the online homework.</p>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="partial-derivatives.html">&larr; Partial Derivatives</a>
+      <a class="next" href="laplacian-and-harmonic-functions.html">The Laplacian and Harmonic Functions &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

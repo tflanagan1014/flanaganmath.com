@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Limits and Continuity of Functions of Several Variables | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Investigating limits of functions of two variables, showing a limit does not exist, and continuity, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Limits and Continuity of Functions of Several Variables</h1>
+
+    <section class="topic-section" id="investigating-a-limit">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="investigating-a-limit-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Investigating a Limit</span></button></h2>
+      <div class="section-body" id="investigating-a-limit-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the function below.</p>
+        <div>\[ f(x, y) = \frac{y^2 - 4}{xy - 2x} \]</div>
+        <p>Investigate the following limit numerically and algebraically.</p>
+        <div>\[ \lim_{(x,y) \to (3,2)} f(x, y) \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Numerically:</strong> evaluate the function at points closer and closer to (3, 2).</p>
+          <table class="nums">
+            <thead><tr><th scope="col">\(x\)</th><th scope="col">\(y\)</th><th scope="col">\(f(x, y)\)</th></tr></thead>
+            <tbody>
+              <tr><td>3</td><td>2</td><td>Undefined</td></tr>
+              <tr><td>3.1</td><td>2.1</td><td>1.322580645</td></tr>
+              <tr><td>3.01</td><td>2.01</td><td>1.332225914</td></tr>
+              <tr><td>3</td><td>2.0001</td><td>1.333366667</td></tr>
+              <tr><td>2.9999</td><td>1.999</td><td>1.333044435</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Algebraically:</strong> factor, and cancel the common factor.</p>
+          <div>\[
+          \begin{aligned}
+            &\lim_{(x,y) \to (3,2)} f(x, y) \\
+            &\quad = \lim_{(x,y) \to (3,2)} \frac{y^2 - 4}{xy - 2x} \\
+            &\quad = \lim_{(x,y) \to (3,2)} \frac{(y + 2)(y - 2)}{x(y - 2)} \\
+            &\quad = \lim_{(x,y) \to (3,2)} \frac{y + 2}{x} \\
+            &\quad = \frac{2 + 2}{3} \\
+            &\quad = \frac{4}{3} = 1.\overline{3}
+          \end{aligned}
+          \]</div>
+          <p><strong>Discussion:</strong> We encounter division by zero when evaluating \(f(x, y)\) at \(x = 3\) and \(y = 2\). But for inputs \((x, y)\) very close to and approaching \((3, 2)\), the function outputs converge to \(1.\overline{3}\). Notice there are many ways for \((x, y)\) to approach \((3, 2)\), all converging to \(1.\overline{3}\). This will be essential very soon.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="using-a-conjugate">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="using-a-conjugate-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Using a Conjugate</span></button></h2>
+      <div class="section-body" id="using-a-conjugate-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Investigate the following limit numerically and algebraically.</p>
+        <div>\[ \lim_{(x,y) \to (0,0)} \frac{\sqrt{4 + xy} - 2}{xy} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Numerically:</strong></p>
+          <table class="nums">
+            <thead><tr><th scope="col">\(x\)</th><th scope="col">\(y\)</th><th scope="col">\(f(x, y)\)</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>0</td><td>Undefined</td></tr>
+              <tr><td>0.1</td><td>0</td><td>Undefined</td></tr>
+              <tr><td>0.01</td><td>0.01</td><td>0.249998438</td></tr>
+              <tr><td>0.0001</td><td>0.01</td><td>0.249999984</td></tr>
+              <tr><td>&minus;0.0001</td><td>&minus;0.0001</td><td>0.249999976</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Algebraically:</strong> multiply by the conjugate of the numerator.</p>
+          <div>\[
+          \begin{aligned}
+            &\lim_{(x,y) \to (0,0)} \frac{\sqrt{4 + xy} - 2}{xy} \cdot \frac{\sqrt{4 + xy} + 2}{\sqrt{4 + xy} + 2} \\
+            &\quad = \lim_{(x,y) \to (0,0)} \frac{\left(\sqrt{4 + xy}\right)^2 - 4}{xy\left(\sqrt{4 + xy} + 2\right)} \\
+            &\quad = \lim_{(x,y) \to (0,0)} \frac{4 + xy - 4}{xy\left(\sqrt{4 + xy} + 2\right)} \\
+            &\quad = \lim_{(x,y) \to (0,0)} \frac{xy}{xy\left(\sqrt{4 + xy} + 2\right)} \\
+            &\quad = \lim_{(x,y) \to (0,0)} \frac{1}{\sqrt{4 + xy} + 2} \\
+            &\quad = \frac{1}{\sqrt{4 + 0} + 2} \\
+            &\quad = \frac{1}{4} = 0.25
+          \end{aligned}
+          \]</div>
+          <p><strong>Discussion:</strong> The function is undefined whenever \(x = 0\) or \(y = 0\). Otherwise, for inputs \((x, y)\) approaching \((0, 0)\), the function outputs converge to \(0.25\). Notice again there are many ways for \((x, y)\) to approach \((0, 0)\). This will be essential very soon.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="left-hand-and-right-hand-limits">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="left-hand-and-right-hand-limits-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Left-Hand and Right-Hand Limits</span></button></h2>
+      <div class="section-body" id="left-hand-and-right-hand-limits-body">
+      <p>In Calculus I, we study functions of one real variable, \(f(x)\). We learn two ways for \(x\) to approach a number \(a\): the left-hand and right-hand limits, \(\displaystyle\lim_{x \to a^-} f(x)\) and \(\displaystyle\lim_{x \to a^+} f(x)\).</p>
+      <p>The limit below exists only when these two limits agree.</p>
+      <div>\[ \lim_{x \to a} f(x) \]</div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="many-ways-to-approach">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="many-ways-to-approach-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Many Ways to Approach</span></button></h2>
+      <div class="section-body" id="many-ways-to-approach-body">
+      <p>Now we study functions of two real variables, \(f(x, y)\). In this case there are infinitely many ways for the ordered pair \((x, y)\) to approach \((a, b)\). This is illustrated below.</p>
+      <img class="wide" src="images/limits-several-variables/many-paths.png" width="657" height="400"
+           alt="The point (a, b) in the xy-plane, with many different curves and lines approaching it from different directions, including straight lines, a wavy curve, and a spiral.">
+      <p>The limit below exists only if the limits along all of these paths exist and agree.</p>
+      <div>\[ \lim_{(x,y) \to (a,b)} f(x, y) \]</div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="showing-a-limit-does-not-exist">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="showing-a-limit-does-not-exist-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Showing a Limit Does Not Exist</span></button></h2>
+      <div class="section-body" id="showing-a-limit-does-not-exist-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the limit below.</p>
+        <div>\[ \lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2} \]</div>
+        <ol type="a">
+          <li>Investigate this limit as \((x, y)\) approaches \((0, 0)\) along \(y = x\).</li>
+          <li>Investigate this limit as \((x, y)\) approaches \((0, 0)\) along \(y = x^2\).</li>
+          <li>Explain why the limit does not exist.</li>
+        </ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Part (a)</strong>: substitute \(y = x\).</p>
+          <table class="nums">
+            <thead><tr><th scope="col">\(x\)</th><th scope="col">\(y = x\)</th><th scope="col">\(f(x, y)\)</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>0</td><td>Undefined</td></tr>
+              <tr><td>0.1</td><td>0.1</td><td>0.5</td></tr>
+              <tr><td>0.01</td><td>0.01</td><td>0.5</td></tr>
+              <tr><td>0.0001</td><td>0.0001</td><td>0.5</td></tr>
+            </tbody>
+          </table>
+          <div>\[
+          \begin{aligned}
+            \lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2} &= \lim_{x \to 0} \frac{x \cdot x}{x^2 + x^2} \\
+            &= \lim_{x \to 0} \frac{x^2}{2x^2} \\
+            &= \lim_{x \to 0} \frac{1}{2} \\
+            &= \frac{1}{2} = 0.5
+          \end{aligned}
+          \]</div>
+          <p><strong>Part (b)</strong>: substitute \(y = x^2\).</p>
+          <table class="nums">
+            <thead><tr><th scope="col">\(x\)</th><th scope="col">\(y = x^2\)</th><th scope="col">\(f(x, y)\)</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>0</td><td>Undefined</td></tr>
+              <tr><td>0.02</td><td>0.0004</td><td>0.019992003</td></tr>
+              <tr><td>0.01</td><td>0.0001</td><td>0.009999000</td></tr>
+              <tr><td>0.001</td><td>0.000001</td><td>0.000999999</td></tr>
+            </tbody>
+          </table>
+          <div>\[
+          \begin{aligned}
+            \lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2} &= \lim_{x \to 0} \frac{x \cdot x^2}{x^2 + \left(x^2\right)^2} \\
+            &= \lim_{x \to 0} \frac{x^3}{x^2 + x^4} \\
+            &= \lim_{x \to 0} \frac{x}{1 + x^2} \\
+            &= 0
+          \end{aligned}
+          \]</div>
+          <p><strong>Part (c)</strong>: The limit does not exist, because the limits along the two paths in parts (a) and (b) are different. For the limit to exist as \((x, y)\) approaches \((0, 0)\), the limits along all paths must agree.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="continuity-of-a-function-of-two-variables">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="continuity-of-a-function-of-two-variables-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Continuity of a Function of Two Variables</span></button></h2>
+      <div class="section-body" id="continuity-of-a-function-of-two-variables-body">
+      <p>Consider a real-valued function of two variables, \(f(x, y)\). This function is continuous at the point \((a, b)\) if the function is defined at the point, the limit exists at the point, and the function value and the limit agree at the point.</p>
+      <div class="formula">
+        <p class="formula-name">Continuity at a Point</p>
+        <div>\[ \lim_{(x,y) \to (a,b)} f(x, y) = f(a, b) \]</div>
+      </div>
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Determine where the below function is continuous.</p>
+        <div>\[ f(x, y) = \frac{1}{xy} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The function is undefined where the denominator \(xy\) is zero. It is continuous everywhere except where \(x = 0\) or \(y = 0\), that is, everywhere except on the \(x\)-axis and the \(y\)-axis.</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Another Example</h3>
+        <p>Determine where the below function is continuous.</p>
+        <div>\[ f(x, y) = \frac{1}{\ln\left(1 + x^2 + y^2\right)} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Since \(1 + x^2 + y^2 \ge 1\), the logarithm is always defined, and it equals zero only when \(1 + x^2 + y^2 = 1\), at the point \((0, 0)\). The function is continuous everywhere except at the point \((0, 0)\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Another Example</h3>
+        <p>Determine where the below function is continuous.</p>
+        <div>\[ f(x, y) = \sin(xy) \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The product \(xy\) and the sine function are continuous everywhere, so their composition is too. The function is continuous everywhere.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="level-curves-and-level-surfaces.html">&larr; Level Curves and Level Surfaces</a>
+      <a class="next" href="partial-derivatives.html">Partial Derivatives &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

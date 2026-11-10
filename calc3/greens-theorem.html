@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Green's Theorem | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Green's Theorem, using it to find work around a closed curve, and a test for conservative fields, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Green's Theorem</h1>
+
+    <section class="topic-section" id="green-s-theorem">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="green-s-theorem-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Green's Theorem</span></button></h2>
+      <div class="section-body" id="green-s-theorem-body">
+      <p>Green&rsquo;s Theorem gives us another way to find the work done by a vector field around a closed curve. It establishes a remarkable connection between the line integral for the work and a double integral over the region enclosed by the curve!</p>
+      <p>Let \(C\) be a simple closed curve in the plane, traveled counterclockwise, that encloses a region \(R\). If \(P\) and \(Q\) have continuous partial derivatives, then:</p>
+      <div class="formula">
+        <p class="formula-name">Green's Theorem</p>
+        <div>\[
+        \begin{aligned}
+          &\oint_C P\,dx + Q\,dy \\
+          &\quad = \iint_R \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA
+        \end{aligned}
+        \]</div>
+      </div>
+      <p>Since \(\mathbf{F} \dotp d\mathbf{r} = P\,dx + Q\,dy\), this can also be written as below.</p>
+      <div>\[ \oint_C \mathbf{F} \dotp d\mathbf{r} = \iint_R \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA \]</div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="two-ways-to-find-the-work-around-a-closed-curve">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="two-ways-to-find-the-work-around-a-closed-curve-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Two Ways to Find the Work Around a Closed Curve</span></button></h2>
+      <div class="section-body" id="two-ways-to-find-the-work-around-a-closed-curve-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the vector field \(\mathbf{F}(x, y) = \langle P, Q \rangle\), where \(P(x, y) = -13xy + y^2\) and \(Q(x, y) = x^2\). Through two different methods, find the work done by this vector field in moving a particle counterclockwise along the closed curve \(C\) determined by \(y = x^2\) and \(y = 2x\).</p>
+        <img class="wide" src="images/greens-theorem/region.png" width="339" height="256"
+             alt="A vector field drawn as blue arrows, with a closed curve made of the parabola y equals x squared and the line y equals 2x, meeting at the origin and at (2, 4).">
+        <ol>
+          <li>Use the line integral \(\displaystyle\oint_C \mathbf{F} \dotp d\mathbf{r}\).</li>
+          <li>Use Green&rsquo;s Theorem.</li>
+        </ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The curves meet where \(x^2 = 2x\), at \((0, 0)\) and \((2, 4)\). Between them, the line \(y = 2x\) is above the parabola. Moving counterclockwise, the particle goes along the parabola \(C_1\) from \((0, 0)\) to \((2, 4)\), and then back along the line \(C_2\) to \((0, 0)\).</p>
+          <p><strong>Method 1, the parabola \(C_1\)</strong>: Let \(x = t\) and \(y = t^2\), with \(t\) from \(0\) to \(2\). Then \(dx = dt\) and \(dy = 2t\,dt\), with \(P = -13t^3 + t^4\) and \(Q = t^2\).</p>
+          <div>\[
+          \begin{aligned}
+            &\int_{C_1} P\,dx + Q\,dy \\
+            &\quad = \int_0^2 \left[ \left(-13t^3 + t^4\right) + t^2(2t) \right] dt \\
+            &\quad = \int_0^2 \left( -11t^3 + t^4 \right) dt \\
+            &\quad = \left[ -\frac{11}{4}t^4 + \frac{1}{5}t^5 \right]_0^2 \\
+            &\quad = -44 + \frac{32}{5} = -\frac{188}{5}
+          \end{aligned}
+          \]</div>
+          <p><strong>Method 1, the line \(C_2\)</strong>: Let \(x = t\) and \(y = 2t\), with \(t\) from \(2\) to \(0\). Then \(dx = dt\) and \(dy = 2\,dt\), with \(P = -22t^2\) and \(Q = t^2\).</p>
+          <div>\[
+          \begin{aligned}
+            &\int_{C_2} P\,dx + Q\,dy \\
+            &\quad = \int_2^0 \left( -22t^2 + 2t^2 \right) dt \\
+            &\quad = \left[ -\frac{20}{3}t^3 \right]_2^0 \\
+            &\quad = \frac{160}{3}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \oint_C \mathbf{F} \dotp d\mathbf{r} &= -\frac{188}{5} + \frac{160}{3} \\
+            &= \frac{236}{15}
+          \end{aligned}
+          \]</div>
+          <p><strong>Method 2, Green's Theorem</strong></p>
+          <div class="eq-list">
+            <div>\[ \frac{\partial Q}{\partial x} = 2x \]</div>
+            <div>\[ \frac{\partial P}{\partial y} = -13x + 2y \]</div>
+          </div>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} &= 2x - (-13x + 2y) \\
+            &= 15x - 2y
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            &\iint_R (15x - 2y)\,dA \\
+            &\quad = \int_0^2 \int_{x^2}^{2x} (15x - 2y)\,dy\,dx \\
+            &\quad = \int_0^2 \Big[ 15xy - y^2 \Big]_{x^2}^{2x} dx \\
+            &\quad = \int_0^2 \left( 26x^2 - 15x^3 + x^4 \right) dx \\
+            &\quad = \left[ \frac{26}{3}x^3 - \frac{15}{4}x^4 + \frac{1}{5}x^5 \right]_0^2 \\
+            &\quad = \frac{208}{3} - 60 + \frac{32}{5} \\
+            &\quad = \frac{236}{15}
+          \end{aligned}
+          \]</div>
+          <p>Both methods give \(\frac{236}{15}\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="using-green-s-theorem">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="using-green-s-theorem-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Using Green's Theorem</span></button></h2>
+      <div class="section-body" id="using-green-s-theorem-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the vector field below. Use Green&rsquo;s Theorem to find the work done by the vector field in moving a particle counterclockwise around the rectangle with vertices (0, 0), (6, 0), (6, 3), and (0, 3).</p>
+        <div>\[ \mathbf{F}(x, y) = \langle x^2\sin x,\ 2xy \rangle \]</div>
+        <img class="wide" src="images/greens-theorem/rectangle-field.png" width="444" height="294"
+             alt="A vector field drawn as blue arrows, with a rectangle traveled counterclockwise from the origin to (6, 0), (6, 3), and (0, 3).">
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Here \(P = x^2\sin x\) and \(Q = 2xy\).</p>
+          <div>\[ \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = 2y - 0 = 2y \]</div>
+          <div>\[
+          \begin{aligned}
+            \oint_C \mathbf{F} \dotp d\mathbf{r} &= \int_0^6 \int_0^3 2y\,dy\,dx \\
+            &= \int_0^6 9\,dx \\
+            &= 54
+          \end{aligned}
+          \]</div>
+          <p>Green&rsquo;s Theorem avoids integrating \(x^2\sin x\) along the edges of the rectangle.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-test-for-conservative-fields">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-test-for-conservative-fields-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Test for Conservative Fields</span></button></h2>
+      <div class="section-body" id="a-test-for-conservative-fields-body">
+      <p>We know the work done by a conservative vector field around a closed curve is always zero. Combining this with Green&rsquo;s Theorem gives:</p>
+      <div>\[ \oint_C \mathbf{F} \dotp d\mathbf{r} = \iint_R \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA = 0 \]</div>
+      <p>For this double integral to be zero for every region, we need the condition below.</p>
+      <div class="formula">
+        <p class="formula-name">Conservative Field Test</p>
+        <div>\[ \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} \]</div>
+      </div>
+      <p>If \(\mathbf{F}\) is conservative, this equation holds. Conversely, if it holds everywhere on a region with no holes, and the partial derivatives are continuous, then \(\mathbf{F}\) is conservative there.</p>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="fundamental-theorem-of-line-integrals.html">&larr; The Fundamental Theorem of Line Integrals</a>
+      <a class="next" href="parametric-surfaces.html">Parametric Surfaces &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

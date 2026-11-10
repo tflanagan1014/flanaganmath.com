@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integrals of Vector-Valued Functions | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Indefinite and definite integrals of vector-valued functions, and finding position from acceleration, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Integrals of Vector-Valued Functions</h1>
+
+    <section class="topic-section" id="the-indefinite-integral-of-a-vector-valued-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-indefinite-integral-of-a-vector-valued-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Indefinite Integral of a Vector-Valued Function</span></button></h2>
+      <div class="section-body" id="the-indefinite-integral-of-a-vector-valued-function-body">
+      <p>Consider a continuous vector-valued function. Its integral is found by integrating each component separately.</p>
+      <div>\[ \mathbf{r}(t) = x(t)\mathbf{i} + y(t)\mathbf{j} + z(t)\mathbf{k} \]</div>
+      <div class="formula">
+        <p class="formula-name">Integral of a Vector-Valued Function</p>
+        <div>\[
+        \begin{aligned}
+          &\int \mathbf{r}(t)\,dt \\
+          &\quad = \left( \int x(t)\,dt \right)\mathbf{i} \\
+          &\qquad\quad {}+ \left( \int y(t)\,dt \right)\mathbf{j} \\
+          &\qquad\quad {}+ \left( \int z(t)\,dt \right)\mathbf{k}
+        \end{aligned}
+        \]</div>
+      </div>
+      <p>This can also be written in angle bracket notation.</p>
+      <div>\[ \vec{r}(t) = \langle x(t),\ y(t),\ z(t) \rangle \]</div>
+      <div>\[
+      \begin{aligned}
+        &\int \vec{r}(t)\,dt \\
+        &\quad = \left\langle \int x(t)\,dt,\ \int y(t)\,dt,\ \int z(t)\,dt \right\rangle
+      \end{aligned}
+      \]</div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-an-indefinite-integral">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-an-indefinite-integral-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding an Indefinite Integral</span></button></h2>
+      <div class="section-body" id="finding-an-indefinite-integral-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Integrate the vector-valued function below.</p>
+        <div>\[ \mathbf{r}(t) = e^t\,\mathbf{i} + 2t\,\mathbf{j} + \sqrt{t}\,\mathbf{k} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Integrate each component. Each integral has its own constant of integration.</p>
+          <div>\[
+          \begin{aligned}
+            &\int \mathbf{r}(t)\,dt \\
+            &\quad = \left( \int e^t\,dt \right)\mathbf{i} + \left( \int 2t\,dt \right)\mathbf{j} \\
+            &\qquad\quad {}+ \left( \int \sqrt{t}\,dt \right)\mathbf{k} \\
+            &\quad = e^t\,\mathbf{i} + t^2\,\mathbf{j} + \frac{2}{3}t^{3/2}\,\mathbf{k} \\
+            &\qquad\quad {}+ C_1\mathbf{i} + C_2\mathbf{j} + C_3\mathbf{k} \\
+            &\quad = e^t\,\mathbf{i} + t^2\,\mathbf{j} + \frac{2}{3}t^{3/2}\,\mathbf{k} + \mathbf{C}
+          \end{aligned}
+          \]</div>
+          <p>Here \(\mathbf{C} = C_1\mathbf{i} + C_2\mathbf{j} + C_3\mathbf{k}\) is a constant vector.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-definite-integral-of-a-vector-valued-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-definite-integral-of-a-vector-valued-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Definite Integral of a Vector-Valued Function</span></button></h2>
+      <div class="section-body" id="the-definite-integral-of-a-vector-valued-function-body">
+      <p>The definite integral of a continuous vector-valued function is also found by integrating each component separately.</p>
+      <div class="formula">
+        <p class="formula-name">Definite Integral of a Vector-Valued Function</p>
+        <div>\[
+        \begin{aligned}
+          &\int_a^b \mathbf{r}(t)\,dt \\
+          &\quad = \left( \int_a^b x(t)\,dt \right)\mathbf{i} \\
+          &\qquad\quad {}+ \left( \int_a^b y(t)\,dt \right)\mathbf{j} \\
+          &\qquad\quad {}+ \left( \int_a^b z(t)\,dt \right)\mathbf{k}
+        \end{aligned}
+        \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-a-definite-integral">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-a-definite-integral-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding a Definite Integral</span></button></h2>
+      <div class="section-body" id="finding-a-definite-integral-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Integrate the vector-valued function below from \(t = 0\) to \(t = 12\).</p>
+        <div>\[ \mathbf{r}(t) = t\,\mathbf{i} + t^2\,\mathbf{j} + 3\,\mathbf{k} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            &\int_0^{12} \mathbf{r}(t)\,dt \\
+            &\quad = \left( \int_0^{12} t\,dt \right)\mathbf{i} + \left( \int_0^{12} t^2\,dt \right)\mathbf{j} \\
+            &\qquad\quad {}+ \left( \int_0^{12} 3\,dt \right)\mathbf{k} \\
+            &\quad = \left[ \frac{1}{2}t^2 \right]_0^{12}\mathbf{i} + \left[ \frac{1}{3}t^3 \right]_0^{12}\mathbf{j} \\
+            &\qquad\quad {}+ \Big[ 3t \Big]_0^{12}\mathbf{k} \\
+            &\quad = 72\,\mathbf{i} + 576\,\mathbf{j} + 36\,\mathbf{k}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-physics-application">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-physics-application-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Physics Application</span></button></h2>
+      <div class="section-body" id="a-physics-application-body">
+      <img class="wide" src="images/integrals-of-vector-valued-functions/position-curve.png" width="941" height="706"
+           alt="A curve in three-dimensional space with a point on it, and a dashed position vector r of t from the origin to that point.">
+      <p>Since velocity is the derivative of position with respect to time, position is the antiderivative, or integral, of velocity with respect to time.</p>
+      <div class="eq-list">
+        <div>\[ \mathbf{v}(t) = \frac{d\mathbf{r}}{dt} \]</div>
+        <div>\[ \mathbf{r}(t) = \int \mathbf{v}(t)\,dt \]</div>
+      </div>
+      <p>Since acceleration is the derivative of velocity with respect to time, velocity is the antiderivative, or integral, of acceleration with respect to time.</p>
+      <div class="eq-list">
+        <div>\[ \mathbf{a}(t) = \frac{d\mathbf{v}}{dt} \]</div>
+        <div>\[ \mathbf{v}(t) = \int \mathbf{a}(t)\,dt \]</div>
+      </div>
+      <p>This can be expressed in the other vector notation we use.</p>
+      <div class="eq-list">
+        <div>\[ \vec{r}(t) = \int \vec{v}(t)\,dt \]</div>
+        <div>\[ \vec{v}(t) = \int \vec{a}(t)\,dt \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-position-from-acceleration">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-position-from-acceleration-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding Position from Acceleration</span></button></h2>
+      <div class="section-body" id="finding-position-from-acceleration-body">
+      <div class="example">
+        <h3>A Sample Exam Problem</h3>
+        <p>Suppose the acceleration of a particle as a function of time, in seconds, is described by the below vector function.</p>
+        <div>\[ \vec{a}(t) = \langle 0,\ 0,\ -32 \rangle \]</div>
+        <p>The particle's initial position and velocity are given below.</p>
+        <div>\[
+        \begin{aligned}
+          \vec{r}(0) &= \langle 2,\ 10,\ 16 \rangle \\
+          \vec{v}(0) &= \langle 2,\ 1,\ 80 \rangle
+        \end{aligned}
+        \]</div>
+        <p>How many units of distance is the particle from the origin after five seconds?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Work one component at a time. First integrate the acceleration to find the velocity, using the initial velocity \(\vec{v}(0) = \langle 2, 1, 80 \rangle\) to find each constant.</p>
+          <div>\[
+          \begin{aligned}
+            v_x(t) &= \int 0\,dt = C_1 = 2 \\
+            v_y(t) &= \int 0\,dt = C_2 = 1 \\
+            v_z(t) &= \int -32\,dt = -32t + C_3 \\
+            &= -32t + 80
+          \end{aligned}
+          \]</div>
+          <div>\[ \vec{v}(t) = \langle 2,\ 1,\ -32t + 80 \rangle \]</div>
+          <p>Next integrate the velocity to find the position, using the initial position \(\vec{r}(0) = \langle 2, 10, 16 \rangle\) to find each constant.</p>
+          <div>\[
+          \begin{aligned}
+            x(t) &= \int 2\,dt = 2t + 2 \\
+            y(t) &= \int 1\,dt = t + 10 \\
+            z(t) &= \int (-32t + 80)\,dt \\
+            &= -16t^2 + 80t + 16
+          \end{aligned}
+          \]</div>
+          <p>Find the position after five seconds.</p>
+          <div>\[
+          \begin{aligned}
+            x(5) &= 2 \cdot 5 + 2 = 12 \\
+            y(5) &= 5 + 10 = 15 \\
+            z(5) &= -16 \cdot 5^2 + 80 \cdot 5 + 16 = 16
+          \end{aligned}
+          \]</div>
+          <div>\[ \vec{r}(5) = \langle 12,\ 15,\ 16 \rangle \]</div>
+          <p>The distance from the origin is the magnitude of the position vector.</p>
+          <div>\[
+          \begin{aligned}
+            \|\vec{r}(5)\| &= \sqrt{12^2 + 15^2 + 16^2} \\
+            &= \sqrt{625} \\
+            &= 25
+          \end{aligned}
+          \]</div>
+          <p>After five seconds, the particle is 25 units of distance from the origin.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="tangential-and-normal-components-of-acceleration.html">&larr; Tangential and Normal Components of Acceleration</a>
+      <a class="next" href="quadric-surfaces.html">Quadric Surfaces &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

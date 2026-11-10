@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Gradient | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="The gradient, its properties, and its physical meaning, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>The Gradient</h1>
+
+    <section class="topic-section" id="what-is-the-gradient">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-the-gradient-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is the Gradient?</span></button></h2>
+      <div class="section-body" id="what-is-the-gradient-body">
+      <p>For a real-valued function of three variables, \(f(x, y, z)\), the gradient is a vector denoted as \(\nabla f\). It is defined below, using the different notations we have for vectors and partial derivatives.</p>
+      <div class="formula">
+        <p class="formula-name">The Gradient</p>
+        <div>\[
+        \begin{aligned}
+          \nabla f &= \langle f_x,\ f_y,\ f_z \rangle \\
+          &= \left\langle \frac{\partial f}{\partial x},\ \frac{\partial f}{\partial y},\ \frac{\partial f}{\partial z} \right\rangle \\
+          &= f_x\,\mathbf{i} + f_y\,\mathbf{j} + f_z\,\mathbf{k}
+        \end{aligned}
+        \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-a-gradient">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-a-gradient-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding a Gradient</span></button></h2>
+      <div class="section-body" id="finding-a-gradient-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Given the function below, find its gradient.</p>
+        <div>\[ f(x, y, z) = 8x^5 y + 9z^6 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \nabla f = \langle 40x^4 y,\ 8x^5,\ 54z^5 \rangle \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="properties-of-the-gradient">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="properties-of-the-gradient-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Properties of the Gradient</span></button></h2>
+      <div class="section-body" id="properties-of-the-gradient-body">
+      <p>The gradient is central to everything that comes next. It is one of the most powerful mathematical tools we have. In the next lesson we will prove the following properties, at any point where \(\nabla f \neq \mathbf{0}\).</p>
+      <ul>
+        <li>The gradient \(\nabla f\) points in the direction of greatest increase in the function.</li>
+        <li>The opposite of the gradient, \(-\nabla f\), points in the direction of greatest decrease in the function.</li>
+        <li>Any direction orthogonal to the gradient is a direction of no change in the function.</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="physical-interpretation">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="physical-interpretation-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Physical Interpretation</span></button></h2>
+      <div class="section-body" id="physical-interpretation-body">
+      <p>Suppose \(T(x, y)\) gives the temperature in the \(xy\)-plane. At each point:</p>
+      <ul>
+        <li>The gradient \(\nabla T\) points in the direction of most rapid increase in temperature.</li>
+        <li>The opposite of the gradient, \(-\nabla T\), points in the direction of most rapid decrease in temperature.</li>
+        <li>Moving orthogonal (perpendicular) to the gradient \(\nabla T\) is a direction along which the temperature remains constant. Following this direction means you are traveling along a level curve, a curve where the temperature does not change.</li>
+        <li>Notice the gradient is orthogonal to the level curve of constant temperature, \(T(x, y) = 5\). This will be important later.</li>
+      </ul>
+      <img class="wide" src="images/gradient/gradient-level-curve.png" width="652" height="674"
+           alt="A color-coded temperature map with a level curve labeled T of x, y equals 5. At a point on the curve, the gradient vector points toward warmer temperatures, perpendicular to the curve, and the negative gradient points the opposite way.">
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-gradient-and-temperature">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-gradient-and-temperature-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Gradient and Temperature</span></button></h2>
+      <div class="section-body" id="the-gradient-and-temperature-body">
+      <div class="example">
+        <h3>A Homework Problem</h3>
+        <p>The function below gives the temperature \(T\), in \(^\circ\mathrm{C}\), at each point \((x, y, z)\) in space.</p>
+        <div>\[ T(x, y, z) = 2x^2 + 3y^3 z \]</div>
+        <ol type="a">
+          <li>Find the temperature at the point \((1, 2, 2)\).</li>
+          <li>At the point \((1, 2, 2)\), find a vector that points in the direction of most rapid increase in temperature.</li>
+          <li>At the point \((1, 2, 2)\), find a vector that points in the direction of most rapid decrease in temperature.</li>
+          <li>At the point \((1, 2, 2)\), which of the following vectors points in a direction of no change in temperature?</li>
+        </ol>
+        <ul class="options">
+          <li>\(-6\mathbf{i} + 0\mathbf{j} + 1\mathbf{k}\)</li>
+          <li>\(-6\mathbf{i} + 1\mathbf{j} + 2\mathbf{k}\)</li>
+          <li>\(-8\mathbf{i} + 0\mathbf{j} + 3\mathbf{k}\)</li>
+          <li>\(-8\mathbf{i} + 1\mathbf{j} + 3\mathbf{k}\)</li>
+        </ul>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Part (a)</strong></p>
+          <div>\[
+          \begin{aligned}
+            T(1, 2, 2) &= 2 \cdot 1^2 + 3 \cdot 2^3 \cdot 2 \\
+            &= 50
+          \end{aligned}
+          \]</div>
+          <p>The temperature is \(50^\circ\mathrm{C}\).</p>
+          <p><strong>Part (b)</strong>: the gradient points in the direction of most rapid increase.</p>
+          <div>\[ \nabla T(x, y, z) = \langle 4x,\ 9y^2 z,\ 3y^3 \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            \nabla T(1, 2, 2) &= \langle 4 \cdot 1,\ 9 \cdot 2^2 \cdot 2,\ 3 \cdot 2^3 \rangle \\
+            &= \langle 4,\ 72,\ 24 \rangle
+          \end{aligned}
+          \]</div>
+          <p><strong>Part (c)</strong>: the direction of most rapid decrease is opposite the gradient.</p>
+          <div>\[ -\nabla T(1, 2, 2) = \langle -4,\ -72,\ -24 \rangle \]</div>
+          <p><strong>Part (d)</strong>: a direction of no change is orthogonal to the gradient, so its dot product with the gradient is zero. Only the first option works.</p>
+          <div>\[
+          \begin{aligned}
+            &\langle 4,\ 72,\ 24 \rangle \dotp \langle -6,\ 0,\ 1 \rangle \\
+            &\quad = 4 \cdot (-6) + 72 \cdot 0 + 24 \cdot 1 \\
+            &\quad = 0
+          \end{aligned}
+          \]</div>
+          <p><strong>\(-6\mathbf{i} + 0\mathbf{j} + 1\mathbf{k}\)</strong></p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="chain-rule.html">&larr; The Chain Rule</a>
+      <a class="next" href="directional-derivative.html">The Directional Derivative &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

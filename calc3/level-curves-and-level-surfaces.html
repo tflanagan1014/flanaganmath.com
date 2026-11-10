@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Level Curves and Level Surfaces | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Level curves of functions of two variables and level surfaces of functions of three variables, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Level Curves and Level Surfaces</h1>
+
+    <section class="topic-section" id="what-is-a-level-curve">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-a-level-curve-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is a Level Curve?</span></button></h2>
+      <div class="section-body" id="what-is-a-level-curve-body">
+      <p>Consider the graph of a function of two variables, \(z = f(x, y)\). This results in a surface in three-dimensional space. A level curve is a two-dimensional curve on the surface with a constant height, resulting from a fixed value of \(z\). Sometimes these are also called contour curves.</p>
+      <h3>An Example</h3>
+      <p>Consider the function of two variables below. Its graph is a quadric surface called a paraboloid, illustrated in the figure.</p>
+      <div>\[ z = f(x, y) = x^2 + y^2 \]</div>
+      <img class="wide" src="images/level-curves/paraboloid-level-curves.png" width="537" height="471"
+           alt="A bowl-shaped paraboloid opening upward from the origin, with three horizontal circles drawn on it at heights 1, 2, and 3.">
+      <p>The equations below determine level curves. Each is a circle where the surface has a constant height, or level.</p>
+      <div class="eq-list">
+        <div>\[ x^2 + y^2 = 3 \]</div>
+        <div>\[ x^2 + y^2 = 2 \]</div>
+        <div>\[ x^2 + y^2 = 1 \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="level-curves-of-a-temperature-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="level-curves-of-a-temperature-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Level Curves of a Temperature Function</span></button></h2>
+      <div class="section-body" id="level-curves-of-a-temperature-function-body">
+      <div class="example">
+        <h3>A Sample Homework Problem</h3>
+        <p>Consider a function \(T(x, y)\) that gives the temperature \(T\) at each point in the \(xy\)-plane. A level curve, or contour curve, results from setting the function equal to a constant \(C\).</p>
+        <div>\[ T(x, y) = C \]</div>
+        <p>The graph of this equation is a level curve. It is the curve passing through all points where the temperature is \(C\). Assume the temperature function is given below.</p>
+        <div>\[ T(x, y) = 4x + y \]</div>
+        <p>Which of the following best describes the level curves?</p>
+        <ul class="options">
+          <li>Parabolas</li>
+          <li>Lines with slope \(m = 4\)</li>
+          <li>Circles with center \((0, 0)\)</li>
+          <li>Lines with slope \(m = -4\)</li>
+        </ul>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Set the function equal to a constant, and solve for y.</p>
+          <div class="eq-list">
+            <div>\[ 4x + y = C \]</div>
+            <div>\[ y = -4x + C \]</div>
+          </div>
+          <p>Each level curve is a line with slope \(-4\). <strong>Lines with slope \(m = -4\)</strong>.</p>
+          <p>The color-coded plot below shows the temperature. Each band of color is between two of these parallel lines.</p>
+          <img src="images/level-curves/temperature-contours.png" width="348" height="340"
+               alt="A color-coded temperature plot of the xy-plane. The boundaries between the color bands are parallel lines that slope downward from left to right.">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="what-is-a-level-surface">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-a-level-surface-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is a Level Surface?</span></button></h2>
+      <div class="section-body" id="what-is-a-level-surface-body">
+      <p>Consider a function of three variables, \(f(x, y, z)\). Its graph would be a four-dimensional figure, which cannot be visualized in space. A level surface is the three-dimensional surface that results from setting the function equal to a fixed value \(C\).</p>
+      <h3>An Example</h3>
+      <p>Suppose the temperature of the air throughout a tank, in degrees Celsius, is described by the function below.</p>
+      <div>\[ T(x, y, z) = y - x - z \]</div>
+      <p>In this scenario, a level surface is the three-dimensional surface with a fixed temperature. For example, the equations below describe the planes of air with temperatures of \(2^\circ\mathrm{C}\) and \(-3^\circ\mathrm{C}\).</p>
+      <div class="eq-list">
+        <div>\[ y - x - z = 2 \]</div>
+        <div>\[ y - x - z = -3 \]</div>
+      </div>
+      <img class="wide" src="images/level-curves/temperature-planes.png" width="620" height="667"
+           alt="Two parallel planes in three-dimensional space, each one a level surface where the temperature is constant.">
+      </div>
+    </section>
+
+    <section class="topic-section" id="level-surfaces-of-a-temperature-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="level-surfaces-of-a-temperature-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Level Surfaces of a Temperature Function</span></button></h2>
+      <div class="section-body" id="level-surfaces-of-a-temperature-function-body">
+      <div class="example">
+        <h3>A Sample Homework Problem</h3>
+        <p>Consider a function \(T(x, y, z)\) that gives the temperature \(T\) at each point \((x, y, z)\) in space. A level surface results from setting the function equal to a constant \(C\). It is the surface where all points have temperature \(C\). Assume the temperature function is given below.</p>
+        <div>\[ T(x, y, z) = -7x^2 - 2y^2 + 3z^2 \]</div>
+        <p>Which of the following best describes the level surfaces, for a positive temperature \(C\)?</p>
+        <ul class="options">
+          <li>Elliptic Cylinder</li>
+          <li>Hyperbolic Paraboloid</li>
+          <li>Ellipsoid</li>
+          <li>Elliptic Cone</li>
+          <li>Parabolic Cylinder</li>
+          <li>Hyperboloid of Two Sheets</li>
+          <li>Hyperboloid of One Sheet</li>
+          <li>Hyperbolic Cylinder</li>
+          <li>Plane</li>
+          <li>Elliptic Paraboloid</li>
+        </ul>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Set the function equal to \(C\), and divide both sides by \(-C\) to match a standard form.</p>
+          <div class="eq-list">
+            <div>\[ -7x^2 - 2y^2 + 3z^2 = C \]</div>
+            <div>\[ \frac{7x^2}{C} + \frac{2y^2}{C} - \frac{3z^2}{C} = -1 \]</div>
+          </div>
+          <p>For \(C > 0\), this matches the form of a hyperboloid of two sheets, which equals \(-1\). <strong>Hyperboloid of Two Sheets</strong>.</p>
+          <p>The shape depends on the sign of \(C\). For \(C < 0\), the right side becomes \(+1\), and each level surface is a hyperboloid of one sheet. For \(C = 0\), the level surface is an elliptic cone.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="functions-of-several-variables.html">&larr; Functions of Several Variables</a>
+      <a class="next" href="limits-and-continuity-of-functions-of-several-variables.html">Limits and Continuity of Functions of Several Variables &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

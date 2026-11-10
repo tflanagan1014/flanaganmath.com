@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Triple Integrals and Volume | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Using a triple integral to find the volume of a solid, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Triple Integrals and Volume</h1>
+
+    <section class="topic-section" id="volume-as-a-triple-integral">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="volume-as-a-triple-integral-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Volume as a Triple Integral</span></button></h2>
+      <div class="section-body" id="volume-as-a-triple-integral-body">
+      <p>When the function being integrated is \(1\), the triple integral gives the volume of the solid \(E\). Through examples, we will see why.</p>
+      <div class="formula">
+        <p class="formula-name">Volume of a Solid</p>
+        <div>\[ V = \iiint_E 1\,dV \]</div>
+      </div>
+      <p>This builds on our past few lessons, where we:</p>
+      <ul>
+        <li>found the limit of a Riemann sum for a function of two variables, and used it to find the exact volume of a solid in space,</li>
+        <li>used the Fundamental Theorem of Calculus to evaluate double and triple integrals over rectangular and non-rectangular regions,</li>
+        <li>used double integrals to find areas, and</li>
+        <li>used double integrals to find volumes.</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-volume-of-a-box">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-volume-of-a-box-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Volume of a Box</span></button></h2>
+      <div class="section-body" id="the-volume-of-a-box-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(E\) be the solid described by \(0 \le x \le 8\), \(0 \le y \le 9\), and \(0 \le z \le 4\). Use a triple integral to find the volume of \(E\). Then draw a graph and explain the meaning of the calculation. Use your knowledge of geometry to confirm the result.</p>
+        <div>\[ \iiint_E 1\,dV \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            &\iiint_E 1\,dV \\
+            &\quad = \int_0^4 \int_0^9 \int_0^8 1\,dx\,dy\,dz \\
+            &\quad = 8 \cdot 9 \cdot 4 \\
+            &\quad = 288
+          \end{aligned}
+          \]</div>
+          <img src="images/triple-integrals-and-volume/box.svg" width="422" height="365"
+               alt="A rectangular box in the first octant from the origin to x equals 8, y equals 9, and z equals 4.">
+          <p>The solid is a rectangular box with length \(8\), width \(9\), and height \(4\). Its volume is \(8 \cdot 9 \cdot 4 = 288\) cubic units, which matches the triple integral.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-volume-under-a-plane">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-volume-under-a-plane-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Volume Under a Plane</span></button></h2>
+      <div class="section-body" id="the-volume-under-a-plane-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(E\) be the solid in the first octant bounded below by the \(xy\)-plane and bounded above by the plane below. Use a triple integral to find the volume of \(E\).</p>
+        <div>\[ x + 13y + 26z = 52 \]</div>
+        <img class="wide" src="images/triple-integrals-and-volume/tetrahedron.png" width="578" height="520"
+             alt="The plane x plus 13y plus 26z equals 52 cutting off a tetrahedron in the first octant.">
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The plane meets the axes at \(x = 52\), \(y = 4\), and \(z = 2\). Solving for \(z\) gives the top of the solid, \(z = \frac{52 - x - 13y}{26}\). In the \(xy\)-plane, the solid sits above the triangle where \(x + 13y \le 52\).</p>
+          <div>\[
+          \begin{aligned}
+            &\iiint_E 1\,dV \\
+            &\quad = \int_0^4 \int_0^{52 - 13y} \int_0^{(52 - x - 13y)/26} 1\,dz\,dx\,dy \\
+            &\quad = \int_0^4 \int_0^{52 - 13y} \frac{52 - x - 13y}{26}\,dx\,dy \\
+            &\quad = \int_0^4 \frac{(52 - 13y)^2}{52}\,dy \\
+            &\quad = \frac{169}{52} \int_0^4 (4 - y)^2\,dy \\
+            &\quad = \frac{169}{52} \cdot \frac{64}{3} \\
+            &\quad = \frac{208}{3}
+          \end{aligned}
+          \]</div>
+          <p>The volume is \(\frac{208}{3} \approx 69.33\) cubic units. This matches the formula for the volume of a tetrahedron with legs along the axes: \(\frac{1}{6} \cdot 52 \cdot 4 \cdot 2 = \frac{208}{3}\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="double-integrals-and-volume.html">&larr; Double Integrals and Volume</a>
+      <a class="next" href="average-value-over-a-solid.html">Average Value of a Function over a Solid &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

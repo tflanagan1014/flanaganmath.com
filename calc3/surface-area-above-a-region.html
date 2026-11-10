@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surface Area above a Region | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="The area of a surface above a region, using a double integral, with a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Surface Area above a Region</h1>
+
+    <section class="topic-section" id="the-area-of-a-surface">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-area-of-a-surface-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Area of a Surface</span></button></h2>
+      <div class="section-body" id="the-area-of-a-surface-body">
+      <img class="wide" src="images/surface-area/surface-over-region.png" width="562" height="478"
+           alt="A tilted surface z equals f of x, y above a rectangular region R in the xy-plane.">
+      <p>The figure shows a surface \(z = f(x, y)\) above a region \(R\) in the \(xy\)-plane. The area of the surface is given by the double integral below.</p>
+      <div class="formula">
+        <p class="formula-name">Surface Area</p>
+        <div>\[ \text{Surface Area} = \iint_R \sqrt{\left[f_x\right]^2 + \left[f_y\right]^2 + 1}\,dA \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-the-area-of-a-surface">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-the-area-of-a-surface-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding the Area of a Surface</span></button></h2>
+      <div class="section-body" id="finding-the-area-of-a-surface-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the surface defined by the equation below. Find the area of the part of this surface that lies above the region in the \(xy\)-plane defined by \(0 \le x \le 3\) and \(0 \le y \le 4\). State the exact answer in simplest form, using radical notation if necessary.</p>
+        <div>\[ z = f(x, y) = 6x + 7y \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div class="eq-list">
+            <div>\[ f_x = 6 \]</div>
+            <div>\[ f_y = 7 \]</div>
+          </div>
+          <div>\[
+          \begin{aligned}
+            &\text{Surface Area} \\
+            &\quad = \int_0^4 \int_0^3 \sqrt{6^2 + 7^2 + 1}\,dx\,dy \\
+            &\quad = \int_0^4 \int_0^3 \sqrt{86}\,dx\,dy \\
+            &\quad = \sqrt{86} \cdot 3 \cdot 4 \\
+            &\quad = 12\sqrt{86}
+          \end{aligned}
+          \]</div>
+          <p>Since the integrand is the constant \(\sqrt{86}\), the double integral is \(\sqrt{86}\) times the area of the region, \(3 \cdot 4 = 12\). The surface area is \(12\sqrt{86} \approx 111.28\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="average-value-over-a-solid.html">&larr; Average Value of a Function over a Solid</a>
+      <a class="next" href="polar-coordinates.html">Polar Coordinates &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

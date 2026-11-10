@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Line Integrals | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Line integrals with respect to arc length, in the plane and in space, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Line Integrals</h1>
+
+    <section class="topic-section" id="from-an-ordinary-integral-to-a-line-integral">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="from-an-ordinary-integral-to-a-line-integral-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">From an Ordinary Integral to a Line Integral</span></button></h2>
+      <div class="section-body" id="from-an-ordinary-integral-to-a-line-integral-body">
+      <p>The definite integral from Calculus I is actually a special case of a more general idea called a line integral.</p>
+      <img class="wide" src="images/line-integrals/figure-1.png" width="650" height="470"
+           alt="The Calculus I integral drawn in three dimensions: a yellow area standing above a segment of the x-axis from a to b, with height f of x and width dx.">
+      <p>The figure shows the integral below, which you already know from Calculus I, drawn in three dimensions. The integral gives the yellow area.</p>
+      <div>\[ \int_a^b f(x)\,dx \]</div>
+      <p>The integration is along a line segment, along the \(x\)-axis from \(x = a\) to \(x = b\). It is a line integral! We can extend this idea from a line segment on the x-axis to integration along any curve.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-line-integral-with-respect-to-arc-length">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-line-integral-with-respect-to-arc-length-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Line Integral with Respect to Arc Length</span></button></h2>
+      <div class="section-body" id="a-line-integral-with-respect-to-arc-length-body">
+      <p>Next, we integrate along a curve \(C\), as in the figure. Above the curve and below the function there is an area, often called a curtain.</p>
+      <img class="wide" src="images/line-integrals/figure-2.png" width="650" height="470"
+           alt="A yellow curtain standing above a curve C in the plane, with its height given by a function f, and a small piece of the curve of length ds highlighted.">
+      <p>In this case, the differential is not \(dx\). The &ldquo;width&rdquo; curves in two directions, so we use the differential of arc length, \(ds\). The integral below gives the area of the curtain.</p>
+      <div class="formula">
+        <p class="formula-name">Line Integral with Respect to Arc Length</p>
+        <div>\[ \int_C f\,ds \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-arc-length-differential">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-arc-length-differential-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Arc Length Differential</span></button></h2>
+      <div class="section-body" id="the-arc-length-differential-body">
+      <p>Put the curve \(C\) in the \(xy\)-plane, and zoom in on a small piece of the curve. By the Pythagorean Theorem:</p>
+      <img class="wide" src="images/line-integrals/figure-3.png" width="650" height="470"
+           alt="A curve C in the xy-plane with a small piece magnified. The piece of arc length delta s is nearly the hypotenuse of a right triangle with legs delta x and delta y.">
+      <div>\[ \Delta s \approx \sqrt{(\Delta x)^2 + (\Delta y)^2} \]</div>
+      <p>The curved piece is slightly longer than the hypotenuse, so this is only an approximation. But the smaller the piece, the straighter it looks, and the better the approximation. In the limit, the changes become differentials, and the approximation becomes exact. For a curve given in terms of a parameter \(t\), divide by \(dt\) inside the square root.</p>
+      <div class="formula">
+        <p class="formula-name">Arc Length Differential</p>
+        <div>\[
+        \begin{aligned}
+          ds &= \sqrt{(dx)^2 + (dy)^2} \\
+          &= \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}\,dt
+        \end{aligned}
+        \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="evaluating-a-line-integral">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="evaluating-a-line-integral-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Evaluating a Line Integral</span></button></h2>
+      <div class="section-body" id="evaluating-a-line-integral-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Evaluate the line integral below, where \(C\) is the upper half of the circle \(x = 2\cos t\), \(y = 2\sin t\), \(0 \le t \le \pi\), from \((2, 0)\) to \((-2, 0)\).</p>
+        <div>\[ \int_C (3 - x)\,ds \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Find the derivatives, and then find the arc length differential.</p>
+          <div class="eq-list">
+            <div>\[ \frac{dx}{dt} = -2\sin t \]</div>
+            <div>\[ \frac{dy}{dt} = 2\cos t \]</div>
+          </div>
+          <div>\[
+          \begin{aligned}
+            ds &= \sqrt{4\sin^2 t + 4\cos^2 t}\,dt \\
+            &= 2\,dt
+          \end{aligned}
+          \]</div>
+          <p>Along the curve, \(x = 2\cos t\), so \(3 - x = 3 - 2\cos t\).</p>
+          <div>\[
+          \begin{aligned}
+            \int_C (3 - x)\,ds &= \int_0^{\pi} (3 - 2\cos t)(2)\,dt \\
+            &= \int_0^{\pi} (6 - 4\cos t)\,dt \\
+            &= \Big[ 6t - 4\sin t \Big]_0^{\pi} \\
+            &= 6\pi
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-closed-curve">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-closed-curve-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Closed Curve</span></button></h2>
+      <div class="section-body" id="a-closed-curve-body">
+      <p>When \(C\) is a closed curve, which ends where it starts, we write the line integral with a circle on the integral sign.</p>
+      <img class="wide" src="images/line-integrals/figure-4.png" width="650" height="470"
+           alt="A yellow curtain standing above a closed curve C, the unit circle, with its height given by f of x, y equals 1 plus y squared.">
+      <div>\[ \oint_C f\,ds \]</div>
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Evaluate the line integral below, where \(C\) is the unit circle.</p>
+        <div>\[ \oint_C \left( 1 + y^2 \right) ds \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Parametrize the unit circle as \(x = \cos t\), \(y = \sin t\), \(0 \le t \le 2\pi\). Then \(ds = \sqrt{\sin^2 t + \cos^2 t}\,dt = dt\).</p>
+          <div>\[ \oint_C \left( 1 + y^2 \right) ds = \int_0^{2\pi} \left( 1 + \sin^2 t \right) dt \]</div>
+          <p>Use the identity \(\sin^2 t = \frac{1}{2}(1 - \cos 2t)\).</p>
+          <div>\[
+          \begin{aligned}
+            &\int_0^{2\pi} \left( \frac{3}{2} - \frac{1}{2}\cos 2t \right) dt \\
+            &\quad = \left[ \frac{3}{2}t - \frac{1}{4}\sin 2t \right]_0^{2\pi} \\
+            &\quad = 3\pi
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-curve-in-space">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-curve-in-space-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Curve in Space</span></button></h2>
+      <div class="section-body" id="a-curve-in-space-body">
+      <p>For a line integral in three dimensions, the arc length differential becomes the following.</p>
+      <div class="formula">
+        <p class="formula-name">Arc Length Differential in Space</p>
+        <div>\[
+        \begin{aligned}
+          ds &= \sqrt{(dx)^2 + (dy)^2 + (dz)^2} \\
+          &= \|\mathbf{r}'(t)\|\,dt
+        \end{aligned}
+        \]</div>
+      </div>
+      <img class="wide" src="images/line-integrals/figure-5.png" width="1069" height="817"
+           alt="A curve C in three-dimensional space, rising from the point (3, 0, 0) to the point (0, 3, 2 pi).">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Evaluate the line integral below, where \(C\) is the curve given by \(\mathbf{r}(t) = \langle 3\cos t, 3\sin t, 4t \rangle\), \(0 \le t \le \pi/2\).</p>
+        <div>\[ \int_C z\,ds \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \mathbf{r}'(t) = \langle -3\sin t,\ 3\cos t,\ 4 \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            ds &= \|\mathbf{r}'(t)\|\,dt \\
+            &= \sqrt{9\sin^2 t + 9\cos^2 t + 16}\,dt \\
+            &= 5\,dt
+          \end{aligned}
+          \]</div>
+          <p>Along the curve, \(z = 4t\).</p>
+          <div>\[
+          \begin{aligned}
+            \int_C z\,ds &= \int_0^{\pi/2} (4t)(5)\,dt \\
+            &= \Big[ 10t^2 \Big]_0^{\pi/2} \\
+            &= \frac{5\pi^2}{2}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="vector-fields-divergence-and-curl.html">&larr; Vector Fields, Divergence, and Curl</a>
+      <a class="next" href="line-integrals-and-work.html">Line Integrals and Work &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

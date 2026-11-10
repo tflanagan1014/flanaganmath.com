@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Double Integrals in Polar Coordinates | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Evaluating double integrals in polar coordinates, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Double Integrals in Polar Coordinates</h1>
+
+    <section class="topic-section" id="the-area-of-a-disk">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-area-of-a-disk-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Area of a Disk</span></button></h2>
+      <div class="section-body" id="the-area-of-a-disk-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(R\) be the region in the plane determined by \(x^2 + y^2 \le a^2\). Use polar coordinates to evaluate the integral below. Then use your knowledge of geometry to make sense of the result.</p>
+        <div>\[ \iint_R 1\,dA \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The region is a disk of radius \(a\): \(0 \le r \le a\) and \(0 \le \theta \le 2\pi\).</p>
+          <div>\[
+          \begin{aligned}
+            &\iint_R 1\,dA \\
+            &\quad = \int_0^{2\pi} \int_0^a r\,dr\,d\theta \\
+            &\quad = \int_0^{2\pi} \frac{a^2}{2}\,d\theta \\
+            &\quad = \pi a^2
+          \end{aligned}
+          \]</div>
+          <p>This is the area of a circle of radius \(a\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="evaluating-a-polar-integral">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="evaluating-a-polar-integral-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Evaluating a Polar Integral</span></button></h2>
+      <div class="section-body" id="evaluating-a-polar-integral-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Evaluate the integral below.</p>
+        <div>\[ \int_0^{\pi} \int_0^{16} r\cos\theta\,dr\,d\theta \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            &\int_0^{\pi} \int_0^{16} r\cos\theta\,dr\,d\theta \\
+            &\quad = \left( \int_0^{16} r\,dr \right) \left( \int_0^{\pi} \cos\theta\,d\theta \right) \\
+            &\quad = 128 \cdot \Big[ \sin\theta \Big]_0^{\pi} \\
+            &\quad = 128 \cdot 0 \\
+            &\quad = 0
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="converting-to-polar-coordinates">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="converting-to-polar-coordinates-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Converting to Polar Coordinates</span></button></h2>
+      <div class="section-body" id="converting-to-polar-coordinates-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Evaluate the double integral below by converting to polar coordinates.</p>
+        <div>\[ \int_{-1}^{1} \int_{-\sqrt{1 - y^2}}^{\sqrt{1 - y^2}} \left( 1 - x^2 - y^2 \right) dx\,dy \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The limits describe the disk \(x^2 + y^2 \le 1\): \(0 \le r \le 1\) and \(0 \le \theta \le 2\pi\). Also, \(1 - x^2 - y^2 = 1 - r^2\).</p>
+          <div>\[
+          \begin{aligned}
+            &\int_0^{2\pi} \int_0^1 \left( 1 - r^2 \right) r\,dr\,d\theta \\
+            &\quad = \int_0^{2\pi} \left[ \frac{r^2}{2} - \frac{r^4}{4} \right]_0^1 d\theta \\
+            &\quad = \int_0^{2\pi} \frac{1}{4}\,d\theta \\
+            &\quad = \frac{\pi}{2}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="integrating-over-a-ring">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="integrating-over-a-ring-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Integrating over a Ring</span></button></h2>
+      <div class="section-body" id="integrating-over-a-ring-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(R\) be the region in the first quadrant enclosed by \(x^2 + y^2 = 1\) and \(x^2 + y^2 = 64\). Evaluate the double integral below.</p>
+        <div>\[ \iint_R y\,dA \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The region is \(1 \le r \le 8\) and \(0 \le \theta \le \frac{\pi}{2}\), and \(y = r\sin\theta\).</p>
+          <div>\[
+          \begin{aligned}
+            &\iint_R y\,dA \\
+            &\quad = \int_0^{\pi/2} \int_1^8 r\sin\theta \cdot r\,dr\,d\theta \\
+            &\quad = \left( \int_1^8 r^2\,dr \right) \left( \int_0^{\pi/2} \sin\theta\,d\theta \right) \\
+            &\quad = \frac{511}{3} \cdot 1 \\
+            &\quad = \frac{511}{3}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-area-of-a-sector">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-area-of-a-sector-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Area of a Sector</span></button></h2>
+      <div class="section-body" id="the-area-of-a-sector-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(R\) be the region enclosed by the rays \(\theta = 0\) and \(\theta = \pi/4\) and the circle \(r = 6\). Use the double integral below to find the area of \(R\).</p>
+        <div>\[ \iint_R 1\,dA \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            &\iint_R 1\,dA \\
+            &\quad = \int_0^{\pi/4} \int_0^6 r\,dr\,d\theta \\
+            &\quad = \int_0^{\pi/4} 18\,d\theta \\
+            &\quad = \frac{9\pi}{2}
+          \end{aligned}
+          \]</div>
+          <p>This matches the area of a sector: \(\frac{1}{8}\) of a circle of radius \(6\), or \(\frac{1}{8} \cdot 36\pi = \frac{9\pi}{2}\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="volume-under-a-paraboloid">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="volume-under-a-paraboloid-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Volume Under a Paraboloid</span></button></h2>
+      <div class="section-body" id="volume-under-a-paraboloid-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(E\) be the solid that lies above the \(xy\)-plane and below the surface below. Use polar coordinates to find the volume of \(E\).</p>
+        <div>\[ f(x, y) = 4 - x^2 - y^2 \]</div>
+        <img class="wide" src="images/polar/paraboloid.png" width="870" height="530"
+             alt="A dome-shaped paraboloid rising above the xy-plane, with its peak at height 4.">
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>In polar coordinates, \(f = 4 - r^2\). The surface meets the \(xy\)-plane where \(4 - r^2 = 0\), so \(0 \le r \le 2\) and \(0 \le \theta \le 2\pi\).</p>
+          <div>\[
+          \begin{aligned}
+            &V \\
+            &\quad = \int_0^{2\pi} \int_0^2 \left( 4 - r^2 \right) r\,dr\,d\theta \\
+            &\quad = \int_0^{2\pi} \left[ 2r^2 - \frac{r^4}{4} \right]_0^2 d\theta \\
+            &\quad = \int_0^{2\pi} 4\,d\theta \\
+            &\quad = 8\pi
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="polar-coordinates.html">&larr; Polar Coordinates</a>
+      <a class="next" href="cylindrical-coordinates.html">Cylindrical Coordinates and Triple Integrals &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

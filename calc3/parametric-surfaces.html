@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parametric Surfaces | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Describing a surface with a vector function of two parameters, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Parametric Surfaces</h1>
+
+    <section class="topic-section" id="what-is-a-parametric-surface">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-a-parametric-surface-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is a Parametric Surface?</span></button></h2>
+      <div class="section-body" id="what-is-a-parametric-surface-body">
+      <p>A curve is described by a vector function of one parameter, \(\mathbf{r}(t)\). A surface is described by a vector function of two parameters, \(u\) and \(v\).</p>
+      <div class="formula">
+        <p class="formula-name">Parametric Surface</p>
+        <div>\[ \mathbf{R}(u, v) = \langle x(u, v),\ y(u, v),\ z(u, v) \rangle \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-plane">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-plane-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Plane</span></button></h2>
+      <div class="section-body" id="a-plane-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Show that every point of the surface below lies on the plane \(x + y + z = 10\).</p>
+        <div>\[ \mathbf{R}(u, v) = \langle u,\ v,\ 10 - u - v \rangle \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Here \(x = u\), \(y = v\), and \(z = 10 - u - v\).</p>
+          <div>\[
+          \begin{aligned}
+            x + y + z &= u + v + (10 - u - v) \\
+            &= 10
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-sphere">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-sphere-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Sphere</span></button></h2>
+      <div class="section-body" id="a-sphere-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Show that every point of the surface below lies on the sphere \(x^2 + y^2 + z^2 = 4\).</p>
+        <div>\[
+        \begin{aligned}
+          &\mathbf{R}(u, v) = \langle 2\sin v\cos u,\ 2\sin v\sin u,\ 2\cos v \rangle, \\
+          &\qquad 0 \le u \le 2\pi,\quad 0 \le v \le \pi
+        \end{aligned}
+        \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            &x^2 + y^2 + z^2 \\
+            &\quad = 4\sin^2 v\cos^2 u + 4\sin^2 v\sin^2 u + 4\cos^2 v \\
+            &\quad = 4\sin^2 v\left(\cos^2 u + \sin^2 u\right) + 4\cos^2 v \\
+            &\quad = 4\sin^2 v + 4\cos^2 v \\
+            &\quad = 4
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="greens-theorem.html">&larr; Green's Theorem</a>
+      <a class="next" href="surface-integrals.html">Surface Integrals &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

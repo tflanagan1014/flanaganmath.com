@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Functions of Several Variables | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Evaluating functions of several variables and finding their domains, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Functions of Several Variables</h1>
+
+    <section class="topic-section" id="what-is-a-function-of-several-variables">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-a-function-of-several-variables-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is a Function of Several Variables?</span></button></h2>
+      <div class="section-body" id="what-is-a-function-of-several-variables-body">
+      <p>Often, the value of a function depends on more than one variable or piece of information. You already have experience working with these. The surface area of a rectangular solid depends on three things. It is a function of three variables: the length \(l\), the width \(w\), and the height \(h\).</p>
+      <div>\[ S(l, w, h) = 2lw + 2lh + 2wh \]</div>
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find the surface area of a rectangular solid with a height of seven inches and a square base two inches by two inches.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            S(2, 2, 7) &= 2 \cdot 2 \cdot 2 + 2 \cdot 2 \cdot 7 + 2 \cdot 2 \cdot 7 \\
+            &= 8 + 28 + 28 \\
+            &= 64
+          \end{aligned}
+          \]</div>
+          <p>The surface area is 64 square inches.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="evaluating-a-function-of-several-variables">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="evaluating-a-function-of-several-variables-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Evaluating a Function of Several Variables</span></button></h2>
+      <div class="section-body" id="evaluating-a-function-of-several-variables-body">
+      <div class="example">
+        <h3>Now You Try!</h3>
+        <p>Evaluate the below function for \(x = 4\), \(y = 4\), and \(z = 32\).</p>
+        <div>\[ f(x, y, z) = \sqrt{x^2 + y^2 + z} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f(4, 4, 32) &= \sqrt{4^2 + 4^2 + 32} \\
+            &= \sqrt{64} \\
+            &= 8
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-luminosity-of-a-star">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-luminosity-of-a-star-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Luminosity of a Star</span></button></h2>
+      <div class="section-body" id="the-luminosity-of-a-star-body">
+      <div class="example">
+        <h3>A Sample Homework Problem</h3>
+        <p>The luminosity \(L\), the total power output in watts, of a star is given by the function below.</p>
+        <div>\[ L(R, T) = 4\pi\sigma R^2 T^4 \]</div>
+        <p>Here \(R\) is the radius of the star in meters, \(T\) is its effective surface temperature in kelvin, and \(\sigma\) is the Stefan&ndash;Boltzmann constant, approximately \(5.670374419 \times 10^{-8}\). Find the luminosity of a star with the following values.</p>
+        <ul>
+          <li>\(R = 6.77 \times 10^8\) meters</li>
+          <li>\(T = 5600\) kelvin</li>
+        </ul>
+        <p>Wait until the end to round. Then use two decimal places.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            L &= 4\pi \left(5.670374419 \times 10^{-8}\right) \\
+            &\qquad \cdot \left(6.77 \times 10^8\right)^2 \cdot 5600^4 \\
+            &\approx 3.21 \times 10^{26}
+          \end{aligned}
+          \]</div>
+          <p>The luminosity is about \(3.21 \times 10^{26}\) watts.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="electric-potential">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="electric-potential-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Electric Potential</span></button></h2>
+      <div class="section-body" id="electric-potential-body">
+      <div class="example">
+        <h3>A Sample Homework Problem</h3>
+        <p>In a vacuum, a point charge \(q\) at the origin produces an electric potential \(V\), in volts, given by the function below.</p>
+        <div>\[ V(x, y, z) = \frac{q}{4\pi\epsilon_0} \cdot \frac{1}{\sqrt{x^2 + y^2 + z^2}} \]</div>
+        <p>Here \(\epsilon_0\) is a fundamental physical constant called the vacuum permittivity, approximately \(8.85419 \times 10^{-12}\) farad per meter, and the charge is \(q = 1.0 \times 10^{-19}\) coulomb, close to the charge of a single proton or electron. Consider the point with the coordinates below, in meters.</p>
+        <ul>
+          <li>\(x = 9.7 \times 10^{-9}\)</li>
+          <li>\(y = 5.9 \times 10^{-9}\)</li>
+          <li>\(z = 8.6 \times 10^{-9}\)</li>
+        </ul>
+        <p>In volts, find the electric potential at this point. Wait until the end to round. Then use four decimal places.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>First find the distance from the origin to the point.</p>
+          <div>\[
+          \begin{aligned}
+            &x^2 + y^2 + z^2 \\
+            &\quad = \left(9.7 \times 10^{-9}\right)^2 + \left(5.9 \times 10^{-9}\right)^2 \\
+            &\qquad\quad {}+ \left(8.6 \times 10^{-9}\right)^2 \\
+            &\quad \approx 2.0286 \times 10^{-16}
+          \end{aligned}
+          \]</div>
+          <div>\[ \sqrt{x^2 + y^2 + z^2} \approx 1.42429 \times 10^{-8} \]</div>
+          <p>Then substitute into the function, one factor at a time.</p>
+          <div>\[
+          \begin{aligned}
+            \frac{q}{4\pi\epsilon_0} &= \frac{1.0 \times 10^{-19}}{4\pi \cdot 8.85419 \times 10^{-12}} \\
+            &\approx 8.98755 \times 10^{-10}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            V &\approx \frac{8.98755 \times 10^{-10}}{1.42429 \times 10^{-8}} \\
+            &\approx 0.0631
+          \end{aligned}
+          \]</div>
+          <p>The electric potential is about 0.0631 volts.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="what-is-the-domain-of-a-function-of-several-variables">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-the-domain-of-a-function-of-several-variables-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is the Domain of a Function of Several Variables?</span></button></h2>
+      <div class="section-body" id="what-is-the-domain-of-a-function-of-several-variables-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find and graph the domain of the function given below.</p>
+        <div>\[ f(x, y) = \frac{1}{\sqrt{1 - x^2 - y^2}} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>In this course we focus only on real numbers, so we must exclude values that result in the square root of a negative number. In a later course called Complex Analysis, you will study calculus with those numbers.</p>
+          <p>The square root is also in the denominator, so it cannot equal zero. So the expression under the square root must be positive.</p>
+          <div class="eq-list">
+            <div>\[ 1 - x^2 - y^2 > 0 \]</div>
+            <div>\[ x^2 + y^2 < 1 \]</div>
+          </div>
+          <p>The domain of the function is the interior of the unit circle: \(\{(x, y) \mid x^2 + y^2 < 1\}\). The circle itself is dashed in the graph, since it is not included.</p>
+          <img src="images/functions-of-several-variables/unit-disk-domain.svg" width="360" height="360"
+               alt="The xy-plane with the inside of the unit circle shaded gray. The circle is dashed to show it is not included. The points (1, 0), (0, 1), (negative 1, 0), and (0, negative 1) are marked on the circle.">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="checking-a-point-in-the-domain">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="checking-a-point-in-the-domain-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Checking a Point in the Domain</span></button></h2>
+      <div class="section-body" id="checking-a-point-in-the-domain-body">
+      <div class="example">
+        <h3>A Sample Homework Problem</h3>
+        <p>Is the point \((2, 5, -3)\) in the domain of the function below?</p>
+        <div>\[ f(x, y, z) = \frac{1 + \ln z}{xy} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The natural logarithm \(\ln z\) is defined only when \(z > 0\). At this point \(z = -3\), so \(\ln(-3)\) is undefined.</p>
+          <p><strong>No</strong>, the point \((2, 5, -3)\) is not in the domain of the function.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="quadric-surfaces.html">&larr; Quadric Surfaces</a>
+      <a class="next" href="level-curves-and-level-surfaces.html">Level Curves and Level Surfaces &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

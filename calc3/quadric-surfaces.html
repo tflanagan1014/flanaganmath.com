@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quadric Surfaces | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="The quadric surfaces, their equations and graphs, and how to identify them.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Quadric Surfaces</h1>
+
+    <section class="topic-section" id="what-is-a-quadric-surface">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-a-quadric-surface-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is a Quadric Surface?</span></button></h2>
+      <div class="section-body" id="what-is-a-quadric-surface-body">
+      <p>A quadric surface is the graph of a second-degree equation in three variables.</p>
+      <div>\[
+      \begin{aligned}
+        &Ax^2 + By^2 + Cz^2 + Dxy + Exz \\
+        &\qquad {}+ Fyz + Gx + Hy + Iz + J = 0
+      \end{aligned}
+      \]</div>
+      <p>There are a few different quadric surfaces that will come up in our study of calculus.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-quadric-surfaces">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-quadric-surfaces-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Quadric Surfaces</span></button></h2>
+      <div class="section-body" id="the-quadric-surfaces-body">
+      <div class="surfaces">
+      <div class="surface">
+        <h3>Ellipsoid</h3>
+        <div>\[ \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1 \]</div>
+        <img src="images/quadric-surfaces/ellipsoid.png" width="227" height="227" loading="lazy" alt="An ellipsoid: a closed, egg-shaped surface centered at the origin, crossing the axes at a, b, and c.">
+      </div>
+      <div class="surface">
+        <h3>Elliptic Cone</h3>
+        <div>\[ z^2 = \frac{x^2}{a^2} + \frac{y^2}{b^2} \]</div>
+        <img src="images/quadric-surfaces/elliptic-cone.png" width="244" height="227" loading="lazy" alt="An elliptic cone: two cones meeting at their tips at the origin, one opening up and one opening down.">
+      </div>
+      <div class="surface">
+        <h3>Elliptic Paraboloid</h3>
+        <div>\[ z = \frac{x^2}{a^2} + \frac{y^2}{b^2} \]</div>
+        <img src="images/quadric-surfaces/elliptic-paraboloid.png" width="206" height="227" loading="lazy" alt="An elliptic paraboloid: a bowl with its lowest point at the origin, opening upward.">
+      </div>
+      <div class="surface">
+        <h3>Hyperbolic Paraboloid</h3>
+        <div>\[ z = \frac{x^2}{a^2} - \frac{y^2}{b^2} \]</div>
+        <img src="images/quadric-surfaces/hyperbolic-paraboloid.png" width="235" height="247" loading="lazy" alt="A hyperbolic paraboloid: a saddle shape, curving up in one direction and down in the other.">
+      </div>
+      <div class="surface">
+        <h3>Hyperboloid of One Sheet</h3>
+        <div>\[ \frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1 \]</div>
+        <img src="images/quadric-surfaces/hyperboloid-one-sheet.png" width="236" height="247" loading="lazy" alt="A hyperboloid of one sheet: a single connected surface shaped like an hourglass with an open middle.">
+      </div>
+      <div class="surface">
+        <h3>Hyperboloid of Two Sheets</h3>
+        <div>\[ \frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = -1 \]</div>
+        <img src="images/quadric-surfaces/hyperboloid-two-sheets.png" width="235" height="247" loading="lazy" alt="A hyperboloid of two sheets: two separate bowl-shaped pieces, one opening up from z equals c and one opening down from z equals negative c.">
+      </div>
+      <div class="surface">
+        <h3>Parabolic Cylinder</h3>
+        <div>\[ x^2 = 4ay \]</div>
+        <img src="images/quadric-surfaces/parabolic-cylinder.png" width="243" height="259" loading="lazy" alt="A parabolic cylinder: a parabola in the xy-plane extended straight up and down along the z-axis.">
+      </div>
+      <div class="surface">
+        <h3>Elliptic Cylinder</h3>
+        <div>\[ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \]</div>
+        <img src="images/quadric-surfaces/elliptic-cylinder.png" width="243" height="259" loading="lazy" alt="An elliptic cylinder: an ellipse in the xy-plane extended straight up and down along the z-axis.">
+      </div>
+      <div class="surface">
+        <h3>Hyperbolic Cylinder</h3>
+        <div>\[ \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1 \]</div>
+        <img src="images/quadric-surfaces/hyperbolic-cylinder.png" width="243" height="259" loading="lazy" alt="A hyperbolic cylinder: the two branches of a hyperbola in the xy-plane extended straight up and down along the z-axis.">
+      </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="identifying-a-quadric-surface">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="identifying-a-quadric-surface-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Identifying a Quadric Surface</span></button></h2>
+      <div class="section-body" id="identifying-a-quadric-surface-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the equation below.</p>
+        <div>\[ \frac{x^2}{4} - \frac{y^2}{9} = 1 \]</div>
+        <p>Which of the options best describes the graph of this equation?</p>
+        <ul class="options">
+          <li>Ellipsoid</li>
+          <li>Elliptic Cone</li>
+          <li>Elliptic Paraboloid</li>
+          <li>Hyperbolic Paraboloid</li>
+          <li>Hyperboloid of One Sheet</li>
+          <li>Hyperboloid of Two Sheets</li>
+          <li>Parabolic Cylinder</li>
+          <li>Elliptic Cylinder</li>
+          <li>Hyperbolic Cylinder</li>
+        </ul>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The variable \(z\) does not appear, so the surface is a cylinder: the curve in the \(xy\)-plane extends straight up and down. The \(x^2\) and \(y^2\) terms have opposite signs, so that curve is a hyperbola.</p>
+          <p><strong>Hyperbolic Cylinder</strong></p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Another Example</h3>
+        <p>Consider the equation below.</p>
+        <div>\[ \frac{x^2}{9} + \frac{y^2}{3} - \frac{z^2}{6} = 1 \]</div>
+        <p>Which of the options best describes the graph of this equation?</p>
+        <ul class="options">
+          <li>Ellipsoid</li>
+          <li>Elliptic Cone</li>
+          <li>Elliptic Paraboloid</li>
+          <li>Hyperbolic Paraboloid</li>
+          <li>Hyperboloid of One Sheet</li>
+          <li>Hyperboloid of Two Sheets</li>
+          <li>Parabolic Cylinder</li>
+          <li>Elliptic Cylinder</li>
+          <li>Hyperbolic Cylinder</li>
+        </ul>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>All three variables are squared, two terms are positive, one term is negative, and the equation equals \(+1\). This matches the form of a hyperboloid of one sheet, with \(a^2 = 9\), \(b^2 = 3\), and \(c^2 = 6\).</p>
+          <p><strong>Hyperboloid of One Sheet</strong></p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="integrals-of-vector-valued-functions.html">&larr; Integrals of Vector-Valued Functions</a>
+      <a class="next" href="functions-of-several-variables.html">Functions of Several Variables &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

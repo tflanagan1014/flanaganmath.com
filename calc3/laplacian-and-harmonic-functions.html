@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Laplacian and Harmonic Functions | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="The Laplacian, the Laplace equation, and harmonic functions, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>The Laplacian and Harmonic Functions</h1>
+
+    <section class="topic-section" id="what-is-the-laplacian">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-the-laplacian-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is the Laplacian?</span></button></h2>
+      <div class="section-body" id="what-is-the-laplacian-body">
+      <p>The Laplacian is a powerful operator. In physics and engineering, it is used to model diffusion, heat flow, electric potential, fluid pressure, and quantum wave functions. The Laplacian of a function \(f(x, y, z)\) is defined below.</p>
+      <div class="formula">
+        <p class="formula-name">The Laplacian</p>
+        <div>\[ \nabla^2 f = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2} \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-a-laplacian">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-a-laplacian-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding a Laplacian</span></button></h2>
+      <div class="section-body" id="finding-a-laplacian-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find the Laplacian of the function below.</p>
+        <div>\[ f(x, y, z) = 7x^4 + 9y^7 + 5z^6 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \frac{\partial f}{\partial x} &= 28x^3 \\
+            \frac{\partial^2 f}{\partial x^2} &= 84x^2
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial f}{\partial y} &= 63y^6 \\
+            \frac{\partial^2 f}{\partial y^2} &= 378y^5
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial f}{\partial z} &= 30z^5 \\
+            \frac{\partial^2 f}{\partial z^2} &= 150z^4
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \nabla^2 f &= \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2} \\
+            &= 84x^2 + 378y^5 + 150z^4
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="what-is-a-harmonic-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-a-harmonic-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is a Harmonic Function?</span></button></h2>
+      <div class="section-body" id="what-is-a-harmonic-function-body">
+      <p>A function \(z = f(x, y)\) is harmonic if it satisfies the equation below, called the Laplace equation. Harmonic functions are useful in the study of fluid dynamics, heat, elasticity, and electricity.</p>
+      <div class="formula">
+        <p class="formula-name">The Laplace Equation</p>
+        <div>\[ \frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial y^2} = 0 \]</div>
+      </div>
+      <img class="wide" src="images/laplacian/harmonic-surface.png" width="833" height="417"
+           alt="The surface z equals e to the x times sine of y, rising and falling in waves along the y-direction and growing steeply as x increases.">
+      </div>
+    </section>
+
+    <section class="topic-section" id="verifying-a-function-is-harmonic">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="verifying-a-function-is-harmonic-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Verifying a Function is Harmonic</span></button></h2>
+      <div class="section-body" id="verifying-a-function-is-harmonic-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Verify the function below is harmonic.</p>
+        <div>\[ z = f(x, y) = e^x \sin y \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \frac{\partial z}{\partial x} &= e^x \sin y \\
+            \frac{\partial^2 z}{\partial x^2} &= e^x \sin y
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial z}{\partial y} &= e^x \cos y \\
+            \frac{\partial^2 z}{\partial y^2} &= -e^x \sin y
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial y^2} &= e^x \sin y + \left(-e^x \sin y\right) \\
+            &= 0
+          \end{aligned}
+          \]</div>
+          <p>Because the sum of these second-order partial derivatives is zero, the function is harmonic.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="second-order-partial-derivatives.html">&larr; Second-Order Partial Derivatives</a>
+      <a class="next" href="chain-rule.html">The Chain Rule &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Divergence Theorem | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="The Divergence Theorem, and how the great theorems of calculus share one idea, with a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>The Divergence Theorem</h1>
+
+    <section class="topic-section" id="the-divergence-theorem">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-divergence-theorem-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Divergence Theorem</span></button></h2>
+      <div class="section-body" id="the-divergence-theorem-body">
+      <p>On the previous page, we computed flux with a double integral over a surface. If the surface is closed, there is another way.</p>
+      <p>Let \(E\) be a solid region whose boundary \(S\) is a closed surface with outward orientation. Let \(\mathbf{F} = \langle P, Q, R \rangle\) be a vector field whose components have continuous partial derivatives on an open region containing \(E\). Then:</p>
+      <div class="formula">
+        <p class="formula-name">The Divergence Theorem</p>
+        <div>\[ \iint_S \mathbf{F} \dotp \mathbf{n}\,dS = \iiint_E \nabla \dotp \mathbf{F}\,dV \]</div>
+      </div>
+      <p>Put simply, the flux of \(\mathbf{F}\) out through the closed surface \(S\) equals the triple integral of the divergence of \(\mathbf{F}\) over the solid \(E\) that \(S\) encloses.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="two-ways-to-find-the-flux">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="two-ways-to-find-the-flux-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Two Ways to Find the Flux</span></button></h2>
+      <div class="section-body" id="two-ways-to-find-the-flux-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Let \(\mathbf{F}(x, y, z) = \langle x, y, z \rangle\), and let \(S\) be the ellipsoid below.</p>
+        <div>\[
+        \begin{aligned}
+          &\mathbf{R}(u, v) = \langle 2\sin v\cos u,\ 3\sin v\sin u,\ \cos v \rangle, \\
+          &\qquad 0 \le u \le 2\pi,\quad 0 \le v \le \pi
+        \end{aligned}
+        \]</div>
+        <p>It encloses the solid below.</p>
+        <div>\[ E:\ \frac{x^2}{4} + \frac{y^2}{9} + z^2 \le 1 \]</div>
+        <ol type="a">
+          <li>Find the outward flux of \(\mathbf{F}\) across \(S\) directly.</li>
+          <li>Confirm your result using the Divergence Theorem.</li>
+        </ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Part (a)</strong></p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{R}_u &= \langle -2\sin v\sin u,\ 3\sin v\cos u,\ 0 \rangle \\
+            \mathbf{R}_v &= \langle 2\cos v\cos u,\ 3\cos v\sin u,\ -\sin v \rangle
+          \end{aligned}
+          \]</div>
+          <p>The cross product \(\mathbf{R}_u \times \mathbf{R}_v\) points inward here, so we use \(\mathbf{R}_v \times \mathbf{R}_u\) for the outward normal.</p>
+          <div>\[
+          \begin{aligned}
+            &\mathbf{R}_v \times \mathbf{R}_u \\
+            &\quad = \langle 3\sin^2 v\cos u,\ 2\sin^2 v\sin u, \\
+            &\qquad\quad 6\sin v\cos v \rangle
+          \end{aligned}
+          \]</div>
+          <p>On the surface, the vector field is below.</p>
+          <div>\[ \mathbf{F} = \langle 2\sin v\cos u,\ 3\sin v\sin u,\ \cos v \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            &\mathbf{F} \dotp (\mathbf{R}_v \times \mathbf{R}_u) \\
+            &\quad = 6\sin^3 v\cos^2 u + 6\sin^3 v\sin^2 u \\
+            &\qquad\quad {}+ 6\sin v\cos^2 v \\
+            &\quad = 6\sin^3 v + 6\sin v\cos^2 v \\
+            &\quad = 6\sin v
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \iint_S \mathbf{F} \dotp \mathbf{n}\,dS &= \int_0^{2\pi} \int_0^{\pi} 6\sin v\,dv\,du \\
+            &= \int_0^{2\pi} 12\,du \\
+            &= 24\pi
+          \end{aligned}
+          \]</div>
+          <p><strong>Part (b)</strong></p>
+          <div>\[ \nabla \dotp \mathbf{F} = 1 + 1 + 1 = 3 \]</div>
+          <p>The solid is an ellipsoid with semi-axes \(2\), \(3\), and \(1\), so its volume is \(\frac{4}{3}\pi \cdot 2 \cdot 3 \cdot 1 = 8\pi\).</p>
+          <div>\[ \iiint_E 3\,dV = 3 \cdot 8\pi = 24\pi \]</div>
+          <p>Both methods give \(24\pi\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="in-closing">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="in-closing-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">In Closing</span></button></h2>
+      <div class="section-body" id="in-closing-body">
+      <p>The Fundamental Theorem of Calculus, the Fundamental Theorem of Line Integrals, Green&rsquo;s Theorem, Stokes&rsquo; Theorem, and the Divergence Theorem are all versions of the same underlying principle:</p>
+      <p><strong>Integrating a derivative over a region gives you information about what happens on the boundary of that region.</strong></p>
+      <p>In each one below, the left side integrates a derivative over the region, and the right side describes what happens on the boundary.</p>
+      <h3>The Fundamental Theorem of Calculus</h3>
+      <p>Region: the interval \([a, b]\). Boundary: its two endpoints.</p>
+      <div>\[ \int_a^b f'(x)\,dx = f(b) - f(a) \]</div>
+      <h3>The Fundamental Theorem of Line Integrals</h3>
+      <p>Region: a curve \(C\). Boundary: its two endpoints.</p>
+      <div>\[ \int_C \nabla f \dotp d\mathbf{r} = f(\mathbf{r}(b)) - f(\mathbf{r}(a)) \]</div>
+      <h3>Green's Theorem</h3>
+      <p>Region: a region \(R\) in the plane. Boundary: the closed curve \(C\).</p>
+      <div>\[ \iint_R \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA = \oint_C \mathbf{F} \dotp d\mathbf{r} \]</div>
+      <h3>Stokes' Theorem</h3>
+      <p>Region: a surface \(S\). Boundary: the closed curve \(C\).</p>
+      <div>\[ \iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS = \oint_C \mathbf{F} \dotp d\mathbf{r} \]</div>
+      <h3>The Divergence Theorem</h3>
+      <p>Region: a solid \(E\). Boundary: the closed surface \(S\).</p>
+      <div>\[ \iiint_E \nabla \dotp \mathbf{F}\,dV = \iint_S \mathbf{F} \dotp \mathbf{n}\,dS \]</div>
+      <p>The derivative changes from theorem to theorem, but the idea stays the same. In each case, we use the theorem when the other side is easier to compute.</p>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="flux.html">&larr; Flux</a>
+    </nav>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Extrema of Functions of Two Variables | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Critical points, saddle points, and the second derivative test, with a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Extrema of Functions of Two Variables</h1>
+
+    <section class="topic-section" id="calculus-i-review">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="calculus-i-review-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Calculus I Review</span></button></h2>
+      <div class="section-body" id="calculus-i-review-body">
+      <img class="wide" src="images/extrema/calculus-1-maximum.png" width="625" height="521"
+           alt="The graph of a downward-opening parabola with its highest point, a maximum, marked in red.">
+      <p>In Calculus I, we found extrema by examining critical points, which are points where the first derivative is zero or undefined. At such points, the graph of a continuous function <em>might</em> turn in such a way that an extremum occurs. Now we focus on functions of two variables, \(f(x, y)\). Likewise, we will examine critical points!</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="what-is-a-critical-point">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-a-critical-point-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is a Critical Point?</span></button></h2>
+      <div class="section-body" id="what-is-a-critical-point-body">
+      <p>A critical point of \(f(x, y)\) is a point \((x_0, y_0)\) where both partial derivatives are zero, \(f_x = f_y = 0\), or where one of the partial derivatives does not exist. A point where \(\nabla f = \mathbf{0}\) is also called a stationary point.</p>
+      <img class="wide" src="images/extrema/stationary-point.png" width="759" height="441"
+           alt="A wavy surface with a horizontal plane touching it at a high point, marked in red, where the surface is flat in every direction.">
+      <p>Imagine a point on the graph of \(f(x, y)\) where \(\nabla f = \mathbf{0}\). Since \(D_{\mathbf{u}}f = \nabla f \dotp \mathbf{u}\), the directional derivative is zero in every direction \(\mathbf{u}\) at that point. Regardless of the direction we face, our instantaneous rate of change is zero. This is where the name &ldquo;stationary point&rdquo; comes from.</p>
+      <p>Such points are places to examine for <em>possible</em> extrema!</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="what-is-a-saddle-point">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-a-saddle-point-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is a Saddle Point?</span></button></h2>
+      <div class="section-body" id="what-is-a-saddle-point-body">
+      <p>A saddle point is a stationary point that is not a relative extremum. You will encounter these! One is illustrated below.</p>
+      <img class="wide" src="images/extrema/saddle-point.png" width="567" height="649"
+           alt="A saddle-shaped surface. At the center point the surface is flat, but it curves up in one direction and down in the other, so the point is neither a maximum nor a minimum.">
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-second-derivative-test">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-second-derivative-test-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Second Derivative Test</span></button></h2>
+      <div class="section-body" id="the-second-derivative-test-body">
+      <p>Suppose \((x_0, y_0)\) is a critical point of \(f(x, y)\) where \(f_x = f_y = 0\), and the second-order partial derivatives of \(f\) are continuous. To classify the critical point, we begin by finding \(D\).</p>
+      <div class="formula">
+        <p class="formula-name">The Discriminant</p>
+        <div>\[ D = f_{xx}(x_0, y_0)\,f_{yy}(x_0, y_0) - \left[f_{xy}(x_0, y_0)\right]^2 \]</div>
+      </div>
+      <p>We have the following tests.</p>
+      <ul>
+        <li>If \(D > 0\) and \(f_{xx}(x_0, y_0) > 0\), then there is a relative minimum at \((x_0, y_0)\).</li>
+        <li>If \(D > 0\) and \(f_{xx}(x_0, y_0) < 0\), then there is a relative maximum at \((x_0, y_0)\).</li>
+        <li>If \(D < 0\), then there is a saddle point at \((x_0, y_0)\).</li>
+        <li>If \(D = 0\), then the test is inconclusive.</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-and-classifying-critical-points">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-and-classifying-critical-points-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding and Classifying Critical Points</span></button></h2>
+      <div class="section-body" id="finding-and-classifying-critical-points-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find and classify the critical points of the function below.</p>
+        <div>\[ f(x, y) = 3x^2 y + y^3 - 3x^2 - 3y^2 + 2 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Find the first partial derivatives, and set them equal to zero.</p>
+          <div class="eq-list">
+            <div>\[ f_x = 6xy - 6x = 6x(y - 1) = 0 \]</div>
+            <div>\[ f_y = 3x^2 + 3y^2 - 6y = 0 \]</div>
+          </div>
+          <p>From \(f_x = 0\), either \(x = 0\) or \(y = 1\).</p>
+          <ul>
+            <li>If \(x = 0\): \(3y^2 - 6y = 0\), so \(3y(y - 2) = 0\), giving \(y = 0\) or \(y = 2\).</li>
+            <li>If \(y = 1\): \(3x^2 + 3 - 6 = 0\), so \(x^2 = 1\), giving \(x = 1\) or \(x = -1\).</li>
+          </ul>
+          <p>The critical points are \((0, 0)\), \((0, 2)\), \((1, 1)\), and \((-1, 1)\). Next, find the second partial derivatives.</p>
+          <div class="eq-list">
+            <div>\[ f_{xx} = 6y - 6 \]</div>
+            <div>\[ f_{yy} = 6y - 6 \]</div>
+            <div>\[ f_{xy} = 6x \]</div>
+          </div>
+          <p>Classify each critical point.</p>
+          <table class="facts">
+            <thead><tr><th scope="col">Point</th><th scope="col">\(f_{xx}\)</th><th scope="col">\(f_{yy}\)</th><th scope="col">\(f_{xy}\)</th><th scope="col">\(D\)</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td>\((0, 0)\)</td><td>\(-6\)</td><td>\(-6\)</td><td>\(0\)</td><td>\(36\)</td><td>Relative maximum</td></tr>
+              <tr><td>\((0, 2)\)</td><td>\(6\)</td><td>\(6\)</td><td>\(0\)</td><td>\(36\)</td><td>Relative minimum</td></tr>
+              <tr><td>\((1, 1)\)</td><td>\(0\)</td><td>\(0\)</td><td>\(6\)</td><td>\(-36\)</td><td>Saddle point</td></tr>
+              <tr><td>\((-1, 1)\)</td><td>\(0\)</td><td>\(0\)</td><td>\(-6\)</td><td>\(-36\)</td><td>Saddle point</td></tr>
+            </tbody>
+          </table>
+          <p>The relative maximum value is \(f(0, 0) = 2\), and the relative minimum value is \(f(0, 2) = 8 - 12 + 2 = -2\). The saddle points are \((1, 1, 0)\) and \((-1, 1, 0)\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="tangent-planes.html">&larr; Equations for Tangent Planes</a>
+      <a class="next" href="lagrange-multipliers.html">Lagrange Multipliers &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
