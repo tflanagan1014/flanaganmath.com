@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Average Value of a Function over a Solid | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Using triple integrals to find the average value of a function throughout a solid, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Average Value of a Function over a Solid</h1>
+
+    <section class="topic-section" id="the-average-value-of-a-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-average-value-of-a-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Average Value of a Function</span></button></h2>
+      <div class="section-body" id="the-average-value-of-a-function-body">
+      <p>The average value of a function \(f(x, y, z)\) throughout a solid \(E\) can be found using triple integrals. It is the integral of the function, divided by the volume of the solid.</p>
+      <div class="formula">
+        <p class="formula-name">Average Value over a Solid</p>
+        <div>\[ f_{\text{avg}} = \frac{\iiint_E f(x, y, z)\,dV}{\iiint_E 1\,dV} \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-an-average-value">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-an-average-value-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding an Average Value</span></button></h2>
+      <div class="section-body" id="finding-an-average-value-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the function below and the solid \(E\) bounded by \(0 \le x \le 6\), \(0 \le y \le x\), and \(0 \le z \le x\). Find the average value of this function throughout this solid.</p>
+        <div>\[ f(x, y, z) = x^3 + y - z \]</div>
+        <img class="wide" src="images/average-value/solid.png" width="466" height="448"
+             alt="A wedge-shaped solid in the first octant whose height and width both grow with x, from a point at the origin to a square face at x equals 6.">
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>First find the volume of the solid.</p>
+          <div>\[
+          \begin{aligned}
+            &\iiint_E 1\,dV \\
+            &\quad = \int_0^6 \int_0^x \int_0^x 1\,dz\,dy\,dx \\
+            &\quad = \int_0^6 x^2\,dx \\
+            &\quad = 72
+          \end{aligned}
+          \]</div>
+          <p>Next integrate the function over the solid.</p>
+          <div>\[
+          \begin{aligned}
+            &\iiint_E \left( x^3 + y - z \right) dV \\
+            &\quad = \int_0^6 \int_0^x \int_0^x \left( x^3 + y - z \right) dz\,dy\,dx \\
+            &\quad = \int_0^6 \int_0^x \left( x^4 + xy - \frac{x^2}{2} \right) dy\,dx \\
+            &\quad = \int_0^6 \left( x^5 + \frac{x^3}{2} - \frac{x^3}{2} \right) dx \\
+            &\quad = \int_0^6 x^5\,dx \\
+            &\quad = 7776
+          \end{aligned}
+          \]</div>
+          <div>\[ f_{\text{avg}} = \frac{7776}{72} = 108 \]</div>
+          <p>The average value of the function throughout the solid is 108.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="average-temperature">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="average-temperature-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Average Temperature</span></button></h2>
+      <div class="section-body" id="average-temperature-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>The average temperature throughout a solid \(E\) can also be found using triple integrals, where \(T(x, y, z)\) gives the temperature, in \(^\circ\mathrm{C}\), at each point in space.</p>
+        <div>\[ T_{\text{avg}} = \frac{\iiint_E T(x, y, z)\,dV}{\iiint_E 1\,dV} \]</div>
+        <p>For this problem, the temperature function is below, and the solid \(E\) is the cube \(0 \le x \le 4\), \(0 \le y \le 4\), and \(0 \le z \le 4\). In degrees Celsius, what is the average temperature throughout \(E\)?</p>
+        <div>\[ T(x, y, z) = 4x^2 + 6x - 5y \]</div>
+        <img class="wide" src="images/average-value/temperature-cube.png" width="704" height="506"
+             alt="A cube colored by temperature, warmest along one edge and coolest along the opposite edge.">
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The volume of the cube is \(4 \cdot 4 \cdot 4 = 64\). Next integrate the temperature over the cube. The function does not depend on \(z\), so the \(z\)-integral contributes a factor of \(4\).</p>
+          <div>\[
+          \begin{aligned}
+            &\iiint_E T\,dV \\
+            &\quad = \int_0^4 \int_0^4 \int_0^4 \left( 4x^2 + 6x - 5y \right) dz\,dy\,dx \\
+            &\quad = 4 \int_0^4 \int_0^4 \left( 4x^2 + 6x - 5y \right) dy\,dx \\
+            &\quad = 4 \int_0^4 \left( 16x^2 + 24x - 40 \right) dx \\
+            &\quad = 4 \left( \frac{1024}{3} + 192 - 160 \right) \\
+            &\quad = \frac{4480}{3}
+          \end{aligned}
+          \]</div>
+          <div>\[ T_{\text{avg}} = \frac{4480/3}{64} = \frac{70}{3} \approx 23.33 \]</div>
+          <p>The average temperature is about \(23.33^\circ\mathrm{C}\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="triple-integrals-and-volume.html">&larr; Triple Integrals and Volume</a>
+      <a class="next" href="surface-area-above-a-region.html">Surface Area above a Region &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

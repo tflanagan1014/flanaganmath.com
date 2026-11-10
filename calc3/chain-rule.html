@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Chain Rule | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="The chain rule for functions of several variables, with worked examples and physics applications.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>The Chain Rule</h1>
+
+    <section class="topic-section" id="chain-rule-i-one-independent-variable">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="chain-rule-i-one-independent-variable-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Chain Rule I: One Independent Variable</span></button></h2>
+      <div class="section-body" id="chain-rule-i-one-independent-variable-body">
+      <p>Consider a function of two variables, \(f(x, y)\). Suppose that \(x\) and \(y\) are functions of one variable, time \(t\). Then by the chain rule we can differentiate \(f\) with respect to time, as below.</p>
+      <div class="formula">
+        <p class="formula-name">Chain Rule, One Independent Variable</p>
+        <div>\[ \frac{df}{dt} = \frac{\partial f}{\partial x} \cdot \frac{dx}{dt} + \frac{\partial f}{\partial y} \cdot \frac{dy}{dt} \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="why-the-chain-rule-works">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="why-the-chain-rule-works-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Why the Chain Rule Works</span></button></h2>
+      <div class="section-body" id="why-the-chain-rule-works-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the following three functions.</p>
+        <div>\[
+        \begin{aligned}
+          f(x, y) &= 3x + y^2 \\
+          x(t) &= 1 - 5t \\
+          y(t) &= 2t
+        \end{aligned}
+        \]</div>
+        <p>In this problem we find \(df/dt\) in two different ways, and see that both give the same answer.</p>
+        <ol>
+          <li>Express \(f(x, y)\) as a function of time, and then differentiate to find \(df/dt\).</li>
+          <li>Use the chain rule to confirm the result from part (1).</li>
+        </ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Part (1)</strong></p>
+          <div>\[
+          \begin{aligned}
+            f(t) &= 3(1 - 5t) + (2t)^2 \\
+            &= 3 - 15t + 4t^2
+          \end{aligned}
+          \]</div>
+          <div>\[ \frac{df}{dt} = -15 + 8t \]</div>
+          <p><strong>Part (2)</strong></p>
+          <div>\[
+          \begin{aligned}
+            \frac{df}{dt} &= \frac{\partial f}{\partial x} \cdot \frac{dx}{dt} + \frac{\partial f}{\partial y} \cdot \frac{dy}{dt} \\
+            &= 3 \cdot (-5) + 2y \cdot 2 \\
+            &= -15 + 4y \\
+            &= -15 + 4(2t) \\
+            &= -15 + 8t
+          \end{aligned}
+          \]</div>
+          <p>Both methods give the same answer.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="writing-the-chain-rule-for-a-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="writing-the-chain-rule-for-a-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Writing the Chain Rule for a Function</span></button></h2>
+      <div class="section-body" id="writing-the-chain-rule-for-a-function-body">
+      <div class="example">
+        <h3>A Homework Problem</h3>
+        <p>Consider a function \(E(x, y)\), where \(x\) and \(y\) are both functions of time, \(t\). Use the chain rule to find a formula for \(dE/dt\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Replace \(f\) with \(E\) in the chain rule.</p>
+          <div>\[ \frac{dE}{dt} = \frac{\partial E}{\partial x} \cdot \frac{dx}{dt} + \frac{\partial E}{\partial y} \cdot \frac{dy}{dt} \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="temperature-along-a-path">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="temperature-along-a-path-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Temperature Along a Path</span></button></h2>
+      <div class="section-body" id="temperature-along-a-path-body">
+      <div class="example">
+        <h3>A Physics Application</h3>
+        <p>The function below gives the temperature \(T\) at each point \((x, y, z)\) in space.</p>
+        <div>\[ T(x, y, z) = 3x^2 - 3y^2 + z \]</div>
+        <p>The vector-valued function below traces out the path of a particle over time, \(t\).</p>
+        <div>\[ \mathbf{r}(t) = 3\sin t\,\mathbf{i} + 3\cos t\,\mathbf{j} + 7t\,\mathbf{k} \]</div>
+        <img class="wide" src="images/chain-rule/temperature-path.png" width="784" height="596"
+             alt="Three horizontal layers of a color-coded temperature field in space, with a curved path of a particle rising up through them.">
+        <p>For this particle, find an expression for its rate of change in temperature with respect to time.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>We are given the following functions.</p>
+          <div>\[
+          \begin{aligned}
+            x(t) &= 3\sin t \\
+            y(t) &= 3\cos t \\
+            z(t) &= 7t
+          \end{aligned}
+          \]</div>
+          <p>The chain rule extends to any number of variables. With three variables:</p>
+          <div>\[
+          \begin{aligned}
+            &\frac{dT}{dt} \\
+            &\quad = \frac{\partial T}{\partial x} \cdot \frac{dx}{dt} + \frac{\partial T}{\partial y} \cdot \frac{dy}{dt} \\
+            &\qquad\quad {}+ \frac{\partial T}{\partial z} \cdot \frac{dz}{dt} \\
+            &\quad = 6x \cdot 3\cos t + (-6y) \cdot (-3\sin t) \\
+            &\qquad\quad {}+ 1 \cdot 7 \\
+            &\quad = 18x\cos t + 18y\sin t + 7
+          \end{aligned}
+          \]</div>
+          <p>Substituting \(x = 3\sin t\) and \(y = 3\cos t\) gives the rate in terms of time alone.</p>
+          <div>\[
+          \begin{aligned}
+            \frac{dT}{dt} &= 54\sin t\cos t + 54\cos t\sin t + 7 \\
+            &= 108\sin t\cos t + 7
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="chain-rule-ii-two-independent-variables">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="chain-rule-ii-two-independent-variables-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Chain Rule II: Two Independent Variables</span></button></h2>
+      <div class="section-body" id="chain-rule-ii-two-independent-variables-body">
+      <p>Consider a function of two variables, \(f(x, y)\). Suppose that \(x\) and \(y\) are both functions of two variables, \(s\) and \(t\). Then by the chain rule we can differentiate \(f\) with respect to \(s\) or \(t\), as below.</p>
+      <div class="formula">
+        <p class="formula-name">Chain Rule, Two Independent Variables</p>
+        <div>\[
+        \begin{aligned}
+          \frac{\partial f}{\partial s} &= \frac{\partial f}{\partial x} \cdot \frac{\partial x}{\partial s} + \frac{\partial f}{\partial y} \cdot \frac{\partial y}{\partial s} \\
+          \frac{\partial f}{\partial t} &= \frac{\partial f}{\partial x} \cdot \frac{\partial x}{\partial t} + \frac{\partial f}{\partial y} \cdot \frac{\partial y}{\partial t}
+        \end{aligned}
+        \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="why-the-chain-rule-works-with-two-variables">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="why-the-chain-rule-works-with-two-variables-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Why the Chain Rule Works with Two Variables</span></button></h2>
+      <div class="section-body" id="why-the-chain-rule-works-with-two-variables-body">
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Consider the following three functions.</p>
+        <div>\[
+        \begin{aligned}
+          f(x, y) &= 3x + y^2 \\
+          x(s, t) &= s + t \\
+          y(s, t) &= 2st
+        \end{aligned}
+        \]</div>
+        <p>In this problem we find \(\partial f / \partial s\) in two different ways, and see that both give the same answer.</p>
+        <ol>
+          <li>Express \(f(x, y)\) as a function of \(s\) and \(t\), and then differentiate to find \(\partial f / \partial s\).</li>
+          <li>Use the chain rule to confirm the result from part (1).</li>
+        </ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Part (1)</strong></p>
+          <div>\[
+          \begin{aligned}
+            f(s, t) &= 3(s + t) + (2st)^2 \\
+            &= 3s + 3t + 4s^2t^2
+          \end{aligned}
+          \]</div>
+          <div>\[ \frac{\partial f}{\partial s} = 3 + 8st^2 \]</div>
+          <p><strong>Part (2)</strong></p>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial f}{\partial s} &= \frac{\partial f}{\partial x} \cdot \frac{\partial x}{\partial s} + \frac{\partial f}{\partial y} \cdot \frac{\partial y}{\partial s} \\
+            &= 3 \cdot 1 + 2y \cdot 2t \\
+            &= 3 + 4ty \\
+            &= 3 + 4t(2st) \\
+            &= 3 + 8st^2
+          \end{aligned}
+          \]</div>
+          <p>Both methods give the same answer.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="electromagnetic-energy-density">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="electromagnetic-energy-density-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Electromagnetic Energy Density</span></button></h2>
+      <div class="section-body" id="electromagnetic-energy-density-body">
+      <div class="example">
+        <h3>A Physics Application</h3>
+        <p>Electromagnetic energy density \(u\) is a function of the electric and magnetic field amplitudes, \(E\) and \(B\). It is given by the formula below, where \(\epsilon_0\) and \(\mu_0\) are physical constants known as the vacuum permittivity and vacuum permeability.</p>
+        <div>\[ u(E, B) = \frac{\epsilon_0 E^2}{2} + \frac{B^2}{2\mu_0} \]</div>
+        <p>For an electromagnetic wave traveling in the positive \(x\) direction, \(E\) and \(B\) are functions of \(x\) and time \(t\), given below. Here \(E_0\) and \(B_0\) are the maximum values of the electric and magnetic fields, \(k\) is the wave number, and \(\omega\) is the angular frequency.</p>
+        <div>\[
+        \begin{aligned}
+          E(x, t) &= E_0 \sin(kx - \omega t) \\
+          B(x, t) &= B_0 \sin(kx - \omega t)
+        \end{aligned}
+        \]</div>
+        <ol type="a">
+          <li>Find \(\partial u / \partial E\) and \(\partial u / \partial B\). These represent how the energy density changes with respect to changes in the field amplitudes.</li>
+          <li>Find \(\partial E / \partial t\) and \(\partial B / \partial t\). These represent how the fields vary in time at a fixed location \(x\).</li>
+          <li>Use the chain rule to find \(\partial u / \partial t\), how the energy density changes in time at a fixed location \(x\).</li>
+        </ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p><strong>Part (a)</strong></p>
+          <div class="eq-list">
+            <div>\[ \frac{\partial u}{\partial E} = \epsilon_0 E \]</div>
+            <div>\[ \frac{\partial u}{\partial B} = \frac{B}{\mu_0} \]</div>
+          </div>
+          <p><strong>Part (b)</strong></p>
+          <div class="eq-list">
+            <div>\[ \frac{\partial E}{\partial t} = -\omega E_0 \cos(kx - \omega t) \]</div>
+            <div>\[ \frac{\partial B}{\partial t} = -\omega B_0 \cos(kx - \omega t) \]</div>
+          </div>
+          <p><strong>Part (c)</strong></p>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial u}{\partial t} &= \frac{\partial u}{\partial E} \cdot \frac{\partial E}{\partial t} + \frac{\partial u}{\partial B} \cdot \frac{\partial B}{\partial t} \\
+            &= \epsilon_0 E \cdot \left(-\omega E_0 \cos(kx - \omega t)\right) \\
+            &\qquad {}+ \frac{B}{\mu_0} \cdot \left(-\omega B_0 \cos(kx - \omega t)\right) \\
+            &= -\omega\left(\epsilon_0 E E_0 + \frac{B B_0}{\mu_0}\right)\cos(kx - \omega t)
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="laplacian-and-harmonic-functions.html">&larr; The Laplacian and Harmonic Functions</a>
+      <a class="next" href="gradient.html">The Gradient &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

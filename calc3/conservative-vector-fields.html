@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conservative Vector Fields | Calculus 3 | Flanagan Math</title>
+  <meta name="description" content="Conservative vector fields and how to find a potential function, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 3</a>
+    </nav>
+
+    <h1>Conservative Vector Fields</h1>
+
+    <section class="topic-section" id="what-is-a-conservative-vector-field">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-a-conservative-vector-field-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is a Conservative Vector Field?</span></button></h2>
+      <div class="section-body" id="what-is-a-conservative-vector-field-body">
+      <p>A vector field \(\mathbf{F}\) is conservative if there exists a scalar-valued function \(f\) such that \(\nabla f = \mathbf{F}\). In this case, we call \(f\) a <strong>potential function</strong> for \(\mathbf{F}\).</p>
+      <div class="formula">
+        <p class="formula-name">Conservative Vector Field</p>
+        <div>\[ \mathbf{F} = \nabla f \]</div>
+      </div>
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Show that the vector field below is conservative, with the potential function \(f(x, y) = x + y^2 + 4\).</p>
+        <div>\[ \mathbf{F} = \langle 1,\ 2y \rangle \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \nabla f &= \left\langle \frac{\partial f}{\partial x},\ \frac{\partial f}{\partial y} \right\rangle \\
+            &= \langle 1,\ 2y \rangle \\
+            &= \mathbf{F}
+          \end{aligned}
+          \]</div>
+          <p>Since \(\nabla f = \mathbf{F}\), the vector field is conservative, and \(f\) is a potential function for it.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="how-to-find-a-potential-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="how-to-find-a-potential-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">How to Find a Potential Function</span></button></h2>
+      <div class="section-body" id="how-to-find-a-potential-function-body">
+      <p>Given a conservative vector field \(\mathbf{F}(x, y) = P(x, y)\,\mathbf{i} + Q(x, y)\,\mathbf{j}\):</p>
+      <ol>
+        <li>Integrate \(P\) with respect to \(x\). Add a function \(g(y)\) instead of a constant, since anything that depends only on \(y\) is constant with respect to \(x\). \(\displaystyle f = \int P\,dx + g(y)\)</li>
+        <li>Differentiate your result with respect to \(y\), and set it equal to \(Q\).</li>
+        <li>Solve for \(g(y)\), and substitute it back into \(f\).</li>
+      </ol>
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find a potential function for the vector field below.</p>
+        <div>\[ \mathbf{F}(x, y) = \langle 2xy,\ x^2 + 3y^2 \rangle \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Here \(P = 2xy\) and \(Q = x^2 + 3y^2\).</p>
+          <p><strong>Step 1</strong>: Integrate \(P\) with respect to \(x\).</p>
+          <div>\[
+          \begin{aligned}
+            f &= \int 2xy\,dx + g(y) \\
+            &= x^2 y + g(y)
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 2</strong>: Differentiate with respect to \(y\), and set it equal to \(Q\).</p>
+          <div>\[ \frac{\partial f}{\partial y} = x^2 + g'(y) = x^2 + 3y^2 \]</div>
+          <p><strong>Step 3</strong>: Solve for \(g(y)\), and substitute it back into \(f\).</p>
+          <div class="eq-list">
+            <div>\[ g'(y) = 3y^2 \]</div>
+            <div>\[ g(y) = y^3 + C \]</div>
+          </div>
+          <div>\[ f(x, y) = x^2 y + y^3 + C \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="line-integrals-and-work.html">&larr; Line Integrals and Work</a>
+      <a class="next" href="fundamental-theorem-of-line-integrals.html">The Fundamental Theorem of Line Integrals &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
