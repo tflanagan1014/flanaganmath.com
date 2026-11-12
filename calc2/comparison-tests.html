@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Comparison Tests | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="The Direct Comparison Test and the Limit Comparison Test, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>The Comparison Tests</h1>
+
+    <section class="topic-section" id="the-direct-comparison-test">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-direct-comparison-test-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Direct Comparison Test</span></button></h2>
+      <div class="section-body" id="the-direct-comparison-test-body">
+      <p>Compare a series to one whose behavior you already know.</p>
+      <ul>
+        <li>If \(0 \le a_n \le b_n\) and \(\sum b_k\) converges, then \(\sum a_k\) converges.</li>
+        <li>If \(0 \le b_n \le a_n\) and \(\sum b_k\) diverges, then \(\sum a_k\) diverges.</li>
+      </ul>
+      <div class="example">
+        <p>Does \(\displaystyle\sum_{k=1}^{\infty} \frac{1}{k^2 + 3}\) converge or diverge?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>\(\dfrac{1}{k^2 + 3} \le \dfrac{1}{k^2}\), and \(\sum \frac{1}{k^2}\) is a convergent p-series. So the series converges.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-limit-comparison-test">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-limit-comparison-test-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Limit Comparison Test</span></button></h2>
+      <div class="section-body" id="the-limit-comparison-test-body">
+      <p>Suppose all terms of the two series are positive.</p>
+      <div class="formula">
+        <p class="formula-name">The Limit Comparison Test</p>
+        <div>\[
+        \begin{aligned}
+          &\text{If } \lim_{n \to \infty} \frac{a_n}{b_n} \text{ is a positive finite number,} \\
+          &\text{both series converge or both diverge.}
+        \end{aligned}
+        \]</div>
+      </div>
+      <div class="example">
+        <p>Use \(\displaystyle\sum_{k=1}^{\infty} \frac{1}{k^2}\) to decide whether \(\displaystyle\sum_{k=1}^{\infty} \frac{\sqrt{k^4 + 7}}{2k^4 + 1}\) converges.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>\(\sum \frac{1}{k^2}\) is a convergent p-series.</p>
+          <div>\[
+          \begin{aligned}
+            \lim_{n \to \infty} \frac{\frac{\sqrt{n^4 + 7}}{2n^4 + 1}}{\frac{1}{n^2}} &= \lim_{n \to \infty} \frac{n^2\sqrt{n^4 + 7}}{2n^4 + 1} \\
+            &= \frac{1}{2}
+          \end{aligned}
+          \]</div>
+          <p>The limit is positive and finite, so the series converges.</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>Use the harmonic series to decide whether \(\displaystyle\sum_{k=1}^{\infty} \frac{1}{k + 5}\) converges.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \lim_{n \to \infty} \frac{\frac{1}{n + 5}}{\frac{1}{n}} &= \lim_{n \to \infty} \frac{n}{n + 5} \\
+            &= 1
+          \end{aligned}
+          \]</div>
+          <p>The limit is positive and finite, and the harmonic series diverges, so this series diverges.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="integral-test-and-p-series.html">&larr; The Integral Test and p-Series</a>
+      <a class="next" href="alternating-series.html">Alternating Series &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

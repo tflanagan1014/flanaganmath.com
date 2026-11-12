@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Integral Test and p-Series | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="Using an improper integral to decide convergence, and p-series, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>The Integral Test and p-Series</h1>
+
+    <section class="topic-section" id="the-integral-test">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-integral-test-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Integral Test</span></button></h2>
+      <div class="section-body" id="the-integral-test-body">
+      <div class="formula">
+        <p class="formula-name">The Integral Test</p>
+        <div>\[
+        \begin{aligned}
+          &\sum_{k=1}^{\infty} a_k \text{ and } \int_1^\infty f(x)\,dx \\
+          &\text{either both converge or both diverge.}
+        \end{aligned}
+        \]</div>
+      </div>
+      <p>This requires \(f(k) = a_k\), and \(f\) must be continuous, positive, and nonincreasing.</p>
+      <div class="example">
+        <p>Consider \(\displaystyle\sum_{k=2}^{\infty} \frac{k}{\left(k^2 - 1\right)^4}\). Evaluate \(\displaystyle\int_2^\infty \frac{x}{\left(x^2 - 1\right)^4}\,dx\). What can you conclude?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Let \(u = x^2 - 1\), so \(du = 2x\,dx\). When \(x = 2\), \(u = 3\).</p>
+          <div>\[
+          \begin{aligned}
+            \int_2^\infty \frac{x\,dx}{\left(x^2 - 1\right)^4} &= \frac{1}{2}\int_3^\infty u^{-4}\,du \\
+            &= \frac{1}{2}\lim_{t \to \infty} \left[-\frac{1}{3u^3}\right]_3^t \\
+            &= \frac{1}{162}
+          \end{aligned}
+          \]</div>
+          <p>The integral converges, so the series converges. (The series does not equal 1/162. The test only tells us it converges.)</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="p-series">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="p-series-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">p-Series</span></button></h2>
+      <div class="section-body" id="p-series-body">
+      <div class="formula">
+        <p class="formula-name">p-Series</p>
+        <div>\[ \sum_{k=1}^{\infty} \frac{1}{k^p} \]</div>
+      </div>
+      <ul>
+        <li>If \(p > 1\), the series converges.</li>
+        <li>If \(p \le 1\), the series diverges.</li>
+      </ul>
+      <div class="example">
+        <p>Consider \(\displaystyle\sum_{k=1}^{\infty} \frac{1}{k^6}\). Evaluate \(\displaystyle\int_1^\infty \frac{dx}{x^6}\). What can you conclude?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \int_1^\infty x^{-6}\,dx &= \lim_{t \to \infty} \left[-\frac{1}{5x^5}\right]_1^t \\
+            &= \frac{1}{5}
+          \end{aligned}
+          \]</div>
+          <p>The integral converges, so the series converges. It is a p-series with \(p = 6 > 1\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>Consider the harmonic series \(\displaystyle\sum_{k=1}^{\infty} \frac{1}{k}\). Evaluate \(\displaystyle\int_1^\infty \frac{dx}{x}\). What can you conclude?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \int_1^\infty \frac{dx}{x} &= \lim_{t \to \infty} \ln t \\
+            &= \infty
+          \end{aligned}
+          \]</div>
+          <p>The integral diverges, so the harmonic series diverges.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="geometric-series.html">&larr; Geometric Series</a>
+      <a class="next" href="comparison-tests.html">The Comparison Tests &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

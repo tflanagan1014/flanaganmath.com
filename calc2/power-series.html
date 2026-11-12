@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power Series and the Interval of Convergence | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="Finding where a power series converges with the Ratio Test and endpoint checks, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>Power Series and the Interval of Convergence</h1>
+
+    <section class="topic-section" id="power-series-and-the-interval-of-convergence">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="power-series-and-the-interval-of-convergence-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Power Series and the Interval of Convergence</span></button></h2>
+      <div class="section-body" id="power-series-and-the-interval-of-convergence-body">
+      <p>A power series, like \(\displaystyle\sum_{k=0}^{\infty} c_k x^k\), is an infinite polynomial. For some values of \(x\) it converges, and for others it diverges. The values where it converges form its interval of convergence.</p>
+      <p><b>Idea:</b> Use the Ratio Test to find the interval. Then check each endpoint separately, because the Ratio Test is inconclusive there.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="examples-10">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="examples-10-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Examples</span></button></h2>
+      <div class="section-body" id="examples-10-body">
+      <div class="example">
+        <p>Find the interval of convergence of \(\displaystyle\sum_{k=0}^{\infty} \frac{x^k}{k + 5}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \lim_{n \to \infty} \left|\frac{x^{n+1}}{n + 6} \cdot \frac{n + 5}{x^n}\right| &= |x|\lim_{n \to \infty} \frac{n + 5}{n + 6} \\
+            &= |x|
+          \end{aligned}
+          \]</div>
+          <p>The series converges when \(|x| < 1\). Now check the endpoints.</p>
+          <ul>
+            <li>At \(x = 1\): \(\sum \frac{1}{k + 5}\) diverges, by limit comparison with the harmonic series.</li>
+            <li>At \(x = -1\): \(\sum \frac{(-1)^k}{k + 5}\) converges, by the Alternating Series Test.</li>
+          </ul>
+          <p>The interval of convergence is \([-1, 1)\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find the interval of convergence of \(\displaystyle\sum_{k=0}^{\infty} \frac{x^k}{2^k(k + 1)}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \lim_{n \to \infty} \left|\frac{x^{n+1}}{2^{n+1}(n + 2)} \cdot \frac{2^n(n + 1)}{x^n}\right| &= \frac{|x|}{2}\lim_{n \to \infty} \frac{n + 1}{n + 2} \\
+            &= \frac{|x|}{2}
+          \end{aligned}
+          \]</div>
+          <p>The series converges when \(|x| < 2\). Now check the endpoints.</p>
+          <ul>
+            <li>At \(x = 2\): \(\sum \frac{1}{k + 1}\) is the harmonic series, which diverges.</li>
+            <li>At \(x = -2\): \(\sum \frac{(-1)^k}{k + 1}\) converges, by the Alternating Series Test.</li>
+          </ul>
+          <p>The interval of convergence is \([-2, 2)\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="root-test.html">&larr; The Root Test</a>
+      <a class="next" href="taylor-and-maclaurin-series.html">Taylor and Maclaurin Series &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

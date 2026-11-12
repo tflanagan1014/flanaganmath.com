@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geometric Series | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="When a geometric series converges and what it converges to, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>Geometric Series</h1>
+
+    <section class="topic-section" id="geometric-series">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="geometric-series-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Geometric Series</span></button></h2>
+      <div class="section-body" id="geometric-series-body">
+      <div class="formula">
+        <p class="formula-name">Geometric Series</p>
+        <div>\[ \sum_{k=1}^{\infty} ar^{k - 1} = a + ar + ar^2 + ar^3 + \cdots \]</div>
+      </div>
+      <ul>
+        <li>If \(|r| \ge 1\), the series diverges.</li>
+        <li>If \(|r| < 1\), the series converges to \(\dfrac{a}{1 - r}\).</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="examples-7">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="examples-7-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Examples</span></button></h2>
+      <div class="section-body" id="examples-7-body">
+      <div class="example">
+        <p>Find \(S_4\) for \(\displaystyle\sum_{k=1}^{\infty} \frac{1}{2} \cdot 3^{k - 1}\). Then explain why the series diverges.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            S_4 &= \frac{1}{2}(1 + 3 + 9 + 27) \\
+            &= 20
+          \end{aligned}
+          \]</div>
+          <p>The ratio is \(r = 3\), and \(|r| \ge 1\), so the series diverges.</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find \(S_5\) for \(\displaystyle\sum_{k=1}^{\infty} 6\left(\frac{1}{2}\right)^{k - 1}\). Then explain why it converges, and find its sum.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            S_5 &= 6\left(1 + \tfrac{1}{2} + \tfrac{1}{4} + \tfrac{1}{8} + \tfrac{1}{16}\right) \\
+            &= 11.625
+          \end{aligned}
+          \]</div>
+          <p>The ratio is \(r = \frac{1}{2}\), and \(|r| < 1\), so it converges.</p>
+          <div>\[
+          \begin{aligned}
+            \frac{a}{1 - r} &= \frac{6}{1 - \frac{1}{2}} \\
+            &= 12
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Does \(\displaystyle\sum_{k=2}^{\infty} 5\left(\frac{1}{3}\right)^{k - 1}\) converge or diverge? If it converges, find its sum.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>This series starts at \(k = 2\), so its first term is \(a = 5\left(\frac{1}{3}\right) = \frac{5}{3}\). The ratio is \(r = \frac{1}{3}\), so it converges.</p>
+          <div>\[
+          \begin{aligned}
+            \frac{a}{1 - r} &= \frac{\frac{5}{3}}{1 - \frac{1}{3}} \\
+            &= \frac{5}{2}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="infinite-series.html">&larr; Infinite Series</a>
+      <a class="next" href="integral-test-and-p-series.html">The Integral Test and p-Series &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

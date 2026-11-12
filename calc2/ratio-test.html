@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Ratio Test | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="Using the Ratio Test to decide convergence, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>The Ratio Test</h1>
+
+    <section class="topic-section" id="the-ratio-test">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-ratio-test-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Ratio Test</span></button></h2>
+      <div class="section-body" id="the-ratio-test-body">
+      <p>Let \(L = \displaystyle\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|\).</p>
+      <ul>
+        <li>If \(L < 1\), the series converges.</li>
+        <li>If \(L > 1\), the series diverges.</li>
+        <li>If \(L = 1\), the test is inconclusive.</li>
+      </ul>
+      <p>The Ratio Test works especially well with factorials and powers.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="examples-8">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="examples-8-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Examples</span></button></h2>
+      <div class="section-body" id="examples-8-body">
+      <div class="example">
+        <p>Apply the Ratio Test to \(\displaystyle\sum_{k=1}^{\infty} \frac{4^k}{(k + 2)!}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \left|\frac{a_{n+1}}{a_n}\right| &= \frac{4^{n+1}}{(n + 3)!} \cdot \frac{(n + 2)!}{4^n} \\
+            &= \frac{4}{n + 3}
+          \end{aligned}
+          \]</div>
+          <div>\[ \lim_{n \to \infty} \frac{4}{n + 3} = 0 < 1 \]</div>
+          <p>The series converges.</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>Apply the Ratio Test to \(\displaystyle\sum_{k=1}^{\infty} k\left(\frac{3}{2}\right)^k\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \left|\frac{a_{n+1}}{a_n}\right| = \frac{n + 1}{n} \cdot \frac{3}{2} \]</div>
+          <div>\[ \lim_{n \to \infty} \frac{n + 1}{n} \cdot \frac{3}{2} = \frac{3}{2} > 1 \]</div>
+          <p>The series diverges.</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>Apply the Ratio Test to \(\displaystyle\sum_{k=1}^{\infty} \frac{k}{k + 5}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \lim_{n \to \infty} \frac{n + 1}{n + 6} \cdot \frac{n + 5}{n} = 1 \]</div>
+          <p>The Ratio Test is inconclusive. But the Divergence Test settles it: \(\frac{n}{n + 5} \to 1 \neq 0\), so the series diverges.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="alternating-series.html">&larr; Alternating Series</a>
+      <a class="next" href="root-test.html">The Root Test &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

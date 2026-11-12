@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alternating Series | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="The Alternating Series Test, with a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>Alternating Series</h1>
+
+    <section class="topic-section" id="the-alternating-series-test">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-alternating-series-test-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Alternating Series Test</span></button></h2>
+      <div class="section-body" id="the-alternating-series-test-body">
+      <p>An alternating series has terms that switch sign.</p>
+      <div class="formula">
+        <p class="formula-name">The Alternating Series Test</p>
+        <div>\[
+        \begin{aligned}
+          &\text{If } |a_n| \text{ is decreasing and } \lim_{n \to \infty} |a_n| = 0, \\
+          &\text{the alternating series converges.}
+        \end{aligned}
+        \]</div>
+      </div>
+      <p>Otherwise, the test is inconclusive.</p>
+      <div class="example">
+        <p>Does the alternating harmonic series \(\displaystyle\sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k}\) converge?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The terms \(\frac{1}{k}\) are decreasing and approach 0, so the series converges, even though the harmonic series \(\sum \frac{1}{k}\) diverges!</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="comparison-tests.html">&larr; The Comparison Tests</a>
+      <a class="next" href="ratio-test.html">The Ratio Test &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
