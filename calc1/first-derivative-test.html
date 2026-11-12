@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 15: The First Derivative Test | Calculus 1 | Flanagan Math</title>
+  <meta name="description" content="Finding where a function increases and decreases and classifying relative extrema with the first derivative test, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 1</a>
+    </nav>
+
+    <h1>Lesson 15: The First Derivative Test</h1>
+
+    <section class="topic-section" id="information-in-the-first-derivative">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="information-in-the-first-derivative-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Information in the First Derivative</span></button></h2>
+      <div class="section-body" id="information-in-the-first-derivative-body">
+      <p>A differentiable function is increasing where \(f\,&#39;(x) > 0\) and decreasing where \(f\,&#39;(x) < 0\).</p>
+      <ul>
+        <li>As the graph moves through a relative maximum, it switches from increasing to decreasing.</li>
+        <li>As the graph moves through a relative minimum, it switches from decreasing to increasing.</li>
+        <li>Relative extrema occur at critical numbers.</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-first-derivative-test">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-first-derivative-test-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The First Derivative Test</span></button></h2>
+      <div class="section-body" id="the-first-derivative-test-body">
+      <div class="formula">
+        <p class="formula-name">Steps</p>
+        <ol>
+          <li>Find any numbers excluded from the domain of \(f(x)\).</li>
+          <li>Find where \(f\,&#39;(x)\) is zero or undefined.</li>
+          <li>Use these numbers to break up the number line into intervals.</li>
+          <li>Choose a test number in each interval and find the sign of \(f\,&#39;(x)\).</li>
+          <li>\(f(x)\) is increasing where \(f\,&#39;(x)\) is positive and decreasing where it is negative.</li>
+          <li>Find the \(y\)-coordinate of each extremum. Always use \(f(x)\) for \(y\)-coordinates.</li>
+        </ol>
+      </div>
+      <p>A relative minimum is where the graph switches from decreasing to increasing. A relative maximum is where it switches from increasing to decreasing.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="examples">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="examples-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Examples</span></button></h2>
+      <div class="section-body" id="examples-body">
+      <div class="example">
+        <p>Find where \(f(x) = x + \dfrac{36}{x}\) is increasing and decreasing, and find and classify its extrema.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The number \(0\) is excluded from the domain.</p>
+          <div>\[
+          \begin{aligned}
+            f'(x) &= 1 - \frac{36}{x^2} = 0 \\
+            x^2 &= 36 \\
+            x &= \pm 6
+          \end{aligned}
+          \]</div>
+          <table class="grid values">
+            <caption class="visually-hidden">Signs of the derivative</caption>
+            <tr><th scope="col">Interval</th><th scope="col">\(f\,'(x)\)</th><th scope="col">\(f(x)\) is</th></tr>
+            <tr><td>\((-\infty, -6)\)</td><td>+</td><td>increasing</td></tr>
+            <tr><td>\((-6, 0)\)</td><td>&minus;</td><td>decreasing</td></tr>
+            <tr><td>\((0, 6)\)</td><td>&minus;</td><td>decreasing</td></tr>
+            <tr><td>\((6, \infty)\)</td><td>+</td><td>increasing</td></tr>
+          </table>
+          <div>\[
+          \begin{aligned}
+            f(-6) &= -6 - 6 = -12 \\
+            f(6) &= 6 + 6 = 12
+          \end{aligned}
+          \]</div>
+          <p>There is a relative maximum at \((-6, -12)\) and a relative minimum at \((6, 12)\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find where \(f(x) = \cos(3x)\) is increasing and decreasing on \((0, 2\pi)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f'(x) &= -3\sin(3x) = 0 \\
+            x &= \frac{\pi}{3},\ \frac{2\pi}{3},\ \pi,\ \frac{4\pi}{3},\ \frac{5\pi}{3}
+          \end{aligned}
+          \]</div>
+          <p>Testing a number in each interval, \(f\,&#39;(x)\) alternates in sign, starting negative.</p>
+          <p>Decreasing on \(\left(0, \frac{\pi}{3}\right)\), \(\left(\frac{2\pi}{3}, \pi\right)\), and \(\left(\frac{4\pi}{3}, \frac{5\pi}{3}\right)\).</p>
+          <p>Increasing on \(\left(\frac{\pi}{3}, \frac{2\pi}{3}\right)\), \(\left(\pi, \frac{4\pi}{3}\right)\), and \(\left(\frac{5\pi}{3}, 2\pi\right)\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>A Sample Exam Problem</h3>
+        <p>Find where \(f(x) = \dfrac{x^2 + 168}{x - 1}\) is increasing and decreasing, and find its relative extrema.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The number \(1\) is excluded from the domain.</p>
+          <div>\[
+          \begin{aligned}
+            f'(x) &= \frac{2x(x - 1) - \left(x^2 + 168\right)}{(x - 1)^2} \\
+            &= \frac{x^2 - 2x - 168}{(x - 1)^2} \\
+            &= \frac{(x - 14)(x + 12)}{(x - 1)^2}
+          \end{aligned}
+          \]</div>
+          <table class="grid values">
+            <caption class="visually-hidden">Signs of the derivative</caption>
+            <tr><th scope="col">Interval</th><th scope="col">\(f\,'(x)\)</th><th scope="col">\(f(x)\) is</th></tr>
+            <tr><td>\((-\infty, -12)\)</td><td>+</td><td>increasing</td></tr>
+            <tr><td>\((-12, 1)\)</td><td>&minus;</td><td>decreasing</td></tr>
+            <tr><td>\((1, 14)\)</td><td>&minus;</td><td>decreasing</td></tr>
+            <tr><td>\((14, \infty)\)</td><td>+</td><td>increasing</td></tr>
+          </table>
+          <div>\[
+          \begin{aligned}
+            f(-12) &= \frac{312}{-13} = -24 \\
+            f(14) &= \frac{364}{13} = 28
+          \end{aligned}
+          \]</div>
+          <p>There is a relative maximum at \((-12, -24)\) and a relative minimum at \((14, 28)\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="mean-value-theorem.html">&larr; The Mean Value Theorem</a>
+      <a class="next" href="concavity-and-inflection-points.html">Concavity and Inflection Points &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

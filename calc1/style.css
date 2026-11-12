@@ -237,3 +237,4 @@ table.values th { border: 1px solid #ccc; padding: 0.35rem 0.9rem; text-align: c
 table.values { width: auto; table-layout: auto; }
 img.wide { width: 100%; height: auto; max-width: 660px; display: block; margin: 0.5rem 0 1rem; }
 .formula ul { margin: 0.25rem 0 0.25rem 1.25rem; }
+@media (max-width: 400px) { table.values th, table.values td { padding: 0.3rem 0.35rem; } }
