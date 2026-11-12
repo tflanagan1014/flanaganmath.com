@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 4: The Intermediate Value Theorem | Calculus 1 | Flanagan Math</title>
+  <meta name="description" content="When a solution must exist: the Intermediate Value Theorem and finding an interval containing a solution, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 1</a>
+    </nav>
+
+    <h1>Lesson 4: The Intermediate Value Theorem</h1>
+
+    <section class="topic-section" id="solutions-do-not-always-exist">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="solutions-do-not-always-exist-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Solutions do not Always Exist</span></button></h2>
+      <div class="section-body" id="solutions-do-not-always-exist-body">
+      <p>In earlier courses you learned why each equation below has no solution.</p>
+      <div class="eq-list">
+        <div>\[ x + 1 = x \]</div>
+        <div>\[ \sin x = 4 \]</div>
+        <div>\[ e^x = 0 \]</div>
+        <div>\[ \frac{x}{x + 1} = 1 \]</div>
+      </div>
+      <p>So it is useful to know when a solution must exist.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-intermediate-value-theorem">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-intermediate-value-theorem-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Intermediate Value Theorem</span></button></h2>
+      <div class="section-body" id="the-intermediate-value-theorem-body">
+      <div class="row">
+        <div>
+          <p>Assume \(a < b\). Suppose \(f(x)\) is continuous on \([a, b]\), and both of the following are true.</p>
+          <ul>
+            <li>\(f(a)\) is negative</li>
+            <li>\(f(b)\) is positive</li>
+          </ul>
+          <p>Then there is at least one number \(c\) with \(a < c < b\) such that \(f(c) = 0\). That is, \(c\) is a solution of \(f(x) = 0\).</p>
+          <p>The same is true if f(a) is positive and f(b) is negative.</p>
+        </div>
+        <img src="images/intermediate-value-theorem.png" width="335" height="287"
+             alt="A continuous curve from a point (a, f of a) below the x-axis to a point (b, f of b) above it, crossing the x-axis at a point c between a and b.">
+      </div>
+      <p><b>Idea:</b> Solutions do not always exist. But under the right assumptions, this theorem guarantees at least one does. Don&rsquo;t underestimate the usefulness of knowing a solution exists!</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-an-interval-containing-a-solution">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-an-interval-containing-a-solution-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding an Interval Containing a Solution</span></button></h2>
+      <div class="section-body" id="finding-an-interval-containing-a-solution-body">
+      <div class="example">
+        <p>Find an interval containing a solution to the equation below.</p>
+        <div>\[ e^{-x} + \sin x = 0 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Let \(f(x) = e^{-x} + \sin x\). Make a table of values, using radians and four decimal places, and look for a sign change.</p>
+          <table class="grid values">
+            <caption class="visually-hidden">Values of f(x)</caption>
+            <tr><th scope="col">\(x\)</th><th scope="col">\(f(x)\)</th></tr>
+            <tr><td>1</td><td>1.2094</td></tr>
+            <tr><td>2</td><td>1.0446</td></tr>
+            <tr><td>3</td><td>0.1909</td></tr>
+            <tr><td>4</td><td>&minus;0.7385</td></tr>
+          </table>
+          <p>\(f(3)\) is positive and \(f(4)\) is negative. The function is continuous, so the Intermediate Value Theorem says a solution \(c\) must exist between 3 and 4.</p>
+          <p>No algebraic procedure finds this solution exactly. Using technology, \(c \approx 3.0964\). There are more solutions, too!</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Now You Try</h3>
+        <p>Find an interval containing a solution to the equation below.</p>
+        <div>\[ 2x^3 - 3x^2 - 3x - 5 = 0 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Let \(f(x) = 2x^3 - 3x^2 - 3x - 5\). Use a table of values to look for a sign change.</p>
+          <table class="grid values">
+            <caption class="visually-hidden">Values of f(x)</caption>
+            <tr><th scope="col">\(x\)</th><th scope="col">\(f(x)\)</th></tr>
+            <tr><td>0</td><td>&minus;5</td></tr>
+            <tr><td>1</td><td>&minus;9</td></tr>
+            <tr><td>2</td><td>&minus;7</td></tr>
+            <tr><td>3</td><td>13</td></tr>
+          </table>
+          <p>\(f(2)\) is negative and \(f(3)\) is positive. A polynomial is continuous, so a solution exists in the interval \(2 < x < 3\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>A Sample Exam Problem</h3>
+        <p>Consider the function below on the interval \([1, 10]\). Use the Intermediate Value Theorem to explain why there is, or is not, at least one number \(c\) with \(1 < c < 10\) and \(f(c) = 0\).</p>
+        <div>\[ f(x) = 2 - x + \ln x \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f(1) &= 2 - 1 + \ln 1 \\
+            &= 1
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            f(10) &= 2 - 10 + \ln 10 \\
+            &\approx -5.6974
+          \end{aligned}
+          \]</div>
+          <p>\(f(x)\) is continuous on \([1, 10]\), \(f(1)\) is positive, and \(f(10)\) is negative. So the Intermediate Value Theorem guarantees at least one such number \(c\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="epsilon-delta-definition-of-a-limit.html">&larr; The Epsilon-Delta Definition of a Limit</a>
+      <a class="next" href="squeeze-theorem.html">The Squeeze Theorem &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
