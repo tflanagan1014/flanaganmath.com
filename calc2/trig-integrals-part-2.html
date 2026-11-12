@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 13: Trigonometric Integrals, Part 2 | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="Integrating products of powers of sine and cosine, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>Lesson 13: Trigonometric Integrals, Part 2</h1>
+
+    <section class="topic-section" id="products-of-sine-and-cosine">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="products-of-sine-and-cosine-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Products of Sine and Cosine</span></button></h2>
+      <div class="section-body" id="products-of-sine-and-cosine-body">
+      <ul>
+        <li><b>Power of sine is odd:</b> save one \(\sin x\), change the rest with \(\sin^2\theta = 1 - \cos^2\theta\), and let \(u = \cos x\).</li>
+        <li><b>Power of cosine is odd:</b> save one \(\cos x\), change the rest with \(\cos^2\theta = 1 - \sin^2\theta\), and let \(u = \sin x\).</li>
+        <li><b>Both powers are even:</b> use the half-angle identities.</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="examples-3">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="examples-3-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Examples</span></button></h2>
+      <div class="section-body" id="examples-3-body">
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \sin^8 x\cos^3 x\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \int \sin^8 x\cos^3 x\,dx = \int \sin^8 x\left(1 - \sin^2 x\right)\cos x\,dx \]</div>
+          <p>Let \(u = \sin x\).</p>
+          <div>\[ \int \left(u^8 - u^{10}\right)du = \frac{\sin^9 x}{9} - \frac{\sin^{11} x}{11} + C \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \sin^5 x\sqrt{\cos x}\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \int \sin^5 x\sqrt{\cos x}\,dx = \int \left(1 - \cos^2 x\right)^2\sqrt{\cos x}\,\sin x\,dx \]</div>
+          <p>Let \(u = \cos x\), so \(du = -\sin x\,dx\).</p>
+          <div>\[
+          \begin{aligned}
+            &-\int \left(u^{\frac{1}{2}} - 2u^{\frac{5}{2}} + u^{\frac{9}{2}}\right)du \\
+            &\quad = -\frac{2}{3}\cos^{\frac{3}{2}} x + \frac{4}{7}\cos^{\frac{7}{2}} x \\
+            &\qquad\quad {}- \frac{2}{11}\cos^{\frac{11}{2}} x + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \sin^2 x\cos^2 x\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \sin^2 x\cos^2 x &= \frac{1 - \cos(2x)}{2} \cdot \frac{1 + \cos(2x)}{2} \\
+            &= \frac{1 - \cos^2(2x)}{4} \\
+            &= \frac{1}{4} - \frac{1 + \cos(4x)}{8} \\
+            &= \frac{1}{8} - \frac{\cos(4x)}{8}
+          \end{aligned}
+          \]</div>
+          <div>\[ \int \sin^2 x\cos^2 x\,dx = \frac{x}{8} - \frac{\sin(4x)}{32} + C \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="trig-integrals-part-1.html">&larr; Trigonometric Integrals, Part 1</a>
+      <a class="next" href="trig-integrals-part-3.html">Trigonometric Integrals, Part 3 &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

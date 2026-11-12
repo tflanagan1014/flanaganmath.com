@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 16: Trigonometric Substitution | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="Using trigonometric substitutions for integrals with square roots, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>Lesson 16: Trigonometric Substitution</h1>
+
+    <section class="topic-section" id="trigonometric-substitution">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="trigonometric-substitution-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Trigonometric Substitution</span></button></h2>
+      <div class="section-body" id="trigonometric-substitution-body">
+      <ul>
+        <li>If the integrand contains \(\sqrt{a^2 - x^2}\), let \(x = a\sin\theta\). Use \(1 - \sin^2\theta = \cos^2\theta\).</li>
+        <li>If the integrand contains \(\sqrt{x^2 + a^2}\), let \(x = a\tan\theta\). Use \(\tan^2\theta + 1 = \sec^2\theta\).</li>
+        <li>If the integrand contains \(\sqrt{x^2 - a^2}\), let \(x = a\sec\theta\). Use \(\sec^2\theta - 1 = \tan^2\theta\).</li>
+      </ul>
+      <p>After integrating, draw a right triangle to change back to x.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="examples-5">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="examples-5-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Examples</span></button></h2>
+      <div class="section-body" id="examples-5-body">
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \frac{dx}{x^2\sqrt{100 - x^2}}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Let \(x = 10\sin\theta\), so \(dx = 10\cos\theta\,d\theta\) and \(\sqrt{100 - x^2} = 10\cos\theta\).</p>
+          <div>\[
+          \begin{aligned}
+            \int \frac{10\cos\theta\,d\theta}{100\sin^2\theta \cdot 10\cos\theta} &= \frac{1}{100}\int \csc^2\theta\,d\theta \\
+            &= -\frac{\cot\theta}{100} + C \\
+            &= -\frac{\sqrt{100 - x^2}}{100x} + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \frac{dx}{\left(x^2 + 121\right)^{3/2}}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Let \(x = 11\tan\theta\), so \(dx = 11\sec^2\theta\,d\theta\) and \(\left(x^2 + 121\right)^{3/2} = 1331\sec^3\theta\).</p>
+          <div>\[
+          \begin{aligned}
+            \int \frac{11\sec^2\theta\,d\theta}{1331\sec^3\theta} &= \frac{1}{121}\int \cos\theta\,d\theta \\
+            &= \frac{\sin\theta}{121} + C \\
+            &= \frac{x}{121\sqrt{x^2 + 121}} + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \frac{\sqrt{x^2 - 1}}{x}\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Let \(x = \sec\theta\), so \(dx = \sec\theta\tan\theta\,d\theta\) and \(\sqrt{x^2 - 1} = \tan\theta\).</p>
+          <div>\[
+          \begin{aligned}
+            \int \frac{\tan\theta}{\sec\theta}\sec\theta\tan\theta\,d\theta &= \int \tan^2\theta\,d\theta \\
+            &= \int \left(\sec^2\theta - 1\right)d\theta \\
+            &= \tan\theta - \theta + C \\
+            &= \sqrt{x^2 - 1} - \sec^{-1} x + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="trig-integrals-part-4.html">&larr; Trigonometric Integrals, Part 4</a>
+      <a class="next" href="integrals-with-quadratics.html">Integrals Containing Quadratics &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

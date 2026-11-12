@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 12: Trigonometric Integrals, Part 1 | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="Integrating powers of sine and cosine, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>Lesson 12: Trigonometric Integrals, Part 1</h1>
+
+    <section class="topic-section" id="powers-of-sine-or-cosine">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="powers-of-sine-or-cosine-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Powers of Sine or Cosine</span></button></h2>
+      <div class="section-body" id="powers-of-sine-or-cosine-body">
+      <div class="formula">
+        <p class="formula-name">Even Powers</p>
+        <div>\[
+        \begin{aligned}
+          &\sin^2\theta = \frac{1 - \cos(2\theta)}{2} \\
+          &\cos^2\theta = \frac{1 + \cos(2\theta)}{2}
+        \end{aligned}
+        \]</div>
+      </div>
+      <p><b>Odd powers:</b> Save one factor of \(\sin x\) or \(\cos x\). Change the remaining even power with \(\sin^2\theta + \cos^2\theta = 1\), then substitute \(u = \cos x\) or \(u = \sin x\).</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="examples-2">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="examples-2-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Examples</span></button></h2>
+      <div class="section-body" id="examples-2-body">
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \cos^2 x\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \int \cos^2 x\,dx &= \int \frac{1 + \cos(2x)}{2}\,dx \\
+            &= \frac{x}{2} + \frac{\sin(2x)}{4} + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \sin^4 x\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \sin^4 x &= \left(\frac{1 - \cos(2x)}{2}\right)^2 \\
+            &= \frac{1}{4}\left(1 - 2\cos(2x) + \cos^2(2x)\right) \\
+            &= \frac{1}{4}\left(1 - 2\cos(2x) + \frac{1 + \cos(4x)}{2}\right) \\
+            &= \frac{3}{8} - \frac{\cos(2x)}{2} + \frac{\cos(4x)}{8}
+          \end{aligned}
+          \]</div>
+          <div>\[ \int \sin^4 x\,dx = \frac{3x}{8} - \frac{\sin(2x)}{4} + \frac{\sin(4x)}{32} + C \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \cos^5 x\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \int \cos^5 x\,dx = \int \left(1 - \sin^2 x\right)^2\cos x\,dx \]</div>
+          <p>Let \(u = \sin x\), so \(du = \cos x\,dx\).</p>
+          <div>\[
+          \begin{aligned}
+            \int \left(1 - u^2\right)^2 du &= \int \left(1 - 2u^2 + u^4\right)du \\
+            &= \sin x - \frac{2\sin^3 x}{3} + \frac{\sin^5 x}{5} + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="integration-by-parts.html">&larr; Integration by Parts</a>
+      <a class="next" href="trig-integrals-part-2.html">Trigonometric Integrals, Part 2 &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

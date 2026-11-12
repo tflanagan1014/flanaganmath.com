@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 14: Trigonometric Integrals, Part 3 | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="Integrating products of powers of tangent and secant, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>Lesson 14: Trigonometric Integrals, Part 3</h1>
+
+    <section class="topic-section" id="products-of-tangent-and-secant">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="products-of-tangent-and-secant-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Products of Tangent and Secant</span></button></h2>
+      <div class="section-body" id="products-of-tangent-and-secant-body">
+      <ul>
+        <li><b>Power of tangent is odd:</b> save \(\sec x\tan x\), change the remaining even power of tangent with \(\tan^2\theta = \sec^2\theta - 1\), and let \(u = \sec x\).</li>
+        <li><b>Power of secant is even:</b> save \(\sec^2 x\), change the remaining even power of secant with \(\sec^2\theta = 1 + \tan^2\theta\), and let \(u = \tan x\).</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="examples-4">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="examples-4-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Examples</span></button></h2>
+      <div class="section-body" id="examples-4-body">
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \tan^3 x\sec^{17} x\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \int \tan^3 x\sec^{17} x\,dx = \int \left(\sec^2 x - 1\right)\sec^{16} x\,(\sec x\tan x)\,dx \]</div>
+          <p>Let \(u = \sec x\).</p>
+          <div>\[ \int \left(u^{18} - u^{16}\right)du = \frac{\sec^{19} x}{19} - \frac{\sec^{17} x}{17} + C \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \tan^{20} x\sec^4 x\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \int \tan^{20} x\sec^4 x\,dx = \int \tan^{20} x\left(1 + \tan^2 x\right)\sec^2 x\,dx \]</div>
+          <p>Let \(u = \tan x\).</p>
+          <div>\[ \int \left(u^{20} + u^{22}\right)du = \frac{\tan^{21} x}{21} + \frac{\tan^{23} x}{23} + C \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="trig-integrals-part-2.html">&larr; Trigonometric Integrals, Part 2</a>
+      <a class="next" href="trig-integrals-part-4.html">Trigonometric Integrals, Part 4 &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
