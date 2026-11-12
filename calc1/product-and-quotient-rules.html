@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 7: The Product and Quotient Rules | Calculus 1 | Flanagan Math</title>
+  <meta name="description" content="The product rule and the quotient rule, with a proof and worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 1</a>
+    </nav>
+
+    <h1>Lesson 7: The Product and Quotient Rules</h1>
+
+    <section class="topic-section" id="the-product-rule">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-product-rule-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Product Rule</span></button></h2>
+      <div class="section-body" id="the-product-rule-body">
+      <div class="formula">
+        <p class="formula-name">The Product Rule</p>
+        <div>\[ \frac{d}{dx}[f(x)\,g(x)] = f'(x)\,g(x) + f(x)\,g'(x) \]</div>
+      </div>
+      <div class="example">
+        <p>Find \(\dfrac{dy}{dx}\) for \(y = x^2 \sin x\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \frac{dy}{dx} &= (2x)(\sin x) + \left(x^2\right)(\cos x) \\
+            &= 2x\sin x + x^2\cos x
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Prove the product rule.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="proof" hidden>Show proof</button>
+        <div class="work">
+          <p>Subtract and add \(f(x + h)\,g(x)\) in the numerator.</p>
+          <div>\[
+          \begin{aligned}
+            &\frac{d}{dx}[f(x)\,g(x)] \\
+            &\quad = \lim_{h \to 0} \frac{f(x + h)g(x + h) - f(x)g(x)}{h} \\
+            &\quad = \lim_{h \to 0} \frac{f(x + h)g(x + h) - f(x + h)g(x)}{h} \\
+            &\qquad\quad {}+ \frac{f(x + h)g(x) - f(x)g(x)}{h} \\
+            &\quad = \lim_{h \to 0} f(x + h)\,\frac{g(x + h) - g(x)}{h} \\
+            &\qquad\quad {}+ g(x)\,\frac{f(x + h) - f(x)}{h} \\
+            &\quad = f(x)\,g'(x) + g(x)\,f'(x)
+          \end{aligned}
+          \]</div>
+          <p>Here \(f(x + h) \to f(x)\) because a differentiable function is continuous.</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>A Sample Exam Problem</h3>
+        <p>Differentiate \(f(\theta) = 4 + 3\cos\theta + 7\theta\sin\theta\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f'(\theta) &= -3\sin\theta + 7\sin\theta + 7\theta\cos\theta \\
+            &= 4\sin\theta + 7\theta\cos\theta
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-quotient-rule">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-quotient-rule-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Quotient Rule</span></button></h2>
+      <div class="section-body" id="the-quotient-rule-body">
+      <div class="formula">
+        <p class="formula-name">The Quotient Rule</p>
+        <div>\[ \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x)\,g(x) - f(x)\,g'(x)}{[g(x)]^2} \]</div>
+      </div>
+      <div class="example">
+        <p>Find \(\dfrac{dy}{dx}\) for \(y = \dfrac{8x}{3x + 7}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \frac{dy}{dx} &= \frac{(8)(3x + 7) - (8x)(3)}{(3x + 7)^2} \\
+            &= \frac{24x + 56 - 24x}{(3x + 7)^2} \\
+            &= \frac{56}{(3x + 7)^2}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Use the quotient rule to show \(\dfrac{d}{dx}[\tan x] = \sec^2 x\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="explanation" hidden>Show explanation</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \frac{d}{dx}[\tan x] &= \frac{d}{dx}\left[\frac{\sin x}{\cos x}\right] \\
+            &= \frac{(\cos x)(\cos x) - (\sin x)(-\sin x)}{\cos^2 x} \\
+            &= \frac{\cos^2 x + \sin^2 x}{\cos^2 x} \\
+            &= \frac{1}{\cos^2 x} \\
+            &= \sec^2 x
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <h3>A Sample Exam Problem</h3>
+        <p>Differentiate \(f(x) = \dfrac{2x - 7}{5x - 9}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f'(x) &= \frac{(2)(5x - 9) - (2x - 7)(5)}{(5x - 9)^2} \\
+            &= \frac{10x - 18 - 10x + 35}{(5x - 9)^2} \\
+            &= \frac{17}{(5x - 9)^2}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="derivatives-of-exponential-log-and-trig-functions.html">&larr; Derivatives of Exponential, Log, and Trig Functions</a>
+      <a class="next" href="chain-rule.html">The Chain Rule &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

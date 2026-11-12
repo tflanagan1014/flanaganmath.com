@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 5: Differentiability | Calculus 1 | Flanagan Math</title>
+  <meta name="description" content="Other forms of the limit definition, three ways a function can fail to be differentiable, and why differentiable implies continuous.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 1</a>
+    </nav>
+
+    <h1>Lesson 5: Differentiability</h1>
+
+    <section class="topic-section" id="other-statements-of-the-limit-definition">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="other-statements-of-the-limit-definition-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Other Statements of the Limit Definition</span></button></h2>
+      <div class="section-body" id="other-statements-of-the-limit-definition-body">
+      <p>The forms below all say the same thing. The second emphasizes the slope at \(x = a\).</p>
+      <div class="eq-list">
+        <div>\[ f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \]</div>
+        <div>\[ f'(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h} \]</div>
+        <div>\[ f'(c) = \lim_{x \to c} \frac{f(x) - f(c)}{x - c} \]</div>
+        <div>\[ \frac{dy}{dx} = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} \]</div>
+      </div>
+      <p>We use \(dx\) to represent \(\Delta x\), and \(dy\) to represent \(\Delta y\), in the limit as \(\Delta x\) goes to zero.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="differentiability">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="differentiability-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Differentiability</span></button></h2>
+      <div class="section-body" id="differentiability-body">
+      <p>When the limit definition of the derivative exists at \(x = c\), we say the function is differentiable there. Below are three ways a function can fail to be differentiable at \(x = c\).</p>
+      <div class="row">
+        <div>
+          <p><b>1.</b> It is not continuous.</p>
+        </div>
+        <img src="images/not-differentiable-discontinuous.png" width="211" height="198"
+             alt="A graph that jumps at x equals c.">
+      </div>
+      <div class="row">
+        <div>
+          <p><b>2.</b> It has a vertical tangent line, which has an undefined slope.</p>
+        </div>
+        <img src="images/not-differentiable-vertical-tangent.png" width="211" height="198"
+             alt="A curve that becomes vertical at x equals c.">
+      </div>
+      <div class="row">
+        <div>
+          <p><b>3.</b> It has a corner.</p>
+        </div>
+        <img src="images/not-differentiable-corner.png" width="211" height="198"
+             alt="A V-shaped graph with a sharp corner at x equals c.">
+      </div>
+      <div class="formula">
+        <p class="formula-name">Very Important</p>
+        <div>\[
+        \begin{aligned}
+          &\text{Differentiable} \implies \text{continuous} \\
+          &\text{Continuous} \centernot\implies \text{differentiable}
+        \end{aligned}
+        \]</div>
+      </div>
+      <p>A function can be continuous but not differentiable, like the corner. But if a function is differentiable, then it is continuous.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-derivative-that-does-not-exist">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-derivative-that-does-not-exist-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Derivative that does not Exist</span></button></h2>
+      <div class="section-body" id="a-derivative-that-does-not-exist-body">
+      <div class="example">
+        <p>Show that \(f(x) = |x|\) is not differentiable at \(x = 0\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Use the third form of the limit definition with \(c = 0\).</p>
+          <div>\[
+          \begin{aligned}
+            \lim_{x \to 0^-} \frac{|x| - 0}{x - 0} &= \lim_{x \to 0^-} \frac{-x}{x} = -1 \\
+            \lim_{x \to 0^+} \frac{|x| - 0}{x - 0} &= \lim_{x \to 0^+} \frac{x}{x} = 1
+          \end{aligned}
+          \]</div>
+          <p>The left-hand and right-hand limits are different, so the derivative does not exist at \(x = 0\). The graph has a corner there.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="equation-of-a-tangent-line.html">&larr; Tangent Lines and Rates of Change</a>
+      <a class="next" href="basic-differentiation-rules.html">Basic Differentiation Rules &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 9: Implicit Differentiation | Calculus 1 | Flanagan Math</title>
+  <meta name="description" content="Finding dy/dx when y is defined implicitly, including the tangent line problem from Lesson 1, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 1</a>
+    </nav>
+
+    <h1>Lesson 9: Implicit Differentiation</h1>
+
+    <section class="topic-section" id="implicit-or-explicit">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="implicit-or-explicit-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Implicit or Explicit?</span></button></h2>
+      <div class="section-body" id="implicit-or-explicit-body">
+      <p>The equation \(y = x^2 + 1\) gives \(y\) explicitly as a function of \(x\). An equation like \(x^2 + y^2 = 25\) defines \(y\) implicitly.</p>
+      <p>To find \(\dfrac{dy}{dx}\) implicitly, differentiate both sides with respect to \(x\). Every time you differentiate an expression with \(y\), the chain rule multiplies by \(\dfrac{dy}{dx}\).</p>
+      <div class="eq-list">
+        <div>\[ \frac{d}{dx}\left[x^2\right] = 2x \]</div>
+        <div>\[ \frac{d}{dx}\left[y^2\right] = 2y\,\frac{dy}{dx} \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="implicit-differentiation">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="implicit-differentiation-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Implicit Differentiation</span></button></h2>
+      <div class="section-body" id="implicit-differentiation-body">
+      <div class="example">
+        <p>Find \(\dfrac{dy}{dx}\) for \(x^2 + y^2 = 25\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            2x + 2y\,\frac{dy}{dx} &= 0 \\
+            2y\,\frac{dy}{dx} &= -2x \\
+            \frac{dy}{dx} &= -\frac{x}{y}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Back in Lesson 1, we could not find the slope of the tangent line to the circle below at \((5, 1)\). Now we can!</p>
+        <div>\[ (x - 2)^2 + (y + 1)^2 = 13 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            2(x - 2) + 2(y + 1)\,\frac{dy}{dx} &= 0 \\
+            \frac{dy}{dx} &= -\frac{x - 2}{y + 1}
+          \end{aligned}
+          \]</div>
+          <p>At \((5, 1)\):</p>
+          <div>\[
+          \begin{aligned}
+            \frac{dy}{dx} &= -\frac{5 - 2}{1 + 1} \\
+            &= -\frac{3}{2}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <h3>A Sample Exam Problem</h3>
+        <p>Use implicit differentiation to find \(\dfrac{dy}{dx}\).</p>
+        <div>\[ 3xy^2 - x^4 + 6y = 100 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Use the product rule on \(3xy^2\).</p>
+          <div>\[
+          \begin{aligned}
+            3y^2 + 6xy\,\frac{dy}{dx} - 4x^3 + 6\,\frac{dy}{dx} &= 0 \\
+            (6xy + 6)\,\frac{dy}{dx} &= 4x^3 - 3y^2 \\
+            \frac{dy}{dx} &= \frac{4x^3 - 3y^2}{6xy + 6}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="chain-rule.html">&larr; The Chain Rule</a>
+      <a class="next" href="inverse-trig-and-hyperbolic-functions.html">Derivatives of Inverse Trig and Hyperbolic Functions &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

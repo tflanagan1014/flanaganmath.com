@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 10: Derivatives of Inverse Trig and Hyperbolic Functions | Calculus 1 | Flanagan Math</title>
+  <meta name="description" content="The derivatives of the inverse trigonometric and hyperbolic functions, with proofs and worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 1</a>
+    </nav>
+
+    <h1>Lesson 10: Derivatives of Inverse Trig and Hyperbolic Functions</h1>
+
+    <section class="topic-section" id="the-inverse-trigonometric-functions">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-inverse-trigonometric-functions-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Inverse Trigonometric Functions</span></button></h2>
+      <div class="section-body" id="the-inverse-trigonometric-functions-body">
+      <div class="formula">
+        <p class="formula-name">Derivatives of the Inverse Trigonometric Functions</p>
+        <div>\[
+        \begin{aligned}
+          \frac{d}{dx}\left[\sin^{-1} x\right] &= \frac{1}{\sqrt{1 - x^2}} \\
+          \frac{d}{dx}\left[\cos^{-1} x\right] &= -\frac{1}{\sqrt{1 - x^2}} \\
+          \frac{d}{dx}\left[\tan^{-1} x\right] &= \frac{1}{1 + x^2} \\
+          \frac{d}{dx}\left[\sec^{-1} x\right] &= \frac{1}{|x|\sqrt{x^2 - 1}}
+        \end{aligned}
+        \]</div>
+      </div>
+      <div class="example">
+        <p>Show that \(\dfrac{d}{dx}\left[\tan^{-1} x\right] = \dfrac{1}{1 + x^2}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="proof" hidden>Show proof</button>
+        <div class="work">
+          <p>Let \(y = \tan^{-1} x\), so \(\tan y = x\). Differentiate implicitly.</p>
+          <div>\[
+          \begin{aligned}
+            \sec^2 y\,\frac{dy}{dx} &= 1 \\
+            \frac{dy}{dx} &= \frac{1}{\sec^2 y} \\
+            &= \frac{1}{1 + \tan^2 y} \\
+            &= \frac{1}{1 + x^2}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Differentiate \(f(x) = \sin^{-1}(4x + 1)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ f'(x) = \frac{4}{\sqrt{1 - (4x + 1)^2}} \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Differentiate \(f(x) = \sin^{-1}(3x)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f'(x) &= \frac{3}{\sqrt{1 - (3x)^2}} \\
+            &= \frac{3}{\sqrt{1 - 9x^2}}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-hyperbolic-functions">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-hyperbolic-functions-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Hyperbolic Functions</span></button></h2>
+      <div class="section-body" id="the-hyperbolic-functions-body">
+      <div class="formula">
+        <p class="formula-name">Hyperbolic Sine and Cosine</p>
+        <div>\[
+        \begin{aligned}
+          &\sinh x = \frac{e^x - e^{-x}}{2} \\
+          &\cosh x = \frac{e^x + e^{-x}}{2}
+        \end{aligned}
+        \]</div>
+      </div>
+      <div class="formula">
+        <p class="formula-name">Their Derivatives</p>
+        <div>\[
+        \begin{aligned}
+          &\frac{d}{dx}[\sinh x] = \cosh x \\
+          &\frac{d}{dx}[\cosh x] = \sinh x
+        \end{aligned}
+        \]</div>
+      </div>
+      <div class="example">
+        <p>Show that \(\dfrac{d}{dx}[\sinh x] = \cosh x\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="proof" hidden>Show proof</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \frac{d}{dx}[\sinh x] &= \frac{d}{dx}\left[\frac{e^x - e^{-x}}{2}\right] \\
+            &= \frac{e^x - \left(-e^{-x}\right)}{2} \\
+            &= \frac{e^x + e^{-x}}{2} \\
+            &= \cosh x
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="implicit-differentiation.html">&larr; Implicit Differentiation</a>
+      <a class="next" href="logarithmic-differentiation.html">Logarithmic Differentiation &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
