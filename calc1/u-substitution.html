@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 22: U-Substitution | Calculus 1 | Flanagan Math</title>
+  <meta name="description" content="Evaluating indefinite and definite integrals with u-substitution, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 1</a>
+    </nav>
+
+    <h1>Lesson 22: U-Substitution</h1>
+
+    <section class="topic-section" id="what-is-u-substitution">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-u-substitution-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is U-Substitution?</span></button></h2>
+      <div class="section-body" id="what-is-u-substitution-body">
+      <p>U-substitution undoes the chain rule. Choose \(u\) to be an inside function whose derivative also appears in the integral. Then rewrite everything in terms of \(u\).</p>
+      <p>The largest part of our final exam is evaluating integrals with u-substitution. This skill is also essential on day one of Calculus 2.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="indefinite-integrals">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="indefinite-integrals-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Indefinite Integrals</span></button></h2>
+      <div class="section-body" id="indefinite-integrals-body">
+      <div class="example">
+        <p>Find \(\displaystyle\int 8x\left(6x^2 + 167\right)^{17}dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            u &= 6x^2 + 167 \\
+            du &= 12x\,dx \\
+            8x\,dx &= \frac{2}{3}\,du
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \int 8x\left(6x^2 + 167\right)^{17}dx &= \frac{2}{3}\int u^{17}\,du \\
+            &= \frac{2}{3} \cdot \frac{u^{18}}{18} + C \\
+            &= \frac{\left(6x^2 + 167\right)^{18}}{27} + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find \(\displaystyle\int 10\sqrt[4]{2x + 83}\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            u &= 2x + 83 \\
+            du &= 2\,dx
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \int 10\sqrt[4]{2x + 83}\,dx &= 5\int u^{\frac{1}{4}}\,du \\
+            &= 5 \cdot \frac{4}{5}u^{\frac{5}{4}} + C \\
+            &= 4(2x + 83)^{\frac{5}{4}} + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find \(\displaystyle\int 6e^{12x}\left(7e^{12x} + 72\right)^7 dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            u &= 7e^{12x} + 72 \\
+            du &= 84e^{12x}\,dx \\
+            6e^{12x}\,dx &= \frac{1}{14}\,du
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \int 6e^{12x}\left(7e^{12x} + 72\right)^7 dx &= \frac{1}{14}\int u^7\,du \\
+            &= \frac{u^8}{112} + C \\
+            &= \frac{\left(7e^{12x} + 72\right)^8}{112} + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find \(\displaystyle\int 17x^6\sin\left(20x^7 + 27\right)dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            u &= 20x^7 + 27 \\
+            du &= 140x^6\,dx
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \int 17x^6\sin\left(20x^7 + 27\right)dx &= \frac{17}{140}\int \sin u\,du \\
+            &= -\frac{17}{140}\cos\left(20x^7 + 27\right) + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find \(\displaystyle 3\int \sec^2\left(\frac{\pi}{4}\theta\right)d\theta\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            u &= \frac{\pi}{4}\theta \\
+            du &= \frac{\pi}{4}\,d\theta
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            3\int \sec^2\left(\frac{\pi}{4}\theta\right)d\theta &= \frac{12}{\pi}\int \sec^2 u\,du \\
+            &= \frac{12}{\pi}\tan\left(\frac{\pi}{4}\theta\right) + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find \(\displaystyle\int \frac{-2x^3}{10x^4 + 31}\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            u &= 10x^4 + 31 \\
+            du &= 40x^3\,dx
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \int \frac{-2x^3}{10x^4 + 31}\,dx &= -\frac{1}{20}\int \frac{1}{u}\,du \\
+            &= -\frac{1}{20}\ln\left(10x^4 + 31\right) + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find \(\displaystyle\int \frac{9}{\sqrt{81 - 16x^2}}\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Factor out 81 to match \(\displaystyle\int \frac{du}{\sqrt{1 - u^2}} = \sin^{-1} u + C\).</p>
+          <div>\[ \int \frac{9}{\sqrt{81 - 16x^2}}\,dx = \int \frac{1}{\sqrt{1 - \left(\frac{4x}{9}\right)^2}}\,dx \]</div>
+          <div>\[
+          \begin{aligned}
+            u &= \frac{4x}{9} \\
+            du &= \frac{4}{9}\,dx
+          \end{aligned}
+          \]</div>
+          <div>\[ \int \frac{1}{\sqrt{1 - u^2}} \cdot \frac{9}{4}\,du = \frac{9}{4}\sin^{-1}\left(\frac{4x}{9}\right) + C \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="definite-integrals">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="definite-integrals-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Definite Integrals</span></button></h2>
+      <div class="section-body" id="definite-integrals-body">
+      <p>Change the limits of integration to u-values, and you never have to go back to x.</p>
+      <div class="example">
+        <p>Evaluate \(\displaystyle\int_0^1 x^4\left(x^5 - 2\right)^7 dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            u &= x^5 - 2 \\
+            du &= 5x^4\,dx
+          \end{aligned}
+          \]</div>
+          <p>When \(x = 0\), \(u = -2\). When \(x = 1\), \(u = -1\).</p>
+          <div>\[
+          \begin{aligned}
+            \int_0^1 x^4\left(x^5 - 2\right)^7 dx &= \frac{1}{5}\int_{-2}^{-1} u^7\,du \\
+            &= \frac{1}{5}\left[\frac{u^8}{8}\right]_{-2}^{-1} \\
+            &= \frac{1}{40}(1 - 256) \\
+            &= -\frac{51}{8}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="fundamental-theorem-of-calculus.html">&larr; The Fundamental Theorem of Calculus</a>
+      <a class="next" href="practice-definite-integrals.html">Practice: Definite Integrals &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

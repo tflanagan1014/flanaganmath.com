@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 21: The Fundamental Theorem of Calculus | Calculus 1 | Flanagan Math</title>
+  <meta name="description" content="Evaluating definite integrals with the Fundamental Theorem of Calculus, properties, average value, and derivatives of integral functions.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 1</a>
+    </nav>
+
+    <h1>Lesson 21: The Fundamental Theorem of Calculus</h1>
+
+    <section class="topic-section" id="the-fundamental-theorem-of-calculus">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-fundamental-theorem-of-calculus-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Fundamental Theorem of Calculus</span></button></h2>
+      <div class="section-body" id="the-fundamental-theorem-of-calculus-body">
+      <p>Finding area with a limit of rectangles is a lot of work. Antiderivatives give an amazing shortcut.</p>
+      <div class="formula">
+        <p class="formula-name">The Fundamental Theorem of Calculus</p>
+        <div>\[ \int_a^b f(x)\,dx = F(b) - F(a), \quad\text{where } F\,'(x) = f(x) \]</div>
+      </div>
+      <div class="example">
+        <p>Use the Fundamental Theorem to find the area under \(f(x) = x^2\) from \(x = 0\) to \(x = 4\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \int_0^4 x^2\,dx &= \left[\frac{x^3}{3}\right]_0^4 \\
+            &= \frac{64}{3} - 0 \\
+            &= \frac{64}{3}
+          \end{aligned}
+          \]</div>
+          <p>It matches the limit of the rectangles! How could that be? That is the Fundamental Theorem of Calculus: Newton and Leibniz&rsquo;s discovery that the tangent line problem and the area problem are connected.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="definite-and-indefinite-integrals">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="definite-and-indefinite-integrals-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Definite and Indefinite Integrals</span></button></h2>
+      <div class="section-body" id="definite-and-indefinite-integrals-body">
+      <p>An indefinite integral, \(\int f(x)\,dx\), is a family of functions. A definite integral, \(\int_a^b f(x)\,dx\), is a number.</p>
+      <p>We don&rsquo;t need \(+\,C\) for a definite integral, because it cancels.</p>
+      <div>\[ [F(b) + C] - [F(a) + C] = F(b) - F(a) \]</div>
+      <div class="example">
+        <p>Evaluate \(\displaystyle\int_1^2 \left(x^2 + 3x + 2\right)dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \int_1^2 \left(x^2 + 3x + 2\right)dx &= \left[\frac{x^3}{3} + \frac{3x^2}{2} + 2x\right]_1^2 \\
+            &= \left(\frac{8}{3} + 6 + 4\right) - \left(\frac{1}{3} + \frac{3}{2} + 2\right) \\
+            &= \frac{38}{3} - \frac{23}{6} \\
+            &= \frac{53}{6}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="properties-of-definite-integrals">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="properties-of-definite-integrals-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Properties of Definite Integrals</span></button></h2>
+      <div class="section-body" id="properties-of-definite-integrals-body">
+      <div class="eq-list">
+        <div>\[ \int_a^a f(x)\,dx = 0 \]</div>
+        <div>\[ \int_b^a f(x)\,dx = -\int_a^b f(x)\,dx \]</div>
+      </div>
+      <div class="example">
+        <p>Sometimes the answer is negative! Evaluate \(\displaystyle\int_0^2 (x - 3)\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \int_0^2 (x - 3)\,dx &= \left[\frac{x^2}{2} - 3x\right]_0^2 \\
+            &= (2 - 6) - 0 \\
+            &= -4
+          \end{aligned}
+          \]</div>
+          <p>The region is below the \(x\)-axis, so the integral is negative.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="average-value">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="average-value-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Average Value</span></button></h2>
+      <div class="section-body" id="average-value-body">
+      <div class="formula">
+        <p class="formula-name">Average Value of a Function</p>
+        <div>\[ f_{\text{avg}} = \frac{1}{b - a}\int_a^b f(x)\,dx \]</div>
+      </div>
+      <div class="example">
+        <p>Find the average value of \(f(x) = x^2\) on \([0, 4]\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f_{\text{avg}} &= \frac{1}{4 - 0}\int_0^4 x^2\,dx \\
+            &= \frac{1}{4} \cdot \frac{64}{3} \\
+            &= \frac{16}{3}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Now You Try</h3>
+        <p>Find the average value of \(f(x) = \sin x\) on \([0, \pi]\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f_{\text{avg}} &= \frac{1}{\pi}\int_0^\pi \sin x\,dx \\
+            &= \frac{1}{\pi}\left[-\cos x\right]_0^\pi \\
+            &= \frac{1}{\pi}(1 + 1) \\
+            &= \frac{2}{\pi}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-derivative-of-an-integral-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-derivative-of-an-integral-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Derivative of an Integral Function</span></button></h2>
+      <div class="section-body" id="the-derivative-of-an-integral-function-body">
+      <div class="formula">
+        <p class="formula-name">The Fundamental Theorem, Part 2</p>
+        <div>\[ \frac{d}{dx}\left[\int_a^x f(t)\,dt\right] = f(x) \]</div>
+      </div>
+      <div class="example">
+        <p>Find \(\dfrac{d}{dx}\left[\displaystyle\int_1^x \left(t^3 + 1\right)dt\right]\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \frac{d}{dx}\left[\int_1^x \left(t^3 + 1\right)dt\right] = x^3 + 1 \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find \(\dfrac{d}{dx}\left[\displaystyle\int_0^x \sin\left(t^2\right)dt\right]\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \frac{d}{dx}\left[\int_0^x \sin\left(t^2\right)dt\right] = \sin\left(x^2\right) \]</div>
+        </div>
+      </div>
+      <p>When the upper limit is a function of x, the chain rule multiplies by its derivative.</p>
+      <div class="example">
+        <p>Find \(\dfrac{d}{dx}\left[\displaystyle\int_0^{x^2} \cos t\,dt\right]\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \frac{d}{dx}\left[\int_0^{x^2} \cos t\,dt\right] = 2x\cos\left(x^2\right) \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Now You Try</h3>
+        <p>Find \(\dfrac{d}{dx}\left[\displaystyle\int_2^{x^3} e^t\,dt\right]\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \frac{d}{dx}\left[\int_2^{x^3} e^t\,dt\right] = 3x^2 e^{x^3} \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="sigma-notation-and-area.html">&larr; Sigma Notation and the Area Problem</a>
+      <a class="next" href="u-substitution.html">U-Substitution &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
