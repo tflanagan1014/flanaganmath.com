@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 5: The Disk Method (y-Axis) | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="Volumes of solids of revolution about the y-axis with the disk method, with a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>Lesson 5: The Disk Method (y-Axis)</h1>
+
+    <section class="topic-section" id="the-disk-method-about-the-y-axis">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-disk-method-about-the-y-axis-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Disk Method About the y-Axis</span></button></h2>
+      <div class="section-body" id="the-disk-method-about-the-y-axis-body">
+      <p>Rotate the graph of \(x = f(y)\) over \([c, d]\) about the \(y\)-axis. Now the disks are horizontal.</p>
+      <ul>
+        <li>Radius: \(f(y_k)\)</li>
+        <li>Height: \(\Delta y\)</li>
+        <li>Volume: \(\pi\left[f(y_k)\right]^2\Delta y\)</li>
+      </ul>
+      <div class="formula">
+        <p class="formula-name">The Disk Method (about the y-axis)</p>
+        <div>\[ V = \int_c^d \pi\left[f(y)\right]^2 dy \]</div>
+      </div>
+      <div class="example">
+        <p>The curve \(x = \sqrt{\cos y}\) over \(0 \le y \le \frac{\pi}{2}\) is rotated about the \(y\)-axis. Find the volume of the solid.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            V &= \int_0^{\pi/2} \pi\left(\sqrt{\cos y}\right)^2 dy \\
+            &= \pi\int_0^{\pi/2} \cos y\,dy \\
+            &= \pi\left[\sin y\right]_0^{\pi/2} \\
+            &= \pi
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="disk-method-x-axis.html">&larr; The Disk Method (x-Axis)</a>
+      <a class="next" href="washer-method-x-axis.html">The Washer Method (x-Axis) &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

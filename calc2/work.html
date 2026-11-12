@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 10: Work | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="Work done by a variable force as a definite integral, with a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>Lesson 10: Work</h1>
+
+    <section class="topic-section" id="work">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="work-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Work</span></button></h2>
+      <div class="section-body" id="work-body">
+      <p>When a constant force \(F\) moves an object a distance \(d\), the work done is \(W = Fd\). But many forces are not constant. Gravity and electromagnetic forces depend on distance from the source.</p>
+      <p>Divide the motion into tiny intervals of length \(\Delta x\). Over each one the force is nearly constant, so \(\Delta W \approx F(x_k)\,\Delta x\).</p>
+      <div>\[ W = \lim_{n \to \infty} \sum_{k=1}^{n} F(x_k)\,\Delta x \]</div>
+      <div class="formula">
+        <p class="formula-name">Work Done by a Variable Force</p>
+        <div>\[ W = \int_a^b F(x)\,dx \]</div>
+      </div>
+      <div class="example">
+        <p>An object is attracted to a point source by a force, in newtons, of \(F(x) = -\dfrac{15}{x^2}\), where \(x\) is the distance in meters. Find the work done as the object moves from \(x = 20\) to \(x = 10\) meters.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            W &= \int_{20}^{10} -\frac{15}{x^2}\,dx \\
+            &= \left[\frac{15}{x}\right]_{20}^{10} \\
+            &= \frac{15}{10} - \frac{15}{20} \\
+            &= 0.75
+          \end{aligned}
+          \]</div>
+          <p>The work done is 0.75 joules.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="arc-length.html">&larr; Arc Length</a>
+      <a class="next" href="volume-formulas.html">Volume of Revolution Formulas &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

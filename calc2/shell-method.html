@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 8: The Shell Method | Calculus 2 | Flanagan Math</title>
+  <meta name="description" content="Volumes of solids of revolution with cylindrical shells, with a derivation and a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus 2</a>
+    </nav>
+
+    <h1>Lesson 8: The Shell Method</h1>
+
+    <section class="topic-section" id="the-volume-of-a-cylindrical-shell">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-volume-of-a-cylindrical-shell-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Volume of a Cylindrical Shell</span></button></h2>
+      <div class="section-body" id="the-volume-of-a-cylindrical-shell-body">
+      <p>A shell is the region between two cylinders with radii \(R\) and \(r\), both with height \(h\).</p>
+      <div>\[
+      \begin{aligned}
+        V &= \pi R^2 h - \pi r^2 h \\
+        &= \pi h(R - r)(R + r) \\
+        &= 2\pi\left(\frac{R + r}{2}\right)h(R - r) \\
+        &= 2\pi\,(\text{average radius})(\text{height})(\text{thickness})
+      \end{aligned}
+      \]</div>
+      <ul>
+        <li>Average radius: \(x_k\)</li>
+        <li>Height: \(f(x_k)\)</li>
+        <li>Thickness: \(\Delta x\)</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-shell-method">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-shell-method-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Shell Method</span></button></h2>
+      <div class="section-body" id="the-shell-method-body">
+      <div class="formula">
+        <p class="formula-name">The Shell Method (about the y-axis)</p>
+        <div>\[ V = \int_a^b 2\pi x\,f(x)\,dx \]</div>
+      </div>
+      <div class="example">
+        <div class="row">
+          <div>
+            <p>Use the shell method to find the volume of the solid obtained by revolving about the \(y\)-axis the region under \(f(x) = 10 - 2x\) over \(0 \le x \le 5\).</p>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <div>\[
+              \begin{aligned}
+                V &= \int_0^5 2\pi x(10 - 2x)\,dx \\
+                &= 2\pi\int_0^5 \left(10x - 2x^2\right)dx \\
+                &= 2\pi\left[5x^2 - \frac{2x^3}{3}\right]_0^5 \\
+                &= 2\pi\left(125 - \frac{250}{3}\right) \\
+                &= \frac{250\pi}{3}
+              \end{aligned}
+              \]</div>
+              <p>Check: the solid is a cone with radius 5 and height 10, and \(\frac{1}{3}\pi(5)^2(10) = \frac{250\pi}{3}\).</p>
+            </div>
+          </div>
+          <img src="images/shell-region.png" width="304" height="287"
+               alt="The triangle under the line f of x equals 10 minus 2x from x equals 0 to 5, with one thin vertical strip of width delta x.">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="washer-method-y-axis.html">&larr; The Washer Method (y-Axis)</a>
+      <a class="next" href="arc-length.html">Arc Length &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
