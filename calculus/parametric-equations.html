@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lesson 65: Parametric Equations | Calculus | Flanagan Math</title>
-  <meta name="description" content="Parametric curves, eliminating the parameter, derivatives, and arc length, with worked examples.">
+  <meta name="description" content="Parametric curves, the path of a particle, eliminating the parameter, tangent lines, and arc length, with worked examples.">
   <link rel="stylesheet" href="style.css">
   <script src="mathjax-setup.js"></script>
   <script src="site.js" defer></script>
@@ -21,31 +21,51 @@
     <section class="topic-section" id="what-are-parametric-equations">
       <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-are-parametric-equations-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What are Parametric Equations?</span></button></h2>
       <div class="section-body" id="what-are-parametric-equations-body">
-      <p>Instead of writing \(y\) as a function of \(x\), we use two equations, each a function of a parameter \(t\).</p>
-      <div>\[
-      \begin{aligned}
-        x &= x(t) \\
-        y &= y(t)
-      \end{aligned}
-      \]</div>
-      <p>As \(t\) changes, the points \((x, y)\) trace out a curve. Parametric equations can trace shapes that are not the graph of a single function of \(x\), and they show the direction of motion.</p>
+      <p>Parametric equations give us another way to describe a curve. Instead of writing \(y\) as a function of \(x\), we describe both \(x\) and \(y\) using a third variable, a parameter, usually called \(t\).</p>
+      <p>So instead of one equation like \(y = f(x)\), we use two equations, \(x(t)\) and \(y(t)\). As \(t\) changes, the points \((x, y)\) trace out a curve. Parametric equations trace out shapes that cannot always be written as a single function of \(x\).</p>
       <div class="example">
         <div class="row">
           <div>
-            <p>Describe the curve \(x = \cos t\), \(y = \sin t\), for \(0 \le t \le 2\pi\).</p>
-            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <p>Given below is the graph of the parametric equations below.</p>
+            <div>\[
+            \begin{aligned}
+              x(t) &= \cos t\cos(5t) \\
+              y(t) &= \sin t\cos(5t)
+            \end{aligned}
+            \]</div>
+            <button type="button" class="toggle" aria-expanded="false" data-what="explanation" hidden>Show explanation</button>
             <div class="work">
-              <div>\[
-              \begin{aligned}
-                x^2 + y^2 &= \cos^2 t + \sin^2 t \\
-                &= 1
-              \end{aligned}
-              \]</div>
-              <p>The curve is the unit circle. It starts at \((1, 0)\) when \(t = 0\) and travels once around counterclockwise.</p>
+              <p>This curve is a five-petal rose. It fails the vertical line test, so it is not the graph of a single function of \(x\). We will meet it again with polar coordinates.</p>
             </div>
           </div>
-          <img src="images/parametric-circle.png" width="289" height="256"
-               alt="The unit circle with arrows showing counterclockwise motion, starting at the point (1, 0) when t equals 0.">
+          <img src="images/rose-five-petals.png" width="287" height="287"
+               alt="A rose with five petals of length 1 centered at the origin.">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-path-of-a-particle">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-path-of-a-particle-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Path of a Particle</span></button></h2>
+      <div class="section-body" id="the-path-of-a-particle-body">
+      <p>A nice way to interpret parametric equations is to think of them as tracing out the path of a particle. As time \(t\) changes, the particle moves through the plane, and its position at time \(t\) is \((x(t), y(t))\).</p>
+      <div class="example">
+        <p>Given the parametric equations below, find the point on the graph corresponding to \(t = 2\).</p>
+        <div>\[
+        \begin{aligned}
+          x(t) &= t^3 - 3t \\
+          y(t) &= t^2 - 3
+        \end{aligned}
+        \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            x(2) &= 8 - 6 = 2 \\
+            y(2) &= 4 - 3 = 1
+          \end{aligned}
+          \]</div>
+          <p>The point is \((2, 1)\).</p>
         </div>
       </div>
       </div>
@@ -55,68 +75,58 @@
       <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="eliminating-the-parameter-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Eliminating the Parameter</span></button></h2>
       <div class="section-body" id="eliminating-the-parameter-body">
       <div class="example">
-        <p>Eliminate the parameter to find an equation in \(x\) and \(y\) for \(x = t + 1\), \(y = t^2\).</p>
+        <p>Eliminate the parameter \(t\) to find an equation that gives \(y\) as a function of \(x\). What is the shape of the graph?</p>
+        <div>\[
+        \begin{aligned}
+          x(t) &= t + 9 \\
+          y(t) &= 4t^2 - 3t + 8
+        \end{aligned}
+        \]</div>
         <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
         <div class="work">
+          <div>\[ t = x - 9 \]</div>
           <div>\[
           \begin{aligned}
-            t &= x - 1 \\
-            y &= (x - 1)^2
+            y &= 4(x - 9)^2 - 3(x - 9) + 8 \\
+            &= 4x^2 - 72x + 324 - 3x + 27 + 8 \\
+            &= 4x^2 - 75x + 359
           \end{aligned}
           \]</div>
-          <p>The curve is a parabola with vertex at (1, 0).</p>
+          <p>The graph is a parabola.</p>
         </div>
       </div>
       </div>
     </section>
 
-    <section class="topic-section" id="derivatives-of-parametric-equations">
-      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="derivatives-of-parametric-equations-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Derivatives of Parametric Equations</span></button></h2>
-      <div class="section-body" id="derivatives-of-parametric-equations-body">
+    <section class="topic-section" id="tangent-lines">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="tangent-lines-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Tangent Lines</span></button></h2>
+      <div class="section-body" id="tangent-lines-body">
       <div class="formula">
         <p class="formula-name">The Slope of a Parametric Curve</p>
         <div>\[ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} \]</div>
       </div>
-      <p>Horizontal tangent lines occur where \(\frac{dy}{dt} = 0\) and \(\frac{dx}{dt} \neq 0\).</p>
       <div class="example">
-        <div class="row">
-          <div>
-            <p>For \(x = t^2\), \(y = t^3 - 3t\), find the tangent line at \(t = 2\), and find any horizontal tangent lines.</p>
-            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
-            <div class="work">
-              <div>\[ \frac{dy}{dx} = \frac{3t^2 - 3}{2t} \]</div>
-              <p>At \(t = 2\): the point is \((4, 2)\), and the slope is \(\frac{12 - 3}{4} = \frac{9}{4}\).</p>
-              <div>\[
-              \begin{aligned}
-                y - 2 &= \frac{9}{4}(x - 4) \\
-                y &= \frac{9}{4}x - 7
-              \end{aligned}
-              \]</div>
-              <p>Horizontal tangents: \(3t^2 - 3 = 0\) when \(t = \pm 1\), at the points \((1, -2)\) and \((1, 2)\).</p>
-            </div>
-          </div>
-          <img src="images/parametric-curve-tangent.png" width="320" height="287"
-               alt="A loop-shaped curve crossing itself at (3, 0), with arrows showing direction, filled dots at the horizontal tangent points (1, 2) and (1, negative 2), and a red tangent line at (4, 2).">
-        </div>
-      </div>
-      <div class="formula">
-        <p class="formula-name">The Second Derivative</p>
-        <div>\[ \frac{d^2 y}{dx^2} = \frac{\frac{d}{dt}\left[\frac{dy}{dx}\right]}{dx/dt} \]</div>
-      </div>
-      <div class="example">
-        <p>For the same curve, find \(\dfrac{d^2 y}{dx^2}\).</p>
+        <p>Consider the curve below for \(t \ge 0\). Find the slope-intercept equation of the tangent line where \(t = 1\).</p>
+        <div>\[
+        \begin{aligned}
+          x(t) &= t^2 + 4t + 10 \\
+          y(t) &= t^2 - 5
+        \end{aligned}
+        \]</div>
         <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
         <div class="work">
           <div>\[
           \begin{aligned}
-            \frac{dy}{dx} &= \frac{3t}{2} - \frac{3}{2t} \\
-            \frac{d}{dt}\left[\frac{dy}{dx}\right] &= \frac{3}{2} + \frac{3}{2t^2}
+            \frac{dx}{dt} &= 2t + 4 \\
+            \frac{dy}{dt} &= 2t
           \end{aligned}
           \]</div>
+          <p>At \(t = 1\), the point is \((15, -4)\).</p>
+          <div>\[ m = \frac{2}{6} = \frac{1}{3} \]</div>
           <div>\[
           \begin{aligned}
-            \frac{d^2 y}{dx^2} &= \frac{\frac{3}{2} + \frac{3}{2t^2}}{2t} \\
-            &= \frac{3t^2 + 3}{4t^3}
+            y + 4 &= \frac{1}{3}(x - 15) \\
+            y &= \frac{1}{3}x - 9
           \end{aligned}
           \]</div>
         </div>
@@ -124,29 +134,36 @@
       </div>
     </section>
 
-    <section class="topic-section" id="arc-length-of-a-parametric-curve">
-      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="arc-length-of-a-parametric-curve-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Arc Length of a Parametric Curve</span></button></h2>
-      <div class="section-body" id="arc-length-of-a-parametric-curve-body">
+    <section class="topic-section" id="arc-length-2">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="arc-length-2-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Arc Length</span></button></h2>
+      <div class="section-body" id="arc-length-2-body">
       <div class="formula">
-        <p class="formula-name">Arc Length</p>
+        <p class="formula-name">Arc Length of a Parametric Curve</p>
         <div>\[ L = \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}\,dt \]</div>
       </div>
       <div class="example">
-        <p>Find the length of the curve \(x = t^2\), \(y = \frac{2}{3}t^3\), for \(0 \le t \le \sqrt{3}\).</p>
+        <p>Find the exact arc length of the curve below for \(0 \le t \le 224\).</p>
+        <div>\[
+        \begin{aligned}
+          x(t) &= t \\
+          y(t) &= \frac{2}{3}t^{3/2}
+        \end{aligned}
+        \]</div>
         <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
         <div class="work">
           <div>\[
           \begin{aligned}
-            \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 &= (2t)^2 + \left(2t^2\right)^2 \\
-            &= 4t^2\left(1 + t^2\right)
+            \frac{dx}{dt} &= 1 \\
+            \frac{dy}{dt} &= t^{1/2}
           \end{aligned}
           \]</div>
           <div>\[
           \begin{aligned}
-            L &= \int_0^{\sqrt{3}} 2t\sqrt{1 + t^2}\,dt \\
-            &= \left[\frac{2}{3}\left(1 + t^2\right)^{3/2}\right]_0^{\sqrt{3}} \\
-            &= \frac{2}{3}(8 - 1) \\
-            &= \frac{14}{3}
+            L &= \int_0^{224} \sqrt{1 + t}\,dt \\
+            &= \left[\frac{2}{3}(1 + t)^{3/2}\right]_0^{224} \\
+            &= \frac{2}{3}\left(225^{3/2} - 1\right) \\
+            &= \frac{2}{3}(3375 - 1) \\
+            &= \frac{6748}{3}
           \end{aligned}
           \]</div>
         </div>
@@ -156,6 +173,7 @@
 
     <nav class="next-prev" aria-label="Topics">
       <a href="series-tests-at-a-glance.html">&larr; Series Tests at a Glance</a>
+      <a class="next" href="polar-coordinates.html">Lesson 66: Polar Coordinates &rarr;</a>
     </nav>
 
   </main>

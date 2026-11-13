@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 66: Polar Coordinates | Calculus | Flanagan Math</title>
+  <meta name="description" content="Polar coordinates and conversions, polar equations, tangent lines, and arc length, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 66: Polar Coordinates</h1>
+
+    <section class="topic-section" id="polar-coordinates">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="polar-coordinates-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Polar Coordinates</span></button></h2>
+      <div class="section-body" id="polar-coordinates-body">
+      <p>Polar coordinates give us another way to locate a point in the plane. Instead of moving over \(x\) and up \(y\), we give a distance \(r\) from the origin, called the pole, and an angle \(\theta\) measured counterclockwise from the positive \(x\)-axis.</p>
+      <div class="formula">
+        <p class="formula-name">Converting Between Polar and Rectangular</p>
+        <div>\[
+        \begin{aligned}
+          &x = r\cos\theta \\
+          &y = r\sin\theta \\
+          &r^2 = x^2 + y^2 \\
+          &\tan\theta = \frac{y}{x}
+        \end{aligned}
+        \]</div>
+      </div>
+      <p>A point has many polar names. Adding \(2\pi\) to the angle gives the same point, so \((r, \theta)\) and \((r, \theta + 2\pi)\) are the same point.</p>
+      <div class="example">
+        <p>Convert the polar point \(\left(4, \frac{\pi}{3}\right)\) to rectangular coordinates.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            x &= 4\cos\frac{\pi}{3} = 2 \\
+            y &= 4\sin\frac{\pi}{3} = 2\sqrt{3}
+          \end{aligned}
+          \]</div>
+          <p>The point is \(\left(2, 2\sqrt{3}\right)\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>Convert the rectangular point \((-1, 1)\) to polar coordinates with \(r > 0\) and \(0 \le \theta < 2\pi\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            r &= \sqrt{1 + 1} = \sqrt{2} \\
+            \tan\theta &= -1
+          \end{aligned}
+          \]</div>
+          <p>The point is in quadrant II, so \(\theta = \frac{3\pi}{4}\). The point is \(\left(\sqrt{2}, \frac{3\pi}{4}\right)\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="polar-equations">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="polar-equations-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Polar Equations</span></button></h2>
+      <div class="section-body" id="polar-equations-body">
+      <p>A polar equation \(r = f(\theta)\) gives a distance \(r\) for each angle \(\theta\). As \(\theta\) changes, the points \((r, \theta)\) trace out a curve, just like \(t\) did for parametric equations.</p>
+      <p>In fact, every polar curve is a parametric curve with \(\theta\) as the parameter.</p>
+      <div>\[
+      \begin{aligned}
+        x &= f(\theta)\cos\theta \\
+        y &= f(\theta)\sin\theta
+      \end{aligned}
+      \]</div>
+      <div class="example">
+        <p>Convert the polar equation \(r = 6\sin\theta\) to rectangular form. What is the shape of the graph?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Multiply both sides by \(r\).</p>
+          <div>\[
+          \begin{aligned}
+            r^2 &= 6r\sin\theta \\
+            x^2 + y^2 &= 6y \\
+            x^2 + y^2 - 6y + 9 &= 9 \\
+            x^2 + (y - 3)^2 &= 9
+          \end{aligned}
+          \]</div>
+          <p>The graph is a circle with center \((0, 3)\) and radius 3.</p>
+          <img src="images/polar-circle.png" width="273" height="273"
+               alt="A circle with center (0, 3) and radius 3, touching the origin.">
+        </div>
+      </div>
+      <div class="example">
+        <p>Look back at the rose on the Parametric Equations page. Show that its graph is the polar curve \(r = \cos(5\theta)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="explanation" hidden>Show explanation</button>
+        <div class="work">
+          <p>With \(r = \cos(5\theta)\), the parametric form of the polar curve is below.</p>
+          <div>\[
+          \begin{aligned}
+            x &= r\cos\theta = \cos\theta\cos(5\theta) \\
+            y &= r\sin\theta = \sin\theta\cos(5\theta)
+          \end{aligned}
+          \]</div>
+          <p>These are the same equations, with \(\theta\) in place of \(t\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="tangent-lines-with-polar-equations">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="tangent-lines-with-polar-equations-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Tangent Lines with Polar Equations</span></button></h2>
+      <div class="section-body" id="tangent-lines-with-polar-equations-body">
+      <p>To find the slope of a tangent line to a polar curve \(r = f(\theta)\), treat the curve as a parametric curve with \(\theta\) as the parameter.</p>
+      <div class="example">
+        <p>Derive the slope formula for a polar curve.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="derivation" hidden>Show derivation</button>
+        <div class="work">
+          <p><b>Step 1:</b> Write the polar curve as parametric equations: \(x = r\cos\theta\) and \(y = r\sin\theta\).</p>
+          <p><b>Step 2:</b> Recall the parametric slope formula.</p>
+          <div>\[ \frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} \]</div>
+          <p><b>Step 3:</b> Find \(\frac{dy}{d\theta}\). Since \(r\) changes with \(\theta\), use the product rule.</p>
+          <div>\[ \frac{dy}{d\theta} = \frac{dr}{d\theta}\sin\theta + r\cos\theta \]</div>
+          <p><b>Step 4:</b> Find \(\frac{dx}{d\theta}\). Use the product rule again.</p>
+          <div>\[ \frac{dx}{d\theta} = \frac{dr}{d\theta}\cos\theta - r\sin\theta \]</div>
+          <p><b>Step 5:</b> Divide.</p>
+        </div>
+      </div>
+      <div class="formula">
+        <p class="formula-name">The Slope of a Polar Curve</p>
+        <div>\[ \frac{dy}{dx} = \frac{\frac{dr}{d\theta}\sin\theta + r\cos\theta}{\frac{dr}{d\theta}\cos\theta - r\sin\theta} \]</div>
+      </div>
+      <ul>
+        <li>Horizontal tangent: \(\frac{dy}{d\theta} = 0\) and \(\frac{dx}{d\theta} \neq 0\).</li>
+        <li>Vertical tangent: \(\frac{dx}{d\theta} = 0\) and \(\frac{dy}{d\theta} \neq 0\).</li>
+      </ul>
+      <p><b>Careful:</b> \(\frac{dr}{d\theta}\) is not the slope of the tangent line. It tells how fast \(r\) is changing, not the slope of the curve.</p>
+      <div class="example">
+        <p>Consider the polar curve \(r = 1 + \cos\theta\). Find the slope-intercept equation of the tangent line at \(\theta = \frac{\pi}{2}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            r &= 1 + \cos\frac{\pi}{2} = 1 \\
+            \frac{dr}{d\theta} &= -\sin\frac{\pi}{2} = -1
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \frac{dy}{d\theta} &= (-1)(1) + (1)(0) = -1 \\
+            \frac{dx}{d\theta} &= (-1)(0) - (1)(1) = -1 \\
+            \frac{dy}{dx} &= \frac{-1}{-1} = 1
+          \end{aligned}
+          \]</div>
+          <p>The point is \(x = r\cos\frac{\pi}{2} = 0\), \(y = r\sin\frac{\pi}{2} = 1\).</p>
+          <div>\[
+          \begin{aligned}
+            y - 1 &= 1(x - 0) \\
+            y &= x + 1
+          \end{aligned}
+          \]</div>
+          <img src="images/cardioid-tangent.png" width="287" height="287"
+               alt="The cardioid r equals 1 plus cosine theta, with the tangent line y equals x plus 1 at the point (0, 1).">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="arc-length-with-polar-equations">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="arc-length-with-polar-equations-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Arc Length with Polar Equations</span></button></h2>
+      <div class="section-body" id="arc-length-with-polar-equations-body">
+      <p>With \(\theta\) as the parameter, use \(\frac{dx}{d\theta}\) and \(\frac{dy}{d\theta}\) from the tangent line steps in the parametric arc length formula.</p>
+      <div class="example">
+        <p>Show that \(\left(\frac{dx}{d\theta}\right)^2 + \left(\frac{dy}{d\theta}\right)^2 = r^2 + \left(\frac{dr}{d\theta}\right)^2\). Write \(r\,'\) for \(\frac{dr}{d\theta}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="derivation" hidden>Show derivation</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            &\left(r'\cos\theta - r\sin\theta\right)^2 + \left(r'\sin\theta + r\cos\theta\right)^2 \\
+            &\quad = r'^2\cos^2\theta - 2rr'\sin\theta\cos\theta + r^2\sin^2\theta \\
+            &\qquad {}+ r'^2\sin^2\theta + 2rr'\sin\theta\cos\theta + r^2\cos^2\theta \\
+            &\quad = r'^2\left(\cos^2\theta + \sin^2\theta\right) + r^2\left(\sin^2\theta + \cos^2\theta\right) \\
+            &\quad = r^2 + r'^2
+          \end{aligned}
+          \]</div>
+          <p>The middle terms cancel, and each group becomes 1.</p>
+        </div>
+      </div>
+      <div class="formula">
+        <p class="formula-name">Arc Length of a Polar Curve</p>
+        <div>\[ L = \int_\alpha^\beta \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2}\,d\theta \]</div>
+      </div>
+      <div class="example">
+        <p>Consider the polar curve \(r = \theta^2\) for \(0 \le \theta \le \sqrt{5}\). Find the exact arc length.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \frac{dr}{d\theta} &= 2\theta \\
+            \sqrt{\theta^4 + 4\theta^2} &= \theta\sqrt{\theta^2 + 4}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            L &= \int_0^{\sqrt{5}} \theta\sqrt{\theta^2 + 4}\,d\theta \\
+            &= \left[\frac{1}{3}\left(\theta^2 + 4\right)^{3/2}\right]_0^{\sqrt{5}} \\
+            &= \frac{1}{3}(27 - 8) \\
+            &= \frac{19}{3}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="parametric-equations.html">&larr; Lesson 65: Parametric Equations</a>
+    </nav>
+
+  </main>
+</body>
+</html>
