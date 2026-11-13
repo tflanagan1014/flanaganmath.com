@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 3: Finding Limits Graphically | Calculus | Flanagan Math</title>
+  <meta name="description" content="Reading function values, one-sided limits, and two-sided limits from a graph, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 3: Finding Limits Graphically</h1>
+
+    <section class="topic-section" id="review-piecewise-defined-functions">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="review-piecewise-defined-functions-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Review: Piecewise-Defined Functions</span></button></h2>
+      <div class="section-body" id="review-piecewise-defined-functions-body">
+      <div class="row">
+        <div>
+          <p>Graph the function below.</p>
+          <div>\[ f(x) = \begin{cases} x + 2, & x \le 0 \\ 2x - 2, & x > 0 \end{cases} \]</div>
+          <table class="grid values">
+            <caption class="visually-hidden">Points on the graph of f</caption>
+            <tr><th scope="col">\(x\)</th><th scope="col">\(f(x)\)</th></tr>
+            <tr><td>&minus;2</td><td>0</td></tr>
+            <tr><td>&minus;1</td><td>1</td></tr>
+            <tr><td>0</td><td>2</td></tr>
+            <tr><td>0.01</td><td>&minus;1.98</td></tr>
+            <tr><td>0.5</td><td>&minus;1.0</td></tr>
+            <tr><td>1</td><td>0</td></tr>
+            <tr><td>2</td><td>2</td></tr>
+          </table>
+          <p>Open and closed circles show the function value where the equation changes. The filled-in circle is the function value.</p>
+        </div>
+        <img src="images/piecewise-jump.png" width="382" height="287"
+             alt="The line y = x + 2 for x up to 0, ending at a filled dot at (0, 2), and the line y = 2x minus 2 for x greater than 0, starting at an open circle at (0, negative 2).">
+      </div>
+      <div>\[ \lim_{x \to 0^-} f(x) = 2 \qquad \lim_{x \to 0^+} f(x) = -2 \]</div>
+      <p>The left-hand and right-hand limits are different, so \(\displaystyle\lim_{x \to 0} f(x)\) does not exist.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="an-essential-example">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="an-essential-example-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">An Essential Example</span></button></h2>
+      <div class="section-body" id="an-essential-example-body">
+      <div class="example">
+        <div class="row">
+          <div>
+            <p>The graph of a function \(f(x)\) is given. Use the graph to find each of the following.</p>
+            <div class="eq-list">
+              <div>\[ f(5) \]</div>
+              <div>\[ f(2) \]</div>
+              <div>\[ f(3) \]</div>
+              <div>\[ \lim_{x \to 3^-} f(x) \]</div>
+              <div>\[ \lim_{x \to 3^+} f(x) \]</div>
+              <div>\[ \lim_{x \to 3} f(x) \]</div>
+            </div>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <div>\[
+              \begin{aligned}
+                f(5) &= 6 \\
+                f(2) &= 0 \\
+                f(3) &= 1 \\
+                \lim_{x \to 3^-} f(x) &= 1 \\
+                \lim_{x \to 3^+} f(x) &= 5
+              \end{aligned}
+              \]</div>
+              <p>The left-hand and right-hand limits are different, so \(\displaystyle\lim_{x \to 3} f(x)\) does not exist.</p>
+            </div>
+          </div>
+          <img src="images/graph-essential-1.png" width="382" height="287"
+               alt="A line rising to a filled dot at (3, 1), and a second line starting at an open circle at (3, 5) and rising through (5, 6).">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="another-essential-example">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="another-essential-example-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Another Essential Example</span></button></h2>
+      <div class="section-body" id="another-essential-example-body">
+      <div class="example">
+        <div class="row">
+          <div>
+            <p>The graph of a function \(f(x)\) is given. Use the graph to find each of the following.</p>
+            <div class="eq-list">
+              <div>\[ f(1) \]</div>
+              <div>\[ \lim_{x \to 1^-} f(x) \]</div>
+              <div>\[ \lim_{x \to 1^+} f(x) \]</div>
+              <div>\[ \lim_{x \to 1} f(x) \]</div>
+            </div>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <p>There is no filled-in dot above \(x = 1\), so \(f(1)\) is undefined.</p>
+              <div>\[
+              \begin{aligned}
+                \lim_{x \to 1^-} f(x) &= 2 \\
+                \lim_{x \to 1^+} f(x) &= 4
+              \end{aligned}
+              \]</div>
+              <p>The left-hand and right-hand limits are different, so \(\displaystyle\lim_{x \to 1} f(x)\) does not exist.</p>
+            </div>
+          </div>
+          <img src="images/graph-essential-2.png" width="382" height="287"
+               alt="A line rising to an open circle at (1, 2), and a second line starting at an open circle at (1, 4) and rising.">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="now-you-try-2">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="now-you-try-2-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Now You Try</span></button></h2>
+      <div class="section-body" id="now-you-try-2-body">
+      <div class="example">
+        <div class="row">
+          <div>
+            <p>The graph of a function \(g(x)\) is given. Use the graph to find each of the following.</p>
+            <div class="eq-list">
+              <div>\[ g(3) \]</div>
+              <div>\[ \lim_{x \to 3^-} g(x) \]</div>
+              <div>\[ \lim_{x \to 3^+} g(x) \]</div>
+              <div>\[ \lim_{x \to 3} g(x) \]</div>
+            </div>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <div>\[
+              \begin{aligned}
+                g(3) &= 1 \\
+                \lim_{x \to 3^-} g(x) &= 3 \\
+                \lim_{x \to 3^+} g(x) &= 1
+              \end{aligned}
+              \]</div>
+              <p>The left-hand and right-hand limits are different, so \(\displaystyle\lim_{x \to 3} g(x)\) does not exist.</p>
+            </div>
+          </div>
+          <img src="images/graph-try-1.png" width="382" height="287"
+               alt="A line falling to an open circle at (3, 3), and a second line starting at a filled dot at (3, 1) and rising.">
+        </div>
+      </div>
+      <div class="example">
+        <div class="row">
+          <div>
+            <p>The graph of a function \(g(x)\) is given. Use the graph to find each of the following.</p>
+            <div class="eq-list">
+              <div>\[ g(-4) \]</div>
+              <div>\[ \lim_{x \to -4^-} g(x) \]</div>
+              <div>\[ \lim_{x \to -4^+} g(x) \]</div>
+              <div>\[ \lim_{x \to -4} g(x) \]</div>
+            </div>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <div>\[
+              \begin{aligned}
+                g(-4) &= 3 \\
+                \lim_{x \to -4^-} g(x) &= 1 \\
+                \lim_{x \to -4^+} g(x) &= 6
+              \end{aligned}
+              \]</div>
+              <p>The left-hand and right-hand limits are different, so \(\displaystyle\lim_{x \to -4} g(x)\) does not exist.</p>
+            </div>
+          </div>
+          <img src="images/graph-try-2.png" width="382" height="287"
+               alt="A line rising to an open circle at (negative 4, 1), a filled dot at (negative 4, 3), and a line starting at an open circle at (negative 4, 6) and falling.">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="finding-limits-numerically.html">&larr; Lesson 2: Finding Limits Numerically</a>
+      <a class="next" href="finding-limits-algebraically.html">Lesson 4: Finding Limits Algebraically &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

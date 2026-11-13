@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 28: Concavity and Inflection Points | Calculus | Flanagan Math</title>
+  <meta name="description" content="Using the second derivative to find concavity and inflection points, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 28: Concavity and Inflection Points</h1>
+
+    <section class="topic-section" id="concavity-and-inflection-points">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="concavity-and-inflection-points-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Concavity and Inflection Points</span></button></h2>
+      <div class="section-body" id="concavity-and-inflection-points-body">
+      <p>A twice differentiable function is concave up where \(f\,&#39;&#39;(x) > 0\) and concave down where \(f\,&#39;&#39;(x) < 0\). An inflection point is a point on the graph where the concavity changes.</p>
+      <div class="formula">
+        <p class="formula-name">Steps</p>
+        <ol>
+          <li>Find the numbers where \(f\,&#39;&#39;(x)\) is zero or undefined.</li>
+          <li>Use them to break up the number line into intervals.</li>
+          <li>Choose a test number in each interval and find the sign of \(f\,&#39;&#39;(x)\).</li>
+          <li>Concave up where \(f\,&#39;&#39;(x)\) is positive, concave down where it is negative.</li>
+          <li>Where the concavity changes, find the \(y\)-coordinate with \(f(x)\). That is an inflection point.</li>
+        </ol>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="examples-2">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="examples-2-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Examples</span></button></h2>
+      <div class="section-body" id="examples-2-body">
+      <div class="example">
+        <p>Find where the function below is concave up and down, and find any inflection points.</p>
+        <div>\[ f(x) = -x^4 - 4x^3 + 210x^2 - 43x + 85 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f'(x) &= -4x^3 - 12x^2 + 420x - 43 \\
+            f''(x) &= -12x^2 - 24x + 420 \\
+            &= -12(x + 7)(x - 5)
+          \end{aligned}
+          \]</div>
+          <table class="grid values">
+            <caption class="visually-hidden">Signs of the second derivative</caption>
+            <tr><th scope="col">Interval</th><th scope="col">\(f\,''(x)\)</th><th scope="col">Concave</th></tr>
+            <tr><td>\((-\infty, -7)\)</td><td>&minus;</td><td>down</td></tr>
+            <tr><td>\((-7, 5)\)</td><td>+</td><td>up</td></tr>
+            <tr><td>\((5, \infty)\)</td><td>&minus;</td><td>down</td></tr>
+          </table>
+          <div>\[
+          \begin{aligned}
+            f(-7) &= 9647 \\
+            f(5) &= 3995
+          \end{aligned}
+          \]</div>
+          <p>The inflection points are \((-7, 9647)\) and \((5, 3995)\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>A Sample Exam Problem</h3>
+        <p>On \((0, 2\pi)\), find where \(f(x) = 7 + x^2 + \cos(2x)\) is concave up and concave down.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f'(x) &= 2x - 2\sin(2x) \\
+            f''(x) &= 2 - 4\cos(2x)
+          \end{aligned}
+          \]</div>
+          <p>\(f\,&#39;&#39;(x) > 0\) when \(\cos(2x) < \frac{1}{2}\). For \(0 < 2x < 4\pi\), that happens when \(\frac{\pi}{3} < 2x < \frac{5\pi}{3}\) or \(\frac{7\pi}{3} < 2x < \frac{11\pi}{3}\).</p>
+          <p>Concave up on \(\left(\frac{\pi}{6}, \frac{5\pi}{6}\right)\) and \(\left(\frac{7\pi}{6}, \frac{11\pi}{6}\right)\).</p>
+          <p>Concave down on \(\left(0, \frac{\pi}{6}\right)\), \(\left(\frac{5\pi}{6}, \frac{7\pi}{6}\right)\), and \(\left(\frac{11\pi}{6}, 2\pi\right)\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="first-derivative-test.html">&larr; Lesson 27: The First Derivative Test</a>
+      <a class="next" href="second-derivative-test.html">Lesson 29: The Second Derivative Test &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

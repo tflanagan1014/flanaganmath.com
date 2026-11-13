@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 54: Numerical Integration | Calculus | Flanagan Math</title>
+  <meta name="description" content="The trapezoidal rule, midpoint rule, and Simpson&rsquo;s rule, with a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 54: Numerical Integration</h1>
+
+    <section class="topic-section" id="numerical-integration">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="numerical-integration-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Numerical Integration</span></button></h2>
+      <div class="section-body" id="numerical-integration-body">
+      <p>Some integrals cannot be evaluated exactly. For a continuous function on \([a, b]\), partition the interval into \(n\) equal subintervals of width \(\Delta x = \frac{b - a}{n}\), with \(x_k = a + k\,\Delta x\).</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="three-rules">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="three-rules-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Three Rules</span></button></h2>
+      <div class="section-body" id="three-rules-body">
+      <div class="formula">
+        <p class="formula-name">The Trapezoidal Rule</p>
+        <div>\[
+        \begin{aligned}
+          &\int_a^b f(x)\,dx \approx \frac{\Delta x}{2}\Big[f(x_0) + 2f(x_1) + 2f(x_2) \\
+          &\qquad + \cdots + 2f(x_{n-1}) + f(x_n)\Big]
+        \end{aligned}
+        \]</div>
+      </div>
+      <div class="formula">
+        <p class="formula-name">The Midpoint Rule</p>
+        <div>\[
+        \begin{aligned}
+          &\int_a^b f(x)\,dx \approx \Delta x\left[f\left(x_1^*\right) + \cdots + f\left(x_n^*\right)\right] \\
+          &\qquad\text{where } x_k^* = a + \left(k - \tfrac{1}{2}\right)\Delta x
+        \end{aligned}
+        \]</div>
+      </div>
+      <div class="formula">
+        <p class="formula-name">Simpson&rsquo;s Rule (n even)</p>
+        <div>\[
+        \begin{aligned}
+          &\int_a^b f(x)\,dx \approx \frac{\Delta x}{3}\Big[f(x_0) + 4f(x_1) + 2f(x_2) \\
+          &\qquad + 4f(x_3) + \cdots + 4f(x_{n-1}) + f(x_n)\Big]
+        \end{aligned}
+        \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="an-example-4">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="an-example-4-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">An Example</span></button></h2>
+      <div class="section-body" id="an-example-4-body">
+      <div class="example">
+        <p>Approximate \(\displaystyle\int_0^2 x^2\,dx\) with \(n = 4\) using each rule. The exact value is \(\frac{8}{3} \approx 2.6667\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>\(\Delta x = 0.5\). The points are \(0, 0.5, 1, 1.5, 2\), with \(f\) values \(0, 0.25, 1, 2.25, 4\).</p>
+          <div>\[
+          \begin{aligned}
+            \text{Trapezoidal} &= \frac{0.5}{2}\left[0 + 2(0.25) + 2(1) + 2(2.25) + 4\right] \\
+            &= 2.75
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \text{Midpoint} &= 0.5\left[f(0.25) + f(0.75) + f(1.25) + f(1.75)\right] \\
+            &= 0.5(0.0625 + 0.5625 + 1.5625 + 3.0625) \\
+            &= 2.625
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \text{Simpson} &= \frac{0.5}{3}\left[0 + 4(0.25) + 2(1) + 4(2.25) + 4\right] \\
+            &= \frac{8}{3}
+          \end{aligned}
+          \]</div>
+          <p>Simpson&rsquo;s Rule is exact here, because it is exact for polynomials up to degree three.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="improper-integrals.html">&larr; Lesson 53: Improper Integrals</a>
+      <a class="next" href="sequences.html">Lesson 55: Sequences &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

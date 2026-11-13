@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 29: The Second Derivative Test | Calculus | Flanagan Math</title>
+  <meta name="description" content="Classifying relative extrema with the second derivative test, with a worked example and conceptual questions.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 29: The Second Derivative Test</h1>
+
+    <section class="topic-section" id="the-idea-behind-the-second-derivative-test">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-idea-behind-the-second-derivative-test-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Idea Behind the Second Derivative Test</span></button></h2>
+      <div class="section-body" id="the-idea-behind-the-second-derivative-test-body">
+      <ul>
+        <li>A relative minimum occurs at a critical point where the graph is concave up.</li>
+        <li>A relative maximum occurs at a critical point where the graph is concave down.</li>
+        <li>A horizontal tangent line does not guarantee an extremum. A critical point can be an inflection point instead.</li>
+      </ul>
+      <div class="formula">
+        <p class="formula-name">The Second Derivative Test</p>
+        <div>\[
+        \begin{aligned}
+          &\text{If } f'(c) = 0 \text{ and } f''(c) > 0, \text{ relative minimum at } c. \\
+          &\text{If } f'(c) = 0 \text{ and } f''(c) < 0, \text{ relative maximum at } c. \\
+          &\text{If } f''(c) = 0, \text{ the test is inconclusive.}
+        \end{aligned}
+        \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="an-example-2">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="an-example-2-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">An Example</span></button></h2>
+      <div class="section-body" id="an-example-2-body">
+      <div class="example">
+        <p>Use the second derivative test to find and classify the extrema of \(f(x) = x^4 - 32x^2 + 30\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f'(x) &= 4x^3 - 64x \\
+            &= 4x(x - 4)(x + 4)
+          \end{aligned}
+          \]</div>
+          <p>The critical numbers are \(0\), \(4\), and \(-4\).</p>
+          <div>\[
+          \begin{aligned}
+            f''(x) &= 12x^2 - 64 \\
+            f''(0) &= -64 < 0 \\
+            f''(\pm 4) &= 128 > 0
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            f(0) &= 30 \\
+            f(\pm 4) &= 256 - 512 + 30 = -226
+          \end{aligned}
+          \]</div>
+          <p>There is a relative maximum at \((0, 30)\), and minimums at \((-4, -226)\) and \((4, -226)\). Since the graph rises forever on both sides, those two minimums are also absolute minimums.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="what-can-you-conclude">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-can-you-conclude-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What Can You Conclude?</span></button></h2>
+      <div class="section-body" id="what-can-you-conclude-body">
+      <p>Each function below is everywhere twice differentiable.</p>
+      <div class="example">
+        <p>If \(f\,&#39;(5) = 0\) and \(f\,&#39;&#39;(5) = 12\), what can you conclude at \(x = 5\)?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="answer" hidden>Show answer</button>
+        <div class="work">
+          <p>There is a horizontal tangent and the graph is concave up, so there is a relative (or absolute) minimum at \(x = 5\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>If \(f\,&#39;(-2) = -53\) and \(f\,&#39;&#39;(-2) = 71\), what can you conclude at \(x = -2\)?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="answer" hidden>Show answer</button>
+        <div class="work">
+          <p>The function is decreasing and concave up at \(x = -2\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>If \(f\,&#39;(8) = 12\) and \(f\,&#39;&#39;(8) = -12\), what can you conclude at \(x = 8\)?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="answer" hidden>Show answer</button>
+        <div class="work">
+          <p>The function is increasing and concave down at \(x = 8\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="concavity-and-inflection-points.html">&larr; Lesson 28: Concavity and Inflection Points</a>
+      <a class="next" href="optimization.html">Lesson 30: Optimization &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

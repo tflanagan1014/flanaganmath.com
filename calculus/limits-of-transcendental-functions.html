@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 6: Limits of Transcendental Functions | Calculus | Flanagan Math</title>
+  <meta name="description" content="Reading limits from the graphs of the natural log, exponential, trigonometric, and inverse tangent functions.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 6: Limits of Transcendental Functions</h1>
+
+    <section class="topic-section" id="graphs-tell-us-limits">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="graphs-tell-us-limits-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Graphs Tell Us Limits</span></button></h2>
+      <div class="section-body" id="graphs-tell-us-limits-body">
+      <p>Knowing the graphs of these functions, and their asymptotes, lets us read off many important limits. The dashed lines are asymptotes.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-natural-log-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-natural-log-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Natural Log Function</span></button></h2>
+      <div class="section-body" id="the-natural-log-function-body">
+      <div class="row">
+        <div>
+          <p>The \(y\)-axis is a vertical asymptote of \(f(x) = \ln x\).</p>
+          <div class="eq-list">
+            <div>\[ \lim_{x \to 0^+} \ln x = -\infty \]</div>
+            <div>\[ \lim_{x \to \infty} \ln x = \infty \]</div>
+          </div>
+        </div>
+        <img src="images/natural-log.png" width="382" height="287"
+             alt="The graph of y equals the natural log of x, rising slowly to the right and dropping toward negative infinity as x approaches 0 from the right. The y-axis is a vertical asymptote.">
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-exponential-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-exponential-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Exponential Function</span></button></h2>
+      <div class="section-body" id="the-exponential-function-body">
+      <div class="row">
+        <div>
+          <p>The \(x\)-axis is a horizontal asymptote of \(f(x) = e^x\).</p>
+          <div class="eq-list">
+            <div>\[ \lim_{x \to -\infty} e^x = 0 \]</div>
+            <div>\[ \lim_{x \to \infty} e^x = \infty \]</div>
+          </div>
+        </div>
+        <img src="images/exponential.png" width="382" height="287"
+             alt="The graph of y equals e to the x, approaching the x-axis on the left and rising steeply on the right. The x-axis is a horizontal asymptote.">
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-tangent-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-tangent-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Tangent Function</span></button></h2>
+      <div class="section-body" id="the-tangent-function-body">
+      <p>Since \(\tan x = \frac{\sin x}{\cos x}\), the graph has vertical asymptotes where \(\cos x = 0\).</p>
+      <img class="wide" src="images/tangent.png" width="507" height="287"
+           alt="The graph of y equals tangent x from negative 2 pi to 2 pi, with vertical asymptotes at negative 3 pi over 2, negative pi over 2, pi over 2, and 3 pi over 2. Each branch rises from negative infinity to infinity.">
+      <div class="eq-list">
+        <div>\[ \lim_{x \to \frac{\pi}{2}^-} \tan x = \infty \]</div>
+        <div>\[ \lim_{x \to \frac{\pi}{2}^+} \tan x = -\infty \]</div>
+      </div>
+      <p>The one-sided limits are different, so \(\displaystyle\lim_{x \to \frac{\pi}{2}} \tan x\) does not exist. The same happens at \(x = \frac{3\pi}{2}\).</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-secant-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-secant-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Secant Function</span></button></h2>
+      <div class="section-body" id="the-secant-function-body">
+      <p>Since \(\sec x = \frac{1}{\cos x}\), the graph has vertical asymptotes where \(\cos x = 0\).</p>
+      <img class="wide" src="images/secant.png" width="507" height="287"
+           alt="The graph of y equals secant x from negative 2 pi to 2 pi, with vertical asymptotes at odd multiples of pi over 2. U-shaped branches open upward above y equals 1 and downward below y equals negative 1.">
+      <div class="eq-list">
+        <div>\[ \lim_{x \to \frac{\pi}{2}^-} \sec x = \infty \]</div>
+        <div>\[ \lim_{x \to \frac{\pi}{2}^+} \sec x = -\infty \]</div>
+        <div>\[ \lim_{x \to \frac{3\pi}{2}^-} \sec x = -\infty \]</div>
+        <div>\[ \lim_{x \to \frac{3\pi}{2}^+} \sec x = \infty \]</div>
+      </div>
+      <p>So \(\displaystyle\lim_{x \to \frac{\pi}{2}} \sec x\) and \(\displaystyle\lim_{x \to \frac{3\pi}{2}} \sec x\) do not exist.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-cosecant-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-cosecant-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Cosecant Function</span></button></h2>
+      <div class="section-body" id="the-cosecant-function-body">
+      <p>Since \(\csc x = \frac{1}{\sin x}\), the graph has vertical asymptotes where \(\sin x = 0\).</p>
+      <img class="wide" src="images/cosecant.png" width="507" height="287"
+           alt="The graph of y equals cosecant x from negative 2 pi to 2 pi, with vertical asymptotes at multiples of pi. U-shaped branches open upward above y equals 1 and downward below y equals negative 1.">
+      <div class="eq-list">
+        <div>\[ \lim_{x \to 0^-} \csc x = -\infty \]</div>
+        <div>\[ \lim_{x \to 0^+} \csc x = \infty \]</div>
+        <div>\[ \lim_{x \to \pi^-} \csc x = \infty \]</div>
+        <div>\[ \lim_{x \to \pi^+} \csc x = -\infty \]</div>
+      </div>
+      <p>So \(\displaystyle\lim_{x \to 0} \csc x\) and \(\displaystyle\lim_{x \to \pi} \csc x\) do not exist.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-cotangent-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-cotangent-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Cotangent Function</span></button></h2>
+      <div class="section-body" id="the-cotangent-function-body">
+      <p>Since \(\cot x = \frac{\cos x}{\sin x}\), the graph has vertical asymptotes where \(\sin x = 0\).</p>
+      <img class="wide" src="images/cotangent.png" width="507" height="287"
+           alt="The graph of y equals cotangent x from negative 2 pi to 2 pi, with vertical asymptotes at multiples of pi. Each branch falls from infinity to negative infinity.">
+      <div class="eq-list">
+        <div>\[ \lim_{x \to 0^-} \cot x = -\infty \]</div>
+        <div>\[ \lim_{x \to 0^+} \cot x = \infty \]</div>
+        <div>\[ \lim_{x \to \pi^-} \cot x = -\infty \]</div>
+        <div>\[ \lim_{x \to \pi^+} \cot x = \infty \]</div>
+      </div>
+      <p>So \(\displaystyle\lim_{x \to 0} \cot x\) and \(\displaystyle\lim_{x \to \pi} \cot x\) do not exist.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-inverse-tangent-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-inverse-tangent-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Inverse Tangent Function</span></button></h2>
+      <div class="section-body" id="the-inverse-tangent-function-body">
+      <p>The graph of \(f(x) = \tan^{-1} x\), also written \(\arctan x\), has two horizontal asymptotes.</p>
+      <img class="wide" src="images/inverse-tangent.png" width="505" height="256"
+           alt="The graph of y equals inverse tangent of x, an S-shaped curve through the origin approaching the horizontal asymptote y equals pi over 2 on the right and y equals negative pi over 2 on the left.">
+      <div class="eq-list">
+        <div>\[ \lim_{x \to \infty} \tan^{-1} x = \frac{\pi}{2} \]</div>
+        <div>\[ \lim_{x \to -\infty} \tan^{-1} x = -\frac{\pi}{2} \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-limit-at-infinity-that-does-not-exist">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-limit-at-infinity-that-does-not-exist-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Limit at Infinity that does not Exist</span></button></h2>
+      <div class="section-body" id="a-limit-at-infinity-that-does-not-exist-body">
+      <img class="wide" src="images/sine-oscillates.png" width="515" height="210"
+           alt="The graph of y equals sine x from negative 4 pi to 4 pi, oscillating between negative 1 and 1 forever.">
+      <p>As \(x\) grows, \(\sin x\) keeps oscillating between \(-1\) and \(1\). It never settles on a single value, so the limits below do not exist.</p>
+      <div class="eq-list">
+        <div>\[ \lim_{x \to \infty} \sin x \]</div>
+        <div>\[ \lim_{x \to -\infty} \sin x \]</div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="infinite-limits-and-limits-at-infinity.html">&larr; Lesson 5: Infinite Limits and Limits at Infinity</a>
+      <a class="next" href="continuity.html">Lesson 7: Continuity &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

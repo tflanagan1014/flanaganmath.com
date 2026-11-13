@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 33: Sigma Notation and the Area Problem | Calculus | Flanagan Math</title>
+  <meta name="description" content="Sigma notation, approximating area with rectangles, and the exact area as a limit of Riemann sums, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 33: Sigma Notation and the Area Problem</h1>
+
+    <section class="topic-section" id="sigma-notation-for-summing">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="sigma-notation-for-summing-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Sigma Notation for Summing</span></button></h2>
+      <div class="section-body" id="sigma-notation-for-summing-body">
+      <p>We use \(\sum\) to indicate a sum.</p>
+      <div class="example">
+        <p>Calculate \(\displaystyle\sum_{k=0}^{4} k^2\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \sum_{k=0}^{4} k^2 &= 0 + 1 + 4 + 9 + 16 \\
+            &= 30
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Calculate \(\displaystyle\sum_{k=2}^{6} k^3\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \sum_{k=2}^{6} k^3 &= 8 + 27 + 64 + 125 + 216 \\
+            &= 440
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="formula">
+        <p class="formula-name">An Important Formula</p>
+        <div>\[ \sum_{k=1}^{n} k^2 = \frac{2n^3 + 3n^2 + n}{6} \]</div>
+      </div>
+      <div class="example">
+        <p>Calculate \(\displaystyle\sum_{k=1}^{30} k^2\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \sum_{k=1}^{30} k^2 &= \frac{2(27{,}000) + 3(900) + 30}{6} \\
+            &= \frac{56{,}730}{6} \\
+            &= 9455
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-area-problem-2">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-area-problem-2-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Area Problem</span></button></h2>
+      <div class="section-body" id="the-area-problem-2-body">
+      <div class="row">
+        <div>
+          <p>Let \(\mathcal{R}\) be the region between the graph of \(f(x) = x^2\) and the \(x\)-axis over \(0 \le x \le 4\). What is its area?</p>
+          <p>There is no formula from geometry for this shape. So we approximate it with rectangles, and see that the approximation improves as the number of rectangles grows.</p>
+        </div>
+        <img src="images/area-region.png" width="335" height="288"
+             alt="The region R under the parabola y equals x squared, from x equals 0 to x equals 4, shaded.">
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="approximating-with-rectangles">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="approximating-with-rectangles-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Approximating with Rectangles</span></button></h2>
+      <div class="section-body" id="approximating-with-rectangles-body">
+      <div class="example">
+        <div class="row">
+          <div>
+            <p>Approximate the area using two right-hand rectangles.</p>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <p>Each rectangle has width 2. The heights come from the right endpoints, \(x = 2\) and \(x = 4\).</p>
+              <div>\[
+              \begin{aligned}
+                \text{Area} &\approx f(2)(2) + f(4)(2) \\
+                &= 4(2) + 16(2) \\
+                &= 40
+              \end{aligned}
+              \]</div>
+            </div>
+          </div>
+          <img src="images/area-2-right.png" width="335" height="288"
+               alt="Two right-hand rectangles of width 2 over the parabola, with heights 4 and 16.">
+        </div>
+      </div>
+      <div class="example">
+        <div class="row">
+          <div>
+            <p>Approximate the area using four right-hand rectangles.</p>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <div>\[
+              \begin{aligned}
+                \text{Area} &\approx [f(1) + f(2) + f(3) + f(4)](1) \\
+                &= 1 + 4 + 9 + 16 \\
+                &= 30
+              \end{aligned}
+              \]</div>
+            </div>
+          </div>
+          <img src="images/area-4-right.png" width="335" height="288"
+               alt="Four right-hand rectangles of width 1 over the parabola, with heights 1, 4, 9, and 16.">
+        </div>
+      </div>
+      <p>The rectangles overshoot less as there are more of them.</p>
+      <img src="images/area-8-right.png" width="335" height="288"
+           alt="Eight right-hand rectangles of width one half, fitting the parabola more closely.">
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-formula-for-any-number-of-rectangles">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-formula-for-any-number-of-rectangles-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Formula for Any Number of Rectangles</span></button></h2>
+      <div class="section-body" id="a-formula-for-any-number-of-rectangles-body">
+      <p>With \(n\) right-hand rectangles, each has width \(\Delta x = \frac{4}{n}\), and the \(k\)th right endpoint is \(x_k = k\,\Delta x\).</p>
+      <div>\[
+      \begin{aligned}
+        \text{Area} &\approx \sum_{k=1}^{n} f(k\,\Delta x)\,\Delta x \\
+        &= \sum_{k=1}^{n} (k\,\Delta x)^2\,\Delta x \\
+        &= \Delta x^3 \sum_{k=1}^{n} k^2 \\
+        &= \left(\frac{4}{n}\right)^3 \cdot \frac{2n^3 + 3n^2 + n}{6} \\
+        &= \frac{64}{3} + \frac{32}{n} + \frac{32}{3n^2}
+      \end{aligned}
+      \]</div>
+      <table class="grid values">
+        <caption class="visually-hidden">Approximate area for n rectangles</caption>
+        <tr><th scope="col">\(n\)</th><th scope="col">Area</th></tr>
+        <tr><td>2</td><td>40</td></tr>
+        <tr><td>4</td><td>30</td></tr>
+        <tr><td>8</td><td>25.5</td></tr>
+        <tr><td>1,000,000</td><td>21.33336&hellip;</td></tr>
+      </table>
+      <p>As the number of rectangles approaches infinity, we get the exact area.</p>
+      <div>\[ \lim_{n \to \infty} \left(\frac{64}{3} + \frac{32}{n} + \frac{32}{3n^2}\right) = \frac{64}{3} \]</div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-definite-integral-as-a-limit-of-riemann-sums">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-definite-integral-as-a-limit-of-riemann-sums-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Definite Integral as a Limit of Riemann Sums</span></button></h2>
+      <div class="section-body" id="the-definite-integral-as-a-limit-of-riemann-sums-body">
+      <div class="formula">
+        <p class="formula-name">The Definite Integral</p>
+        <div>\[ \int_a^b f(x)\,dx = \lim_{n \to \infty} \sum_{k=1}^{n} f(x_k)\,\Delta x \]</div>
+      </div>
+      <p>This is named after Bernhard Riemann, another of my favorites. He made a famous conjecture, the Riemann Hypothesis, that is still one of the most important unsolved problems in mathematics. His ideas in geometry were also crucial to Einstein&rsquo;s theory of gravity.</p>
+      <p>Think of \(\int\) as a stretched-out S for &ldquo;sum,&rdquo; and \(dx\) as the width of infinitely thin rectangles.</p>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="antiderivatives.html">&larr; Lesson 32: Antiderivatives</a>
+      <a class="next" href="fundamental-theorem-of-calculus.html">Lesson 34: The Fundamental Theorem of Calculus &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

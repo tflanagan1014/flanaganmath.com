@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 7: Continuity | Calculus | Flanagan Math</title>
+  <meta name="description" content="Three ways a function can be discontinuous, the definition of continuity, and deciding continuity from a graph or formula.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 7: Continuity</h1>
+
+    <section class="topic-section" id="three-ways-for-a-function-to-be-discontinuous">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="three-ways-for-a-function-to-be-discontinuous-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Three Ways for a Function to be Discontinuous</span></button></h2>
+      <div class="section-body" id="three-ways-for-a-function-to-be-discontinuous-body">
+      <div class="row">
+        <div>
+          <p><b>1.</b> \(f(c)\) is undefined.</p>
+        </div>
+        <img src="images/discontinuous-undefined.png" width="211" height="198"
+             alt="A curve with an open circle at x equals c and no filled dot: f of c is undefined.">
+      </div>
+      <div class="row">
+        <div>
+          <p><b>2.</b> \(\displaystyle\lim_{x \to c} f(x)\) does not exist.</p>
+        </div>
+        <img src="images/discontinuous-no-limit.png" width="211" height="198"
+             alt="A curve that jumps at x equals c: the left piece ends at a filled dot and the right piece starts higher at an open circle.">
+      </div>
+      <div class="row">
+        <div>
+          <p><b>3.</b> \(\displaystyle\lim_{x \to c} f(x) \neq f(c)\).</p>
+        </div>
+        <img src="images/discontinuous-limit-not-value.png" width="211" height="198"
+             alt="A curve with an open circle at x equals c and a filled dot above it: the limit and the function value are different.">
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-definition-of-continuity">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-definition-of-continuity-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Definition of Continuity</span></button></h2>
+      <div class="section-body" id="the-definition-of-continuity-body">
+      <p>A function is continuous when it is not discontinuous. That is, for \(f(x)\) to be continuous at \(x = c\), we need to avoid these three possibilities.</p>
+      <div class="formula">
+        <p class="formula-name">Continuity at <span>\(x = c\)</span></p>
+        <ul>
+          <li>\(f(c)\) is defined</li>
+          <li>\(\displaystyle\lim_{x \to c} f(x)\) exists</li>
+          <li>\(\displaystyle\lim_{x \to c} f(x) = f(c)\)</li>
+        </ul>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="is-the-function-continuous">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="is-the-function-continuous-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Is the Function Continuous?</span></button></h2>
+      <div class="section-body" id="is-the-function-continuous-body">
+      <div class="example">
+        <div class="row">
+          <div>
+            <p>The graph of \(f(x)\) is given. Evaluate each of the following. Then decide whether \(f(x)\) is continuous at \(x = 1\).</p>
+            <div class="eq-list">
+              <div>\[ f(1) \]</div>
+              <div>\[ \lim_{x \to 1^-} f(x) \]</div>
+              <div>\[ \lim_{x \to 1^+} f(x) \]</div>
+              <div>\[ \lim_{x \to 1} f(x) \]</div>
+            </div>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <div>\[
+              \begin{aligned}
+                f(1) &= 1 \\
+                \lim_{x \to 1^-} f(x) &= 3 \\
+                \lim_{x \to 1^+} f(x) &= 1
+              \end{aligned}
+              \]</div>
+              <p>The one-sided limits are different, so \(\displaystyle\lim_{x \to 1} f(x)\) does not exist. The function is not continuous at \(x = 1\).</p>
+            </div>
+          </div>
+          <img src="images/continuity-example-1.png" width="382" height="287"
+               alt="A line rising to an open circle at (1, 3), and a curve starting at a filled dot at (1, 1) and rising.">
+        </div>
+      </div>
+      <div class="example">
+        <div class="row">
+          <div>
+            <p>The graph of \(f(x)\) is given. Evaluate each of the following. Then decide whether \(f(x)\) is continuous at \(x = -4\).</p>
+            <div class="eq-list">
+              <div>\[ f(-4) \]</div>
+              <div>\[ \lim_{x \to -4^-} f(x) \]</div>
+              <div>\[ \lim_{x \to -4^+} f(x) \]</div>
+              <div>\[ \lim_{x \to -4} f(x) \]</div>
+            </div>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <div>\[
+              \begin{aligned}
+                f(-4) &= 3 \\
+                \lim_{x \to -4^-} f(x) &= 3 \\
+                \lim_{x \to -4^+} f(x) &= 3 \\
+                \lim_{x \to -4} f(x) &= 3
+              \end{aligned}
+              \]</div>
+              <p>All four agree, so the function is continuous at \(x = -4\).</p>
+            </div>
+          </div>
+          <img src="images/continuity-example-2.png" width="382" height="287"
+               alt="An unbroken wavy curve passing through a filled dot at (negative 4, 3).">
+        </div>
+      </div>
+      <p><b>Idea:</b> For a function to be continuous, all four of these must have the same answer.</p>
+      <div class="example">
+        <p>Decide whether the function below is continuous at \(x = 0\).</p>
+        <div>\[ f(x) = \begin{cases} x + 2, & x \le 0 \\ 2x - 2, & x > 0 \end{cases} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f(0) &= 0 + 2 = 2 \\
+            \lim_{x \to 0^-} f(x) &= 0 + 2 = 2 \\
+            \lim_{x \to 0^+} f(x) &= 2(0) - 2 = -2
+          \end{aligned}
+          \]</div>
+          <p>The one-sided limits are different, so \(\displaystyle\lim_{x \to 0} f(x)\) does not exist. The function is not continuous at \(x = 0\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="limits-of-transcendental-functions.html">&larr; Lesson 6: Limits of Transcendental Functions</a>
+      <a class="next" href="epsilon-delta-definition-of-a-limit.html">Lesson 8: The Epsilon-Delta Definition of a Limit &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

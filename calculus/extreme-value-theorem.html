@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 25: The Extreme Value Theorem | Calculus | Flanagan Math</title>
+  <meta name="description" content="When a function must have an absolute maximum and minimum, three cases with graphs, and sample exam problems.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 25: The Extreme Value Theorem</h1>
+
+    <section class="topic-section" id="the-extreme-value-theorem">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-extreme-value-theorem-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Extreme Value Theorem</span></button></h2>
+      <div class="section-body" id="the-extreme-value-theorem-body">
+      <div class="formula">
+        <p class="formula-name">The Extreme Value Theorem</p>
+        <div>\[
+        \begin{aligned}
+          &\text{A continuous function on a closed interval} \\
+          &\text{has an absolute maximum and an absolute minimum.}
+        \end{aligned}
+        \]</div>
+      </div>
+      <p>Both requirements matter: the function must be continuous, and the interval must be closed.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="three-cases">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="three-cases-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Three Cases</span></button></h2>
+      <div class="section-body" id="three-cases-body">
+      <div class="row">
+        <div>
+          <p><b>Case 1: Continuous, closed interval.</b> The absolute maximum is at an endpoint and the absolute minimum is at a critical number. Both exist, because both requirements are satisfied.</p>
+        </div>
+        <img src="images/evt-closed-continuous.png" width="257" height="233"
+             alt="A continuous curve on the closed interval from negative 2.5 to 1.5, with its highest point at the right endpoint and its lowest point at a critical number in between.">
+      </div>
+      <div class="row">
+        <div>
+          <p><b>Case 2: Continuous, but not closed.</b> On \([-2.5, 2)\) the absolute maximum is at the left endpoint, but there is no absolute minimum: the function decreases forever near the vertical asymptote.</p>
+        </div>
+        <img src="images/evt-not-closed.png" width="257" height="233"
+             alt="A continuous curve starting at a filled dot at x equals negative 2.5 and falling toward negative infinity near a vertical asymptote at x equals 2.">
+      </div>
+      <div class="row">
+        <div>
+          <p><b>Case 3: Closed, but not continuous.</b> On \([-2.5, 3]\) the absolute maximum is at an endpoint, but there is no absolute minimum: the function decreases forever near the vertical asymptote.</p>
+        </div>
+        <img src="images/evt-not-continuous.png" width="257" height="233"
+             alt="A curve on the closed interval from negative 2.5 to 3 with a vertical asymptote at x equals 1, where both sides fall toward negative infinity.">
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="why-doesnt-the-theorem-apply">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="why-doesnt-the-theorem-apply-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Why Doesn&rsquo;t the Theorem Apply?</span></button></h2>
+      <div class="section-body" id="why-doesnt-the-theorem-apply-body">
+      <div class="example">
+        <p>Explain why the Extreme Value Theorem doesn&rsquo;t apply to \(f(x) = \dfrac{1}{x - 1}\) on \([-18, 18]\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="answer" hidden>Show answer</button>
+        <div class="work">
+          <p>The interval is closed, but the function is not continuous on it. It has a vertical asymptote at \(x = 1\), which is inside the interval.</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>Explain why the Extreme Value Theorem doesn&rsquo;t apply to \(f(x) = \dfrac{1}{x - 7}\) on \([-4, 4)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="answer" hidden>Show answer</button>
+        <div class="work">
+          <p>The vertical asymptote \(x = 7\) is not in the interval, so the function is continuous there. But \([-4, 4)\) is not a closed interval.</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Sample Exam Problems</h3>
+        <p>Explain why the Extreme Value Theorem doesn&rsquo;t apply to \(f(x) = \dfrac{1}{x}\) on \((4, 5)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="answer" hidden>Show answer</button>
+        <div class="work">
+          <p>The function is continuous there, but \((4, 5)\) is not a closed interval.</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>Explain why the Extreme Value Theorem doesn&rsquo;t apply to \(f(x) = \dfrac{1}{x}\) on \([-5, 5]\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="answer" hidden>Show answer</button>
+        <div class="work">
+          <p>The interval is closed, but the function is not continuous on it: it is undefined at \(x = 0\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="absolute-extrema.html">&larr; Lesson 24: Critical Numbers and Absolute Extrema</a>
+      <a class="next" href="mean-value-theorem.html">Lesson 26: The Mean Value Theorem &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

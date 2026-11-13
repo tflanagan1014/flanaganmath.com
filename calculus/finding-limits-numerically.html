@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 2: Finding Limits Numerically | Calculus | Flanagan Math</title>
+  <meta name="description" content="The idea of a limit, left-hand and right-hand limits, limits that do not exist, and three important limits, using tables of values.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 2: Finding Limits Numerically</h1>
+
+    <section class="topic-section" id="a-table-of-values-and-an-essential-idea">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-table-of-values-and-an-essential-idea-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Table of Values and an Essential Idea</span></button></h2>
+      <div class="section-body" id="a-table-of-values-and-an-essential-idea-body">
+      <div class="example">
+        <p>Given the function below, complete the table of values.</p>
+        <div>\[ f(x) = \frac{x^2 - 7x + 12}{x - 4} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <table class="grid values">
+            <caption class="visually-hidden">Values of f(x) near x = 4</caption>
+            <tr><th scope="col">\(x\)</th><th scope="col">\(f(x)\)</th></tr>
+            <tr><td>5</td><td>2</td></tr>
+            <tr><td>4</td><td>undefined</td></tr>
+            <tr><td>4.1</td><td>1.1</td></tr>
+            <tr><td>4.01</td><td>1.01</td></tr>
+            <tr><td>4.001</td><td>1.001</td></tr>
+            <tr><td>4.0001</td><td>1.0001</td></tr>
+          </table>
+          <p>The function is undefined when \(x = 4\). But as \(x\) approaches 4, we see a pattern: \(f(x)\) approaches 1.</p>
+        </div>
+      </div>
+      <p>This is the idea of a limit. We write it as below.</p>
+      <div>\[ \lim_{x \to 4} \frac{x^2 - 7x + 12}{x - 4} = 1 \]</div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="left-hand-and-right-hand-limits">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="left-hand-and-right-hand-limits-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Left-Hand and Right-Hand Limits</span></button></h2>
+      <div class="section-body" id="left-hand-and-right-hand-limits-body">
+      <div class="example">
+        <p>Given the function below, complete the tables of values.</p>
+        <div>\[ f(x) = \frac{x^2 - 1}{x - 1} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>As \(x\) approaches 1 from the left:</p>
+          <table class="grid values">
+            <caption class="visually-hidden">Values of f(x) to the left of x = 1</caption>
+            <tr><th scope="col">\(x\)</th><th scope="col">\(f(x)\)</th></tr>
+            <tr><td>0.9</td><td>1.9</td></tr>
+            <tr><td>0.99</td><td>1.99</td></tr>
+            <tr><td>0.999</td><td>1.999</td></tr>
+            <tr><td>0.9999</td><td>1.9999</td></tr>
+          </table>
+          <p>As \(x\) approaches 1 from the right:</p>
+          <table class="grid values">
+            <caption class="visually-hidden">Values of f(x) to the right of x = 1</caption>
+            <tr><th scope="col">\(x\)</th><th scope="col">\(f(x)\)</th></tr>
+            <tr><td>1.1</td><td>2.1</td></tr>
+            <tr><td>1.01</td><td>2.01</td></tr>
+            <tr><td>1.001</td><td>2.001</td></tr>
+            <tr><td>1.0001</td><td>2.0001</td></tr>
+          </table>
+          <p>From the left, \(f(x)\) approaches 2. This is the left-hand limit. From the right, \(f(x)\) approaches 2. This is the right-hand limit.</p>
+          <div>\[ \lim_{x \to 1^-} f(x) = 2 \qquad \lim_{x \to 1^+} f(x) = 2 \]</div>
+        </div>
+      </div>
+      <p><b>Idea:</b> When the left-hand and right-hand limits agree, the two-sided limit exists and equals that number.</p>
+      <div>\[ \lim_{x \to 1} f(x) = 2 \]</div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="now-you-try">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="now-you-try-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Now You Try</span></button></h2>
+      <div class="section-body" id="now-you-try-body">
+      <div class="example">
+        <p>Given the function below, complete tables of values to find the limits.</p>
+        <div>\[ h(t) = \frac{3t^2 - 6t}{t - 2} \]</div>
+        <div class="eq-list">
+          <div>\[ \lim_{t \to 2^-} h(t) \]</div>
+          <div>\[ \lim_{t \to 2^+} h(t) \]</div>
+          <div>\[ \lim_{t \to 2} h(t) \]</div>
+        </div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <table class="grid values">
+            <caption class="visually-hidden">Values of h(t) to the left of t = 2</caption>
+            <tr><th scope="col">\(t\)</th><th scope="col">\(h(t)\)</th></tr>
+            <tr><td>1.9</td><td>5.7</td></tr>
+            <tr><td>1.99</td><td>5.97</td></tr>
+            <tr><td>1.999</td><td>5.997</td></tr>
+            <tr><td>1.9999</td><td>5.9997</td></tr>
+          </table>
+          <table class="grid values">
+            <caption class="visually-hidden">Values of h(t) to the right of t = 2</caption>
+            <tr><th scope="col">\(t\)</th><th scope="col">\(h(t)\)</th></tr>
+            <tr><td>2.1</td><td>6.3</td></tr>
+            <tr><td>2.01</td><td>6.03</td></tr>
+            <tr><td>2.001</td><td>6.003</td></tr>
+            <tr><td>2.0001</td><td>6.0003</td></tr>
+          </table>
+          <div>\[
+          \begin{aligned}
+            \lim_{t \to 2^-} h(t) &= 6 \\
+            \lim_{t \to 2^+} h(t) &= 6 \\
+            \lim_{t \to 2} h(t) &= 6
+          \end{aligned}
+          \]</div>
+          <p>The two-sided limit exists because the left-hand and right-hand limits agree.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="a-limit-that-does-not-exist">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="a-limit-that-does-not-exist-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">A Limit that does not Exist</span></button></h2>
+      <div class="section-body" id="a-limit-that-does-not-exist-body">
+      <div class="example">
+        <p>Given the function below, complete tables of values to find the limits.</p>
+        <div>\[ f(x) = \frac{|x|}{x} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <table class="grid values">
+            <caption class="visually-hidden">Values of f(x) to the left of x = 0</caption>
+            <tr><th scope="col">\(x\)</th><th scope="col">\(f(x)\)</th></tr>
+            <tr><td>&minus;0.1</td><td>&minus;1</td></tr>
+            <tr><td>&minus;0.01</td><td>&minus;1</td></tr>
+            <tr><td>&minus;0.001</td><td>&minus;1</td></tr>
+            <tr><td>&minus;0.0001</td><td>&minus;1</td></tr>
+          </table>
+          <table class="grid values">
+            <caption class="visually-hidden">Values of f(x) to the right of x = 0</caption>
+            <tr><th scope="col">\(x\)</th><th scope="col">\(f(x)\)</th></tr>
+            <tr><td>0.1</td><td>1</td></tr>
+            <tr><td>0.01</td><td>1</td></tr>
+            <tr><td>0.001</td><td>1</td></tr>
+            <tr><td>0.0001</td><td>1</td></tr>
+          </table>
+          <div>\[
+          \begin{aligned}
+            \lim_{x \to 0^-} f(x) &= -1 \\
+            \lim_{x \to 0^+} f(x) &= 1
+          \end{aligned}
+          \]</div>
+          <p>The left-hand and right-hand limits are different, so \(\displaystyle\lim_{x \to 0} f(x)\) does not exist.</p>
+        </div>
+      </div>
+      <p>When the left-hand and right-hand limits are different, we say the limit does not exist.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="three-limits-we-will-need-later">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="three-limits-we-will-need-later-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Three Limits We Will Need Later</span></button></h2>
+      <div class="section-body" id="three-limits-we-will-need-later-body">
+      <p>Use radians for the trigonometric functions!</p>
+      <div class="example">
+        <p>Use tables of values to find \(\displaystyle\lim_{h \to 0} \frac{e^h - 1}{h}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <table class="grid values">
+            <caption class="visually-hidden">Values near h = 0</caption>
+            <tr><th scope="col">\(h\)</th><th scope="col">\(\frac{e^h - 1}{h}\)</th></tr>
+            <tr><td>&minus;0.1</td><td>0.95163</td></tr>
+            <tr><td>&minus;0.01</td><td>0.99502</td></tr>
+            <tr><td>&minus;0.001</td><td>0.9995</td></tr>
+            <tr><td>0.001</td><td>1.0005</td></tr>
+            <tr><td>0.01</td><td>1.00502</td></tr>
+            <tr><td>0.1</td><td>1.05171</td></tr>
+          </table>
+          <div>\[ \lim_{h \to 0} \frac{e^h - 1}{h} = 1 \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Use tables of values to find \(\displaystyle\lim_{\theta \to 0} \frac{\sin\theta}{\theta}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <table class="grid values">
+            <caption class="visually-hidden">Values near theta = 0</caption>
+            <tr><th scope="col">\(\theta\)</th><th scope="col">\(\frac{\sin\theta}{\theta}\)</th></tr>
+            <tr><td>&minus;0.1</td><td>0.9983342</td></tr>
+            <tr><td>&minus;0.01</td><td>0.9999833</td></tr>
+            <tr><td>&minus;0.001</td><td>0.9999998</td></tr>
+            <tr><td>0.001</td><td>0.9999998</td></tr>
+            <tr><td>0.01</td><td>0.9999833</td></tr>
+            <tr><td>0.1</td><td>0.9983342</td></tr>
+          </table>
+          <div>\[ \lim_{\theta \to 0} \frac{\sin\theta}{\theta} = 1 \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Use tables of values to find \(\displaystyle\lim_{\theta \to 0} \frac{1 - \cos\theta}{\theta}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <table class="grid values">
+            <caption class="visually-hidden">Values near theta = 0</caption>
+            <tr><th scope="col">\(\theta\)</th><th scope="col">\(\frac{1 - \cos\theta}{\theta}\)</th></tr>
+            <tr><td>&minus;0.1</td><td>&minus;0.0499583</td></tr>
+            <tr><td>&minus;0.01</td><td>&minus;0.005</td></tr>
+            <tr><td>&minus;0.001</td><td>&minus;0.0005</td></tr>
+            <tr><td>0.001</td><td>0.0005</td></tr>
+            <tr><td>0.01</td><td>0.005</td></tr>
+            <tr><td>0.1</td><td>0.0499583</td></tr>
+          </table>
+          <div>\[ \lim_{\theta \to 0} \frac{1 - \cos\theta}{\theta} = 0 \]</div>
+        </div>
+      </div>
+      <div class="formula">
+        <p class="formula-name">Three Important Limits</p>
+        <div>\[
+        \begin{aligned}
+          &\lim_{x \to 0} \frac{e^x - 1}{x} = 1 \\
+          &\lim_{x \to 0} \frac{\sin x}{x} = 1 \\
+          &\lim_{x \to 0} \frac{1 - \cos x}{x} = 0
+        \end{aligned}
+        \]</div>
+      </div>
+      <p>The letter we use for the variable does not matter.</p>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="an-introduction.html">&larr; Lesson 1: An Introduction</a>
+      <a class="next" href="finding-limits-graphically.html">Lesson 3: Finding Limits Graphically &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

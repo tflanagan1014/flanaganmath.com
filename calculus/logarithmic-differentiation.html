@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 20: Logarithmic Differentiation | Calculus | Flanagan Math</title>
+  <meta name="description" content="Using logarithms and implicit differentiation to find derivatives like x to the x, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 20: Logarithmic Differentiation</h1>
+
+    <section class="topic-section" id="three-properties-of-logarithms">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="three-properties-of-logarithms-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Three Properties of Logarithms</span></button></h2>
+      <div class="section-body" id="three-properties-of-logarithms-body">
+      <div class="eq-list">
+        <div>\[ \ln(AB) = \ln A + \ln B \]</div>
+        <div>\[ \ln\left(\frac{A}{B}\right) = \ln A - \ln B \]</div>
+        <div>\[ \ln A^x = x\ln A \]</div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="logarithmic-differentiation">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="logarithmic-differentiation-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Logarithmic Differentiation</span></button></h2>
+      <div class="section-body" id="logarithmic-differentiation-body">
+      <p>We can&rsquo;t use the power rule on \(y = x^x\), because the power rule needs a constant exponent. We can&rsquo;t use the rule for \(a^x\) either, because it needs a constant base.</p>
+      <p><b>Idea:</b> Take the natural log of both sides, use the power rule for logs, and then differentiate implicitly.</p>
+      <div class="example">
+        <p>Find \(\dfrac{dy}{dx}\) for \(y = x^x\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \ln y &= \ln x^x \\
+            \ln y &= x\ln x
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \frac{1}{y}\,\frac{dy}{dx} &= (1)(\ln x) + (x)\left(\frac{1}{x}\right) \\
+            \frac{1}{y}\,\frac{dy}{dx} &= \ln x + 1 \\
+            \frac{dy}{dx} &= y(\ln x + 1) \\
+            \frac{dy}{dx} &= x^x(\ln x + 1)
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find \(\dfrac{dy}{dx}\) for \(y = x^{\sin x}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \ln y &= \sin x \ln x \\
+            \frac{1}{y}\,\frac{dy}{dx} &= \cos x\ln x + \frac{\sin x}{x} \\
+            \frac{dy}{dx} &= x^{\sin x}\left(\cos x\ln x + \frac{\sin x}{x}\right)
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find \(\dfrac{dy}{dx}\) for the function below.</p>
+        <div>\[ y = \frac{x^{24}\sqrt{x^2 + 1}}{(2x + 1)^6} \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The log properties turn the products and quotient into sums.</p>
+          <div>\[
+          \begin{aligned}
+            \ln y &= 24\ln x + \frac{1}{2}\ln\left(x^2 + 1\right) - 6\ln(2x + 1) \\
+            \frac{1}{y}\,\frac{dy}{dx} &= \frac{24}{x} + \frac{x}{x^2 + 1} - \frac{12}{2x + 1}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \frac{dy}{dx} &= \frac{x^{24}\sqrt{x^2 + 1}}{(2x + 1)^6} \\
+            &\qquad \cdot \left(\frac{24}{x} + \frac{x}{x^2 + 1} - \frac{12}{2x + 1}\right)
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <h3>A Sample Exam Problem</h3>
+        <p>Use logarithmic differentiation to find \(\dfrac{dy}{dx}\) for \(y = x^{\tan x}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \ln y &= \tan x\ln x \\
+            \frac{1}{y}\,\frac{dy}{dx} &= \sec^2 x\ln x + \frac{\tan x}{x} \\
+            \frac{dy}{dx} &= x^{\tan x}\left(\sec^2 x\ln x + \frac{\tan x}{x}\right)
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="inverse-trig-and-hyperbolic-functions.html">&larr; Lesson 19: Derivatives of Inverse Trig and Hyperbolic Functions</a>
+      <a class="next" href="higher-order-derivatives.html">Lesson 21: Higher-Order Derivatives &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

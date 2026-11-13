@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 8: The Epsilon-Delta Definition of a Limit | Calculus | Flanagan Math</title>
+  <meta name="description" content="How close is close enough: the epsilon-delta definition of a limit, with worked examples and a proof.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 8: The Epsilon-Delta Definition of a Limit</h1>
+
+    <section class="topic-section" id="how-do-we-prove-a-limit">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="how-do-we-prove-a-limit-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">How do we Prove a Limit?</span></button></h2>
+      <div class="section-body" id="how-do-we-prove-a-limit-body">
+      <p>A table of values for \(f(x) = \frac{x^2 - 7x + 12}{x - 4}\) suggests that \(f(x)\) approaches 1 as \(x\) approaches 4. But can we be sure the pattern continues? We prove it with an epsilon-delta argument.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="an-epsilon-delta-introduction">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="an-epsilon-delta-introduction-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">An Epsilon-Delta Introduction</span></button></h2>
+      <div class="section-body" id="an-epsilon-delta-introduction-body">
+      <div class="example">
+        <p>Consider \(f(x) = 2x + 1\). How close to 3 must \(x\) be so that \(f(x)\) is within 1 of 7?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            |f(x) - 7| &< 1 \\
+            |2x + 1 - 7| &< 1 \\
+            |2x - 6| &< 1 \\
+            2|x - 3| &< 1 \\
+            |x - 3| &< 0.5
+          \end{aligned}
+          \]</div>
+          <p>If \(x\) is within 0.5 of 3, then \(f(x)\) is within 1 of 7.</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Now You Try</h3>
+        <p>Consider \(f(x) = 4x + 3\). How close to 2 must \(x\) be so that \(f(x)\) is within 0.01 of 11?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            |f(x) - 11| &< 0.01 \\
+            |4x + 3 - 11| &< 0.01 \\
+            |4x - 8| &< 0.01 \\
+            4|x - 2| &< 0.01 \\
+            |x - 2| &< 0.0025
+          \end{aligned}
+          \]</div>
+          <p>If \(x\) is within 0.0025 of 2, then \(f(x)\) is within 0.01 of 11.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-epsilon-delta-definition-of-a-limit">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-epsilon-delta-definition-of-a-limit-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Epsilon-Delta Definition of a Limit</span></button></h2>
+      <div class="section-body" id="the-epsilon-delta-definition-of-a-limit-body">
+      <div class="row">
+        <div>
+          <p>We write \(\displaystyle\lim_{x \to c} f(x) = L\) when the statement below is true.</p>
+          <p>Given any number \(\epsilon > 0\), there is a number \(\delta > 0\) such that:</p>
+          <div class="formula">
+            <p class="formula-name">Epsilon-Delta Definition</p>
+            <div>\[ 0 < |x - c| < \delta \ \text{ implies } \ |f(x) - L| < \epsilon \]</div>
+          </div>
+          <p><b>Idea:</b> If \(x\) is within \(\delta\) of \(c\), then \(f(x)\) is within \(\epsilon\) of the limit \(L\).</p>
+        </div>
+        <img src="images/epsilon-delta.png" width="359" height="295"
+             alt="A rising line. A vertical band from c minus delta to c plus delta on the x-axis and a horizontal band from L minus epsilon to L plus epsilon on the y-axis cross at the point (c, L).">
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="an-epsilon-delta-proof">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="an-epsilon-delta-proof-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">An Epsilon-Delta Proof</span></button></h2>
+      <div class="section-body" id="an-epsilon-delta-proof-body">
+      <div class="example">
+        <p>Given \(f(x) = 4x + 1\), use the epsilon-delta definition to prove \(\displaystyle\lim_{x \to 2} f(x) = 9\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="proof" hidden>Show proof</button>
+        <div class="work">
+          <p><b>Scratch work:</b> We want \(|f(x) - 9| < \epsilon\).</p>
+          <div>\[
+          \begin{aligned}
+            |4x + 1 - 9| &< \epsilon \\
+            |4x - 8| &< \epsilon \\
+            4|x - 2| &< \epsilon \\
+            |x - 2| &< \frac{\epsilon}{4}
+          \end{aligned}
+          \]</div>
+          <p><b>Proof:</b> Given any \(\epsilon > 0\), choose \(\delta = \frac{\epsilon}{4}\). Then \(0 < |x - 2| < \delta\) implies the following.</p>
+          <div>\[
+          \begin{aligned}
+            |x - 2| &< \frac{\epsilon}{4} \\
+            4|x - 2| &< \epsilon \\
+            |4x - 8| &< \epsilon \\
+            |(4x + 1) - 9| &< \epsilon
+          \end{aligned}
+          \]</div>
+          <p>So \(|f(x) - 9| < \epsilon\), which proves the limit.</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>A Sample Exam Problem</h3>
+        <p>Use the epsilon-delta definition of a limit to find \(\delta\) for \(\epsilon = 0.5\).</p>
+        <div>\[ \lim_{x \to 4} (16x - 9) = 55 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            |(16x - 9) - 55| &< 0.5 \\
+            |16x - 64| &< 0.5 \\
+            16|x - 4| &< 0.5 \\
+            |x - 4| &< \frac{0.5}{16} \\
+            |x - 4| &< 0.03125
+          \end{aligned}
+          \]</div>
+          <p>So \(\delta = 0.03125\), which is \(\frac{1}{32}\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="continuity.html">&larr; Lesson 7: Continuity</a>
+      <a class="next" href="intermediate-value-theorem.html">Lesson 9: The Intermediate Value Theorem &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

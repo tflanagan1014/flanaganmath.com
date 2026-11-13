@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 1: An Introduction | Calculus | Flanagan Math</title>
+  <meta name="description" content="Who discovered calculus, the tangent line and area problems, slope, division by zero, and the number pi.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 1: An Introduction</h1>
+
+    <section class="topic-section" id="what-is-calculus-and-who-discovered-it">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-calculus-and-who-discovered-it-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is Calculus and Who Discovered It?</span></button></h2>
+      <div class="section-body" id="what-is-calculus-and-who-discovered-it-body">
+      <p>Most mathematicians and historians agree that calculus was developed independently by the Englishman Isaac Newton (1643&ndash;1727) and the German Gottfried Leibniz (1646&ndash;1716).</p>
+      <p>When we credit Newton and Leibniz with developing calculus, we mean that they were the first to understand the relationship between the solutions of two problems.</p>
+      <ul>
+        <li>The tangent line problem</li>
+        <li>The area problem</li>
+      </ul>
+      <p>Let&rsquo;s review some essential ideas, and then discuss these two problems.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-slope-of-a-line">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-slope-of-a-line-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Slope of a Line</span></button></h2>
+      <div class="section-body" id="the-slope-of-a-line-body">
+      <p>Through slope we try to understand the &ldquo;steepness&rdquo; of a line.</p>
+      <div class="formula">
+        <p class="formula-name">Slope</p>
+        <div>\[ m = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} \]</div>
+      </div>
+      <p><b>Note:</b> The slope equation requires two points!</p>
+      <div class="example">
+        <h3>An Example</h3>
+        <p>Find the slope of the line through the points \((0, 1)\) and \((2, 4)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            m &= \frac{y_2 - y_1}{x_2 - x_1} \\
+            &= \frac{4 - 1}{2 - 0} \\
+            &= \frac{3}{2}
+          \end{aligned}
+          \]</div>
+          <p>The line goes up 3 for every 2 to the right.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-study-of-change">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-study-of-change-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Study of Change</span></button></h2>
+      <div class="section-body" id="the-study-of-change-body">
+      <p>Please do not underestimate the significance of slope. Through it we measure change, and some people call calculus the study of change.</p>
+      <p>In the example above we measured how \(y\) changes as \(x\) changes. We call this the rate of change in \(y\) with respect to \(x\). In another context it could measure how distance changes with respect to time, or how luminosity changes with respect to temperature, or many other rates of change.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="horizontal-lines">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="horizontal-lines-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Horizontal Lines</span></button></h2>
+      <div class="section-body" id="horizontal-lines-body">
+      <div class="example">
+        <p>Find the slope of the horizontal line through the points \((2, 4)\) and \((5, 4)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            m &= \frac{4 - 4}{5 - 2} \\
+            &= \frac{0}{3} \\
+            &= 0
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <p>The slope of a horizontal line is zero.</p>
+      <p>All points on this line have the same \(y\)-value, 4, so its equation is \(y = 4\). The equation of a horizontal line has the form \(y = \text{number}\).</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="vertical-lines">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="vertical-lines-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Vertical Lines</span></button></h2>
+      <div class="section-body" id="vertical-lines-body">
+      <div class="example">
+        <p>Find the slope of the vertical line through the points \((3, 2)\) and \((3, 6)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            m &= \frac{6 - 2}{3 - 3} \\
+            &= \frac{4}{0}
+          \end{aligned}
+          \]</div>
+          <p>This is undefined.</p>
+        </div>
+      </div>
+      <p>The slope of a vertical line is undefined.</p>
+      <p>All points on this line have the same \(x\)-value, 3, so its equation is \(x = 3\). The equation of a vertical line has the form \(x = \text{number}\).</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="what-is-division">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-division-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is Division?</span></button></h2>
+      <div class="section-body" id="what-is-division-body">
+      <p>Consider the question below.</p>
+      <div>\[ \frac{12}{4} = \ ? \]</div>
+      <p>A division question has an equivalent multiplication question.</p>
+      <div>\[ 4 \times \ ? = 12 \]</div>
+      <p>Multiplication comes from repeated addition.</p>
+      <div>\[ 4 + 4 + 4 = 12 \]</div>
+      <p>The answer to both questions is three, because that&rsquo;s how many 4&rsquo;s are needed to combine to 12.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="something-from-nothing">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="something-from-nothing-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Something from Nothing?</span></button></h2>
+      <div class="section-body" id="something-from-nothing-body">
+      <p>Now consider the question below.</p>
+      <div>\[ \frac{12}{0} = \ ? \]</div>
+      <p>Its equivalent multiplication question is below.</p>
+      <div>\[ 0 \times \ ? = 12 \]</div>
+      <p>No matter how many zeros we combine, they will never add to 12.</p>
+      <div>\[ 0 + 0 + 0 + \cdots + 0 \neq 12 \]</div>
+      <p><b>Conclusion:</b> We cannot divide by zero. We say division by zero is undefined.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-tangent-line-problem">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-tangent-line-problem-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Tangent Line Problem</span></button></h2>
+      <div class="section-body" id="the-tangent-line-problem-body">
+      <p>For a circle, a tangent line touches the circle exactly once. What is the slope of a tangent line? This question is at the heart of differential calculus. As you will soon see, its answer measures an instantaneous rate of change.</p>
+      <div class="example">
+        <p>The graph of the equation below is a circle. Consider the tangent line to the circle at the point \((5, 1)\). Can you find its slope?</p>
+        <div>\[ (x - 2)^2 + (y + 1)^2 = 13 \]</div>
+        <button type="button" class="toggle" aria-expanded="false" data-what="answer" hidden>Show answer</button>
+        <div class="work">
+          <p>Not yet, because the slope equation requires two points, and a tangent line touches the circle at only one. In a few weeks you&rsquo;ll use calculus to show the slope is \(-\tfrac{3}{2}\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="the-area-problem">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="the-area-problem-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">The Area Problem</span></button></h2>
+      <div class="section-body" id="the-area-problem-body">
+      <p>You know area formulas for familiar shapes.</p>
+      <div class="example">
+        <p>Find the area of the rectangle with corners \((1, 2)\), \((5, 2)\), \((5, 7)\), and \((1, 7)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The width is \(5 - 1 = 4\) and the height is \(7 - 2 = 5\).</p>
+          <div>\[
+          \begin{aligned}
+            A &= lw \\
+            &= 5 \times 4 \\
+            &= 20
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Find the area of the circle with center \((-2, 1)\) that passes through the point \((-7, 1)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>The radius is the distance from \((-2, 1)\) to \((-7, 1)\), which is \(5\).</p>
+          <div>\[
+          \begin{aligned}
+            A &= \pi r^2 \\
+            &= \pi \times 5^2 \\
+            &= 25\pi \\
+            &\approx 78.54
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <p>But many regions, like the region under a curve, are not shapes whose area formulas we learn in geometry. We cannot find those areas yet. By the end of this course, integral calculus will give us a truly amazing way to do it.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="pi-an-amazing-number">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="pi-an-amazing-number-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Pi, an Amazing Number</span></button></h2>
+      <div class="section-body" id="pi-an-amazing-number-body">
+      <p>For every circle, the ratio of circumference to diameter is the same, and it equals \(\pi\).</p>
+      <div>\[ \frac{C}{D} = \pi = 3.14159265358979\ldots \]</div>
+      <p>\(\pi\) cannot be written as a fraction of whole numbers. It is irrational, with an infinite, non-repeating decimal expansion. Its irrationality was first proved in the 18th century by Johann Heinrich Lambert.</p>
+      <p>Mysteriously, \(\pi\) appears all over mathematics and science, in places that seem to have nothing to do with circles.</p>
+      <h3>Gravity</h3>
+      <p>Isaac Newton developed a theory of gravity. In the 20th century, Albert Einstein improved it with the equation below. Notice the \(\pi\).</p>
+      <div>\[ R_{\mu\nu} - \tfrac{1}{2}R\,g_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}\,T_{\mu\nu} \]</div>
+      <h3>Statistics</h3>
+      <p>The normal distribution, central to statistics and probability, is below.</p>
+      <div>\[ y = \frac{1}{\sigma\sqrt{2\pi}}\,e^{-\frac{(x - \mu)^2}{2\sigma^2}} \]</div>
+      <h3>Euler&rsquo;s Identity</h3>
+      <p>One of the simplest, most beautiful equations relates five of our most fundamental numbers.</p>
+      <div>\[ e^{i\pi} + 1 = 0 \]</div>
+      <h3>Ramanujan</h3>
+      <p>In Calculus 2 you will study infinite sums like the one below, from Srinivasa Ramanujan. There is a book and a movie about him called <i>The Man Who Knew Infinity</i>.</p>
+      <div>\[ \frac{1}{\pi} = \frac{2\sqrt{2}}{9801}\sum_{k=0}^{\infty}\frac{(4k)!\,(1103 + 26390k)}{(k!)^4\,396^{4k}} \]</div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a class="next" href="finding-limits-numerically.html">Lesson 2: Finding Limits Numerically &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 30: Optimization | Calculus | Flanagan Math</title>
+  <meta name="description" content="Using derivatives to find the largest or smallest value of a quantity, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 30: Optimization</h1>
+
+    <section class="topic-section" id="optimization">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="optimization-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Optimization</span></button></h2>
+      <div class="section-body" id="optimization-body">
+      <p>In an optimization problem, we find the largest or smallest value of a quantity. Write a function for the quantity in one variable, find its critical numbers, and check that you have a maximum or minimum.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="examples-3">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="examples-3-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Examples</span></button></h2>
+      <div class="section-body" id="examples-3-body">
+      <div class="example">
+        <p>A rectangle must have a perimeter of 236 ft. Find the maximum area it can have.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            2x + 2y &= 236 \\
+            y &= 118 - x
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            A(x) &= x(118 - x) = 118x - x^2 \\
+            A'(x) &= 118 - 2x = 0 \\
+            x &= 59
+          \end{aligned}
+          \]</div>
+          <p>\(A\,&#39;&#39;(x) = -2 < 0\), so this is a maximum. The rectangle is a 59 by 59 square, with area \(3481\) square feet.</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>A cylinder with volume 46 cubic centimeters is to be made. Find the radius that minimizes its surface area, to the nearest hundredth.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \pi r^2 h &= 46 \\
+            h &= \frac{46}{\pi r^2}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            S(r) &= 2\pi r^2 + 2\pi r h \\
+            &= 2\pi r^2 + \frac{92}{r} \\
+            S'(r) &= 4\pi r - \frac{92}{r^2} = 0 \\
+            r^3 &= \frac{23}{\pi} \\
+            r &\approx 1.94
+          \end{aligned}
+          \]</div>
+          <p>The radius is about \(1.94\) centimeters.</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>A star is at the point \((268, 0)\). A spacecraft travels along the path \(y = \sqrt{x}\). Find the distance of closest approach, to the nearest hundredth.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Minimizing the distance is the same as minimizing its square.</p>
+          <div>\[
+          \begin{aligned}
+            D^2 &= (x - 268)^2 + \left(\sqrt{x}\right)^2 \\
+            &= (x - 268)^2 + x \\
+            \frac{d}{dx}\left[D^2\right] &= 2(x - 268) + 1 = 0 \\
+            x &= 267.5
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            D &= \sqrt{(-0.5)^2 + 267.5} \\
+            &= \sqrt{267.75} \\
+            &\approx 16.36
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>A closed box with a square base must have a volume of 2025 cubic feet. The top and bottom cost \$5 per square foot, and the sides cost \$225 per square foot. Find the minimum cost of materials.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Let the base be \(x\) by \(x\) and the height \(h\).</p>
+          <div>\[
+          \begin{aligned}
+            x^2 h &= 2025 \\
+            h &= \frac{2025}{x^2}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            C(x) &= 5\left(2x^2\right) + 225(4xh) \\
+            &= 10x^2 + \frac{1{,}822{,}500}{x} \\
+            C'(x) &= 20x - \frac{1{,}822{,}500}{x^2} = 0 \\
+            x^3 &= 91{,}125 \\
+            x &= 45
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            C(45) &= 20{,}250 + 40{,}500 \\
+            &= 60{,}750
+          \end{aligned}
+          \]</div>
+          <p>The minimum cost is \$60,750.</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>A Sample Exam Problem</h3>
+        <p>A closed box with a square base must have a volume of 324 cubic feet. The top and bottom cost \$9 per square foot, and the sides cost \$162 per square foot. Find the minimum cost of materials.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            h &= \frac{324}{x^2} \\
+            C(x) &= 9\left(2x^2\right) + 162(4xh) \\
+            &= 18x^2 + \frac{209{,}952}{x} \\
+            C'(x) &= 36x - \frac{209{,}952}{x^2} = 0 \\
+            x^3 &= 5832 \\
+            x &= 18
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            C(18) &= 5832 + 11{,}664 \\
+            &= 17{,}496
+          \end{aligned}
+          \]</div>
+          <p>The minimum cost is \$17,496.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="second-derivative-test.html">&larr; Lesson 29: The Second Derivative Test</a>
+      <a class="next" href="lhopitals-rule.html">Lesson 31: L'H&ocirc;pital's Rule &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

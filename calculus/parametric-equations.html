@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 65: Parametric Equations | Calculus | Flanagan Math</title>
+  <meta name="description" content="Parametric curves, eliminating the parameter, derivatives, and arc length, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 65: Parametric Equations</h1>
+
+    <section class="topic-section" id="what-are-parametric-equations">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-are-parametric-equations-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What are Parametric Equations?</span></button></h2>
+      <div class="section-body" id="what-are-parametric-equations-body">
+      <p>Instead of writing \(y\) as a function of \(x\), we use two equations, each a function of a parameter \(t\).</p>
+      <div>\[
+      \begin{aligned}
+        x &= x(t) \\
+        y &= y(t)
+      \end{aligned}
+      \]</div>
+      <p>As \(t\) changes, the points \((x, y)\) trace out a curve. Parametric equations can trace shapes that are not the graph of a single function of \(x\), and they show the direction of motion.</p>
+      <div class="example">
+        <div class="row">
+          <div>
+            <p>Describe the curve \(x = \cos t\), \(y = \sin t\), for \(0 \le t \le 2\pi\).</p>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <div>\[
+              \begin{aligned}
+                x^2 + y^2 &= \cos^2 t + \sin^2 t \\
+                &= 1
+              \end{aligned}
+              \]</div>
+              <p>The curve is the unit circle. It starts at \((1, 0)\) when \(t = 0\) and travels once around counterclockwise.</p>
+            </div>
+          </div>
+          <img src="images/parametric-circle.png" width="289" height="256"
+               alt="The unit circle with arrows showing counterclockwise motion, starting at the point (1, 0) when t equals 0.">
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="eliminating-the-parameter">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="eliminating-the-parameter-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Eliminating the Parameter</span></button></h2>
+      <div class="section-body" id="eliminating-the-parameter-body">
+      <div class="example">
+        <p>Eliminate the parameter to find an equation in \(x\) and \(y\) for \(x = t + 1\), \(y = t^2\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            t &= x - 1 \\
+            y &= (x - 1)^2
+          \end{aligned}
+          \]</div>
+          <p>The curve is a parabola with vertex at (1, 0).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="derivatives-of-parametric-equations">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="derivatives-of-parametric-equations-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Derivatives of Parametric Equations</span></button></h2>
+      <div class="section-body" id="derivatives-of-parametric-equations-body">
+      <div class="formula">
+        <p class="formula-name">The Slope of a Parametric Curve</p>
+        <div>\[ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} \]</div>
+      </div>
+      <p>Horizontal tangent lines occur where \(\frac{dy}{dt} = 0\) and \(\frac{dx}{dt} \neq 0\).</p>
+      <div class="example">
+        <div class="row">
+          <div>
+            <p>For \(x = t^2\), \(y = t^3 - 3t\), find the tangent line at \(t = 2\), and find any horizontal tangent lines.</p>
+            <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+            <div class="work">
+              <div>\[ \frac{dy}{dx} = \frac{3t^2 - 3}{2t} \]</div>
+              <p>At \(t = 2\): the point is \((4, 2)\), and the slope is \(\frac{12 - 3}{4} = \frac{9}{4}\).</p>
+              <div>\[
+              \begin{aligned}
+                y - 2 &= \frac{9}{4}(x - 4) \\
+                y &= \frac{9}{4}x - 7
+              \end{aligned}
+              \]</div>
+              <p>Horizontal tangents: \(3t^2 - 3 = 0\) when \(t = \pm 1\), at the points \((1, -2)\) and \((1, 2)\).</p>
+            </div>
+          </div>
+          <img src="images/parametric-curve-tangent.png" width="320" height="287"
+               alt="A loop-shaped curve crossing itself at (3, 0), with arrows showing direction, filled dots at the horizontal tangent points (1, 2) and (1, negative 2), and a red tangent line at (4, 2).">
+        </div>
+      </div>
+      <div class="formula">
+        <p class="formula-name">The Second Derivative</p>
+        <div>\[ \frac{d^2 y}{dx^2} = \frac{\frac{d}{dt}\left[\frac{dy}{dx}\right]}{dx/dt} \]</div>
+      </div>
+      <div class="example">
+        <p>For the same curve, find \(\dfrac{d^2 y}{dx^2}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \frac{dy}{dx} &= \frac{3t}{2} - \frac{3}{2t} \\
+            \frac{d}{dt}\left[\frac{dy}{dx}\right] &= \frac{3}{2} + \frac{3}{2t^2}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \frac{d^2 y}{dx^2} &= \frac{\frac{3}{2} + \frac{3}{2t^2}}{2t} \\
+            &= \frac{3t^2 + 3}{4t^3}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="arc-length-of-a-parametric-curve">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="arc-length-of-a-parametric-curve-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Arc Length of a Parametric Curve</span></button></h2>
+      <div class="section-body" id="arc-length-of-a-parametric-curve-body">
+      <div class="formula">
+        <p class="formula-name">Arc Length</p>
+        <div>\[ L = \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2}\,dt \]</div>
+      </div>
+      <div class="example">
+        <p>Find the length of the curve \(x = t^2\), \(y = \frac{2}{3}t^3\), for \(0 \le t \le \sqrt{3}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 &= (2t)^2 + \left(2t^2\right)^2 \\
+            &= 4t^2\left(1 + t^2\right)
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            L &= \int_0^{\sqrt{3}} 2t\sqrt{1 + t^2}\,dt \\
+            &= \left[\frac{2}{3}\left(1 + t^2\right)^{3/2}\right]_0^{\sqrt{3}} \\
+            &= \frac{2}{3}(8 - 1) \\
+            &= \frac{14}{3}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="series-tests-at-a-glance.html">&larr; Series Tests at a Glance</a>
+    </nav>
+
+  </main>
+</body>
+</html>

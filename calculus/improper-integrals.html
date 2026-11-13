@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 53: Improper Integrals | Calculus | Flanagan Math</title>
+  <meta name="description" content="Integrals with infinite limits or vertical asymptotes, convergence and divergence, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 53: Improper Integrals</h1>
+
+    <section class="topic-section" id="what-is-an-improper-integral">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="what-is-an-improper-integral-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">What is an Improper Integral?</span></button></h2>
+      <div class="section-body" id="what-is-an-improper-integral-body">
+      <p>An integral is improper in a few cases.</p>
+      <ul>
+        <li>An infinite limit of integration, such as \(\displaystyle\int_3^\infty\). When both limits are infinite, split the integral at a convenient point.</li>
+        <li>A vertical asymptote at an endpoint.</li>
+        <li>A vertical asymptote inside the interval. Don&rsquo;t integrate straight through it! Split the integral there.</li>
+      </ul>
+      <p>In every case, replace the problem spot with a variable, integrate as usual, and take a limit. A finite limit means the integral converges. Otherwise it diverges.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="examples-10">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="examples-10-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Examples</span></button></h2>
+      <div class="section-body" id="examples-10-body">
+      <div class="example">
+        <p>Evaluate \(\displaystyle\int_3^\infty \frac{1}{x^3}\,dx\), or state that it does not exist.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \int_3^\infty \frac{dx}{x^3} &= \lim_{t \to \infty} \left[-\frac{1}{2x^2}\right]_3^t \\
+            &= \lim_{t \to \infty} \left(-\frac{1}{2t^2} + \frac{1}{18}\right) \\
+            &= \frac{1}{18}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Evaluate \(\displaystyle\int_2^6 \frac{1}{(x - 3)^2}\,dx\), or state that it does not exist.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>There is a vertical asymptote at \(x = 3\), inside the interval. Split there and check the left piece.</p>
+          <div>\[
+          \begin{aligned}
+            \int_2^3 \frac{dx}{(x - 3)^2} &= \lim_{t \to 3^-} \left[-\frac{1}{x - 3}\right]_2^t \\
+            &= \lim_{t \to 3^-} \left(-\frac{1}{t - 3} - 1\right) \\
+            &= \infty
+          \end{aligned}
+          \]</div>
+          <p>That piece diverges, so the integral does not exist.</p>
+        </div>
+      </div>
+      <div class="example">
+        <p>Evaluate \(\displaystyle\int_0^\infty \frac{1}{81 + 100x^2}\,dx\), or state that it does not exist.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \int_0^\infty \frac{dx}{81 + 100x^2} &= \lim_{t \to \infty} \left[\frac{1}{90}\tan^{-1}\left(\frac{10x}{9}\right)\right]_0^t \\
+            &= \frac{1}{90} \cdot \frac{\pi}{2} \\
+            &= \frac{\pi}{180}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Evaluate \(\displaystyle\int_5^\infty x e^{-3x}\,dx\), or state that it does not exist.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <p>Integration by parts gives the antiderivative.</p>
+          <div>\[ \int x e^{-3x}\,dx = -\frac{x e^{-3x}}{3} - \frac{e^{-3x}}{9} + C \]</div>
+          <div>\[
+          \begin{aligned}
+            \int_5^\infty x e^{-3x}\,dx &= \lim_{t \to \infty} \left[-\frac{x e^{-3x}}{3} - \frac{e^{-3x}}{9}\right]_5^t \\
+            &= 0 + \frac{5e^{-15}}{3} + \frac{e^{-15}}{9} \\
+            &= \frac{16}{9e^{15}}
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="partial-fractions.html">&larr; Lesson 52: Partial Fraction Decomposition</a>
+      <a class="next" href="numerical-integration.html">Lesson 54: Numerical Integration &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

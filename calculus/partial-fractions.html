@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 52: Partial Fraction Decomposition | Calculus | Flanagan Math</title>
+  <meta name="description" content="The four cases of partial fraction decomposition, with worked examples.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 52: Partial Fraction Decomposition</h1>
+
+    <section class="topic-section" id="partial-fraction-decomposition">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="partial-fraction-decomposition-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Partial Fraction Decomposition</span></button></h2>
+      <div class="section-body" id="partial-fraction-decomposition-body">
+      <p>Partial fractions rewrite a complicated rational expression as a sum of simpler fractions that are easy to integrate.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="case-1-distinct-linear-factors">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="case-1-distinct-linear-factors-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Case 1: Distinct Linear Factors</span></button></h2>
+      <div class="section-body" id="case-1-distinct-linear-factors-body">
+      <p>Write one constant numerator over each linear factor.</p>
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \frac{x}{x^2 - 10x + 21}\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \frac{x}{(x - 3)(x - 7)} &= \frac{A}{x - 3} + \frac{B}{x - 7} \\
+            x &= A(x - 7) + B(x - 3)
+          \end{aligned}
+          \]</div>
+          <p>At \(x = 3\): \(3 = -4A\), so \(A = -\frac{3}{4}\). At \(x = 7\): \(7 = 4B\), so \(B = \frac{7}{4}\).</p>
+          <div>\[ \int \frac{x}{x^2 - 10x + 21}\,dx = -\frac{3}{4}\ln|x - 3| + \frac{7}{4}\ln|x - 7| + C \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \frac{dx}{x^2 - 36}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \frac{1}{(x - 6)(x + 6)} = \frac{1}{12}\left(\frac{1}{x - 6} - \frac{1}{x + 6}\right) \]</div>
+          <div>\[ \int \frac{dx}{x^2 - 36} = \frac{1}{12}\ln\left|\frac{x - 6}{x + 6}\right| + C \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="case-2-repeated-linear-factor">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="case-2-repeated-linear-factor-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Case 2: Repeated Linear Factor</span></button></h2>
+      <div class="section-body" id="case-2-repeated-linear-factor-body">
+      <p>Include one fraction for each power of the repeated factor.</p>
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \frac{dx}{x^3 - 10x^2 + 25x}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \frac{1}{x(x - 5)^2} &= \frac{A}{x} + \frac{B}{x - 5} + \frac{C}{(x - 5)^2} \\
+            1 &= A(x - 5)^2 + Bx(x - 5) + Cx
+          \end{aligned}
+          \]</div>
+          <p>At \(x = 0\): \(A = \frac{1}{25}\). At \(x = 5\): \(C = \frac{1}{5}\). Matching \(x^2\) terms: \(A + B = 0\), so \(B = -\frac{1}{25}\).</p>
+          <div>\[
+          \begin{aligned}
+            &\int \frac{dx}{x^3 - 10x^2 + 25x} \\
+            &\quad = \frac{1}{25}\ln|x| - \frac{1}{25}\ln|x - 5| - \frac{1}{5(x - 5)} + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="case-3-irreducible-quadratic-factor">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="case-3-irreducible-quadratic-factor-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Case 3: Irreducible Quadratic Factor</span></button></h2>
+      <div class="section-body" id="case-3-irreducible-quadratic-factor-body">
+      <p>Use a linear numerator over a quadratic that does not factor.</p>
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \frac{3x + 5}{(x - 1)\left(x^2 + 4\right)}\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            \frac{3x + 5}{(x - 1)\left(x^2 + 4\right)} &= \frac{A}{x - 1} + \frac{Bx + C}{x^2 + 4} \\
+            3x + 5 &= A\left(x^2 + 4\right) + (Bx + C)(x - 1)
+          \end{aligned}
+          \]</div>
+          <p>At \(x = 1\): \(8 = 5A\), so \(A = \frac{8}{5}\). Matching \(x^2\) terms: \(B = -\frac{8}{5}\). Matching constants: \(5 = 4A - C\), so \(C = \frac{7}{5}\).</p>
+          <div>\[
+          \begin{aligned}
+            &\int \frac{3x + 5}{(x - 1)\left(x^2 + 4\right)}\,dx \\
+            &\quad = \frac{8}{5}\ln|x - 1| - \frac{4}{5}\ln\left(x^2 + 4\right) + \frac{7}{10}\tan^{-1}\left(\frac{x}{2}\right) + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="case-4-repeated-irreducible-quadratic">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="case-4-repeated-irreducible-quadratic-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Case 4: Repeated Irreducible Quadratic</span></button></h2>
+      <div class="section-body" id="case-4-repeated-irreducible-quadratic-body">
+      <p>Include a linear numerator over each power of the repeated quadratic.</p>
+      <div class="example">
+        <p>Evaluate \(\displaystyle \int \frac{x^3 + 216}{\left(x^2 + 36\right)^2}\,dx\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[ \frac{x^3 + 216}{\left(x^2 + 36\right)^2} = \frac{Ax + B}{x^2 + 36} + \frac{Cx + D}{\left(x^2 + 36\right)^2} \]</div>
+          <p>Matching coefficients gives \(A = 1\), \(B = 0\), \(C = -36\), and \(D = 216\).</p>
+          <div>\[
+          \begin{aligned}
+            &\int \frac{x}{x^2 + 36}\,dx = \frac{1}{2}\ln\left(x^2 + 36\right) \\
+            &\int \frac{-36x}{\left(x^2 + 36\right)^2}\,dx = \frac{18}{x^2 + 36}
+          \end{aligned}
+          \]</div>
+          <p>For the last piece, let \(x = 6\tan\theta\).</p>
+          <div>\[
+          \begin{aligned}
+            \int \frac{216\,dx}{\left(x^2 + 36\right)^2} &= \int \cos^2\theta\,d\theta \\
+            &= \frac{\theta}{2} + \frac{\sin\theta\cos\theta}{2} \\
+            &= \frac{1}{2}\tan^{-1}\left(\frac{x}{6}\right) + \frac{3x}{x^2 + 36}
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            &\int \frac{x^3 + 216}{\left(x^2 + 36\right)^2}\,dx \\
+            &\quad = \frac{1}{2}\ln\left(x^2 + 36\right) + \frac{3x + 18}{x^2 + 36} + \frac{1}{2}\tan^{-1}\left(\frac{x}{6}\right) + C
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="long-division-and-integration.html">&larr; Lesson 51: Long Division and Integration</a>
+      <a class="next" href="improper-integrals.html">Lesson 53: Improper Integrals &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

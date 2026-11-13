@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson 42: Arc Length | Calculus | Flanagan Math</title>
+  <meta name="description" content="The arc length formula and what it measures, with a worked example.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Calculus</a>
+    </nav>
+
+    <h1>Lesson 42: Arc Length</h1>
+
+    <section class="topic-section" id="arc-length">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="arc-length-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Arc Length</span></button></h2>
+      <div class="section-body" id="arc-length-body">
+      <div class="formula">
+        <p class="formula-name">Arc Length</p>
+        <div>\[ L = \int_a^b \sqrt{1 + \left[f\,'(x)\right]^2}\,dx \]</div>
+      </div>
+      <p>Imagine an object moving along the graph from \((a, f(a))\) to \((b, f(b))\). The arc length is the &ldquo;mileage&rdquo; of that motion: the actual distance traveled along the curve.</p>
+      <div class="example">
+        <p>Find the arc length of the graph of \(f(x) = \ln|\sec x|\) from \(x = 0\) to \(x = \frac{\pi}{6}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+          <div>\[
+          \begin{aligned}
+            f'(x) &= \frac{\sec x\tan x}{\sec x} \\
+            &= \tan x
+          \end{aligned}
+          \]</div>
+          <div>\[
+          \begin{aligned}
+            \sqrt{1 + \tan^2 x} &= \sqrt{\sec^2 x} \\
+            &= \sec x
+          \end{aligned}
+          \]</div>
+          <p>Use \(\displaystyle\int \sec x\,dx = \ln|\sec x + \tan x| + C\).</p>
+          <div>\[
+          \begin{aligned}
+            L &= \int_0^{\pi/6} \sec x\,dx \\
+            &= \Big[\ln|\sec x + \tan x|\Big]_0^{\pi/6} \\
+            &= \ln\left(\frac{2}{\sqrt{3}} + \frac{1}{\sqrt{3}}\right) - \ln 1 \\
+            &= \ln\sqrt{3} \\
+            &= \frac{1}{2}\ln 3
+          \end{aligned}
+          \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="shell-method.html">&larr; Lesson 41: The Shell Method</a>
+      <a class="next" href="work.html">Lesson 43: Work &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
