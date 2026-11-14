@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homework Solutions | College Algebra | Flanagan Math</title>
+  <meta name="description" content="Worked solutions to the Module 4, Topic 3 homework problems in College Algebra.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">College Algebra</a>
+    </nav>
+
+    <p class="module-label">Module 4 – Topic 3</p>
+    <h1>Homework Solutions</h1>
+    <p>Try each problem on your own before you open its solution. When a problem gives you trouble, go back to your notes for <a href="rational-functions.html">this topic</a>.</p>
+
+    <section class="topic-section" id="rational-functions">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="rational-functions-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Rational Functions</span></button></h2>
+      <div class="section-body" id="rational-functions-body">
+      <div class="example">
+        <h3>Problem 1</h3>
+        <p>For \(f(x)=\dfrac{x+4}{x-6}\), find the domain, any holes, the vertical and horizontal asymptotes, and the intercepts. State asymptotes as equations, holes and intercepts as ordered pairs, and “none” where there are none.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Always start by factoring the top and bottom. Here they are already as simple as they can be, and they have no common factor, so nothing cancels.</p>
+        <p><strong>Domain.</strong> The trouble spots are where the denominator is \(0\). Set \(x - 6 = 0\), so \(x = 6\). The domain is every real number except \(6\): \((-\infty,\,6)\cup(6,\,\infty)\).</p>
+        <p><strong>Holes.</strong> A hole comes from a factor that cancels. Nothing cancels, so there are no holes.</p>
+        <p><strong>Vertical asymptote.</strong> Since \(x = 6\) is a trouble spot that did not cancel, the graph has a vertical asymptote there: \(x = 6\).</p>
+        <p><strong>Horizontal asymptote.</strong> Compare the degrees of the top and bottom. The top, \(x + 4\), has degree \(1\), and the bottom, \(x - 6\), also has degree \(1\). The degrees are equal, so the horizontal asymptote is \(y =\) the ratio of the leading coefficients. Both leading coefficients are \(1\), so \(y = \tfrac11 = 1\).</p>
+        <p><strong>\(x\)-intercept.</strong> A fraction equals \(0\) only when its numerator is \(0\). Set \(x + 4 = 0\), so \(x = -4\). The \(x\)-intercept is \((-4,\,0)\).</p>
+        <p><strong>\(y\)-intercept.</strong> Find \(f(0) = \dfrac{0+4}{0-6} = \dfrac{4}{-6} = -\dfrac23\). The \(y\)-intercept is \(\left(0,\,-\tfrac23\right)\).</p>
+        
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 2</h3>
+        <p>For \(f(x)=\dfrac{5}{x^2-9}\), find the domain, any holes, the vertical and horizontal asymptotes, and the intercepts. State asymptotes as equations, holes and intercepts as ordered pairs, and “none” where there are none.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Start by factoring. The bottom is a difference of squares.</p>
+        <div>\[ f(x)=\frac{5}{(x-3)(x+3)} \]</div><p><strong>Domain.</strong> The denominator is \(0\) when \(x - 3 = 0\) or \(x + 3 = 0\), so at \(x = 3\) and \(x = -3\). The domain is every real number except those two: \((-\infty,\,-3)\cup(-3,\,3)\cup(3,\,\infty)\).</p>
+        <p><strong>Holes.</strong> The top is just \(5\), so there is no common factor to cancel. There are no holes.</p>
+        <p><strong>Vertical asymptotes.</strong> Both trouble spots remain after simplifying, so there are two vertical asymptotes: \(x = 3\) and \(x = -3\).</p>
+        <p><strong>Horizontal asymptote.</strong> The top, \(5\), is a constant, so it has degree \(0\). The bottom, \(x^2 - 9\), has degree \(2\). The top is smaller, so the horizontal asymptote is \(y = 0\). As \(x\) gets very large, the bottom grows huge while the top stays \(5\), so the fraction gets closer and closer to \(0\).</p>
+        <p><strong>\(x\)-intercepts.</strong> A fraction is \(0\) only when its numerator is \(0\). The numerator is \(5\), which is never \(0\), so there are no \(x\)-intercepts.</p>
+        <p><strong>\(y\)-intercept.</strong> Find \(f(0) = \dfrac{5}{0-9} = -\dfrac59\). The \(y\)-intercept is \(\left(0,\,-\tfrac59\right)\).</p>
+        
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 3</h3>
+        <p>For \(f(x)=\dfrac{x-3}{x^2-9}\), find the domain, any holes, the vertical and horizontal asymptotes, and the intercepts. State asymptotes as equations, holes and intercepts as ordered pairs, and “none” where there are none.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Start by factoring. The bottom is a difference of squares.</p>
+        <div>\[ f(x)=\frac{x-3}{(x-3)(x+3)} \]</div><p><strong>Domain.</strong> Find the domain before canceling anything. The denominator is \(0\) at \(x = 3\) and \(x = -3\), so the domain is \((-\infty,\,-3)\cup(-3,\,3)\cup(3,\,\infty)\). Even after a factor cancels, that \(x\)-value is still not in the domain.</p>
+        <p>Now simplify. The factor \(x - 3\) appears on top and bottom, so it cancels.</p>
+        <div>\[ f(x)=\frac{1}{x+3},\quad x\ne3 \]</div><p><strong>Hole.</strong> The factor that canceled, \(x - 3\), gives a hole at \(x = 3\). To find its \(y\)-value, put \(x = 3\) into the simplified function: \(\dfrac{1}{3+3} = \dfrac16\). The hole is \(\left(3,\,\tfrac16\right)\). (Putting \(3\) into the original function would give \(\tfrac00\), which is why we use the simplified one.)</p>
+        <p><strong>Vertical asymptote.</strong> The simplified denominator \(x + 3\) is \(0\) at \(x = -3\), so the vertical asymptote is \(x = -3\). There is no vertical asymptote at \(x = 3\), because that factor canceled and became a hole instead.</p>
+        <p><strong>Horizontal asymptote.</strong> Compare degrees in the original function: the top, \(x - 3\), has degree \(1\), and the bottom, \(x^2 - 9\), has degree \(2\). The top is smaller, so \(y = 0\).</p>
+        <p><strong>\(x\)-intercepts.</strong> Use the simplified numerator, which is \(1\). It is never \(0\), so there are no \(x\)-intercepts. The original numerator is \(0\) at \(x = 3\), but that is the hole, and an \(x\)-intercept never occurs at a hole.</p>
+        <p><strong>\(y\)-intercept.</strong> Find \(f(0)\) using the simplified function: \(\dfrac{1}{0+3} = \dfrac13\). The \(y\)-intercept is \(\left(0,\,\tfrac13\right)\).</p>
+        
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 4</h3>
+        <p>For \(f(x)=\dfrac{x^2-x-6}{x^2-4}\), find the domain, any holes, the vertical and horizontal asymptotes, and the intercepts. State asymptotes as equations, holes and intercepts as ordered pairs, and “none” where there are none.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Start by factoring. The top is a trinomial: we need two numbers that multiply to \(-6\) and add to \(-1\), which are \(-3\) and \(2\). The bottom is a difference of squares.</p>
+        <div>\[ f(x)=\frac{(x-3)(x+2)}{(x-2)(x+2)} \]</div><p><strong>Domain.</strong> Find the domain before canceling. The denominator is \(0\) at \(x = 2\) and \(x = -2\), so the domain is \((-\infty,\,-2)\cup(-2,\,2)\cup(2,\,\infty)\).</p>
+        <p>Now simplify. The factor \(x + 2\) appears on top and bottom, so it cancels.</p>
+        <div>\[ f(x)=\frac{x-3}{x-2},\quad x\ne-2 \]</div><p><strong>Hole.</strong> The factor that canceled, \(x + 2\), gives a hole at \(x = -2\). Put \(x = -2\) into the simplified function for its \(y\)-value: \(\dfrac{-2-3}{-2-2} = \dfrac{-5}{-4} = \dfrac54\). The hole is \(\left(-2,\,\tfrac54\right)\).</p>
+        <p><strong>Vertical asymptote.</strong> The simplified denominator \(x - 2\) is \(0\) at \(x = 2\), so the vertical asymptote is \(x = 2\).</p>
+        <p><strong>Horizontal asymptote.</strong> The top and bottom both have degree \(2\). The degrees are equal, so take the ratio of the leading coefficients. Both are \(1\), so \(y = 1\).</p>
+        <p><strong>\(x\)-intercept.</strong> The simplified numerator \(x - 3\) is \(0\) at \(x = 3\), so the \(x\)-intercept is \((3,\,0)\). The original numerator is also \(0\) at \(x = -2\), but that is the hole, not an intercept.</p>
+        <p><strong>\(y\)-intercept.</strong> Find \(f(0)\) using the simplified function: \(\dfrac{0-3}{0-2} = \dfrac{-3}{-2} = \dfrac32\). The \(y\)-intercept is \(\left(0,\,\tfrac32\right)\).</p>
+        
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 5</h3>
+        <p>For \(f(x)=\dfrac{3x^2}{x^2+1}\), find the domain, any holes, the vertical and horizontal asymptotes, and the intercepts. State asymptotes as equations, holes and intercepts as ordered pairs, and “none” where there are none.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>The bottom, \(x^2 + 1\), is a sum of squares and does not factor. In fact, it is never \(0\): since \(x^2 \ge 0\) for every \(x\), we always have \(x^2 + 1 \ge 1\).</p>
+        <p><strong>Domain.</strong> The denominator is never \(0\), so there are no trouble spots. The domain is all real numbers, \((-\infty,\,\infty)\).</p>
+        <p><strong>Holes.</strong> There are no trouble spots, so there are no holes.</p>
+        <p><strong>Vertical asymptotes.</strong> There are no trouble spots, so there are no vertical asymptotes either.</p>
+        <p><strong>Horizontal asymptote.</strong> The top and bottom both have degree \(2\). The degrees are equal, so take the ratio of the leading coefficients: \(y = \tfrac31 = 3\).</p>
+        <p><strong>\(x\)-intercept.</strong> Set the numerator equal to \(0\): \(3x^2 = 0\) gives \(x = 0\). The \(x\)-intercept is \((0,\,0)\).</p>
+        <p><strong>\(y\)-intercept.</strong> \(f(0) = \dfrac{0}{0+1} = 0\), so the \(y\)-intercept is \((0,\,0)\). The graph goes through the origin, so the origin is both intercepts.</p>
+        
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 6</h3>
+        <p>For \(f(x)=\dfrac{x^2+4}{x+1}\), find the domain, any holes, the vertical and horizontal asymptotes, and the intercepts. State asymptotes as equations, holes and intercepts as ordered pairs, and “none” where there are none.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>The top, \(x^2 + 4\), is a sum of squares and does not factor, and the bottom is already simple. There is no common factor, so nothing cancels.</p>
+        <p><strong>Domain.</strong> The denominator is \(0\) at \(x = -1\). The domain is \((-\infty,\,-1)\cup(-1,\,\infty)\).</p>
+        <p><strong>Holes.</strong> Nothing cancels, so there are no holes.</p>
+        <p><strong>Vertical asymptote.</strong> The trouble spot \(x = -1\) did not cancel, so the vertical asymptote is \(x = -1\).</p>
+        <p><strong>Horizontal asymptote.</strong> The top has degree \(2\) and the bottom has degree \(1\). The top is bigger, so there is no horizontal asymptote. As \(x\) gets very large, the top grows much faster than the bottom, so the graph does not level off at any height.</p>
+        <p><strong>\(x\)-intercepts.</strong> Set the numerator equal to \(0\): \(x^2 + 4 = 0\) gives \(x^2 = -4\). No real number squared is negative, so there is no real solution, and there are no \(x\)-intercepts.</p>
+        <p><strong>\(y\)-intercept.</strong> \(f(0) = \dfrac{0+4}{0+1} = 4\), so the \(y\)-intercept is \((0,\,4)\).</p>
+        
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="review-problems">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="review-problems-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Review Problems</span></button></h2>
+      <div class="section-body" id="review-problems-body">
+      <div class="example">
+        <h3>Problem 7</h3>
+        <p>Let \(f(x)=\sqrt{x+2}\). Find all \(x\) for which \(f(x)=x\).</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Set \(f(x) = x\).</p>
+        <div>\[ \sqrt{x+2} = x \]</div>
+        <p>The square root is already by itself, so square both sides.</p>
+        <div>\[ x+2 = x^2 \]</div>
+        <p>Move everything to one side so it equals \(0\), and factor. We need two numbers that multiply to \(-2\) and add to \(-1\): \(-2\) and \(1\).</p>
+        <div>\[ \begin{aligned} 0 &= x^2-x-2 \\ 0 &= (x-2)(x+1) \end{aligned} \]</div>
+        <p>Set each factor equal to \(0\): \(x = 2\) or \(x = -1\).</p>
+        <p><strong>Check both answers in the original equation.</strong> Squaring both sides can create false solutions, so this step is required.</p><p>\(x = 2\): \(\sqrt{2+2} = \sqrt{4} = 2\), and the right side is also \(2\). It checks.</p><p>\(x = -1\): \(\sqrt{-1+2} = \sqrt{1} = 1\), but the right side is \(-1\). The square root symbol always means the positive root, and \(1\) does not equal \(-1\). So \(x = -1\) is a false solution and must be thrown out.</p>
+        <p>The answer is \(x = 2\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 8</h3>
+        <p>Find the zeros of \(f(x)=x^3-9x\).</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>A zero is an input that gives an output of \(0\), so set \(f(x) = 0\).</p>
+        <div>\[ x^3-9x = 0 \]</div>
+        <p>Both terms have an \(x\), so factor it out first. Then \(x^2 - 9\) is a difference of squares.</p>
+        <div>\[ \begin{aligned} x(x^2-9) &= 0 \\ x(x-3)(x+3) &= 0 \end{aligned} \]</div>
+        <p>Set each factor equal to \(0\): \(x = 0\), \(x - 3 = 0\), and \(x + 3 = 0\). Don't forget the zero that comes from the factor \(x\) by itself.</p>
+        <p>Zeros: \(x = 0\), \(x = 3\), \(x = -3\)</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 9</h3>
+        <p>Solve the equation \(\log_2(x+1)+\log_2(x-1)=3\).</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Use the product rule to combine the two logs into one.</p>
+        <div>\[ \log_2\big((x+1)(x-1)\big) = 3 \]</div>
+        <p>Now there is a single log equal to a number, so rewrite it in exponential form. \(\log_2(\text{something}) = 3\) means \(2^3 = \text{something}\).</p>
+        <div>\[ (x+1)(x-1) = 2^3 \]</div>
+        <p>Multiply out the left side (it is a difference of squares) and solve by taking square roots.</p>
+        <div>\[ \begin{aligned} x^2-1 &= 8 \\ x^2 &= 9 \\ x &= \pm3 \end{aligned} \]</div>
+        <p><strong>Check both in the original equation.</strong> We can only take the log of a positive number.</p>
+        <p>\(x = -3\): the terms would be \(\log_2(-2)\) and \(\log_2(-4)\), which are undefined. So \(x = -3\) is a false solution and must be thrown out.</p>
+        <p>\(x = 3\): \(\log_2 4 + \log_2 2 = 2 + 1 = 3\). It checks.</p>
+        <p>The solution is \(x = 3\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="homework-module-4-topic-2.html">&larr; Topic 2 Homework</a>
+    </nav>
+
+  </main>
+</body>
+</html>
