@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inverse Functions | College Algebra | Flanagan Math</title>
+  <meta name="description" content="Inverse functions: how inputs and outputs trade places, finding an inverse, and using it to find the range, with solutions.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">College Algebra</a>
+    </nav>
+
+    <p class="module-label">Module 4 – Topic 5</p>
+    <h1>Inverse Functions</h1>
+
+    <section class="topic-section" id="inverse-functions">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="inverse-functions-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Inverse Functions</span></button></h2>
+      <div class="section-body" id="inverse-functions-body">
+
+      <p>An <strong>inverse function</strong> reverses what a function does. For example, \(f(x)=x+3\) adds \(3\), so its inverse subtracts \(3\): \(f^{-1}(x)=x-3\).</p>
+      <p>If \(f\) sends \(a\) to \(b\), then \(f^{-1}\) sends \(b\) back to \(a\). So if \((a,\,b)\) is on the graph of \(f\), then \((b,\,a)\) is on the graph of \(f^{-1}\). Inputs and outputs trade places.</p>
+      <p>Because inputs and outputs trade places, the domain of \(f\) is the range of \(f^{-1}\), and the range of \(f\) is the domain of \(f^{-1}\).</p>
+      <p>Only a <strong>one-to-one</strong> function has an inverse: each output must come from exactly one input.</p>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-an-inverse">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-an-inverse-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding an Inverse</span></button></h2>
+      <div class="section-body" id="finding-an-inverse-body">
+
+      <p><strong>To find \(f^{-1}\):</strong> replace \(f(x)\) with \(y\), switch \(x\) and \(y\) (this trades inputs and outputs), and solve for \(y\).</p>
+      <div class="example">
+        <h3>Example 1</h3>
+        <p>Find the inverse of \(f(x)=3x+5\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Replace \(f(x)\) with \(y\), switch \(x\) and \(y\), and solve for \(y\).</p>
+        <div>\[ \begin{aligned} y &= 3x+5 \\ x &= 3y+5 \\ x-5 &= 3y \\ \frac{x-5}{3} &= y \end{aligned} \]</div><div>\[ f^{-1}(x)=\frac{x-5}{3} \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Example 2</h3>
+        <p>Let \(f(x)=\dfrac{3x+1}{x-2}\). Find the domain of \(f\), the inverse, and the range of \(f\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p><strong>Domain of \(f\):</strong> the bottom is \(0\) at \(x=2\), so the domain is \((-\infty,\,2)\cup(2,\,\infty)\).</p>
+        <p><strong>Inverse:</strong> replace \(f(x)\) with \(y\) and switch \(x\) and \(y\).</p>
+        <div>\[ x=\frac{3y+1}{y-2} \]</div>
+        <p>Clear the fraction, gather the \(y\) terms on one side, and factor out \(y\).</p>
+        <div>\[ \begin{aligned} x(y-2) &= 3y+1 \\ xy-2x &= 3y+1 \\ xy-3y &= 2x+1 \\ y(x-3) &= 2x+1 \\ y &= \frac{2x+1}{x-3} \end{aligned} \]</div><div>\[ f^{-1}(x)=\frac{2x+1}{x-3} \]</div>
+        <p><strong>Range of \(f\):</strong> the range of \(f\) is the domain of \(f^{-1}\). The bottom of \(f^{-1}\) is \(0\) at \(x=3\), so the range of \(f\) is \((-\infty,\,3)\cup(3,\,\infty)\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="composite-functions.html">&larr; Topic 4</a>
+      <a class="next" href="linear-functions.html">Topic 6 &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

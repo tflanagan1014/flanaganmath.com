@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Working with Functions: Polynomials | College Algebra | Flanagan Math</title>
+  <meta name="description" content="Solving f(x) = k, polynomial functions, degree, and finding real and complex zeros and intercepts, with solutions.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">College Algebra</a>
+    </nav>
+
+    <p class="module-label">Module 4 – Topic 2</p>
+    <h1>Working with Functions: Polynomials</h1>
+
+    <section class="topic-section" id="solving-f-of-x-equals-k">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="solving-f-of-x-equals-k-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Solving \(f(x)=k\)</span></button></h2>
+      <div class="section-body" id="solving-f-of-x-equals-k-body">
+
+      <p>The equation \(f(x)=k\) asks: which inputs \(x\) give the output \(k\)? On a graph, these are the \(x\)-values where the graph is at height \(k\).</p>
+      <p>To find them, set \(f(x)=k\) and solve for \(x\). Squaring both sides or clearing fractions can create false solutions, so always check your answers in the original equation.</p>
+      <div class="example">
+        <h3>Example 1</h3>
+        <p>Let \(f(x)=\sqrt{x+6}\). Find all \(x\) for which \(f(x)=x\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Set \(f(x)=x\), square both sides, and solve.</p>
+        <div>\[ \begin{aligned} \sqrt{x+6} &= x \\ x+6 &= x^2 \\ 0 &= x^2-x-6 \\ 0 &= (x-3)(x+2) \end{aligned} \]</div>
+        <p>So \(x=3\) or \(x=-2\). Check each one in the original equation.</p>
+        <p>\(x=3\): \(\sqrt{3+6}=\sqrt{9}=3\). It checks.</p>
+        <p>\(x=-2\): \(\sqrt{-2+6}=\sqrt{4}=2\), and \(2\ne-2\). This is a false solution.</p>
+        <p>The answer is \(x=3\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="polynomials-and-zeros">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="polynomials-and-zeros-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Polynomials and Zeros</span></button></h2>
+      <div class="section-body" id="polynomials-and-zeros-body">
+
+      <p>A <strong>polynomial function</strong> is a sum of terms of the form \(ax^n\), where each exponent \(n\) is a whole number (\(0, 1, 2, 3, \ldots\)). For example, \(3x^4-2x+7\) is a polynomial. \(\sqrt{x}\) and \(\dfrac{2}{x}\) are not, because \(\sqrt{x}=x^{1/2}\) and \(\dfrac{2}{x}=2x^{-1}\).</p>
+      <p>The <strong>degree</strong> is the largest exponent. The degree of \(3x^4-2x+7\) is \(4\).</p>
+      <p>A <strong>zero</strong> of \(f\) is an input that gives the output \(0\), so we find zeros by setting \(f(x)=0\). Factor, then set each factor equal to \(0\).</p>
+      <p>A real zero \(c\) is where the graph crosses or touches the \(x\)-axis, at the \(x\)-intercept \((c,\,0)\). A complex zero is not on the graph, so it is not an \(x\)-intercept.</p>
+      <div class="example">
+        <h3>Example 2</h3>
+        <p>Find the zeros and intercepts of \(f(x)=x^3-3x^2-4x+12\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Set \(f(x)=0\) and factor by grouping.</p>
+        <div>\[ \begin{aligned} x^3-3x^2-4x+12 &= 0 \\ x^2(x-3)-4(x-3) &= 0 \\ (x-3)(x^2-4) &= 0 \\ (x-3)(x-2)(x+2) &= 0 \end{aligned} \]</div>
+        <p>Zeros: \(x=3\), \(x=2\), \(x=-2\)</p>
+        <p>\(x\)-intercepts: \((3,\,0)\), \((2,\,0)\), \((-2,\,0)\)</p>
+        <p>For the \(y\)-intercept, find \(f(0)=12\). The \(y\)-intercept is \((0,\,12)\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Example 3</h3>
+        <p>Find all zeros of \(f(x)=x^4-81\), including complex zeros. State the \(x\)-intercepts.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Set \(f(x)=0\) and factor as a difference of squares, twice.</p>
+        <div>\[ \begin{aligned} x^4-81 &= 0 \\ (x^2-9)(x^2+9) &= 0 \\ (x-3)(x+3)(x^2+9) &= 0 \end{aligned} \]</div>
+        <p>The first two factors give \(x=3\) and \(x=-3\). For the last factor:</p>
+        <div>\[ \begin{aligned} x^2+9 &= 0 \\ x^2 &= -9 \\ x &= \pm\sqrt{-9} \\ x &= \pm 3i \end{aligned} \]</div>
+        <p>Zeros: \(x=3\), \(x=-3\), \(x=3i\), \(x=-3i\)</p>
+        <p>Only the real zeros are \(x\)-intercepts: \((3,\,0)\) and \((-3,\,0)\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="reading-graphs-and-piecewise-defined-functions.html">&larr; Topic 1</a>
+      <a class="next" href="rational-functions.html">Topic 3 &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

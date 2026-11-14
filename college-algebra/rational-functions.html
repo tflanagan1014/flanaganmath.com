@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Working with Functions: Rational Functions | College Algebra | Flanagan Math</title>
+  <meta name="description" content="Rational functions: domain, holes, vertical and horizontal asymptotes, and intercepts, with solutions.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">College Algebra</a>
+    </nav>
+
+    <p class="module-label">Module 4 – Topic 3</p>
+    <h1>Working with Functions: Rational Functions</h1>
+
+    <section class="topic-section" id="rational-functions">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="rational-functions-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Rational Functions</span></button></h2>
+      <div class="section-body" id="rational-functions-body">
+
+      <p>A <strong>rational function</strong> is a fraction whose top and bottom are polynomials, such as \(f(x)=\dfrac{x-2}{x-1}\).</p>
+      <p>The trouble spots are where the denominator is \(0\). Those \(x\)-values are not in the domain. After we factor and simplify, each trouble spot is either a <strong>hole</strong> (a single missing point) or a <strong>vertical asymptote</strong> (the graph shoots up or down along a vertical line).</p>
+      <p>A <strong>horizontal asymptote</strong> tells us what height the graph approaches as \(x\) gets very large in either direction.</p>
+      <h3>Steps</h3>
+      <p>Factor the top and bottom first.</p>
+      <ul>
+        <li><strong>Hole:</strong> a factor that cancels. Get its \(y\)-value from the simplified function.</li>
+        <li><strong>Vertical asymptote:</strong> where the simplified denominator is \(0\).</li>
+        <li><strong>Horizontal asymptote:</strong> compare degrees. Top smaller: \(y=0\). Equal: \(y=\) the ratio of the leading coefficients. Top bigger: none.</li>
+        <li><strong>Intercepts:</strong> \(x\)-intercepts where the simplified numerator is \(0\) (never at a hole). \(y\)-intercept: find \(f(0)\).</li>
+      </ul>
+      </div>
+    </section>
+
+    <section class="topic-section" id="finding-holes-asymptotes-and-intercepts">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="finding-holes-asymptotes-and-intercepts-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Finding Holes, Asymptotes, and Intercepts</span></button></h2>
+      <div class="section-body" id="finding-holes-asymptotes-and-intercepts-body">
+      <div class="example">
+        <h3>Example 1</h3>
+        <p>Find the domain, hole, asymptotes, and intercepts of \(f(x)=\dfrac{x^2-4}{x^2+x-2}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Factor the top and bottom.</p>
+        <div>\[ f(x)=\frac{(x-2)(x+2)}{(x+2)(x-1)} \]</div>
+        <p><strong>Domain:</strong> the bottom is \(0\) at \(x=-2\) and \(x=1\), so the domain is \((-\infty,\,-2)\cup(-2,\,1)\cup(1,\,\infty)\).</p>
+        <p>The factor \(x+2\) cancels, so the simplified function is</p>
+        <div>\[ f(x)=\frac{x-2}{x-1}, \quad x\ne-2 \]</div>
+        <p><strong>Hole:</strong> at \(x=-2\). Use the simplified function for the \(y\)-value.</p>
+        <div>\[ \frac{-2-2}{-2-1}=\frac{-4}{-3}=\frac43 \]</div>
+        <p>The hole is \(\left(-2,\,\tfrac43\right)\).</p>
+        <p><strong>Vertical asymptote:</strong> the simplified denominator is \(0\) at \(x=1\), so \(x=1\).</p>
+        <p><strong>Horizontal asymptote:</strong> the degrees are equal (both \(2\)), and the leading coefficients are \(1\) and \(1\), so \(y=\tfrac11=1\).</p>
+        <p><strong>\(x\)-intercept:</strong> the simplified numerator is \(0\) at \(x=2\), so \((2,\,0)\).</p>
+        <p><strong>\(y\)-intercept:</strong> \(f(0)=\dfrac{0-2}{0-1}=2\), so \((0,\,2)\).</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Example 2</h3>
+        <p>Find the asymptotes and intercepts of \(f(x)=\dfrac{2x^2+1}{x-3}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Nothing factors, so nothing cancels, and there are no holes.</p>
+        <p><strong>Vertical asymptote:</strong> the bottom is \(0\) at \(x=3\), so \(x=3\).</p>
+        <p><strong>Horizontal asymptote:</strong> the top has degree \(2\) and the bottom has degree \(1\). The top is bigger, so there is none.</p>
+        <p><strong>\(x\)-intercepts:</strong> set the numerator equal to \(0\).</p>
+        <div>\[ \begin{aligned} 2x^2+1 &= 0 \\ x^2 &= -\tfrac12 \end{aligned} \]</div>
+        <p>There is no real solution, so there are no \(x\)-intercepts.</p>
+        <p><strong>\(y\)-intercept:</strong> \(f(0)=\dfrac{0+1}{0-3}=-\dfrac13\), so \(\left(0,\,-\tfrac13\right)\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="polynomials.html">&larr; Topic 2</a>
+      <a class="next" href="composite-functions.html">Topic 4 &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

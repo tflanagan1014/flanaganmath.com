@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linear Functions | College Algebra | Flanagan Math</title>
+  <meta name="description" content="Linear functions: slope, finding a line through two points, cost functions, and cost, revenue, profit, and break-even, with solutions.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">College Algebra</a>
+    </nav>
+
+    <p class="module-label">Module 4 – Topic 6</p>
+    <h1>Linear Functions</h1>
+
+    <section class="topic-section" id="linear-functions">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="linear-functions-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Linear Functions</span></button></h2>
+      <div class="section-body" id="linear-functions-body">
+
+      <p>A <strong>linear function</strong> has the form \(f(x)=mx+b\). Its graph is a line.</p>
+      <p>The <strong>slope</strong> \(m=\dfrac{y_2-y_1}{x_2-x_1}\) is the rate of change: how much \(y\) changes when \(x\) goes up by \(1\). The number \(b\) is the \(y\)-intercept, the value when \(x=0\).</p>
+      <div class="formula">
+        <p class="formula-name">Slope</p>
+        <div>\[ m=\frac{y_2-y_1}{x_2-x_1} \]</div>
+      </div>
+      <p>In applications, the slope is a per-unit rate (dollars per mile, cost per item) and \(b\) is a fixed starting amount.</p>
+      <div class="example">
+        <h3>Example 1</h3>
+        <p>Find the linear function through \((1,\,4)\) and \((3,\,10)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Find the slope.</p>
+        <div>\[ m=\frac{10-4}{3-1}=\frac{6}{2}=3 \]</div>
+        <p>Put \(m=3\) and the point \((1,\,4)\) into \(y=mx+b\) to find \(b\).</p>
+        <div>\[ \begin{aligned} 4 &= 3(1)+b \\ 1 &= b \end{aligned} \]</div><div>\[ f(x)=3x+1 \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Example 2</h3>
+        <p>A truck rental costs \(\$30\) plus \(\$1.50\) per mile.</p>
+        <ol type="a" class="parts"><li>Write the cost function \(C(x)\).</li><li>Find \(C(120)\).</li><li>How many miles can you drive for \(\$96\)?</li></ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p><strong>a.</strong> The per-mile rate is the slope, and the fixed \(\$30\) is \(b\). Let \(x\) be the number of miles.</p>
+        <div>\[ C(x)=1.50x+30 \]</div>
+        <p><strong>b.</strong></p>
+        <div>\[ \begin{aligned} C(120) &= 1.50(120)+30 \\ &= 180+30 \\ &= 210 \end{aligned} \]</div>
+        <p>Driving \(120\) miles costs \(\$210\).</p>
+        <p><strong>c.</strong> Set \(C(x)=96\) and solve.</p>
+        <div>\[ \begin{aligned} 1.50x+30 &= 96 \\ 1.50x &= 66 \\ x &= 44 \end{aligned} \]</div>
+        <p>You can drive \(44\) miles for \(\$96\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="cost-revenue-and-profit">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="cost-revenue-and-profit-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Cost, Revenue, and Profit</span></button></h2>
+      <div class="section-body" id="cost-revenue-and-profit-body">
+
+      <p>Cost is the fixed cost plus the cost per unit times the number of units. Revenue is the price times the number of units sold. Profit is what is left: \(P(x)=R(x)-C(x)\).</p>
+      <div class="formula">
+        <p class="formula-name">Profit</p>
+        <div>\[ P(x)=R(x)-C(x) \]</div>
+      </div>
+      <p>The <strong>break-even point</strong> is where there is no profit and no loss: set \(R(x)=C(x)\).</p>
+      <div class="example">
+        <h3>Example 3</h3>
+        <p>Fixed costs are \(\$1{,}500\), each unit costs \(\$20\) to make, and each sells for \(\$45\). Write \(C(x)\), \(R(x)\), and \(P(x)\), and find the break-even point.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Let \(x\) be the number of units.</p>
+        <div class="eq-list">
+        <div>\[ C(x)=20x+1500 \]</div><div>\[ R(x)=45x \]</div>
+        </div>
+        <div>\[ \begin{aligned} P(x) &= R(x)-C(x) \\ &= 45x-(20x+1500) \\ &= 25x-1500 \end{aligned} \]</div>
+        <p><strong>Break-even:</strong> set \(R(x)=C(x)\).</p>
+        <div>\[ \begin{aligned} 45x &= 20x+1500 \\ 25x &= 1500 \\ x &= 60 \end{aligned} \]</div>
+        <p>At \(60\) units, the revenue and cost are both \(R(60)=45(60)=\$2{,}700\). The company breaks even at \(60\) units.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="inverse-functions.html">&larr; Topic 5</a>
+      <a class="next" href="quadratic-functions.html">Topic 7 &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>

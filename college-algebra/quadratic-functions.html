@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quadratic Functions | College Algebra | Flanagan Math</title>
+  <meta name="description" content="Quadratic functions: opening up or down, the vertex, maximum and minimum values, range, and maximizing revenue, with solutions.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">College Algebra</a>
+    </nav>
+
+    <p class="module-label">Module 4 – Topic 7</p>
+    <h1>Quadratic Functions</h1>
+
+    <section class="topic-section" id="quadratic-functions">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="quadratic-functions-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Quadratic Functions</span></button></h2>
+      <div class="section-body" id="quadratic-functions-body">
+
+      <p>A <strong>quadratic function</strong> has the form \(f(x)=ax^2+bx+c\), with \(a\ne0\).</p>
+      <p>Its graph is a U-shaped curve called a parabola. The parabola is symmetric: the vertical line through the vertex splits it into two matching halves.</p>
+      <p>If \(a\gt0\), the parabola opens up, and the vertex is its lowest point, a minimum. If \(a\lt0\), it opens down, and the vertex is its highest point, a maximum.</p>
+      <p>The <strong>vertex</strong> is the turning point. Its \(x\)-coordinate is \(x=-\dfrac{b}{2a}\). Its \(y\)-coordinate is found by plugging that \(x\) into \(f\). The range starts or ends at the \(y\)-coordinate of the vertex.</p>
+      <div class="formula">
+        <p class="formula-name">\(x\)-Coordinate of the Vertex</p>
+        <div>\[ x=-\frac{b}{2a} \]</div>
+      </div>
+      <div class="example">
+        <h3>Example 1</h3>
+        <p>For \(f(x)=-3x^2+12x+1\), does it open up or down? Find the vertex, the maximum or minimum value, and the range.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Here \(a=-3\), \(b=12\), and \(c=1\). Since \(a\lt0\), the parabola opens down, so the vertex is a maximum.</p>
+        <div>\[ x=-\frac{b}{2a}=-\frac{12}{2(-3)}=2 \]</div><div>\[ \begin{aligned} f(2) &= -3(2)^2+12(2)+1 \\ &= -12+24+1 \\ &= 13 \end{aligned} \]</div>
+        <p>Vertex: \((2,\,13)\)</p>
+        <p>Maximum value: \(13\)</p>
+        <p>Range: \((-\infty,\,13]\)</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="maximizing-revenue">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="maximizing-revenue-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Maximizing Revenue</span></button></h2>
+      <div class="section-body" id="maximizing-revenue-body">
+
+      <p>Revenue is price times quantity, \(R=xp\). When the quantity sold depends on the price, \(R\) becomes a quadratic function of the price that opens down, so the maximum revenue is at the vertex.</p>
+      <div class="example">
+        <h3>Example 2</h3>
+        <p>The demand equation for a product is \(x=-2p+300\), where \(p\) is the price in dollars. Express the revenue \(R\) as a function of \(p\). Find the price that maximizes revenue, the maximum revenue, and the units sold at that price.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Substitute the demand equation into \(R=xp\).</p>
+        <div>\[ \begin{aligned} R(p) &= xp \\ &= (-2p+300)p \\ &= -2p^2+300p \end{aligned} \]</div>
+        <p>Here \(a=-2\) and \(b=300\). The parabola opens down, so the maximum is at the vertex.</p>
+        <div>\[ p=-\frac{b}{2a}=-\frac{300}{2(-2)}=75 \]</div><div>\[ \begin{aligned} R(75) &= -2(75)^2+300(75) \\ &= -11{,}250+22{,}500 \\ &= 11{,}250 \end{aligned} \]</div><div>\[ \begin{aligned} x &= -2(75)+300 \\ &= 150 \end{aligned} \]</div>
+        <p>A price of \(\$75\) maximizes revenue. The maximum revenue is \(\$11{,}250\), with \(150\) units sold.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="linear-functions.html">&larr; Topic 6</a>
+    </nav>
+
+  </main>
+</body>
+</html>

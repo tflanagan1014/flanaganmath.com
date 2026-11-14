@@ -206,3 +206,27 @@ ul.links li { margin: 0.5rem 0; font-size: 1.1rem; }
   body { font-size: 11pt; }
   .work, button.toggle { display: none !important; }
 }
+
+/* ---- Topic pages and homework solutions ---- */
+
+/* Module and topic line above the title, like the notes */
+.module-label { margin: 1.5rem 0 0.2rem; font-size: 0.95rem; font-weight: 700; color: #444; }
+.module-label + h1 { margin-top: 0; }
+
+/* Headings on the course page */
+h2.list-head { margin: 2rem 0 0.25rem; }
+
+/* Graphs drawn on the page */
+.gfig { max-width: 22rem; margin: 0.6rem 0 0.9rem; }
+.gfig.narrow { max-width: 17rem; }
+svg.graph { width: 100%; height: auto; display: block; }
+
+/* Lettered questions and answers */
+ol.parts { padding-left: 1.6rem; margin: 0.3rem 0 0.8rem; }
+ol.parts > li { margin: 0.25rem 0; }
+
+/* Tables of values for graphing a piecewise function */
+.tables { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; margin: 0.5rem 0 0.75rem; }
+table.vals { border-collapse: collapse; background: #fff; }
+table.vals caption { font-weight: 600; text-align: left; padding-bottom: 0.2rem; white-space: nowrap; }
+table.vals th, table.vals td { border: 1px solid #999; padding: 0.2rem 0.9rem; text-align: center; }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Composite Functions | College Algebra | Flanagan Math</title>
+  <meta name="description" content="Composite functions: evaluating and finding f of g of x, and the domain of a composite function, with solutions.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">College Algebra</a>
+    </nav>
+
+    <p class="module-label">Module 4 – Topic 4</p>
+    <h1>Composite Functions</h1>
+
+    <section class="topic-section" id="composite-functions">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="composite-functions-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Composite Functions</span></button></h2>
+      <div class="section-body" id="composite-functions-body">
+
+      <p>A <strong>composite function</strong> puts one function inside another: the output of \(g\) becomes the input of \(f\).</p>
+      <p>We write \((f\circ g)(x)=f(g(x))\) and read it “\(f\) of \(g\) of \(x\).” Work from the inside out: first find \(g(x)\), then put that result into \(f\).</p>
+      <div class="formula">
+        <p class="formula-name">Composite Function</p>
+        <div>\[ (f\circ g)(x)=f(g(x)) \]</div>
+      </div>
+      <p>Order matters. In general, \((f\circ g)(x)\) and \((g\circ f)(x)\) are different.</p>
+      <div class="example">
+        <h3>Example 1</h3>
+        <p>Let \(f(x)=2x+1\) and \(g(x)=4x-5\). Find:</p>
+        <ol type="a" class="parts"><li>\((f\circ g)(2)\)</li><li>\((f\circ g)(x)\)</li><li>\((g\circ f)(x)\)</li></ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p><strong>a.</strong> Work from the inside out: find \(g(2)\) first, then put it into \(f\).</p>
+        <div>\[ \begin{aligned} g(2) &= 4(2)-5 = 3 \\ (f\circ g)(2) &= f(3) \\ &= 2(3)+1 \\ &= 7 \end{aligned} \]</div>
+        <p><strong>b.</strong> Put \(g(x)=4x-5\) into \(f\).</p>
+        <div>\[ \begin{aligned} (f\circ g)(x) &= f(4x-5) \\ &= 2(4x-5)+1 \\ &= 8x-10+1 \\ &= 8x-9 \end{aligned} \]</div>
+        <p><strong>c.</strong> Put \(f(x)=2x+1\) into \(g\).</p>
+        <div>\[ \begin{aligned} (g\circ f)(x) &= g(2x+1) \\ &= 4(2x+1)-5 \\ &= 8x+4-5 \\ &= 8x-1 \end{aligned} \]</div>
+        <p>Notice \((f\circ g)(x)\ne(g\circ f)(x)\). Order matters.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="domain-of-a-composite-function">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="domain-of-a-composite-function-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Domain of a Composite Function</span></button></h2>
+      <div class="section-body" id="domain-of-a-composite-function-body">
+
+      <p>An \(x\)-value is allowed only if it works in the inside function first, and then the result works in the outside function. So check the domain of the inside function, and check the final simplified form.</p>
+      <div class="example">
+        <h3>Example 2</h3>
+        <p>Let \(f(x)=\dfrac{1}{2+x}\) and \(g(x)=4x+1\). Find \((f\circ g)(x)\) and \((g\circ f)(x)\), and state the domain of each.</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p><strong>\((f\circ g)(x)\):</strong> put \(g(x)=4x+1\) into \(f\).</p>
+        <div>\[ \begin{aligned} (f\circ g)(x) &= f(4x+1) \\ &= \frac{1}{2+(4x+1)} \\ &= \frac{1}{4x+3} \end{aligned} \]</div>
+        <p>The inside function \(g(x)=4x+1\) takes every \(x\). The final form needs \(4x+3\ne0\), so \(x\ne-\tfrac34\).</p>
+        <p>Domain: \(\left(-\infty,\,-\tfrac34\right)\cup\left(-\tfrac34,\,\infty\right)\)</p>
+        <p><strong>\((g\circ f)(x)\):</strong> put \(f(x)=\dfrac{1}{2+x}\) into \(g\), then combine into one fraction.</p>
+        <div>\[ \begin{aligned} (g\circ f)(x) &= g\!\left(\frac{1}{2+x}\right) \\ &= 4\left(\frac{1}{2+x}\right)+1 \\ &= \frac{4}{x+2}+\frac{x+2}{x+2} \\ &= \frac{x+6}{x+2} \end{aligned} \]</div>
+        <p>The inside function \(f(x)=\dfrac{1}{2+x}\) needs \(x\ne-2\). The final form also needs \(x\ne-2\).</p>
+        <p>Domain: \((-\infty,\,-2)\cup(-2,\,\infty)\)</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="rational-functions.html">&larr; Topic 3</a>
+      <a class="next" href="inverse-functions.html">Topic 5 &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
