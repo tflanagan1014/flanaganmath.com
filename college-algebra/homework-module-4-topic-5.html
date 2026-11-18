@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homework Solutions | College Algebra | Flanagan Math</title>
+  <meta name="description" content="Worked solutions to the Module 4, Topic 5 homework problems in College Algebra.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">College Algebra</a>
+    </nav>
+
+    <p class="module-label">Module 4 – Topic 5</p>
+    <h1>Homework Solutions</h1>
+    <p>Try each problem on your own before you open its solution. When a problem gives you trouble, go back to your notes for <a href="inverse-functions.html">this topic</a>.</p>
+
+    <section class="topic-section" id="inverse-functions">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="inverse-functions-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Inverse Functions</span></button></h2>
+      <div class="section-body" id="inverse-functions-body">
+      <div class="example">
+        <h3>Problem 1</h3>
+        <p>The function \(f(x)=5x-2\) is one-to-one. Find its inverse.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>To find the inverse: replace \(f(x)\) with \(y\), swap \(x\) and \(y\), then solve for \(y\). The result is \(f^{-1}(x)\).</p>
+        <p>Write \(y=5x-2\), then swap \(x\) and \(y\).</p>
+        <div>\[ \begin{aligned} x&=5y-2 \end{aligned} \]</div>
+        <p>Solve for \(y\): add \(2\), then divide by \(5\).</p>
+        <div>\[ \begin{aligned} x+2&=5y \\ y&=\dfrac{x+2}{5} \end{aligned} \]</div>
+        <p>\(f^{-1}(x)=\dfrac{x+2}{5}\)</p>
+        <p>Check: \(f\big(f^{-1}(x)\big)=5\left(\dfrac{x+2}{5}\right)-2=x+2-2=x\). It works.</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 2</h3>
+        <p>The function \(f(x)=\dfrac{x+1}{4}\) is one-to-one. Find its inverse.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Write \(y=\dfrac{x+1}{4}\), then swap \(x\) and \(y\).</p>
+        <div>\[ \begin{aligned} x&=\dfrac{y+1}{4} \end{aligned} \]</div>
+        <p>Solve for \(y\): multiply both sides by \(4\), then subtract \(1\).</p>
+        <div>\[ \begin{aligned} 4x&=y+1 \\ y&=4x-1 \end{aligned} \]</div>
+        <p>\(f^{-1}(x)=4x-1\)</p>
+        <p>Check: \(f\big(f^{-1}(x)\big)=\dfrac{(4x-1)+1}{4}=\dfrac{4x}{4}=x\). It works.</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 3</h3>
+        <p>The function \(f(x)=x^3+6\) is one-to-one. Find its inverse.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Write \(y=x^3+6\), then swap \(x\) and \(y\).</p>
+        <div>\[ \begin{aligned} x&=y^3+6 \end{aligned} \]</div>
+        <p>Solve for \(y\): subtract \(6\), then take the cube root of both sides. The cube root undoes the cube.</p>
+        <div>\[ \begin{aligned} x-6&=y^3 \\ y&=\sqrt[3]{x-6} \end{aligned} \]</div>
+        <p>\(f^{-1}(x)=\sqrt[3]{x-6}\)</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 4</h3>
+        <p>The function \(f(x)=\dfrac{4}{x+1}\) is one-to-one. Find its inverse.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Write \(y=\dfrac{4}{x+1}\), then swap \(x\) and \(y\).</p>
+        <div>\[ \begin{aligned} x&=\dfrac{4}{y+1} \end{aligned} \]</div>
+        <p>Solve for \(y\): multiply both sides by \(y+1\) to clear the fraction, divide by \(x\), then subtract \(1\).</p>
+        <div>\[ \begin{aligned} x(y+1)&=4 \\ y+1&=\dfrac{4}{x} \\ y&=\dfrac{4}{x}-1 \end{aligned} \]</div>
+        <p>To write this as one fraction, write \(1\) as \(\dfrac{x}{x}\).</p>
+        <div>\[ \begin{aligned} y&=\dfrac{4}{x}-\dfrac{x}{x}=\dfrac{4-x}{x} \end{aligned} \]</div>
+        <p>\(f^{-1}(x)=\dfrac{4-x}{x}\)</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 5</h3>
+        <p>The function \(f(x)=e^{x-2}\) is one-to-one. Find its inverse.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Write \(y=e^{x-2}\), then swap \(x\) and \(y\).</p>
+        <div>\[ \begin{aligned} x&=e^{y-2} \end{aligned} \]</div>
+        <p>The variable \(y\) is in the exponent, so rewrite in logarithmic form (or take the natural log of both sides). Since \(\ln e^{y-2}=y-2\):</p>
+        <div>\[ \begin{aligned} \ln x&=y-2 \\ y&=\ln x+2 \end{aligned} \]</div>
+        <p>\(f^{-1}(x)=\ln x+2\)</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 6</h3>
+        <p>The function \(f(x)=\ln x+3\) is one-to-one. Find its inverse.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Write \(y=\ln x+3\), then swap \(x\) and \(y\).</p>
+        <div>\[ \begin{aligned} x&=\ln y+3 \end{aligned} \]</div>
+        <p>Get the log by itself by subtracting \(3\). Then rewrite in exponential form: \(\ln y=x-3\) means \(y=e^{x-3}\).</p>
+        <div>\[ \begin{aligned} x-3&=\ln y \\ y&=e^{x-3} \end{aligned} \]</div>
+        <p>\(f^{-1}(x)=e^{x-3}\)</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 7</h3>
+        <p>Let \(f(x)=\dfrac{2x+3}{x-1}\).</p><ol type="a" class="parts"><li>Find the domain of \(f\).</li><li>Find the inverse function.</li><li>Use the inverse to find the range of \(f\).</li><li>State the domain and range of \(f^{-1}\).</li></ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p><strong>a.</strong> The denominator is \(0\) when \(x-1=0\), so \(x=1\) is excluded.</p>
+        <p>Domain of \(f\): \((-\infty,\,1)\cup(1,\,\infty)\)</p>
+        <p><strong>b.</strong> Write \(y=\dfrac{2x+3}{x-1}\), then swap \(x\) and \(y\).</p>
+        <div>\[ \begin{aligned} x&=\dfrac{2y+3}{y-1} \end{aligned} \]</div>
+        <p>Multiply both sides by \(y-1\) to clear the fraction. Then get every term with \(y\) on one side, factor out \(y\), and divide.</p>
+        <div>\[ \begin{aligned} x(y-1)&=2y+3 \\ xy-x&=2y+3 \\ xy-2y&=x+3 \\ y(x-2)&=x+3 \\ y&=\dfrac{x+3}{x-2} \end{aligned} \]</div>
+        <p>\(f^{-1}(x)=\dfrac{x+3}{x-2}\)</p>
+        <p><strong>c.</strong> The range of \(f\) is the domain of \(f^{-1}\). The inverse has a zero denominator at \(x=2\), so \(2\) is the only value left out.</p>
+        <p>Range of \(f\): \((-\infty,\,2)\cup(2,\,\infty)\)</p>
+        <p><strong>d.</strong> The domain and range trade places between \(f\) and \(f^{-1}\).</p>
+        <p>Domain of \(f^{-1}\): \((-\infty,\,2)\cup(2,\,\infty)\) (the range of \(f\))</p>
+        <p>Range of \(f^{-1}\): \((-\infty,\,1)\cup(1,\,\infty)\) (the domain of \(f\))</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 8</h3>
+        <p>Let \(f(x)=\dfrac{x-4}{2x+1}\). Find the domain of \(f\), the inverse, and the range of \(f\).</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p><strong>Domain of \(f\):</strong> the denominator is \(0\) when \(2x+1=0\), so \(x=-\tfrac12\) is excluded.</p>
+        <p>Domain of \(f\): \(\left(-\infty,\,-\tfrac12\right)\cup\left(-\tfrac12,\,\infty\right)\)</p>
+        <p><strong>Inverse:</strong> write \(y=\dfrac{x-4}{2x+1}\), then swap \(x\) and \(y\).</p>
+        <div>\[ \begin{aligned} x&=\dfrac{y-4}{2y+1} \end{aligned} \]</div>
+        <p>Multiply both sides by \(2y+1\). Move the \(y\) terms to the left and everything else to the right, factor out \(y\), and divide.</p>
+        <div>\[ \begin{aligned} x(2y+1)&=y-4 \\ 2xy+x&=y-4 \\ 2xy-y&=-x-4 \\ y(2x-1)&=-x-4 \\ y&=\dfrac{-x-4}{2x-1} \end{aligned} \]</div>
+        <p>Multiplying the top and bottom by \(-1\) gives a neater form.</p>
+        <div>\[ \begin{aligned} y&=\dfrac{x+4}{1-2x} \end{aligned} \]</div>
+        <p>\(f^{-1}(x)=\dfrac{x+4}{1-2x}\)</p>
+        <p><strong>Range of \(f\):</strong> the range of \(f\) is the domain of \(f^{-1}\). The inverse has a zero denominator when \(1-2x=0\), so \(x=\tfrac12\) is excluded.</p>
+        <p>Range of \(f\): \(\left(-\infty,\,\tfrac12\right)\cup\left(\tfrac12,\,\infty\right)\)</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 9</h3>
+        <p>If \(f(2)=7\), what is \(f^{-1}(7)\)? What point on the graph of \(f^{-1}\) goes with the point \((2,\,7)\) on the graph of \(f\)?</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>The inverse undoes \(f\). Since \(f\) sends \(2\) to \(7\), \(f^{-1}\) sends \(7\) back to \(2\).</p>
+        <p>\(f^{-1}(7)=2\)</p>
+        <p>On a graph, the inverse switches the coordinates of every point. The point \((2,\,7)\) on \(f\) becomes \((7,\,2)\) on \(f^{-1}\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="review-problems">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="review-problems-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Review Problems</span></button></h2>
+      <div class="section-body" id="review-problems-body">
+      <div class="example">
+        <h3>Problem 10</h3>
+        <p>Let \(f(x)=x+4\) and \(g(x)=3x\). Find \((f\circ g)(x)\) and \((g\circ f)(x)\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p><strong>\((f\circ g)(x)\):</strong> put \(3x\) in for \(x\) in \(f\).</p>
+        <div>\[ \begin{aligned} (f\circ g)(x)&=3x+4 \end{aligned} \]</div>
+        <p><strong>\((g\circ f)(x)\):</strong> put \(x+4\) in for \(x\) in \(g\). Use parentheses so the \(3\) multiplies the whole expression.</p>
+        <div>\[ \begin{aligned} (g\circ f)(x)&=3(x+4) \\ &=3x+12 \end{aligned} \]</div>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 11</h3>
+        <p>Find any holes and vertical asymptotes of \(f(x)=\dfrac{x+1}{x^2-1}\).</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Factor the bottom as a difference of squares.</p>
+        <div>\[ \begin{aligned} f(x)&=\dfrac{x+1}{(x-1)(x+1)} \end{aligned} \]</div>
+        <p>The factor \(x+1\) cancels, so the simplified function is</p>
+        <div>\[ \begin{aligned} f(x)&=\dfrac{1}{x-1},\quad x\ne-1 \end{aligned} \]</div>
+        <p><strong>Hole:</strong> at \(x=-1\), where the factor canceled. The simplified function gives \(\dfrac{1}{-1-1}=-\dfrac12\), so the hole is \(\left(-1,\,-\tfrac12\right)\).</p>
+        <p><strong>Vertical asymptote:</strong> the simplified denominator is \(0\) at \(x=1\), so \(x=1\)</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 12</h3>
+        <p>Determine whether \(f(x)=x^3-5x\) is even, odd, or neither.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Find \(f(-x)\) by putting \(-x\) in for every \(x\). An odd power keeps the negative sign: \((-x)^3=-x^3\).</p>
+        <div>\[ \begin{aligned} f(-x)&=(-x)^3-5(-x) \\ &=-x^3+5x \end{aligned} \]</div>
+        <p>This is not equal to \(f(x)=x^3-5x\), so \(f\) is not even. Factor out \(-1\) to compare it with \(-f(x)\).</p>
+        <div>\[ \begin{aligned} f(-x)&=-(x^3-5x)=-f(x) \end{aligned} \]</div>
+        <p>Since \(f(-x)=-f(x)\), the function is odd.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="homework-module-4-topic-4.html">&larr; Topic 4 Homework</a>
+    </nav>
+
+  </main>
+</body>
+</html>

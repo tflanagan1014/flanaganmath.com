@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homework Solutions | College Algebra | Flanagan Math</title>
+  <meta name="description" content="Worked solutions to the Module 4, Topic 4 homework problems in College Algebra.">
+  <link rel="stylesheet" href="style.css">
+  <script src="mathjax-setup.js"></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="top" aria-label="Site">
+      <a href="../index.html">Home</a> &rsaquo; <a href="index.html">College Algebra</a>
+    </nav>
+
+    <p class="module-label">Module 4 – Topic 4</p>
+    <h1>Homework Solutions</h1>
+    <p>Try each problem on your own before you open its solution. When a problem gives you trouble, go back to your notes for <a href="composite-functions.html">this topic</a>.</p>
+
+    <section class="topic-section" id="composite-functions">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="composite-functions-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Composite Functions</span></button></h2>
+      <div class="section-body" id="composite-functions-body">
+      <div class="example">
+        <h3>Problem 1</h3>
+        <p>Let \(f(x)=3x-4\) and \(g(x)=x^2+1\). Find:</p><ol type="a" class="parts"><li>\((f\circ g)(1)\)</li><li>\((g\circ f)(1)\)</li><li>\((f\circ g)(-2)\)</li><li>\((g\circ f)(0)\)</li></ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>\((f\circ g)(x)\) means \(f\big(g(x)\big)\). Work from the inside out: find the inside function first, then put that answer into the outside function.</p>
+        <p><strong>a.</strong> \((f\circ g)(1)=f\big(g(1)\big)\). The inside function is \(g\).</p>
+        <div>\[ \begin{aligned} g(1)&=1^2+1=2 \\ f(2)&=3(2)-4=2 \end{aligned} \]</div>
+        <p>\((f\circ g)(1)=2\)</p>
+        <p><strong>b.</strong> \((g\circ f)(1)=g\big(f(1)\big)\). Now the inside function is \(f\).</p>
+        <div>\[ \begin{aligned} f(1)&=3(1)-4=-1 \\ g(-1)&=(-1)^2+1=2 \end{aligned} \]</div>
+        <p>\((g\circ f)(1)=2\)</p>
+        <p><strong>c.</strong> \((f\circ g)(-2)=f\big(g(-2)\big)\).</p>
+        <div>\[ \begin{aligned} g(-2)&=(-2)^2+1=5 \\ f(5)&=3(5)-4=11 \end{aligned} \]</div>
+        <p>\((f\circ g)(-2)=11\)</p>
+        <p><strong>d.</strong> \((g\circ f)(0)=g\big(f(0)\big)\).</p>
+        <div>\[ \begin{aligned} f(0)&=3(0)-4=-4 \\ g(-4)&=(-4)^2+1=17 \end{aligned} \]</div>
+        <p>\((g\circ f)(0)=17\)</p>
+        <p>Notice that parts a and b both came out to \(2\), but that is a coincidence. In general \((f\circ g)(x)\) and \((g\circ f)(x)\) are different, as parts c and d and Problem 2 show.</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 2</h3>
+        <p>Let \(f(x)=3x-4\) and \(g(x)=x^2+1\). Find:</p><ol type="a" class="parts"><li>\((f\circ g)(x)\)</li><li>\((g\circ f)(x)\)</li><li>\((f\circ f)(x)\)</li></ol>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>To find a composite function, replace the \(x\) in the outside function with the entire inside function, in parentheses. Then simplify.</p>
+        <p><strong>a.</strong> \((f\circ g)(x)=f\big(g(x)\big)\). Put \(x^2+1\) in for \(x\) in \(f(x)=3x-4\).</p>
+        <div>\[ \begin{aligned} (f\circ g)(x)&=3(x^2+1)-4 \\ &=3x^2+3-4 \\ &=3x^2-1 \end{aligned} \]</div>
+        <p><strong>b.</strong> \((g\circ f)(x)=g\big(f(x)\big)\). Put \(3x-4\) in for \(x\) in \(g(x)=x^2+1\). Square the whole binomial: \((3x-4)^2=(3x-4)(3x-4)\), not \(9x^2+16\).</p>
+        <div>\[ \begin{aligned} (g\circ f)(x)&=(3x-4)^2+1 \\ &=9x^2-24x+16+1 \\ &=9x^2-24x+17 \end{aligned} \]</div>
+        <p><strong>c.</strong> \((f\circ f)(x)=f\big(f(x)\big)\). Put \(3x-4\) in for \(x\) in \(f(x)=3x-4\).</p>
+        <div>\[ \begin{aligned} (f\circ f)(x)&=3(3x-4)-4 \\ &=9x-12-4 \\ &=9x-16 \end{aligned} \]</div>
+        <p>Check with Problem 1: \((f\circ g)(-2)=3(-2)^2-1=11\) and \((g\circ f)(0)=9(0)^2-24(0)+17=17\). Both match.</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 3</h3>
+        <p>Let \(f(x)=\dfrac{1}{x-3}\) and \(g(x)=2x+1\). Find \((f\circ g)(x)\) and \((g\circ f)(x)\), and state the domain of each.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>The domain of \(f\circ g\) is every \(x\) that (1) is in the domain of the inside function, and (2) gives an output the outside function can use. Find the domain before you simplify, so nothing gets lost.</p>
+        <p><strong>Finding \((f\circ g)(x)\):</strong> put \(2x+1\) in for \(x\) in \(f\).</p>
+        <div>\[ \begin{aligned} (f\circ g)(x)&=\dfrac{1}{(2x+1)-3} \\ &=\dfrac{1}{2x-2} \end{aligned} \]</div>
+        <p><strong>Domain of \(f\circ g\):</strong> the inside function \(g(x)=2x+1\) accepts every real number. The outside function \(f\) cannot have a zero denominator, so set it equal to \(0\) to find the \(x\)-value to exclude.</p>
+        <div>\[ \begin{aligned} 2x-2&=0 \\ x&=1 \end{aligned} \]</div>
+        <p>Domain: \((-\infty,\,1)\cup(1,\,\infty)\)</p>
+        <p><strong>Finding \((g\circ f)(x)\):</strong> put \(\dfrac{1}{x-3}\) in for \(x\) in \(g\). To simplify, write \(1\) as \(\dfrac{x-3}{x-3}\) and combine over the common denominator.</p>
+        <div>\[ \begin{aligned} (g\circ f)(x)&=2\left(\dfrac{1}{x-3}\right)+1 \\ &=\dfrac{2}{x-3}+\dfrac{x-3}{x-3} \\ &=\dfrac{x-1}{x-3} \end{aligned} \]</div>
+        <p><strong>Domain of \(g\circ f\):</strong> the inside function \(f(x)=\dfrac{1}{x-3}\) is not defined at \(x=3\), so \(x=3\) must be excluded. The outside function \(g\) accepts every real number, so nothing else is excluded.</p>
+        <p>Domain: \((-\infty,\,3)\cup(3,\,\infty)\)</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 4</h3>
+        <p>Let \(f(x)=\sqrt{x}\) and \(g(x)=x+5\). Find \((f\circ g)(x)\) and \((g\circ f)(x)\), and state the domain of each.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p><strong>Finding \((f\circ g)(x)\):</strong> put \(x+5\) in for \(x\) in \(f\).</p>
+        <div>\[ \begin{aligned} (f\circ g)(x)&=\sqrt{x+5} \end{aligned} \]</div>
+        <p><strong>Domain of \(f\circ g\):</strong> \(g\) accepts every real number. The square root needs what is under it to be \(0\) or more.</p>
+        <div>\[ \begin{aligned} x+5&\ge0 \\ x&\ge-5 \end{aligned} \]</div>
+        <p>Domain: \([-5,\,\infty)\)</p>
+        <p><strong>Finding \((g\circ f)(x)\):</strong> put \(\sqrt{x}\) in for \(x\) in \(g\).</p>
+        <div>\[ \begin{aligned} (g\circ f)(x)&=\sqrt{x}+5 \end{aligned} \]</div>
+        <p><strong>Domain of \(g\circ f\):</strong> the inside function \(\sqrt{x}\) needs \(x\ge0\). The outside function \(g\) accepts every real number.</p>
+        <p>Domain: \([0,\,\infty)\)</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 5</h3>
+        <p>Let \(f(x)=\dfrac{2}{x}\) and \(g(x)=x-4\). Find \((f\circ g)(x)\) and \((g\circ f)(x)\), and state the domain of each.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p><strong>Finding \((f\circ g)(x)\):</strong> put \(x-4\) in for \(x\) in \(f\).</p>
+        <div>\[ \begin{aligned} (f\circ g)(x)&=\dfrac{2}{x-4} \end{aligned} \]</div>
+        <p><strong>Domain of \(f\circ g\):</strong> \(g\) accepts every real number. The denominator cannot be \(0\), and \(x-4=0\) at \(x=4\).</p>
+        <p>Domain: \((-\infty,\,4)\cup(4,\,\infty)\)</p>
+        <p><strong>Finding \((g\circ f)(x)\):</strong> put \(\dfrac{2}{x}\) in for \(x\) in \(g\). To combine, write \(4\) as \(\dfrac{4x}{x}\).</p>
+        <div>\[ \begin{aligned} (g\circ f)(x)&=\dfrac{2}{x}-4 \\ &=\dfrac{2}{x}-\dfrac{4x}{x} \\ &=\dfrac{2-4x}{x} \end{aligned} \]</div>
+        <p><strong>Domain of \(g\circ f\):</strong> the inside function \(\dfrac{2}{x}\) is not defined at \(x=0\). The outside function \(g\) accepts every real number.</p>
+        <p>Domain: \((-\infty,\,0)\cup(0,\,\infty)\)</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 6</h3>
+        <p>Let \(f(x)=x^2\) and \(g(x)=x+1\). Find all \(x\) for which \((f\circ g)(x)=9\).</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>First find \((f\circ g)(x)\) by putting \(x+1\) in for \(x\) in \(f\).</p>
+        <div>\[ \begin{aligned} (f\circ g)(x)&=(x+1)^2 \end{aligned} \]</div>
+        <p>Set it equal to \(9\) and solve. Take the square root of both sides, and remember both the positive and the negative root.</p>
+        <div>\[ \begin{aligned} (x+1)^2&=9 \\ x+1&=\pm3 \end{aligned} \]</div>
+        <p>Solve each equation.</p>
+        <div>\[ \begin{aligned} x+1=3 &\quad\text{or}\quad x+1=-3 \\ x=2 &\quad\text{or}\quad x=-4 \end{aligned} \]</div>
+        <p>Check: \((2+1)^2=9\) and \((-4+1)^2=(-3)^2=9\). Both work.</p>
+        <p>The answers are \(x=2\) and \(x=-4\).</p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="topic-section" id="review-problems">
+      <h2><button type="button" class="section-toggle" aria-expanded="false" aria-controls="review-problems-body"><span class="chevron" aria-hidden="true"></span><span class="section-title">Review Problems</span></button></h2>
+      <div class="section-body" id="review-problems-body">
+      <div class="example">
+        <h3>Problem 7</h3>
+        <p>Find the vertical and horizontal asymptotes of \(f(x)=\dfrac{2x-1}{x+5}\).</p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>Nothing factors, so nothing cancels.</p>
+        <p><strong>Vertical asymptote:</strong> the denominator is \(0\) when \(x+5=0\), so \(x=-5\)</p>
+        <p><strong>Horizontal asymptote:</strong> the degrees are equal (both \(1\)), so divide the leading coefficients: \(y=\tfrac21=2\)</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 8</h3>
+        <p>Find the intercepts of \(f(x)=x^2-2x-8\). State each as an ordered pair.</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p><strong>\(x\)-intercepts:</strong> set \(f(x)=0\) and factor.</p>
+        <div>\[ \begin{aligned} x^2-2x-8&=0 \\ (x-4)(x+2)&=0 \end{aligned} \]</div>
+        <p>So \(x=4\) or \(x=-2\). The \(x\)-intercepts are \((4,\,0)\) and \((-2,\,0)\).</p>
+        <p><strong>\(y\)-intercept:</strong> find \(f(0)=0^2-2(0)-8=-8\), so \((0,\,-8)\)</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>Problem 9</h3>
+        <p>Find and simplify the difference quotient for \(f(x)=x^2-3x\).</p><p><strong>Show all of your work.</strong></p>
+        <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
+        <div class="work">
+        <p>The difference quotient is \(\dfrac{f(x+h)-f(x)}{h}\). First find \(f(x+h)\) by putting \(x+h\) in for every \(x\).</p>
+        <div>\[ \begin{aligned} f(x+h)&=(x+h)^2-3(x+h) \\ &=x^2+2xh+h^2-3x-3h \end{aligned} \]</div>
+        <p>Subtract \(f(x)=x^2-3x\). Use parentheses so the subtraction reaches both terms. The \(x^2\) and \(-3x\) terms cancel.</p>
+        <div>\[ \begin{aligned} f(x+h)-f(x)&=\left(x^2+2xh+h^2-3x-3h\right) \\ &\quad-\left(x^2-3x\right) \\ &=2xh+h^2-3h \end{aligned} \]</div>
+        <p>Divide by \(h\). Every term has a factor of \(h\), so factor it out and cancel.</p>
+        <div>\[ \begin{aligned} \dfrac{f(x+h)-f(x)}{h}&=\dfrac{h(2x+h-3)}{h} \\ &=2x+h-3 \end{aligned} \]</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <nav class="next-prev" aria-label="Topics">
+      <a href="homework-module-4-topic-3.html">&larr; Topic 3 Homework</a>
+      <a class="next" href="homework-module-4-topic-5.html">Topic 5 Homework &rarr;</a>
+    </nav>
+
+  </main>
+</body>
+</html>
