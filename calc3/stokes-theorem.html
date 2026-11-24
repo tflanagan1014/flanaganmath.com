@@ -97,14 +97,16 @@
           \end{aligned}
           \]</div>
           <div>\[ \operatorname{curl}\mathbf{F} = \langle 2,\ 0,\ 0 \rangle \]</div>
-          <p><strong>Step 2</strong>: Take the partial derivatives of \(\mathbf{R}(u, v)\).</p>
+          <p><strong>Step 2</strong>: The formula for \(\mathbf{n}\).</p>
+          <div>\[ \mathbf{n} = \frac{\mathbf{R}_u \times \mathbf{R}_v}{\|\mathbf{R}_u \times \mathbf{R}_v\|} \]</div>
+          <p><strong>Step 3</strong>: Take the partial derivatives of \(\mathbf{R}(u, v)\).</p>
           <div>\[
           \begin{aligned}
             \mathbf{R}_u &= \langle 0,\ \cos v,\ \sin v \rangle \\
             \mathbf{R}_v &= \langle 0,\ -u\sin v,\ u\cos v \rangle
           \end{aligned}
           \]</div>
-          <p><strong>Step 3</strong>: Find the cross product.</p>
+          <p><strong>Step 4</strong>: Find the cross product.</p>
           <div>\[
           \begin{aligned}
             &\mathbf{R}_u \times \mathbf{R}_v \\
@@ -115,8 +117,7 @@
             &\quad = \langle u,\ 0,\ 0 \rangle
           \end{aligned}
           \]</div>
-          <p>This normal points in the positive \(x\)-direction. As \(t\) increases, \(C\) goes counterclockwise when viewed from the positive \(x\)-axis, so the right-hand rule agrees with this normal.</p>
-          <p><strong>Step 4</strong>: Find \(\mathbf{n}\).</p>
+          <p><strong>Step 5</strong>: Find \(\mathbf{n}\).</p>
           <div>\[
           \begin{aligned}
             \|\mathbf{R}_u \times \mathbf{R}_v\| &= \sqrt{u^2 + 0^2 + 0^2} \\
@@ -130,21 +131,21 @@
             &= \langle 1,\ 0,\ 0 \rangle
           \end{aligned}
           \]</div>
-          <p><strong>Step 5</strong>: Find \(f = (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\).</p>
+          <p><strong>Step 6</strong>: Find \(f = (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\).</p>
           <div>\[
           \begin{aligned}
             f &= \langle 2,\ 0,\ 0 \rangle \dotp \langle 1,\ 0,\ 0 \rangle \\
             &= 2
           \end{aligned}
           \]</div>
-          <p><strong>Step 6</strong>: Find \(dS\).</p>
+          <p><strong>Step 7</strong>: Find \(dS\).</p>
           <div>\[
           \begin{aligned}
             dS &= \|\mathbf{R}_u \times \mathbf{R}_v\|\,du\,dv \\
             &= u\,du\,dv
           \end{aligned}
           \]</div>
-          <p><strong>Step 7</strong>: Substitute into the double integral and evaluate.</p>
+          <p><strong>Step 8</strong>: Substitute into the double integral and evaluate.</p>
           <div>\[
           \begin{aligned}
             &\iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS \\
@@ -209,7 +210,6 @@
             &= \langle 1,\ 1,\ 1 \rangle
           \end{aligned}
           \]</div>
-          <p>This normal points upward (its \(\mathbf{k}\)-component is positive). By the right-hand rule, using it means \(C\) is traversed counterclockwise when viewed from above.</p>
           <p><strong>Step 4</strong>: Write the curl on the surface. On \(S\), \(x = u\) and \(z = 1 - u - v\).</p>
           <div>\[
           \begin{aligned}
@@ -302,7 +302,6 @@
           \end{aligned}
           \]</div>
           <div>\[ \operatorname{curl}\mathbf{F} = \langle y,\ x,\ 1 \rangle \]</div>
-          <p>The difficult terms drop out: \(\sin\left(x^3\right)\) depends only on \(x\), so its \(y\)- and \(z\)-derivatives are \(0\), and \(\cos\left(z^4\right)\) depends only on \(z\), so its \(x\)- and \(y\)-derivatives are \(0\).</p>
           <p><strong>Step 2</strong>: Take the partial derivatives of \(\mathbf{R}(u, v) = \langle u,\ v,\ u^2 + v^2 \rangle\).</p>
           <div>\[
           \begin{aligned}
@@ -319,7 +318,6 @@
             &= \langle -2u,\ -2v,\ 1 \rangle
           \end{aligned}
           \]</div>
-          <p>This normal points upward (its \(\mathbf{k}\)-component is positive). By the right-hand rule, using it means \(C\) is traversed counterclockwise when viewed from above.</p>
           <p><strong>Step 4</strong>: Write the curl on the surface. On \(S\), \(x = u\) and \(y = v\).</p>
           <div>\[
           \begin{aligned}
