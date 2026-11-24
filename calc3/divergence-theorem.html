@@ -111,10 +111,19 @@
           \]</div>
           <p><strong>Step 4</strong>: Write \(\mathbf{F}\) on the surface. Since \(\mathbf{F} = \langle x,\ y,\ z \rangle\), it equals \(\mathbf{R}(u, v)\) itself.</p>
           <div>\[ \mathbf{F} = \langle 2\sin v\cos u,\ 3\sin v\sin u,\ \cos v \rangle \]</div>
-          <p><strong>Step 5</strong>: Find \(\mathbf{F}(\mathbf{R}(u, v)) \dotp (\mathbf{R}_v \times \mathbf{R}_u)\).</p>
+          <p><strong>Step 5</strong>: Find \(\mathbf{n}\).</p>
           <div>\[
           \begin{aligned}
-            &\mathbf{F}(\mathbf{R}(u, v)) \dotp (\mathbf{R}_v \times \mathbf{R}_u) \\
+            &\|\mathbf{R}_v \times \mathbf{R}_u\| \\
+            &\quad = \Big( 9\sin^4 v\cos^2 u + 4\sin^4 v\sin^2 u \\
+            &\qquad\qquad {}+ 36\sin^2 v\cos^2 v \Big)^{1/2}
+          \end{aligned}
+          \]</div>
+          <div>\[ \mathbf{n} = \frac{\mathbf{R}_v \times \mathbf{R}_u}{\|\mathbf{R}_v \times \mathbf{R}_u\|} \]</div>
+          <p><strong>Step 6</strong>: Find \(f = \mathbf{F} \dotp \mathbf{n}\).</p>
+          <div>\[
+          \begin{aligned}
+            &\mathbf{F} \dotp (\mathbf{R}_v \times \mathbf{R}_u) \\
             &\quad = (2\sin v\cos u)\left(3\sin^2 v\cos u\right) \\
             &\qquad\quad {}+ (3\sin v\sin u)\left(2\sin^2 v\sin u\right) \\
             &\qquad\quad {}+ (\cos v)(6\sin v\cos v) \\
@@ -127,11 +136,20 @@
             &\quad = 6\sin v
           \end{aligned}
           \]</div>
-          <p><strong>Step 6</strong>: Substitute into the flux formula and evaluate over \(0 \le u \le 2\pi\), \(0 \le v \le \pi\).</p>
+          <div>\[
+          \begin{aligned}
+            f &= \frac{\mathbf{F} \dotp (\mathbf{R}_v \times \mathbf{R}_u)}{\|\mathbf{R}_v \times \mathbf{R}_u\|} \\
+            &= \frac{6\sin v}{\|\mathbf{R}_v \times \mathbf{R}_u\|}
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 7</strong>: Find \(dS\).</p>
+          <div>\[ dS = \|\mathbf{R}_v \times \mathbf{R}_u\|\,du\,dv \]</div>
+          <p><strong>Step 8</strong>: Substitute into the double integral and evaluate over \(0 \le u \le 2\pi\), \(0 \le v \le \pi\).</p>
           <div>\[
           \begin{aligned}
             &\iint_S \mathbf{F} \dotp \mathbf{n}\,dS \\
-            &\quad = \iint_D \mathbf{F}(\mathbf{R}(u, v)) \dotp (\mathbf{R}_v \times \mathbf{R}_u)\,dA \\
+            &\quad = \int_0^{2\pi} \int_0^{\pi} \left( \frac{6\sin v}{\|\mathbf{R}_v \times \mathbf{R}_u\|} \right) \\
+            &\qquad\qquad {}\cdot \|\mathbf{R}_v \times \mathbf{R}_u\|\,dv\,du \\
             &\quad = \int_0^{2\pi} \int_0^{\pi} 6\sin v\,dv\,du \\
             &\quad = \int_0^{2\pi} \Big[ -6\cos v \Big]_0^{\pi}\,du \\
             &\quad = \int_0^{2\pi} \big( -6\cos\pi - (-6\cos 0) \big)\,du \\
