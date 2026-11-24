@@ -42,7 +42,14 @@
         <p>Let \(\mathbf{F}(x, y, z) = \langle 0, -z, y \rangle\), and let \(C\) be the curve \(\mathbf{r}(t) = \langle 2, 3\cos t, 3\sin t \rangle\), \(0 \le t \le 2\pi\).</p>
         <ol type="a">
           <li>Find the work done by \(\mathbf{F}\) around \(C\) directly, using the line integral.</li>
-          <li>Confirm your result using Stokes&rsquo; Theorem.</li>
+          <li>Confirm your result using Stokes&rsquo; Theorem with the surface \(S\) given by:
+            <div>\[
+            \begin{aligned}
+              &\mathbf{R}(u, v) = \langle 2,\ u\cos v,\ u\sin v \rangle, \\
+              &\qquad 0 \le u \le 3,\quad 0 \le v \le 2\pi
+            \end{aligned}
+            \]</div>
+          </li>
         </ol>
         <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
         <div class="work">
@@ -76,14 +83,7 @@
           \end{aligned}
           \]</div>
           <p><strong>Part (b)</strong></p>
-          <p><strong>Step 1</strong>: Choose a surface. The curve \(C\) is a circle of radius \(3\) in the plane \(x = 2\), so let \(S\) be the disk in that plane bounded by \(C\).</p>
-          <div>\[
-          \begin{aligned}
-            &\mathbf{R}(u, v) = \langle 2,\ u\cos v,\ u\sin v \rangle, \\
-            &\qquad 0 \le u \le 3,\quad 0 \le v \le 2\pi
-          \end{aligned}
-          \]</div>
-          <p><strong>Step 2</strong>: Find the curl of \(\mathbf{F} = \langle 0,\ -z,\ y \rangle\).</p>
+          <p><strong>Step 1</strong>: Find the curl of \(\mathbf{F} = \langle 0,\ -z,\ y \rangle\).</p>
           <div class="eq-list">
             <div>\[ P = 0 \]</div>
             <div>\[ Q = -z \]</div>
@@ -97,14 +97,14 @@
           \end{aligned}
           \]</div>
           <div>\[ \operatorname{curl}\mathbf{F} = \langle 2,\ 0,\ 0 \rangle \]</div>
-          <p><strong>Step 3</strong>: Take the partial derivatives of \(\mathbf{R}(u, v)\).</p>
+          <p><strong>Step 2</strong>: Take the partial derivatives of \(\mathbf{R}(u, v)\).</p>
           <div>\[
           \begin{aligned}
             \mathbf{R}_u &= \langle 0,\ \cos v,\ \sin v \rangle \\
             \mathbf{R}_v &= \langle 0,\ -u\sin v,\ u\cos v \rangle
           \end{aligned}
           \]</div>
-          <p><strong>Step 4</strong>: Find the cross product.</p>
+          <p><strong>Step 3</strong>: Find the cross product.</p>
           <div>\[
           \begin{aligned}
             &\mathbf{R}_u \times \mathbf{R}_v \\
@@ -116,7 +116,7 @@
           \end{aligned}
           \]</div>
           <p>This normal points in the positive \(x\)-direction. As \(t\) increases, \(C\) goes counterclockwise when viewed from the positive \(x\)-axis, so the right-hand rule agrees with this normal.</p>
-          <p><strong>Step 5</strong>: Find \(\mathbf{n}\).</p>
+          <p><strong>Step 4</strong>: Find \(\mathbf{n}\).</p>
           <div>\[
           \begin{aligned}
             \|\mathbf{R}_u \times \mathbf{R}_v\| &= \sqrt{u^2 + 0^2 + 0^2} \\
@@ -130,21 +130,21 @@
             &= \langle 1,\ 0,\ 0 \rangle
           \end{aligned}
           \]</div>
-          <p><strong>Step 6</strong>: Find \(f = (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\).</p>
+          <p><strong>Step 5</strong>: Find \(f = (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\).</p>
           <div>\[
           \begin{aligned}
             f &= \langle 2,\ 0,\ 0 \rangle \dotp \langle 1,\ 0,\ 0 \rangle \\
             &= 2
           \end{aligned}
           \]</div>
-          <p><strong>Step 7</strong>: Find \(dS\).</p>
+          <p><strong>Step 6</strong>: Find \(dS\).</p>
           <div>\[
           \begin{aligned}
             dS &= \|\mathbf{R}_u \times \mathbf{R}_v\|\,du\,dv \\
             &= u\,du\,dv
           \end{aligned}
           \]</div>
-          <p><strong>Step 8</strong>: Substitute into the double integral and evaluate.</p>
+          <p><strong>Step 7</strong>: Substitute into the double integral and evaluate.</p>
           <div>\[
           \begin{aligned}
             &\iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS \\
