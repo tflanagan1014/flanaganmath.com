@@ -116,21 +116,39 @@
           \end{aligned}
           \]</div>
           <p>This normal points in the positive \(x\)-direction. As \(t\) increases, \(C\) goes counterclockwise when viewed from the positive \(x\)-axis, so the right-hand rule agrees with this normal.</p>
-          <p><strong>Step 5</strong>: Since \(\mathbf{n} = \dfrac{\mathbf{R}_u \times \mathbf{R}_v}{\|\mathbf{R}_u \times \mathbf{R}_v\|}\) and \(dS = \|\mathbf{R}_u \times \mathbf{R}_v\|\,dA\), the magnitudes cancel.</p>
-          <div>\[ \mathbf{n}\,dS = (\mathbf{R}_u \times \mathbf{R}_v)\,dA \]</div>
-          <p>So we only need the dot product of the curl with the cross product.</p>
+          <p><strong>Step 5</strong>: Find \(\mathbf{n}\).</p>
           <div>\[
           \begin{aligned}
-            &(\operatorname{curl}\mathbf{F}) \dotp (\mathbf{R}_u \times \mathbf{R}_v) \\
-            &\quad = \langle 2,\ 0,\ 0 \rangle \dotp \langle u,\ 0,\ 0 \rangle \\
-            &\quad = 2u + 0 + 0 \\
-            &\quad = 2u
+            \|\mathbf{R}_u \times \mathbf{R}_v\| &= \sqrt{u^2 + 0^2 + 0^2} \\
+            &= u
           \end{aligned}
           \]</div>
-          <p><strong>Step 6</strong>: Set up and evaluate the integral.</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{n} &= \frac{\mathbf{R}_u \times \mathbf{R}_v}{\|\mathbf{R}_u \times \mathbf{R}_v\|} \\
+            &= \frac{\langle u,\ 0,\ 0 \rangle}{u} \\
+            &= \langle 1,\ 0,\ 0 \rangle
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 6</strong>: Find \(f = (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\).</p>
+          <div>\[
+          \begin{aligned}
+            f &= \langle 2,\ 0,\ 0 \rangle \dotp \langle 1,\ 0,\ 0 \rangle \\
+            &= 2
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 7</strong>: Find \(dS\).</p>
+          <div>\[
+          \begin{aligned}
+            dS &= \|\mathbf{R}_u \times \mathbf{R}_v\|\,du\,dv \\
+            &= u\,du\,dv
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 8</strong>: Substitute into the double integral and evaluate.</p>
           <div>\[
           \begin{aligned}
             &\iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS \\
+            &\quad = \int_0^{2\pi} \int_0^3 (2)(u)\,du\,dv \\
             &\quad = \int_0^{2\pi} \int_0^3 2u\,du\,dv \\
             &\quad = \int_0^{2\pi} \Big[\, u^2 \,\Big]_0^3\,dv \\
             &\quad = \int_0^{2\pi} 9\,dv \\
@@ -138,7 +156,7 @@
             &\quad = 18\pi
           \end{aligned}
           \]</div>
-          <p>Both methods give \(18\pi\).</p>
+<p>Both methods give \(18\pi\).</p>
         </div>
       </div>
       </div>
@@ -159,7 +177,7 @@
         \]</div>
         <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
         <div class="work">
-          <p>By Stokes&rsquo; Theorem, the work is the surface integral below, where \(\mathbf{n}\,dS = (\mathbf{R}_u \times \mathbf{R}_v)\,dA\).</p>
+          <p>By Stokes&rsquo; Theorem, the work is the surface integral below.</p>
           <div>\[ \oint_C \mathbf{F} \dotp d\mathbf{r} = \iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS \]</div>
           <p><strong>Step 1</strong>: Find the curl of \(\mathbf{F}\).</p>
           <div class="eq-list">
@@ -199,33 +217,48 @@
             &= \langle -(1 - u - v),\ 0,\ u \rangle
           \end{aligned}
           \]</div>
-          <p><strong>Step 5</strong>: Find the dot product with the cross product.</p>
+          <p><strong>Step 5</strong>: Find \(\mathbf{n}\).</p>
           <div>\[
           \begin{aligned}
-            &(\operatorname{curl}\mathbf{F}) \dotp (\mathbf{R}_u \times \mathbf{R}_v) \\
-            &\quad = \langle -(1 - u - v),\ 0,\ u \rangle \dotp \langle 1,\ 1,\ 1 \rangle \\
-            &\quad = -(1 - u - v) + 0 + u \\
-            &\quad = -1 + u + v + u \\
-            &\quad = 2u + v - 1
+            \|\mathbf{R}_u \times \mathbf{R}_v\| &= \sqrt{1^2 + 1^2 + 1^2} \\
+            &= \sqrt{3}
           \end{aligned}
           \]</div>
-          <p><strong>Step 6</strong>: Set up the integral over \(0 \le u \le 2\), \(0 \le v \le 1\), and evaluate the inner integral.</p>
           <div>\[
           \begin{aligned}
-            &\int_0^1 (2u + v - 1)\,dv \\
-            &\quad = \Big[\, 2uv + \frac{1}{2}v^2 - v \,\Big]_0^1 \\
-            &\quad = \left( 2u + \frac{1}{2} - 1 \right) - 0 \\
-            &\quad = 2u - \frac{1}{2}
+            \mathbf{n} &= \frac{\mathbf{R}_u \times \mathbf{R}_v}{\|\mathbf{R}_u \times \mathbf{R}_v\|} \\
+            &= \frac{\langle 1,\ 1,\ 1 \rangle}{\sqrt{3}}
           \end{aligned}
           \]</div>
-          <p><strong>Step 7</strong>: Evaluate the outer integral.</p>
+          <p><strong>Step 6</strong>: Find \(f = (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\).</p>
           <div>\[
           \begin{aligned}
-            \oint_C \mathbf{F} \dotp d\mathbf{r} &= \int_0^2 \int_0^1 (2u + v - 1)\,dv\,du \\
-            &= \int_0^2 \left( 2u - \frac{1}{2} \right) du \\
-            &= \Big[\, u^2 - \frac{1}{2}u \,\Big]_0^2 \\
-            &= (4 - 1) - 0 \\
-            &= 3
+            f &= \frac{\langle -(1 - u - v),\ 0,\ u \rangle \dotp \langle 1,\ 1,\ 1 \rangle}{\sqrt{3}} \\
+            &= \frac{-(1 - u - v) + 0 + u}{\sqrt{3}} \\
+            &= \frac{-1 + u + v + u}{\sqrt{3}} \\
+            &= \frac{2u + v - 1}{\sqrt{3}}
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 7</strong>: Find \(dS\).</p>
+          <div>\[
+          \begin{aligned}
+            dS &= \|\mathbf{R}_u \times \mathbf{R}_v\|\,du\,dv \\
+            &= \sqrt{3}\,du\,dv
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 8</strong>: Substitute into the double integral and evaluate over \(0 \le u \le 2\), \(0 \le v \le 1\).</p>
+          <div>\[
+          \begin{aligned}
+            &\oint_C \mathbf{F} \dotp d\mathbf{r} \\
+            &\quad = \iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS \\
+            &\quad = \int_0^2 \int_0^1 \left( \frac{2u + v - 1}{\sqrt{3}} \right) \sqrt{3}\,dv\,du \\
+            &\quad = \int_0^2 \int_0^1 (2u + v - 1)\,dv\,du \\
+            &\quad = \int_0^2 \Big[\, 2uv + \frac{1}{2}v^2 - v \,\Big]_0^1\,du \\
+            &\quad = \int_0^2 \left( 2u + \frac{1}{2} - 1 \right) du \\
+            &\quad = \int_0^2 \left( 2u - \frac{1}{2} \right) du \\
+            &\quad = \Big[\, u^2 - \frac{1}{2}u \,\Big]_0^2 \\
+            &\quad = (4 - 1) - 0 \\
+            &\quad = 3
           \end{aligned}
           \]</div>
         </div>
@@ -253,7 +286,7 @@
         \]</div>
         <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
         <div class="work">
-          <p>By Stokes&rsquo; Theorem, the work is the surface integral below, where \(\mathbf{n}\,dS = (\mathbf{R}_u \times \mathbf{R}_v)\,dA\).</p>
+          <p>By Stokes&rsquo; Theorem, the work is the surface integral below.</p>
           <div>\[ \oint_C \mathbf{F} \dotp d\mathbf{r} = \iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS \]</div>
           <p><strong>Step 1</strong>: Find the curl of \(\mathbf{F}\).</p>
           <div class="eq-list">
@@ -294,31 +327,47 @@
             &= \langle v,\ u,\ 1 \rangle
           \end{aligned}
           \]</div>
-          <p><strong>Step 5</strong>: Find the dot product with the cross product.</p>
+          <p><strong>Step 5</strong>: Find \(\mathbf{n}\).</p>
           <div>\[
           \begin{aligned}
-            &(\operatorname{curl}\mathbf{F}) \dotp (\mathbf{R}_u \times \mathbf{R}_v) \\
-            &\quad = \langle v,\ u,\ 1 \rangle \dotp \langle -2u,\ -2v,\ 1 \rangle \\
-            &\quad = -2uv - 2uv + 1 \\
-            &\quad = 1 - 4uv
+            \|\mathbf{R}_u \times \mathbf{R}_v\| &= \sqrt{(-2u)^2 + (-2v)^2 + 1^2} \\
+            &= \sqrt{4u^2 + 4v^2 + 1}
           \end{aligned}
           \]</div>
-          <p><strong>Step 6</strong>: Set up the integral over \(0 \le u \le 2\), \(0 \le v \le 1\), and evaluate the inner integral.</p>
           <div>\[
           \begin{aligned}
-            \int_0^1 (1 - 4uv)\,dv &= \Big[\, v - 2uv^2 \,\Big]_0^1 \\
-            &= (1 - 2u) - 0 \\
-            &= 1 - 2u
+            \mathbf{n} &= \frac{\mathbf{R}_u \times \mathbf{R}_v}{\|\mathbf{R}_u \times \mathbf{R}_v\|} \\
+            &= \frac{\langle -2u,\ -2v,\ 1 \rangle}{\sqrt{4u^2 + 4v^2 + 1}}
           \end{aligned}
           \]</div>
-          <p><strong>Step 7</strong>: Evaluate the outer integral.</p>
+          <p><strong>Step 6</strong>: Find \(f = (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\).</p>
           <div>\[
           \begin{aligned}
-            \oint_C \mathbf{F} \dotp d\mathbf{r} &= \int_0^2 \int_0^1 (1 - 4uv)\,dv\,du \\
-            &= \int_0^2 (1 - 2u)\,du \\
-            &= \Big[\, u - u^2 \,\Big]_0^2 \\
-            &= (2 - 4) - 0 \\
-            &= -2
+            f &= \frac{\langle v,\ u,\ 1 \rangle \dotp \langle -2u,\ -2v,\ 1 \rangle}{\sqrt{4u^2 + 4v^2 + 1}} \\
+            &= \frac{-2uv - 2uv + 1}{\sqrt{4u^2 + 4v^2 + 1}} \\
+            &= \frac{1 - 4uv}{\sqrt{4u^2 + 4v^2 + 1}}
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 7</strong>: Find \(dS\).</p>
+          <div>\[
+          \begin{aligned}
+            dS &= \|\mathbf{R}_u \times \mathbf{R}_v\|\,du\,dv \\
+            &= \sqrt{4u^2 + 4v^2 + 1}\,du\,dv
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 8</strong>: Substitute into the double integral and evaluate over \(0 \le u \le 2\), \(0 \le v \le 1\).</p>
+          <div>\[
+          \begin{aligned}
+            &\oint_C \mathbf{F} \dotp d\mathbf{r} \\
+            &\quad = \iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS \\
+            &\quad = \int_0^2 \int_0^1 \left( \frac{1 - 4uv}{\sqrt{4u^2 + 4v^2 + 1}} \right) \\
+            &\qquad\qquad {}\cdot \sqrt{4u^2 + 4v^2 + 1}\,dv\,du \\
+            &\quad = \int_0^2 \int_0^1 (1 - 4uv)\,dv\,du \\
+            &\quad = \int_0^2 \Big[\, v - 2uv^2 \,\Big]_0^1\,du \\
+            &\quad = \int_0^2 (1 - 2u)\,du \\
+            &\quad = \Big[\, u - u^2 \,\Big]_0^2 \\
+            &\quad = (2 - 4) - 0 \\
+            &\quad = -2
           \end{aligned}
           \]</div>
           <p>Notice how Stokes&rsquo; Theorem lets us avoid the difficult terms \(\sin\left(x^3\right)\) and \(\cos\left(z^4\right)\) entirely.</p>

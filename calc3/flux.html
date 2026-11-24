@@ -75,19 +75,40 @@
             &= \langle u,\ v,\ 2 \rangle
           \end{aligned}
           \]</div>
-          <p><strong>Step 5</strong>: Find the dot product with the cross product.</p>
+          <p><strong>Step 5</strong>: Find \(\mathbf{n}\).</p>
           <div>\[
           \begin{aligned}
-            &\mathbf{F} \dotp (\mathbf{R}_u \times \mathbf{R}_v) \\
-            &\quad = \langle u,\ v,\ 2 \rangle \dotp \langle 0,\ 0,\ 1 \rangle \\
-            &\quad = 0 + 0 + 2 \\
-            &\quad = 2
+            \|\mathbf{R}_u \times \mathbf{R}_v\| &= \sqrt{0^2 + 0^2 + 1^2} \\
+            &= 1
           \end{aligned}
           \]</div>
-          <p><strong>Step 6</strong>: Set up and evaluate the integral over \(0 \le u \le 3\), \(0 \le v \le 4\).</p>
           <div>\[
           \begin{aligned}
-            \iint_S \mathbf{F} \dotp \mathbf{n}\,dS &= \int_0^3 \int_0^4 2\,dv\,du \\
+            \mathbf{n} &= \frac{\mathbf{R}_u \times \mathbf{R}_v}{\|\mathbf{R}_u \times \mathbf{R}_v\|} \\
+            &= \frac{\langle 0,\ 0,\ 1 \rangle}{1} \\
+            &= \langle 0,\ 0,\ 1 \rangle
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 6</strong>: Find \(f = \mathbf{F} \dotp \mathbf{n}\).</p>
+          <div>\[
+          \begin{aligned}
+            f &= \langle u,\ v,\ 2 \rangle \dotp \langle 0,\ 0,\ 1 \rangle \\
+            &= 0 + 0 + 2 \\
+            &= 2
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 7</strong>: Find \(dS\).</p>
+          <div>\[
+          \begin{aligned}
+            dS &= \|\mathbf{R}_u \times \mathbf{R}_v\|\,du\,dv \\
+            &= 1\,du\,dv
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 8</strong>: Substitute into the double integral and evaluate over \(0 \le u \le 3\), \(0 \le v \le 4\).</p>
+          <div>\[
+          \begin{aligned}
+            \iint_S \mathbf{F} \dotp \mathbf{n}\,dS &= \int_0^3 \int_0^4 (2)(1)\,dv\,du \\
+            &= \int_0^3 \int_0^4 2\,dv\,du \\
             &= \int_0^3 \Big[\, 2v \,\Big]_0^4\,du \\
             &= \int_0^3 8\,du \\
             &= \Big[\, 8u \,\Big]_0^3 \\

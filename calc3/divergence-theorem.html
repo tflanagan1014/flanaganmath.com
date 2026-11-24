@@ -111,7 +111,16 @@
           \]</div>
           <p><strong>Step 4</strong>: Write \(\mathbf{F}\) on the surface. Since \(\mathbf{F} = \langle x,\ y,\ z \rangle\), it equals \(\mathbf{R}(u, v)\) itself.</p>
           <div>\[ \mathbf{F} = \langle 2\sin v\cos u,\ 3\sin v\sin u,\ \cos v \rangle \]</div>
-          <p><strong>Step 5</strong>: Find the dot product with the outward normal.</p>
+          <p><strong>Step 5</strong>: Find \(\mathbf{n}\).</p>
+          <div>\[
+          \begin{aligned}
+            &\|\mathbf{R}_v \times \mathbf{R}_u\| \\
+            &\quad = \Big( 9\sin^4 v\cos^2 u + 4\sin^4 v\sin^2 u \\
+            &\qquad\qquad {}+ 36\sin^2 v\cos^2 v \Big)^{1/2}
+          \end{aligned}
+          \]</div>
+          <div>\[ \mathbf{n} = \frac{\mathbf{R}_v \times \mathbf{R}_u}{\|\mathbf{R}_v \times \mathbf{R}_u\|} \]</div>
+          <p><strong>Step 6</strong>: Find \(f = \mathbf{F} \dotp \mathbf{n}\).</p>
           <div>\[
           \begin{aligned}
             &\mathbf{F} \dotp (\mathbf{R}_v \times \mathbf{R}_u) \\
@@ -127,22 +136,27 @@
             &\quad = 6\sin v
           \end{aligned}
           \]</div>
-          <p><strong>Step 6</strong>: Set up the integral and evaluate the inner integral.</p>
           <div>\[
           \begin{aligned}
-            \int_0^{\pi} 6\sin v\,dv &= \Big[ -6\cos v \Big]_0^{\pi} \\
-            &= -6\cos\pi - (-6\cos 0) \\
-            &= 6 + 6 \\
-            &= 12
+            f &= \frac{\mathbf{F} \dotp (\mathbf{R}_v \times \mathbf{R}_u)}{\|\mathbf{R}_v \times \mathbf{R}_u\|} \\
+            &= \frac{6\sin v}{\|\mathbf{R}_v \times \mathbf{R}_u\|}
           \end{aligned}
           \]</div>
-          <p><strong>Step 7</strong>: Evaluate the outer integral.</p>
+          <p><strong>Step 7</strong>: Find \(dS\).</p>
+          <div>\[ dS = \|\mathbf{R}_v \times \mathbf{R}_u\|\,du\,dv \]</div>
+          <p><strong>Step 8</strong>: Substitute into the double integral and evaluate over \(0 \le u \le 2\pi\), \(0 \le v \le \pi\).</p>
           <div>\[
           \begin{aligned}
-            \iint_S \mathbf{F} \dotp \mathbf{n}\,dS &= \int_0^{2\pi} \int_0^{\pi} 6\sin v\,dv\,du \\
-            &= \int_0^{2\pi} 12\,du \\
-            &= \Big[\, 12u \,\Big]_0^{2\pi} \\
-            &= 24\pi
+            &\iint_S \mathbf{F} \dotp \mathbf{n}\,dS \\
+            &\quad = \int_0^{2\pi} \int_0^{\pi} \left( \frac{6\sin v}{\|\mathbf{R}_v \times \mathbf{R}_u\|} \right) \\
+            &\qquad\qquad {}\cdot \|\mathbf{R}_v \times \mathbf{R}_u\|\,dv\,du \\
+            &\quad = \int_0^{2\pi} \int_0^{\pi} 6\sin v\,dv\,du \\
+            &\quad = \int_0^{2\pi} \Big[ -6\cos v \Big]_0^{\pi}\,du \\
+            &\quad = \int_0^{2\pi} \big( -6\cos\pi - (-6\cos 0) \big)\,du \\
+            &\quad = \int_0^{2\pi} (6 + 6)\,du \\
+            &\quad = \int_0^{2\pi} 12\,du \\
+            &\quad = \Big[\, 12u \,\Big]_0^{2\pi} \\
+            &\quad = 24\pi
           \end{aligned}
           \]</div>
           <p><strong>Part (b)</strong></p>
