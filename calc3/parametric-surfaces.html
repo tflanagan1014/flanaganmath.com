@@ -38,13 +38,21 @@
         <div>\[ \mathbf{R}(u, v) = \langle u,\ v,\ 10 - u - v \rangle \]</div>
         <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
         <div class="work">
-          <p>Here \(x = u\), \(y = v\), and \(z = 10 - u - v\).</p>
+          <p>Read off the components of \(\mathbf{R}(u, v)\).</p>
+          <div class="eq-list">
+            <div>\[ x = u \]</div>
+            <div>\[ y = v \]</div>
+            <div>\[ z = 10 - u - v \]</div>
+          </div>
+          <p>Substitute these into the left side of the plane&rsquo;s equation.</p>
           <div>\[
           \begin{aligned}
             x + y + z &= u + v + (10 - u - v) \\
+            &= u + v + 10 - u - v \\
             &= 10
           \end{aligned}
           \]</div>
+          <p>The result is \(10\) for every choice of \(u\) and \(v\), so every point of the surface lies on the plane \(x + y + z = 10\).</p>
         </div>
       </div>
       </div>
@@ -64,15 +72,27 @@
         \]</div>
         <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
         <div class="work">
+          <p>Read off the components of \(\mathbf{R}(u, v)\) and square each one.</p>
+          <div>\[
+          \begin{aligned}
+            x = 2\sin v\cos u \quad&\Rightarrow\quad x^2 = 4\sin^2 v\cos^2 u \\
+            y = 2\sin v\sin u \quad&\Rightarrow\quad y^2 = 4\sin^2 v\sin^2 u \\
+            z = 2\cos v \quad&\Rightarrow\quad z^2 = 4\cos^2 v
+          \end{aligned}
+          \]</div>
+          <p>Add them. Factor \(4\sin^2 v\) out of the first two terms, then use \(\cos^2 \theta + \sin^2 \theta = 1\) twice.</p>
           <div>\[
           \begin{aligned}
             &x^2 + y^2 + z^2 \\
             &\quad = 4\sin^2 v\cos^2 u + 4\sin^2 v\sin^2 u + 4\cos^2 v \\
             &\quad = 4\sin^2 v\left(\cos^2 u + \sin^2 u\right) + 4\cos^2 v \\
-            &\quad = 4\sin^2 v + 4\cos^2 v \\
+            &\quad = 4\sin^2 v\,(1) + 4\cos^2 v \\
+            &\quad = 4\left(\sin^2 v + \cos^2 v\right) \\
+            &\quad = 4\,(1) \\
             &\quad = 4
           \end{aligned}
           \]</div>
+          <p>The result is \(4\) for every choice of \(u\) and \(v\), so every point of the surface lies on the sphere \(x^2 + y^2 + z^2 = 4\).</p>
         </div>
       </div>
       </div>

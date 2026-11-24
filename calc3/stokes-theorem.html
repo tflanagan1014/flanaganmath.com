@@ -47,42 +47,94 @@
         <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
         <div class="work">
           <p><strong>Part (a)</strong></p>
+          <p><strong>Step 1</strong>: Differentiate \(\mathbf{r}(t) = \langle 2,\ 3\cos t,\ 3\sin t \rangle\).</p>
           <div>\[ \mathbf{r}'(t) = \langle 0,\ -3\sin t,\ 3\cos t \rangle \]</div>
-          <p>Along the curve, \(y = 3\cos t\) and \(z = 3\sin t\), so \(\mathbf{F}(\mathbf{r}(t)) = \langle 0, -3\sin t, 3\cos t \rangle\).</p>
+          <p><strong>Step 2</strong>: Write \(\mathbf{F}\) along the curve. Along \(C\), \(y = 3\cos t\) and \(z = 3\sin t\).</p>
           <div>\[
           \begin{aligned}
-            \mathbf{F}(\mathbf{r}(t)) \dotp \mathbf{r}'(t) &= 9\sin^2 t + 9\cos^2 t \\
-            &= 9
+            \mathbf{F}(\mathbf{r}(t)) &= \langle 0,\ -z,\ y \rangle \\
+            &= \langle 0,\ -3\sin t,\ 3\cos t \rangle
           \end{aligned}
           \]</div>
-          <div>\[ \oint_C \mathbf{F} \dotp d\mathbf{r} = \int_0^{2\pi} 9\,dt = 18\pi \]</div>
-          <p><strong>Part (b)</strong>: Let \(S\) be the disk in the plane \(x = 2\) bounded by \(C\).</p>
+          <p><strong>Step 3</strong>: Find the dot product.</p>
+          <div>\[
+          \begin{aligned}
+            &\mathbf{F}(\mathbf{r}(t)) \dotp \mathbf{r}'(t) \\
+            &\quad = \langle 0,\ -3\sin t,\ 3\cos t \rangle \\
+            &\qquad\quad {}\dotp \langle 0,\ -3\sin t,\ 3\cos t \rangle \\
+            &\quad = 0 + 9\sin^2 t + 9\cos^2 t \\
+            &\quad = 9\left(\sin^2 t + \cos^2 t\right) \\
+            &\quad = 9
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 4</strong>: Integrate over \(0 \le t \le 2\pi\).</p>
+          <div>\[
+          \begin{aligned}
+            \oint_C \mathbf{F} \dotp d\mathbf{r} &= \int_0^{2\pi} 9\,dt \\
+            &= \Big[\, 9t \,\Big]_0^{2\pi} \\
+            &= 18\pi
+          \end{aligned}
+          \]</div>
+          <p><strong>Part (b)</strong></p>
+          <p><strong>Step 1</strong>: Choose a surface. The curve \(C\) is a circle of radius \(3\) in the plane \(x = 2\), so let \(S\) be the disk in that plane bounded by \(C\).</p>
           <div>\[
           \begin{aligned}
             &\mathbf{R}(u, v) = \langle 2,\ u\cos v,\ u\sin v \rangle, \\
             &\qquad 0 \le u \le 3,\quad 0 \le v \le 2\pi
           \end{aligned}
           \]</div>
+          <p><strong>Step 2</strong>: Find the curl of \(\mathbf{F} = \langle 0,\ -z,\ y \rangle\).</p>
+          <div class="eq-list">
+            <div>\[ P = 0 \]</div>
+            <div>\[ Q = -z \]</div>
+            <div>\[ R = y \]</div>
+          </div>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} &= 1 - (-1) = 2 \\
+            \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} &= 0 - 0 = 0 \\
+            \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} &= 0 - 0 = 0
+          \end{aligned}
+          \]</div>
           <div>\[ \operatorname{curl}\mathbf{F} = \langle 2,\ 0,\ 0 \rangle \]</div>
+          <p><strong>Step 3</strong>: Take the partial derivatives of \(\mathbf{R}(u, v)\).</p>
           <div>\[
           \begin{aligned}
             \mathbf{R}_u &= \langle 0,\ \cos v,\ \sin v \rangle \\
-            \mathbf{R}_v &= \langle 0,\ -u\sin v,\ u\cos v \rangle \\
-            \mathbf{R}_u \times \mathbf{R}_v &= \langle u,\ 0,\ 0 \rangle
+            \mathbf{R}_v &= \langle 0,\ -u\sin v,\ u\cos v \rangle
           \end{aligned}
           \]</div>
+          <p><strong>Step 4</strong>: Find the cross product.</p>
+          <div>\[
+          \begin{aligned}
+            &\mathbf{R}_u \times \mathbf{R}_v \\
+            &\quad = \big[ (\cos v)(u\cos v) - (\sin v)(-u\sin v) \big]\mathbf{i} \\
+            &\qquad {}+ \big[ (\sin v)(0) - (0)(u\cos v) \big]\mathbf{j} \\
+            &\qquad {}+ \big[ (0)(-u\sin v) - (\cos v)(0) \big]\mathbf{k} \\
+            &\quad = u\left(\cos^2 v + \sin^2 v\right)\mathbf{i} + 0\,\mathbf{j} + 0\,\mathbf{k} \\
+            &\quad = \langle u,\ 0,\ 0 \rangle
+          \end{aligned}
+          \]</div>
+          <p>This normal points in the positive \(x\)-direction. As \(t\) increases, \(C\) goes counterclockwise when viewed from the positive \(x\)-axis, so the right-hand rule agrees with this normal.</p>
+          <p><strong>Step 5</strong>: Since \(\mathbf{n} = \dfrac{\mathbf{R}_u \times \mathbf{R}_v}{\|\mathbf{R}_u \times \mathbf{R}_v\|}\) and \(dS = \|\mathbf{R}_u \times \mathbf{R}_v\|\,dA\), the magnitudes cancel.</p>
+          <div>\[ \mathbf{n}\,dS = (\mathbf{R}_u \times \mathbf{R}_v)\,dA \]</div>
+          <p>So we only need the dot product of the curl with the cross product.</p>
           <div>\[
           \begin{aligned}
             &(\operatorname{curl}\mathbf{F}) \dotp (\mathbf{R}_u \times \mathbf{R}_v) \\
             &\quad = \langle 2,\ 0,\ 0 \rangle \dotp \langle u,\ 0,\ 0 \rangle \\
+            &\quad = 2u + 0 + 0 \\
             &\quad = 2u
           \end{aligned}
           \]</div>
+          <p><strong>Step 6</strong>: Set up and evaluate the integral.</p>
           <div>\[
           \begin{aligned}
             &\iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS \\
             &\quad = \int_0^{2\pi} \int_0^3 2u\,du\,dv \\
+            &\quad = \int_0^{2\pi} \Big[\, u^2 \,\Big]_0^3\,dv \\
             &\quad = \int_0^{2\pi} 9\,dv \\
+            &\quad = \Big[\, 9v \,\Big]_0^{2\pi} \\
             &\quad = 18\pi
           \end{aligned}
           \]</div>
@@ -107,27 +159,72 @@
         \]</div>
         <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
         <div class="work">
+          <p>By Stokes&rsquo; Theorem, the work is the surface integral below, where \(\mathbf{n}\,dS = (\mathbf{R}_u \times \mathbf{R}_v)\,dA\).</p>
+          <div>\[ \oint_C \mathbf{F} \dotp d\mathbf{r} = \iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS \]</div>
+          <p><strong>Step 1</strong>: Find the curl of \(\mathbf{F}\).</p>
+          <div class="eq-list">
+            <div>\[ P = xy \]</div>
+            <div>\[ Q = x^2 + y^2 + z^2 \]</div>
+            <div>\[ R = yz \]</div>
+          </div>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} &= z - 2z = -z \\
+            \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} &= 0 - 0 = 0 \\
+            \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} &= 2x - x = x
+          \end{aligned}
+          \]</div>
           <div>\[ \operatorname{curl}\mathbf{F} = \langle -z,\ 0,\ x \rangle \]</div>
+          <p><strong>Step 2</strong>: Take the partial derivatives of \(\mathbf{R}(u, v) = \langle u,\ v,\ 1 - u - v \rangle\).</p>
           <div>\[
           \begin{aligned}
             \mathbf{R}_u &= \langle 1,\ 0,\ -1 \rangle \\
-            \mathbf{R}_v &= \langle 0,\ 1,\ -1 \rangle \\
-            \mathbf{R}_u \times \mathbf{R}_v &= \langle 1,\ 1,\ 1 \rangle
+            \mathbf{R}_v &= \langle 0,\ 1,\ -1 \rangle
           \end{aligned}
           \]</div>
-          <p>On the surface, \(x = u\) and \(z = 1 - u - v\).</p>
+          <p><strong>Step 3</strong>: Find the cross product.</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{R}_u \times \mathbf{R}_v &= \big[ 0(-1) - (-1)(1) \big]\mathbf{i} \\
+            &\qquad {}+ \big[ (-1)(0) - 1(-1) \big]\mathbf{j} \\
+            &\qquad {}+ \big[ 1(1) - 0(0) \big]\mathbf{k} \\
+            &= \langle 1,\ 1,\ 1 \rangle
+          \end{aligned}
+          \]</div>
+          <p>This normal points upward (its \(\mathbf{k}\)-component is positive). By the right-hand rule, using it means \(C\) is traversed counterclockwise when viewed from above.</p>
+          <p><strong>Step 4</strong>: Write the curl on the surface. On \(S\), \(x = u\) and \(z = 1 - u - v\).</p>
+          <div>\[
+          \begin{aligned}
+            \operatorname{curl}\mathbf{F} &= \langle -z,\ 0,\ x \rangle \\
+            &= \langle -(1 - u - v),\ 0,\ u \rangle
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 5</strong>: Find the dot product with the cross product.</p>
           <div>\[
           \begin{aligned}
             &(\operatorname{curl}\mathbf{F}) \dotp (\mathbf{R}_u \times \mathbf{R}_v) \\
-            &\quad = -z + x \\
-            &\quad = -(1 - u - v) + u \\
+            &\quad = \langle -(1 - u - v),\ 0,\ u \rangle \dotp \langle 1,\ 1,\ 1 \rangle \\
+            &\quad = -(1 - u - v) + 0 + u \\
+            &\quad = -1 + u + v + u \\
             &\quad = 2u + v - 1
           \end{aligned}
           \]</div>
+          <p><strong>Step 6</strong>: Set up the integral over \(0 \le u \le 2\), \(0 \le v \le 1\), and evaluate the inner integral.</p>
+          <div>\[
+          \begin{aligned}
+            &\int_0^1 (2u + v - 1)\,dv \\
+            &\quad = \Big[\, 2uv + \frac{1}{2}v^2 - v \,\Big]_0^1 \\
+            &\quad = \left( 2u + \frac{1}{2} - 1 \right) - 0 \\
+            &\quad = 2u - \frac{1}{2}
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 7</strong>: Evaluate the outer integral.</p>
           <div>\[
           \begin{aligned}
             \oint_C \mathbf{F} \dotp d\mathbf{r} &= \int_0^2 \int_0^1 (2u + v - 1)\,dv\,du \\
             &= \int_0^2 \left( 2u - \frac{1}{2} \right) du \\
+            &= \Big[\, u^2 - \frac{1}{2}u \,\Big]_0^2 \\
+            &= (4 - 1) - 0 \\
             &= 3
           \end{aligned}
           \]</div>
@@ -156,26 +253,71 @@
         \]</div>
         <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
         <div class="work">
+          <p>By Stokes&rsquo; Theorem, the work is the surface integral below, where \(\mathbf{n}\,dS = (\mathbf{R}_u \times \mathbf{R}_v)\,dA\).</p>
+          <div>\[ \oint_C \mathbf{F} \dotp d\mathbf{r} = \iint_S (\operatorname{curl}\mathbf{F}) \dotp \mathbf{n}\,dS \]</div>
+          <p><strong>Step 1</strong>: Find the curl of \(\mathbf{F}\).</p>
+          <div class="eq-list">
+            <div>\[ P = \sin\left(x^3\right) + xz \]</div>
+            <div>\[ Q = x - yz \]</div>
+            <div>\[ R = \cos\left(z^4\right) \]</div>
+          </div>
+          <div>\[
+          \begin{aligned}
+            \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} &= 0 - (-y) = y \\
+            \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} &= x - 0 = x \\
+            \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} &= 1 - 0 = 1
+          \end{aligned}
+          \]</div>
           <div>\[ \operatorname{curl}\mathbf{F} = \langle y,\ x,\ 1 \rangle \]</div>
+          <p>The difficult terms drop out: \(\sin\left(x^3\right)\) depends only on \(x\), so its \(y\)- and \(z\)-derivatives are \(0\), and \(\cos\left(z^4\right)\) depends only on \(z\), so its \(x\)- and \(y\)-derivatives are \(0\).</p>
+          <p><strong>Step 2</strong>: Take the partial derivatives of \(\mathbf{R}(u, v) = \langle u,\ v,\ u^2 + v^2 \rangle\).</p>
           <div>\[
           \begin{aligned}
             \mathbf{R}_u &= \langle 1,\ 0,\ 2u \rangle \\
-            \mathbf{R}_v &= \langle 0,\ 1,\ 2v \rangle \\
-            \mathbf{R}_u \times \mathbf{R}_v &= \langle -2u,\ -2v,\ 1 \rangle
+            \mathbf{R}_v &= \langle 0,\ 1,\ 2v \rangle
           \end{aligned}
           \]</div>
-          <p>On the surface, \(x = u\) and \(y = v\).</p>
+          <p><strong>Step 3</strong>: Find the cross product.</p>
+          <div>\[
+          \begin{aligned}
+            \mathbf{R}_u \times \mathbf{R}_v &= \big[ 0(2v) - 2u(1) \big]\mathbf{i} \\
+            &\qquad {}+ \big[ 2u(0) - 1(2v) \big]\mathbf{j} \\
+            &\qquad {}+ \big[ 1(1) - 0(0) \big]\mathbf{k} \\
+            &= \langle -2u,\ -2v,\ 1 \rangle
+          \end{aligned}
+          \]</div>
+          <p>This normal points upward (its \(\mathbf{k}\)-component is positive). By the right-hand rule, using it means \(C\) is traversed counterclockwise when viewed from above.</p>
+          <p><strong>Step 4</strong>: Write the curl on the surface. On \(S\), \(x = u\) and \(y = v\).</p>
+          <div>\[
+          \begin{aligned}
+            \operatorname{curl}\mathbf{F} &= \langle y,\ x,\ 1 \rangle \\
+            &= \langle v,\ u,\ 1 \rangle
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 5</strong>: Find the dot product with the cross product.</p>
           <div>\[
           \begin{aligned}
             &(\operatorname{curl}\mathbf{F}) \dotp (\mathbf{R}_u \times \mathbf{R}_v) \\
             &\quad = \langle v,\ u,\ 1 \rangle \dotp \langle -2u,\ -2v,\ 1 \rangle \\
+            &\quad = -2uv - 2uv + 1 \\
             &\quad = 1 - 4uv
           \end{aligned}
           \]</div>
+          <p><strong>Step 6</strong>: Set up the integral over \(0 \le u \le 2\), \(0 \le v \le 1\), and evaluate the inner integral.</p>
+          <div>\[
+          \begin{aligned}
+            \int_0^1 (1 - 4uv)\,dv &= \Big[\, v - 2uv^2 \,\Big]_0^1 \\
+            &= (1 - 2u) - 0 \\
+            &= 1 - 2u
+          \end{aligned}
+          \]</div>
+          <p><strong>Step 7</strong>: Evaluate the outer integral.</p>
           <div>\[
           \begin{aligned}
             \oint_C \mathbf{F} \dotp d\mathbf{r} &= \int_0^2 \int_0^1 (1 - 4uv)\,dv\,du \\
             &= \int_0^2 (1 - 2u)\,du \\
+            &= \Big[\, u - u^2 \,\Big]_0^2 \\
+            &= (2 - 4) - 0 \\
             &= -2
           \end{aligned}
           \]</div>
