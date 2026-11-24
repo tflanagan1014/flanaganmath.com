@@ -54,8 +54,15 @@
         <button type="button" class="toggle" aria-expanded="false" data-what="solution" hidden>Show solution</button>
         <div class="work">
           <p><strong>Part (a)</strong></p>
-          <p><strong>Step 1</strong>: Differentiate \(\mathbf{r}(t) = \langle 2,\ 3\cos t,\ 3\sin t \rangle\).</p>
+          <div>\[ \oint_C \mathbf{F} \dotp d\mathbf{r} = \int_0^{2\pi} \mathbf{F}(\mathbf{r}(t)) \dotp \mathbf{r}'(t)\,dt \]</div>
+          <p><strong>Step 1</strong>: Find \(d\mathbf{r}\).</p>
           <div>\[ \mathbf{r}'(t) = \langle 0,\ -3\sin t,\ 3\cos t \rangle \]</div>
+          <div>\[
+          \begin{aligned}
+            d\mathbf{r} &= \mathbf{r}'(t)\,dt \\
+            &= \langle 0,\ -3\sin t,\ 3\cos t \rangle\,dt
+          \end{aligned}
+          \]</div>
           <p><strong>Step 2</strong>: Write \(\mathbf{F}\) along the curve. Along \(C\), \(y = 3\cos t\) and \(z = 3\sin t\).</p>
           <div>\[
           \begin{aligned}
@@ -63,15 +70,16 @@
             &= \langle 0,\ -3\sin t,\ 3\cos t \rangle
           \end{aligned}
           \]</div>
-          <p><strong>Step 3</strong>: Find the dot product.</p>
+          <p><strong>Step 3</strong>: Find \(\mathbf{F} \dotp d\mathbf{r}\).</p>
           <div>\[
           \begin{aligned}
-            &\mathbf{F}(\mathbf{r}(t)) \dotp \mathbf{r}'(t) \\
+            &\mathbf{F} \dotp d\mathbf{r} \\
+            &\quad = \mathbf{F}(\mathbf{r}(t)) \dotp \mathbf{r}'(t)\,dt \\
             &\quad = \langle 0,\ -3\sin t,\ 3\cos t \rangle \\
-            &\qquad\quad {}\dotp \langle 0,\ -3\sin t,\ 3\cos t \rangle \\
-            &\quad = 0 + 9\sin^2 t + 9\cos^2 t \\
-            &\quad = 9\left(\sin^2 t + \cos^2 t\right) \\
-            &\quad = 9
+            &\qquad\quad {}\dotp \langle 0,\ -3\sin t,\ 3\cos t \rangle\,dt \\
+            &\quad = \left( 0 + 9\sin^2 t + 9\cos^2 t \right) dt \\
+            &\quad = 9\left(\sin^2 t + \cos^2 t\right) dt \\
+            &\quad = 9\,dt
           \end{aligned}
           \]</div>
           <p><strong>Step 4</strong>: Integrate over \(0 \le t \le 2\pi\).</p>
